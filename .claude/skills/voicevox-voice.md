@@ -2,7 +2,7 @@
 name: voicevox-voice
 description: |
   VOICEVOXで音声+リップシンクデータを生成するスキル。
-  トリガー: 「音声を生成して」「VOICEVOXで喋らせて」「セリフの音声を作って」
+  トリガー: 「音声を生成して」「VOICEVOXで喋らせて」
   出力: .wav音声ファイル + .jsonリップシンクデータ
 ---
 
@@ -15,14 +15,20 @@ docker compose up -d voicevox
 curl -s http://localhost:50021/version  # 起動確認
 ```
 
-## 音声+リップシンク生成
+## シーンYAMLから一括生成（推奨）
+
+```bash
+./scripts/generate-from-scenes.sh scenes/demo.yaml
+```
+
+## 個別音声生成
 
 ```bash
 ./scripts/generate-voice-with-lipsync.sh "テキスト" <speaker_id> <output_base>
 
 # 例
-./scripts/generate-voice-with-lipsync.sh "こんにちは！" 3 public/audio/line1
-# 出力: line1.wav, line1.json
+./scripts/generate-voice-with-lipsync.sh "こんにちは！" 3 public/audio/demo/scene_001
+# 出力: scene_001.wav, scene_001.json
 ```
 
 話者ID: ずんだもん=3（ノーマル）、1（あまあま）、7（ツンツン）
@@ -34,28 +40,11 @@ curl -s http://localhost:50021/version  # 起動確認
 ./scripts/voicevox-dict.sh export config/voicevox-dict.json
 ```
 
-## Remotionでの使用
-
-```tsx
-import line1LipSync from "../public/audio/line1.json";
-import { useLipSync, LipSyncData, DialogueLipSync } from "./hooks/useLipSync";
-
-const dialogue = [
-  { start: 0.5, lipsync: line1LipSync as LipSyncData },
-];
-
-const lipSyncDialogues = dialogue.map((d) => ({
-  start: d.start,
-  lipsyncData: d.lipsync,
-}));
-
-const mouth = useLipSync(lipSyncDialogues, "closed");
-```
-
-## JSONの構造
+## リップシンクJSON構造
 
 ```json
 {
+  "text": "こんにちは",
   "duration": 2.867,
   "lipsync": [
     { "time": 0, "duration": 0.091, "phoneme": "k", "mouth": "n" },
@@ -65,3 +54,15 @@ const mouth = useLipSync(lipSyncDialogues, "closed");
 ```
 
 最後に`end`エントリ（0.5秒、closed）が自動追加される。
+
+## 口形状マッピング
+
+| 音素 | mouth |
+|------|-------|
+| a, A | a |
+| i, I | smile |
+| u, U | u |
+| e, E | e |
+| o, O | o |
+| N, n | n |
+| pau, end | closed |

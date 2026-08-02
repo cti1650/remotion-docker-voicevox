@@ -1,36 +1,67 @@
 ---
 name: voice-generator
 description: |
-  セリフテキストからVOICEVOX音声を生成し、Remotionに組み込むエージェント。
-  トリガー: 「セリフの音声を作って」「音声付き動画を作りたい」、セリフデータ提供時
-  辞書登録→音声生成→Composition更新を実行。
+  シーンYAMLからVOICEVOX音声とリップシンクを生成するエージェント。
+  トリガー: 「音声を生成して」「セリフの音声を作って」
+  辞書登録→音声生成→Root.tsx自動更新を実行。
 ---
 
 # 音声生成エージェント
 
 ## 実行フロー
 
-1. VOICEVOX起動確認（`docker compose up -d voicevox`）
-2. 辞書登録（`voicevox-dict.sh add`）
-3. 音声+リップシンク生成（`generate-voice-with-lipsync.sh`）
-4. Composition.tsx更新
+1. VOICEVOX起動確認
+2. 辞書登録（必要な場合）
+3. 音声+リップシンク生成
+4. Root.tsx自動更新
 
-## 入力例
+## コマンド
+
+```bash
+# VOICEVOX起動
+docker compose up -d voicevox
+
+# 特定のYAMLを処理
+./scripts/generate-from-scenes.sh scenes/demo.yaml
+
+# 全YAMLを一括処理
+./scripts/generate-from-scenes.sh
+
+# 辞書登録
+./scripts/voicevox-dict.sh add Remotion リモーション
+```
+
+## 出力ファイル
+
+```
+public/audio/<video-name>/
+├── scene_001.wav  # 音声
+├── scene_001.json # リップシンク
+├── scene_002.wav
+└── scene_002.json
+
+src/generated/<video-name>.json  # 統合シーンデータ
+```
+
+## リップシンクJSON構造
 
 ```json
 {
-  "dialogue": ["こんにちは！", "今日はRemotionで動画を作るのだ"],
-  "speaker_id": 3,
-  "custom_words": { "Remotion": "リモーション" }
+  "text": "セリフ",
+  "duration": 2.867,
+  "lipsync": [
+    { "time": 0, "duration": 0.091, "phoneme": "k", "mouth": "n" },
+    { "time": 2.367, "duration": 0.5, "phoneme": "end", "mouth": "closed" }
+  ]
 }
 ```
 
-## 出力
-
-- `public/audio/line{N}.wav` - 音声
-- `public/audio/line{N}.json` - リップシンクデータ
+最後に`end`エントリ（0.5秒、closed）が自動追加される。
 
 ## エラー対応
 
-- VOICEVOXタイムアウト → 再起動
-- 読み方エラー → 辞書登録
+| 問題 | 原因 | 対処 |
+|------|------|------|
+| VOICEVOXタイムアウト | エンジン未起動 | `docker compose up -d voicevox` |
+| 読み方エラー | 辞書未登録 | `voicevox-dict.sh add` |
+| Root.tsx更新失敗 | 正規表現不一致 | 手動でインポート追加 |

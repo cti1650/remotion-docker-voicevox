@@ -1,0 +1,28 @@
+# シーン定義ファイル
+# このファイルを編集して ./scripts/generate-from-scenes.sh を実行すると動画が生成されます
+
+title: "ずんだもん解説動画"
+speaker_id: 3          # ずんだもんノーマル
+fps: 30
+width: 1920
+height: 1080
+defaultBackground: "gradient"  # グラデーション背景
+defaultPause: 0.5              # セリフ間の間（秒）
+
+scenes:
+  - text: "こんにちは！ずんだもんなのだ！"
+    emotion: happy
+
+  - text: "今日はRemotionで動画を作る方法を紹介するのだ"
+    emotion: normal
+
+  - text: "VOICEVOXと組み合わせると、自動で音声が生成されるのだ"
+    emotion: thinking
+    background: purple
+
+  - text: "さらにリップシンクも自動で合わせてくれるのだ！"
+    emotion: surprised
+
+  - text: "簡単に動画が作れて、とっても便利なのだ！"
+    emotion: happy
+    background: green

@@ -1,128 +1,160 @@
 # Remotion + VOICEVOX Docker Environment
 
-DockerでRemotionとVOICEVOXを使った動画作成環境。
+DockerでRemotionとVOICEVOXを使った動画作成環境。YAMLでシーンを定義するだけで、音声・リップシンク・動画を自動生成。
 
 ## 必要条件
 
-- Docker
-- Docker Compose
+- Docker / Docker Compose
+- Node.js 18+ (ローカル開発時)
 
-## セットアップ
-
-```bash
-# リポジトリをクローン後
-docker compose build
-
-# Remotionプロジェクトを初期化（初回のみ）
-docker compose run --rm remotion npm create video@latest -- --yes --blank --no-tailwind .
-```
-
-## 使い方
-
-### 開発サーバー起動
+## クイックスタート
 
 ```bash
-docker compose up
+# 1. VOICEVOXエンジン起動
+docker compose up -d voicevox
+
+# 2. 依存関係インストール（初回のみ）
+npm install
+
+# 3. シーンYAMLから音声・リップシンク生成
+./scripts/generate-from-scenes.sh scenes/demo.yaml
+
+# 4. プレビュー
+npm run dev
+
+# 5. 動画レンダリング
+./scripts/render-video.sh scenes/demo.yaml
 ```
 
-ブラウザで http://localhost:3000 を開く。
+## ワークフロー
 
-### 動画レンダリング
+### 1. シーンYAMLを作成
+
+`scenes/` ディレクトリにYAMLファイルを作成:
+
+```yaml
+# scenes/my-video.yaml
+title: "説明動画"
+speaker_id: 3          # ずんだもんノーマル
+
+scenes:
+  - text: "こんにちは！ずんだもんなのだ！"
+    emotion: happy
+
+  - text: "今日はRemotionについて説明するのだ"
+    emotion: normal
+    background: purple
+
+  - text: "とっても簡単なのだ！"
+    emotion: surprised
+```
+
+### 2. 音声とリップシンク生成
 
 ```bash
-docker compose --profile render up render
+./scripts/generate-from-scenes.sh scenes/my-video.yaml
 ```
 
-`output/video.mp4` に出力される。
-
-### VOICEVOXで音声生成
+### 3. プレビュー
 
 ```bash
-# コンテナ内でスクリプトを実行
-docker compose exec remotion ./scripts/generate-voice.sh "こんにちは" 3 assets/audio/hello.wav
+npm run dev
+# ブラウザで http://localhost:3000 を開く
 ```
 
-Speaker IDの一覧は http://localhost:50021/speakers で確認できる。
-
-### キャラクターポートレートのダウンロード
+### 4. 動画出力
 
 ```bash
-docker compose exec remotion ./scripts/download-portrait.sh "ずんだもん"
+./scripts/render-video.sh scenes/my-video.yaml
+# output/my-video.mp4 に出力
 ```
 
-### ずんだもん立ち絵パーツのセットアップ
+## シーン設定オプション
 
-キャラクターをアニメーションさせるには、立ち絵素材が必要です。
-
-1. [ニコニコ静画](https://seiga.nicovideo.jp/seiga/im10788496)からPSDファイルをダウンロード（パスワード: zunda）
-2. `assets/zundamon.psd` に配置
-3. パーツを抽出:
-
-```bash
-docker compose exec remotion python3 scripts/extract-psd-parts.py assets/zundamon.psd assets/parts/zundamon
-```
-
-または、[PSDTool](https://oov.github.io/psdtool/)を使ってブラウザでパーツを個別にPNG出力することもできます。
+| プロパティ | 説明 | 例 |
+|-----------|------|-----|
+| `text` | セリフ（必須） | `"こんにちは！"` |
+| `emotion` | 表情 | `normal`, `happy`, `sad`, `angry`, `surprised`, `thinking`, `smug`, `tired` |
+| `background` | 背景 | `gradient`, `purple`, `blue`, `green`, `orange`, `pink`, `dark`, `white` |
+| `image` | 強調画像 | `{ src: "images/sample.png", position: "top-right" }` |
+| `pause` | セリフ後の間（秒） | `0.5` |
 
 ## ディレクトリ構成
 
 ```
 .
-├── Dockerfile
-├── docker-compose.yml
+├── scenes/                    # シーン定義YAML
+│   └── demo.yaml
 ├── scripts/
-│   ├── setup.sh                # セットアップスクリプト
-│   ├── download-portrait.sh    # ポートレートダウンロード
-│   ├── generate-voice.sh       # 音声生成
-│   ├── extract-psd-parts.py    # PSDパーツ抽出
-│   └── download-zundamon-parts.sh
+│   ├── generate-from-scenes.sh   # 音声・リップシンク生成
+│   ├── render-video.sh           # 動画レンダリング
+│   └── generate-voice-with-lipsync.sh
 ├── src/
 │   ├── components/
-│   │   └── ZundamonCharacter.tsx  # キャラクターコンポーネント
-│   ├── hooks/
-│   │   └── useLipSync.ts          # 口パク同期フック
-│   ├── Composition.tsx            # メイン動画構成
-│   ├── Root.tsx
-│   └── index.ts
-├── public/parts/             # キャラクターパーツ（PNG）
-├── assets/                   # アセット（PSD・音声）
-└── output/                   # 出力ディレクトリ
+│   │   ├── ZundamonCharacter.tsx
+│   │   ├── SceneComposition.tsx
+│   │   ├── Background.tsx
+│   │   └── HighlightImage.tsx
+│   ├── generated/             # 生成されたシーンJSON
+│   └── types/scene.ts
+├── public/
+│   ├── parts/zundamon_en/     # キャラクターパーツ
+│   └── audio/                 # 生成された音声
+└── output/                    # 出力動画
 ```
 
-## VOICEVOX API
+## コマンド一覧
+
+```bash
+# 開発サーバー
+npm run dev
+
+# 全シーンの音声生成
+./scripts/generate-from-scenes.sh
+
+# 特定のシーンの音声生成
+./scripts/generate-from-scenes.sh scenes/demo.yaml
+
+# 動画レンダリング
+./scripts/render-video.sh scenes/demo.yaml
+
+# 音声生成をスキップしてレンダリングのみ
+./scripts/render-video.sh scenes/demo.yaml --skip-generate
+
+# VOICEVOX辞書登録（発音修正）
+./scripts/voicevox-dict.sh add Remotion リモーション
+```
+
+## VOICEVOX設定
 
 VOICEVOXエンジンは http://localhost:50021 で動作。
 
-主なエンドポイント:
-- `GET /speakers` - 話者一覧
-- `POST /audio_query` - 音声クエリ生成
-- `POST /synthesis` - 音声合成
+```bash
+# 起動
+docker compose up -d voicevox
 
-## ライセンス・利用規約
+# 話者一覧確認
+curl http://localhost:50021/speakers | jq
+```
 
-### Remotion
+主な話者ID:
+- 3: ずんだもん（ノーマル）
+- 1: 四国めたん
+- 8: 春日部つむぎ
 
-- 個人または3人以下のチームは無料（商用含む）
-- 4人以上の営利組織は[有料ライセンス](https://www.remotion.dev/docs/license)が必要
+## ライセンス・クレジット
 
-### VOICEVOX音声（ずんだもん）
+### VOICEVOX音声
 
-- 個人利用・収益化OK
 - **クレジット表記必須**: `VOICEVOX:ずんだもん`
-- 禁止: 公序良俗違反、政治・宗教活動、情報商材、フェイク情報
 - [利用規約](https://zunko.jp/con_ongen_kiyaku.html)
 
-### 立ち絵素材（坂本アヒル氏）
+### 立ち絵素材
 
-- 個人利用・改変OK
-- クレジット表記は任意（推奨）
-- 禁止: 公序良俗違反、キャラクターイメージを著しく損なう使用
+- 作者: 坂本アヒル
 - [ニコニコ静画](https://seiga.nicovideo.jp/seiga/im10788496)
 
-### クレジット表記例
-
-動画の概要欄またはエンディングに以下を記載:
-
+動画内に以下を表示（自動表示済み）:
 ```
 VOICEVOX:ずんだもん
 立ち絵素材: 坂本アヒル

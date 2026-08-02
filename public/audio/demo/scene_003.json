@@ -1,0 +1,361 @@
+{
+  "text": "VOICEVOXと組み合わせると、自動で音声が生成されるのだ",
+  "speaker_id": 3,
+  "duration": 5.568,
+  "lipsync": [
+    {
+      "time": 0,
+      "duration": 0.076,
+      "phoneme": "b",
+      "mouth": "closed"
+    },
+    {
+      "time": 0.076,
+      "duration": 0.12,
+      "phoneme": "o",
+      "mouth": "o"
+    },
+    {
+      "time": 0.196,
+      "duration": 0.074,
+      "phoneme": "i",
+      "mouth": "smile"
+    },
+    {
+      "time": 0.269,
+      "duration": 0.081,
+      "phoneme": "s",
+      "mouth": "n"
+    },
+    {
+      "time": 0.35,
+      "duration": 0.07,
+      "phoneme": "u",
+      "mouth": "u"
+    },
+    {
+      "time": 0.42,
+      "duration": 0.054,
+      "phoneme": "b",
+      "mouth": "closed"
+    },
+    {
+      "time": 0.474,
+      "duration": 0.121,
+      "phoneme": "o",
+      "mouth": "o"
+    },
+    {
+      "time": 0.596,
+      "duration": 0.072,
+      "phoneme": "cl",
+      "mouth": "closed"
+    },
+    {
+      "time": 0.668,
+      "duration": 0.064,
+      "phoneme": "k",
+      "mouth": "n"
+    },
+    {
+      "time": 0.731,
+      "duration": 0.059,
+      "phoneme": "U",
+      "mouth": "u"
+    },
+    {
+      "time": 0.79,
+      "duration": 0.056,
+      "phoneme": "s",
+      "mouth": "n"
+    },
+    {
+      "time": 0.846,
+      "duration": 0.058,
+      "phoneme": "u",
+      "mouth": "u"
+    },
+    {
+      "time": 0.905,
+      "duration": 0.062,
+      "phoneme": "t",
+      "mouth": "n"
+    },
+    {
+      "time": 0.966,
+      "duration": 0.104,
+      "phoneme": "o",
+      "mouth": "o"
+    },
+    {
+      "time": 1.07,
+      "duration": 0.066,
+      "phoneme": "k",
+      "mouth": "n"
+    },
+    {
+      "time": 1.137,
+      "duration": 0.063,
+      "phoneme": "u",
+      "mouth": "u"
+    },
+    {
+      "time": 1.199,
+      "duration": 0.07,
+      "phoneme": "m",
+      "mouth": "closed"
+    },
+    {
+      "time": 1.27,
+      "duration": 0.088,
+      "phoneme": "i",
+      "mouth": "smile"
+    },
+    {
+      "time": 1.357,
+      "duration": 0.121,
+      "phoneme": "a",
+      "mouth": "a"
+    },
+    {
+      "time": 1.478,
+      "duration": 0.055,
+      "phoneme": "w",
+      "mouth": "n"
+    },
+    {
+      "time": 1.533,
+      "duration": 0.077,
+      "phoneme": "a",
+      "mouth": "a"
+    },
+    {
+      "time": 1.61,
+      "duration": 0.076,
+      "phoneme": "s",
+      "mouth": "n"
+    },
+    {
+      "time": 1.686,
+      "duration": 0.079,
+      "phoneme": "e",
+      "mouth": "e"
+    },
+    {
+      "time": 1.766,
+      "duration": 0.034,
+      "phoneme": "r",
+      "mouth": "n"
+    },
+    {
+      "time": 1.8,
+      "duration": 0.093,
+      "phoneme": "u",
+      "mouth": "u"
+    },
+    {
+      "time": 1.892,
+      "duration": 0.068,
+      "phoneme": "t",
+      "mouth": "n"
+    },
+    {
+      "time": 1.96,
+      "duration": 0.17,
+      "phoneme": "o",
+      "mouth": "o"
+    },
+    {
+      "time": 2.13,
+      "duration": 0.406,
+      "phoneme": "pau",
+      "mouth": "closed"
+    },
+    {
+      "time": 2.536,
+      "duration": 0.094,
+      "phoneme": "j",
+      "mouth": "n"
+    },
+    {
+      "time": 2.63,
+      "duration": 0.066,
+      "phoneme": "i",
+      "mouth": "smile"
+    },
+    {
+      "time": 2.696,
+      "duration": 0.064,
+      "phoneme": "d",
+      "mouth": "n"
+    },
+    {
+      "time": 2.759,
+      "duration": 0.097,
+      "phoneme": "o",
+      "mouth": "o"
+    },
+    {
+      "time": 2.857,
+      "duration": 0.097,
+      "phoneme": "o",
+      "mouth": "o"
+    },
+    {
+      "time": 2.953,
+      "duration": 0.056,
+      "phoneme": "d",
+      "mouth": "n"
+    },
+    {
+      "time": 3.009,
+      "duration": 0.086,
+      "phoneme": "e",
+      "mouth": "e"
+    },
+    {
+      "time": 3.095,
+      "duration": 0.148,
+      "phoneme": "o",
+      "mouth": "o"
+    },
+    {
+      "time": 3.243,
+      "duration": 0.087,
+      "phoneme": "N",
+      "mouth": "n"
+    },
+    {
+      "time": 3.329,
+      "duration": 0.078,
+      "phoneme": "s",
+      "mouth": "n"
+    },
+    {
+      "time": 3.408,
+      "duration": 0.088,
+      "phoneme": "e",
+      "mouth": "e"
+    },
+    {
+      "time": 3.496,
+      "duration": 0.078,
+      "phoneme": "e",
+      "mouth": "e"
+    },
+    {
+      "time": 3.574,
+      "duration": 0.061,
+      "phoneme": "g",
+      "mouth": "n"
+    },
+    {
+      "time": 3.634,
+      "duration": 0.099,
+      "phoneme": "a",
+      "mouth": "a"
+    },
+    {
+      "time": 3.733,
+      "duration": 0.091,
+      "phoneme": "s",
+      "mouth": "n"
+    },
+    {
+      "time": 3.824,
+      "duration": 0.092,
+      "phoneme": "e",
+      "mouth": "e"
+    },
+    {
+      "time": 3.917,
+      "duration": 0.097,
+      "phoneme": "e",
+      "mouth": "e"
+    },
+    {
+      "time": 4.014,
+      "duration": 0.082,
+      "phoneme": "s",
+      "mouth": "n"
+    },
+    {
+      "time": 4.096,
+      "duration": 0.079,
+      "phoneme": "e",
+      "mouth": "e"
+    },
+    {
+      "time": 4.174,
+      "duration": 0.084,
+      "phoneme": "e",
+      "mouth": "e"
+    },
+    {
+      "time": 4.258,
+      "duration": 0.077,
+      "phoneme": "s",
+      "mouth": "n"
+    },
+    {
+      "time": 4.335,
+      "duration": 0.088,
+      "phoneme": "a",
+      "mouth": "a"
+    },
+    {
+      "time": 4.423,
+      "duration": 0.038,
+      "phoneme": "r",
+      "mouth": "n"
+    },
+    {
+      "time": 4.461,
+      "duration": 0.08,
+      "phoneme": "e",
+      "mouth": "e"
+    },
+    {
+      "time": 4.54,
+      "duration": 0.035,
+      "phoneme": "r",
+      "mouth": "n"
+    },
+    {
+      "time": 4.575,
+      "duration": 0.071,
+      "phoneme": "u",
+      "mouth": "u"
+    },
+    {
+      "time": 4.646,
+      "duration": 0.06,
+      "phoneme": "n",
+      "mouth": "n"
+    },
+    {
+      "time": 4.706,
+      "duration": 0.1,
+      "phoneme": "o",
+      "mouth": "o"
+    },
+    {
+      "time": 4.805,
+      "duration": 0.051,
+      "phoneme": "d",
+      "mouth": "n"
+    },
+    {
+      "time": 4.856,
+      "duration": 0.212,
+      "phoneme": "a",
+      "mouth": "a"
+    },
+    {
+      "time": 5.068,
+      "duration": 0.5,
+      "phoneme": "end",
+      "mouth": "closed"
+    }
+  ]
+}

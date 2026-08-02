@@ -1,14 +1,38 @@
 ---
 name: character-animation
 description: |
-  Remotionでキャラクターアニメーション（口パク・瞬き・呼吸）を実装するスキル。
-  トリガー: 「キャラクターを動かして」「口パクを実装して」「瞬きを追加して」
-  ZundamonCharacterコンポーネントの使い方とuseLipSyncフックの実装。
+  Remotionでキャラクターアニメーション（口パク・瞬き・呼吸・表情）を実装するスキル。
+  トリガー: 「キャラクターを動かして」「表情を変えて」「アニメーションを実装して」
+  SceneCompositionコンポーネントとEMOTION_PRESETSの使い方。
 ---
 
 # キャラクターアニメーション
 
-## コンポーネント使用
+## シーンYAMLでの表情指定（推奨）
+
+```yaml
+scenes:
+  - text: "嬉しいのだ！"
+    emotion: happy     # 自動で表情パーツが設定される
+
+  - text: "悲しいのだ..."
+    emotion: sad
+```
+
+## 表情プリセット（src/types/scene.ts）
+
+| emotion | eye | eyebrow | faceColor | edamame |
+|---------|-----|---------|-----------|---------|
+| normal | normal | normal | cheek_normal | normal |
+| happy | smile | normal | cheek_red | normal |
+| sad | normal | troubled | cheek_normal | wilted |
+| angry | jitome | angry | cheek_red | normal |
+| surprised | circle | raised | cheek_normal | standing |
+| thinking | normal_up | normal | cheek_normal | normal |
+| smug | jitome | normal | cheek_normal | normal |
+| tired | relaxed | troubled | pale | wilted |
+
+## 直接コンポーネント使用
 
 ```tsx
 <ZundamonCharacter
@@ -18,49 +42,38 @@ description: |
   mouth={mouth}           // useLipSyncから取得
   eye="normal"
   eyebrow="normal"
+  faceColor="cheek_normal"
+  edamame="normal"
   enableBlink={true}
   enableBreathing={true}
 />
 ```
 
-## リップシンク（推奨）
+## リップシンク
+
+SceneCompositionでは自動処理。直接使用する場合:
 
 ```tsx
 import { useLipSync } from "./hooks/useLipSync";
-import line1LipSync from "../public/audio/line1.json";
 
-const dialogue = [
-  { start: 0.5, lipsyncData: line1LipSync },
-];
+const lipSyncDialogues = scenes.map((scene) => ({
+  start: scene.startTime,
+  lipsyncData: scene.lipsyncData,
+}));
 
-const mouth = useLipSync(dialogue, "closed");
+const mouth = useLipSync(lipSyncDialogues, "closed");
 ```
-
-## 口の形マッピング
-
-| 音素 | mouth | 説明 |
-|------|-------|------|
-| a, A | a | あ |
-| i, I | smile | い |
-| u, U | u | う |
-| e, E | e | え |
-| o, O | o | お |
-| N, n | n | ん |
-| pau, end | closed | 閉じ |
-
-## レイヤー順序（下から上）
-
-1. tail → 2. body → 3. arm_right → 4. arm_left → 5. head → 6. edamame → 7. face_color → 8. eyebrow → 9. eye → 10. mouth
 
 ## 型定義
 
 ```tsx
 type MouthType = "closed" | "a" | "aa" | "u" | "e" | "o" | "n" | "smile" | ...;
-type EyeType = "normal" | "closed" | "smile" | "jitome" | ...;
+type EyeType = "normal" | "closed" | "smile" | "jitome" | "circle" | ...;
 type EyebrowType = "normal" | "angry" | "raised" | "troubled" | ...;
+type FaceColorType = "cheek_normal" | "cheek_red" | "blush" | "pale";
+type EdamameType = "normal" | "standing" | "standing_bent" | "wilted";
 ```
 
-## 注意
+## レイヤー順序（下から上）
 
-- 口のデフォルト: `closed`（`むふ`から抽出）
-- JSON更新後はRemotionサーバー再起動が必要
+tail → body → arm_right → arm_left → head → edamame → face_color → eyebrow → eye → mouth
