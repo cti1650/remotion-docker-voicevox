@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+output/
+*.mp4
+*.webm
+*.mov
+
+# Remotion
+.remotion/
+
+# VOICEVOX
+voicevox_core/
+download-linux-x64
+
+# Audio files (generated)
+*.wav
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Cache
+.cache/
+.parcel-cache/

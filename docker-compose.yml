@@ -1,0 +1,45 @@
+services:
+  # VOICEVOX Engine for text-to-speech
+  voicevox:
+    image: voicevox/voicevox_engine:cpu-ubuntu20.04-latest
+    ports:
+      - "50021:50021"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:50021/version"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Remotion development environment
+  remotion:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - ./output:/app/out
+    environment:
+      - VOICEVOX_ENGINE_URL=http://voicevox:50021
+    depends_on:
+      voicevox:
+        condition: service_healthy
+    stdin_open: true
+    tty: true
+
+  # Render service (for batch rendering)
+  render:
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - ./output:/app/out
+    environment:
+      - VOICEVOX_ENGINE_URL=http://voicevox:50021
+    depends_on:
+      voicevox:
+        condition: service_healthy
+    command: ["npx", "remotion", "render", "--output", "/app/out/video.mp4"]
+    profiles:
+      - render

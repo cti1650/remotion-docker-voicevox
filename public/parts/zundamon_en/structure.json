@@ -1,0 +1,1716 @@
+{
+  "size": [
+    1082,
+    1594
+  ],
+  "layers": [
+    {
+      "name": "尻尾のような何か",
+      "sanitized_name": "尻尾のような何か",
+      "visible": true,
+      "kind": "pixel",
+      "bbox": [
+        565,
+        530,
+        963,
+        998
+      ]
+    },
+    {
+      "name": "!体",
+      "sanitized_name": "体",
+      "visible": true,
+      "kind": "pixel",
+      "bbox": [
+        327,
+        218,
+        723,
+        1541
+      ]
+    },
+    {
+      "name": "!右腕",
+      "sanitized_name": "右腕",
+      "visible": true,
+      "kind": "group",
+      "bbox": [
+        270,
+        549,
+        460,
+        842
+      ],
+      "children": [
+        {
+          "name": "*(非表示)",
+          "sanitized_name": "非表示",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "name": "*腰",
+          "sanitized_name": "腰",
+          "visible": true,
+          "kind": "pixel",
+          "bbox": [
+            270,
+            549,
+            460,
+            842
+          ]
+        },
+        {
+          "name": "*指差し横",
+          "sanitized_name": "指差し横",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            122,
+            521,
+            440,
+            758
+          ]
+        },
+        {
+          "name": "*横",
+          "sanitized_name": "横",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            119,
+            537,
+            440,
+            758
+          ]
+        },
+        {
+          "name": "*指差し上",
+          "sanitized_name": "指差し上",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            172,
+            244,
+            478,
+            709
+          ]
+        },
+        {
+          "name": "*手を挙げる",
+          "sanitized_name": "手を挙げる",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            138,
+            261,
+            478,
+            709
+          ]
+        },
+        {
+          "name": "*チョップ",
+          "sanitized_name": "チョップ",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            323,
+            510,
+            443,
+            789
+          ]
+        },
+        {
+          "name": "*口元",
+          "sanitized_name": "口元",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            284,
+            514,
+            475,
+            755
+          ]
+        },
+        {
+          "name": "*基本",
+          "sanitized_name": "基本",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            269,
+            565,
+            438,
+            1050
+          ]
+        }
+      ]
+    },
+    {
+      "name": "!左腕",
+      "sanitized_name": "左腕",
+      "visible": true,
+      "kind": "group",
+      "bbox": [
+        571,
+        554,
+        770,
+        844
+      ],
+      "children": [
+        {
+          "name": "*腕組み(右腕は非表示に)",
+          "sanitized_name": "腕組み_右腕は非表示に",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            334,
+            564,
+            678,
+            806
+          ]
+        },
+        {
+          "name": "*腰",
+          "sanitized_name": "腰",
+          "visible": true,
+          "kind": "pixel",
+          "bbox": [
+            571,
+            554,
+            770,
+            844
+          ]
+        },
+        {
+          "name": "*横",
+          "sanitized_name": "横",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            596,
+            532,
+            862,
+            751
+          ]
+        },
+        {
+          "name": "*手を挙げる",
+          "sanitized_name": "手を挙げる",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            546,
+            271,
+            914,
+            669
+          ]
+        },
+        {
+          "name": "*あごに指",
+          "sanitized_name": "あごに指",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            454,
+            516,
+            704,
+            779
+          ]
+        },
+        {
+          "name": "*口元",
+          "sanitized_name": "口元",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            514,
+            510,
+            708,
+            753
+          ]
+        },
+        {
+          "name": "*基本",
+          "sanitized_name": "基本",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            591,
+            558,
+            768,
+            1041
+          ]
+        }
+      ]
+    },
+    {
+      "name": "*頭_上向き",
+      "sanitized_name": "頭_上向き",
+      "visible": false,
+      "kind": "group",
+      "bbox": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "children": [
+        {
+          "name": "!頭",
+          "sanitized_name": "頭",
+          "visible": true,
+          "kind": "pixel",
+          "bbox": [
+            302,
+            163,
+            737,
+            526
+          ]
+        },
+        {
+          "name": "!枝豆",
+          "sanitized_name": "枝豆",
+          "visible": true,
+          "kind": "group",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "children": [
+            {
+              "name": "*枝豆萎え",
+              "sanitized_name": "枝豆萎え",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                239,
+                154,
+                803,
+                427
+              ]
+            },
+            {
+              "name": "*枝豆立ち",
+              "sanitized_name": "枝豆立ち",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                244,
+                42,
+                753,
+                429
+              ]
+            },
+            {
+              "name": "*枝豆通常",
+              "sanitized_name": "枝豆通常",
+              "visible": true,
+              "kind": "pixel",
+              "bbox": [
+                244,
+                101,
+                781,
+                429
+              ]
+            }
+          ]
+        },
+        {
+          "name": "!顔色",
+          "sanitized_name": "顔色",
+          "visible": true,
+          "kind": "group",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "children": [
+            {
+              "name": "*(非表示)",
+              "sanitized_name": "非表示",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                0,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "name": "*青ざめ",
+              "sanitized_name": "青ざめ",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                364,
+                345,
+                613,
+                410
+              ]
+            },
+            {
+              "name": "*赤面",
+              "sanitized_name": "赤面",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                350,
+                325,
+                645,
+                463
+              ]
+            },
+            {
+              "name": "*ほっぺ赤め",
+              "sanitized_name": "ほっぺ赤め",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                349,
+                372,
+                627,
+                437
+              ]
+            },
+            {
+              "name": "*ほっぺ基本",
+              "sanitized_name": "ほっぺ基本",
+              "visible": true,
+              "kind": "pixel",
+              "bbox": [
+                349,
+                373,
+                625,
+                429
+              ]
+            },
+            {
+              "name": "かげり",
+              "sanitized_name": "かげり",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                361,
+                220,
+                634,
+                370
+              ]
+            }
+          ]
+        },
+        {
+          "name": "!口",
+          "sanitized_name": "口",
+          "visible": true,
+          "kind": "group",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "children": [
+            {
+              "name": "*うへー",
+              "sanitized_name": "うへー",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                450,
+                423,
+                522,
+                455
+              ]
+            },
+            {
+              "name": "*むくー",
+              "sanitized_name": "むくー",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                466,
+                432,
+                518,
+                454
+              ]
+            },
+            {
+              "name": "*にやり",
+              "sanitized_name": "にやり",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                446,
+                429,
+                525,
+                461
+              ]
+            },
+            {
+              "name": "*うわー",
+              "sanitized_name": "うわー",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                448,
+                412,
+                528,
+                484
+              ]
+            },
+            {
+              "name": "*んえー",
+              "sanitized_name": "んえー",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                449,
+                427,
+                526,
+                468
+              ]
+            },
+            {
+              "name": "*んー",
+              "sanitized_name": "んー",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                458,
+                440,
+                519,
+                453
+              ]
+            },
+            {
+              "name": "*お",
+              "sanitized_name": "お",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                465,
+                423,
+                504,
+                463
+              ]
+            },
+            {
+              "name": "*Δ",
+              "sanitized_name": "Δ",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                471,
+                425,
+                500,
+                457
+              ]
+            },
+            {
+              "name": "*ん",
+              "sanitized_name": "ん",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                473,
+                438,
+                495,
+                451
+              ]
+            },
+            {
+              "name": "*あは",
+              "sanitized_name": "あは",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                452,
+                418,
+                519,
+                465
+              ]
+            },
+            {
+              "name": "*ほほえみ",
+              "sanitized_name": "ほほえみ",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                456,
+                433,
+                513,
+                455
+              ]
+            },
+            {
+              "name": "*ほあー",
+              "sanitized_name": "ほあー",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                443,
+                413,
+                523,
+                479
+              ]
+            },
+            {
+              "name": "*ほう",
+              "sanitized_name": "ほう",
+              "visible": true,
+              "kind": "pixel",
+              "bbox": [
+                451,
+                415,
+                517,
+                479
+              ]
+            },
+            {
+              "name": "*ほあ",
+              "sanitized_name": "ほあ",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                449,
+                415,
+                519,
+                471
+              ]
+            },
+            {
+              "name": "*えへ",
+              "sanitized_name": "えへ",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                451,
+                427,
+                519,
+                459
+              ]
+            },
+            {
+              "name": "*むふ",
+              "sanitized_name": "むふ",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                452,
+                433,
+                523,
+                450
+              ]
+            }
+          ]
+        },
+        {
+          "name": "!目",
+          "sanitized_name": "目",
+          "visible": true,
+          "kind": "group",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "children": [
+            {
+              "name": "*><",
+              "sanitized_name": "",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                369,
+                324,
+                621,
+                403
+              ]
+            },
+            {
+              "name": "*〇〇",
+              "sanitized_name": "〇〇",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                369,
+                322,
+                614,
+                398
+              ]
+            },
+            {
+              "name": "*なごみ目",
+              "sanitized_name": "なごみ目",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                367,
+                334,
+                621,
+                390
+              ]
+            },
+            {
+              "name": "*^^",
+              "sanitized_name": "^^",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                364,
+                337,
+                616,
+                392
+              ]
+            },
+            {
+              "name": "*にっこり",
+              "sanitized_name": "にっこり",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                365,
+                353,
+                621,
+                390
+              ]
+            },
+            {
+              "name": "*UU",
+              "sanitized_name": "UU",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                371,
+                348,
+                615,
+                396
+              ]
+            },
+            {
+              "name": "*閉じ目",
+              "sanitized_name": "閉じ目",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                364,
+                345,
+                618,
+                390
+              ]
+            },
+            {
+              "name": "*ジト目2",
+              "sanitized_name": "ジト目2",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                365,
+                301,
+                622,
+                401
+              ]
+            },
+            {
+              "name": "*普通目2↑",
+              "sanitized_name": "普通目2↑",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                365,
+                294,
+                622,
+                401
+              ]
+            },
+            {
+              "name": "*普通目2",
+              "sanitized_name": "普通目2",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                365,
+                294,
+                622,
+                401
+              ]
+            },
+            {
+              "name": "*ジト目ハート",
+              "sanitized_name": "ジト目ハート",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                365,
+                301,
+                622,
+                401
+              ]
+            },
+            {
+              "name": "*ジト目",
+              "sanitized_name": "ジト目",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                365,
+                301,
+                622,
+                401
+              ]
+            },
+            {
+              "name": "*普通目↑",
+              "sanitized_name": "普通目↑",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                365,
+                294,
+                622,
+                401
+              ]
+            },
+            {
+              "name": "*普通目",
+              "sanitized_name": "普通目",
+              "visible": true,
+              "kind": "pixel",
+              "bbox": [
+                365,
+                294,
+                622,
+                401
+              ]
+            }
+          ]
+        },
+        {
+          "name": "!眉",
+          "sanitized_name": "眉",
+          "visible": true,
+          "kind": "group",
+          "bbox": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "children": [
+            {
+              "name": "*困り眉",
+              "sanitized_name": "困り眉",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                393,
+                255,
+                605,
+                289
+              ]
+            },
+            {
+              "name": "*怒り眉2",
+              "sanitized_name": "怒り眉2",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                400,
+                250,
+                607,
+                283
+              ]
+            },
+            {
+              "name": "*怒り眉",
+              "sanitized_name": "怒り眉",
+              "visible": true,
+              "kind": "pixel",
+              "bbox": [
+                399,
+                245,
+                605,
+                277
+              ]
+            },
+            {
+              "name": "*上がり眉",
+              "sanitized_name": "上がり眉",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                392,
+                241,
+                606,
+                269
+              ]
+            },
+            {
+              "name": "*基本眉",
+              "sanitized_name": "基本眉",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                405,
+                255,
+                594,
+                269
+              ]
+            }
+          ]
+        },
+        {
+          "name": "汗多め",
+          "sanitized_name": "汗多め",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            375,
+            257,
+            665,
+            514
+          ]
+        },
+        {
+          "name": "汗",
+          "sanitized_name": "汗",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            375,
+            439,
+            398,
+            462
+          ]
+        },
+        {
+          "name": "涙",
+          "sanitized_name": "涙",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            358,
+            378,
+            622,
+            417
+          ]
+        }
+      ]
+    },
+    {
+      "name": "*頭_正面向き",
+      "sanitized_name": "頭_正面向き",
+      "visible": true,
+      "kind": "group",
+      "bbox": [
+        247,
+        116,
+        769,
+        529
+      ],
+      "children": [
+        {
+          "name": "!頭",
+          "sanitized_name": "頭",
+          "visible": true,
+          "kind": "pixel",
+          "bbox": [
+            304,
+            153,
+            734,
+            529
+          ]
+        },
+        {
+          "name": "!枝豆",
+          "sanitized_name": "枝豆",
+          "visible": true,
+          "kind": "group",
+          "bbox": [
+            247,
+            116,
+            769,
+            463
+          ],
+          "children": [
+            {
+              "name": "*枝豆萎え",
+              "sanitized_name": "枝豆萎え",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                226,
+                172,
+                760,
+                481
+              ]
+            },
+            {
+              "name": "*枝豆立ち片折れ",
+              "sanitized_name": "枝豆立ち片折れ",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                234,
+                31,
+                761,
+                463
+              ]
+            },
+            {
+              "name": "*枝豆立ち",
+              "sanitized_name": "枝豆立ち",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                247,
+                31,
+                761,
+                463
+              ]
+            },
+            {
+              "name": "*枝豆通常",
+              "sanitized_name": "枝豆通常",
+              "visible": true,
+              "kind": "pixel",
+              "bbox": [
+                247,
+                116,
+                769,
+                463
+              ]
+            }
+          ]
+        },
+        {
+          "name": "!顔色",
+          "sanitized_name": "顔色",
+          "visible": true,
+          "kind": "group",
+          "bbox": [
+            359,
+            413,
+            623,
+            458
+          ],
+          "children": [
+            {
+              "name": "*(非表示)",
+              "sanitized_name": "非表示",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                0,
+                0,
+                1,
+                1
+              ]
+            },
+            {
+              "name": "*青ざめ",
+              "sanitized_name": "青ざめ",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                377,
+                383,
+                608,
+                446
+              ]
+            },
+            {
+              "name": "*赤面",
+              "sanitized_name": "赤面",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                355,
+                364,
+                645,
+                501
+              ]
+            },
+            {
+              "name": "*ほっぺ赤め",
+              "sanitized_name": "ほっぺ赤め",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                358,
+                407,
+                625,
+                466
+              ]
+            },
+            {
+              "name": "*ほっぺ基本",
+              "sanitized_name": "ほっぺ基本",
+              "visible": true,
+              "kind": "pixel",
+              "bbox": [
+                359,
+                413,
+                623,
+                458
+              ]
+            },
+            {
+              "name": "かげり",
+              "sanitized_name": "かげり",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                356,
+                245,
+                628,
+                404
+              ]
+            }
+          ]
+        },
+        {
+          "name": "!口",
+          "sanitized_name": "口",
+          "visible": true,
+          "kind": "group",
+          "bbox": [
+            455,
+            441,
+            525,
+            502
+          ],
+          "children": [
+            {
+              "name": "*うへえ",
+              "sanitized_name": "うへえ",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                458,
+                466,
+                527,
+                492
+              ]
+            },
+            {
+              "name": "*むくー",
+              "sanitized_name": "むくー",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                475,
+                468,
+                514,
+                488
+              ]
+            },
+            {
+              "name": "*うわー",
+              "sanitized_name": "うわー",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                455,
+                447,
+                532,
+                504
+              ]
+            },
+            {
+              "name": "*んえー",
+              "sanitized_name": "んえー",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                458,
+                461,
+                531,
+                498
+              ]
+            },
+            {
+              "name": "*んー",
+              "sanitized_name": "んー",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                464,
+                477,
+                526,
+                488
+              ]
+            },
+            {
+              "name": "*お",
+              "sanitized_name": "お",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                472,
+                459,
+                507,
+                498
+              ]
+            },
+            {
+              "name": "*Δ",
+              "sanitized_name": "Δ",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                474,
+                465,
+                509,
+                492
+              ]
+            },
+            {
+              "name": "*ん",
+              "sanitized_name": "ん",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                480,
+                475,
+                504,
+                487
+              ]
+            },
+            {
+              "name": "*にやり",
+              "sanitized_name": "にやり",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                456,
+                462,
+                531,
+                493
+              ]
+            },
+            {
+              "name": "*あは",
+              "sanitized_name": "あは",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                458,
+                453,
+                521,
+                495
+              ]
+            },
+            {
+              "name": "*ほほえみ",
+              "sanitized_name": "ほほえみ",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                461,
+                458,
+                520,
+                484
+              ]
+            },
+            {
+              "name": "*ほあー",
+              "sanitized_name": "ほあー",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                453,
+                440,
+                524,
+                506
+              ]
+            },
+            {
+              "name": "*ほう",
+              "sanitized_name": "ほう",
+              "visible": true,
+              "kind": "pixel",
+              "bbox": [
+                455,
+                441,
+                525,
+                502
+              ]
+            },
+            {
+              "name": "*ほあ",
+              "sanitized_name": "ほあ",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                455,
+                451,
+                521,
+                499
+              ]
+            },
+            {
+              "name": "*えへ",
+              "sanitized_name": "えへ",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                460,
+                459,
+                521,
+                494
+              ]
+            },
+            {
+              "name": "*むふ",
+              "sanitized_name": "むふ",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                457,
+                463,
+                526,
+                483
+              ]
+            }
+          ]
+        },
+        {
+          "name": "!目",
+          "sanitized_name": "目",
+          "visible": true,
+          "kind": "group",
+          "bbox": [
+            358,
+            322,
+            630,
+            433
+          ],
+          "children": [
+            {
+              "name": "*><",
+              "sanitized_name": "",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                362,
+                351,
+                614,
+                428
+              ]
+            },
+            {
+              "name": "*〇〇",
+              "sanitized_name": "〇〇",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                366,
+                345,
+                611,
+                428
+              ]
+            },
+            {
+              "name": "*なごみ目",
+              "sanitized_name": "なごみ目",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                366,
+                375,
+                614,
+                417
+              ]
+            },
+            {
+              "name": "*^^",
+              "sanitized_name": "^^",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                368,
+                370,
+                609,
+                422
+              ]
+            },
+            {
+              "name": "*にっこり",
+              "sanitized_name": "にっこり",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                368,
+                381,
+                611,
+                421
+              ]
+            },
+            {
+              "name": "*UU",
+              "sanitized_name": "UU",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                370,
+                380,
+                608,
+                430
+              ]
+            },
+            {
+              "name": "*閉じ目",
+              "sanitized_name": "閉じ目",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                366,
+                383,
+                612,
+                426
+              ]
+            },
+            {
+              "name": "*細め目ハート",
+              "sanitized_name": "細め目ハート",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                359,
+                330,
+                630,
+                429
+              ]
+            },
+            {
+              "name": "*細め目",
+              "sanitized_name": "細め目",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                359,
+                330,
+                630,
+                429
+              ]
+            },
+            {
+              "name": "*ジト目2←",
+              "sanitized_name": "ジト目2←",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                357,
+                336,
+                630,
+                433
+              ]
+            },
+            {
+              "name": "*ジト目2→",
+              "sanitized_name": "ジト目2→",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                357,
+                336,
+                630,
+                433
+              ]
+            },
+            {
+              "name": "*ジト目2",
+              "sanitized_name": "ジト目2",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                357,
+                336,
+                630,
+                433
+              ]
+            },
+            {
+              "name": "*基本目2↑",
+              "sanitized_name": "基本目2↑",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                358,
+                322,
+                630,
+                433
+              ]
+            },
+            {
+              "name": "*基本目2←",
+              "sanitized_name": "基本目2←",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                358,
+                322,
+                630,
+                433
+              ]
+            },
+            {
+              "name": "*基本目2→",
+              "sanitized_name": "基本目2→",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                358,
+                322,
+                630,
+                433
+              ]
+            },
+            {
+              "name": "*基本目2",
+              "sanitized_name": "基本目2",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                358,
+                322,
+                630,
+                433
+              ]
+            },
+            {
+              "name": "*ジト目←",
+              "sanitized_name": "ジト目←",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                357,
+                336,
+                630,
+                433
+              ]
+            },
+            {
+              "name": "*ジト目→",
+              "sanitized_name": "ジト目→",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                357,
+                336,
+                630,
+                433
+              ]
+            },
+            {
+              "name": "*ジト目",
+              "sanitized_name": "ジト目",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                357,
+                336,
+                630,
+                433
+              ]
+            },
+            {
+              "name": "*基本目↑",
+              "sanitized_name": "基本目↑",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                358,
+                322,
+                630,
+                433
+              ]
+            },
+            {
+              "name": "*基本目←",
+              "sanitized_name": "基本目←",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                358,
+                322,
+                630,
+                433
+              ]
+            },
+            {
+              "name": "*基本目→",
+              "sanitized_name": "基本目→",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                358,
+                322,
+                630,
+                433
+              ]
+            },
+            {
+              "name": "*基本目",
+              "sanitized_name": "基本目",
+              "visible": true,
+              "kind": "pixel",
+              "bbox": [
+                358,
+                322,
+                630,
+                433
+              ]
+            }
+          ]
+        },
+        {
+          "name": "!眉",
+          "sanitized_name": "眉",
+          "visible": true,
+          "kind": "group",
+          "bbox": [
+            376,
+            272,
+            580,
+            304
+          ],
+          "children": [
+            {
+              "name": "*困り眉",
+              "sanitized_name": "困り眉",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                374,
+                276,
+                585,
+                306
+              ]
+            },
+            {
+              "name": "*怒り眉2",
+              "sanitized_name": "怒り眉2",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                377,
+                291,
+                573,
+                312
+              ]
+            },
+            {
+              "name": "*怒り眉",
+              "sanitized_name": "怒り眉",
+              "visible": true,
+              "kind": "pixel",
+              "bbox": [
+                376,
+                272,
+                580,
+                304
+              ]
+            },
+            {
+              "name": "*上がり眉",
+              "sanitized_name": "上がり眉",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                373,
+                263,
+                584,
+                291
+              ]
+            },
+            {
+              "name": "*基本眉2",
+              "sanitized_name": "基本眉2",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                380,
+                286,
+                575,
+                304
+              ]
+            },
+            {
+              "name": "*基本眉",
+              "sanitized_name": "基本眉",
+              "visible": false,
+              "kind": "pixel",
+              "bbox": [
+                368,
+                278,
+                576,
+                302
+              ]
+            }
+          ]
+        },
+        {
+          "name": "下眼瞼",
+          "sanitized_name": "下眼瞼",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            384,
+            423,
+            594,
+            440
+          ]
+        },
+        {
+          "name": "汗多め",
+          "sanitized_name": "汗多め",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            402,
+            291,
+            648,
+            510
+          ]
+        },
+        {
+          "name": "汗",
+          "sanitized_name": "汗",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            402,
+            475,
+            421,
+            495
+          ]
+        },
+        {
+          "name": "涙",
+          "sanitized_name": "涙",
+          "visible": false,
+          "kind": "pixel",
+          "bbox": [
+            362,
+            414,
+            618,
+            445
+          ]
+        }
+      ]
+    }
+  ]
+}
