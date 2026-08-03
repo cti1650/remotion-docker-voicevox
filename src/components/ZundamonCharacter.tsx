@@ -7,10 +7,11 @@ import {
 } from "remotion";
 
 // 口の形状タイプ（英語名）
+// i と u はPSD由来ではなくscripts/generate-mouth-parts.pyで生成する派生パーツ
 export type MouthType =
-  | "closed" | "a" | "aa" | "u" | "e"
+  | "closed" | "a" | "aa" | "i" | "u" | "e" | "o"
   | "aha" | "smile" | "smirk" | "n" | "nn"
-  | "ne" | "o" | "triangle" | "uwaa" | "muku" | "uhee";
+  | "ne" | "square" | "triangle" | "uwaa" | "muku" | "uhee";
 
 // 目の形状タイプ（英語名）
 export type EyeType =
@@ -196,14 +197,12 @@ export const ZundamonCharacter: React.FC<ZundamonCharacterProps> = ({
 };
 
 // 口パク用のマッピング（母音キー → パーツ名）
-// パーツ名はPSDレイヤー名由来で母音の呼称と一致しない点に注意
-// u.png（ほう）= 大きな丸口 → お / o.png（お）= 小さくすぼめた口 → う
 export const MOUTH_MAP = {
   a: "a" as MouthType,
-  i: "uhee" as MouthType,
-  u: "o" as MouthType,
+  i: "i" as MouthType,
+  u: "u" as MouthType,
   e: "e" as MouthType,
-  o: "u" as MouthType,
+  o: "o" as MouthType,
   n: "n" as MouthType,
   closed: "closed" as MouthType,
 };

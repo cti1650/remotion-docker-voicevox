@@ -70,23 +70,19 @@ export function useLipSync(
 /**
  * 母音キーをMouthType（パーツ名）に変換
  *
- * パーツ名はPSDのレイヤー名由来のため、母音の呼称と一致しない。
- * 実際の絵に合わせて割り当てること:
- *   - a.png（ほあ）    : 大きく開いた口   → あ
- *   - uhee.png（うへえ）: 横に平たく開いた口 → い
- *   - u.png（ほう）    : 大きな丸口       → お
- *   - o.png（お）      : 小さくすぼめた口  → う
+ * 母音パーツは a/i/u/e/o に揃えてあるが、i.pngとu.pngはPSDに該当する絵が無く
+ * scripts/generate-mouth-parts.py で生成した派生パーツである点に注意。
  */
 function convertToMouthType(mouth: string): MouthType {
   const mouthMap: Record<string, MouthType> = {
     a: "a",
-    i: "uhee",   // 横に平たく開いた口
-    u: "o",      // すぼめた小さい丸口
+    i: "i",
+    u: "u",
     e: "e",
-    o: "u",      // 大きく開いた丸口
+    o: "o",
     n: "n",
     closed: "closed",
-    smile: "uhee",  // 旧JSON互換（「い」がsmileで記録されていた時期のデータ用）
+    smile: "i",   // 旧JSON互換（「い」がsmileで記録されていた時期のデータ用）
   };
 
   return mouthMap[mouth] || "closed";
