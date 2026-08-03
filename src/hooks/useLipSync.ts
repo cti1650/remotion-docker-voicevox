@@ -68,18 +68,25 @@ export function useLipSync(
 }
 
 /**
- * 文字列をMouthTypeに変換
+ * 母音キーをMouthType（パーツ名）に変換
+ *
+ * パーツ名はPSDのレイヤー名由来のため、母音の呼称と一致しない。
+ * 実際の絵に合わせて割り当てること:
+ *   - a.png（ほあ）    : 大きく開いた口   → あ
+ *   - uhee.png（うへえ）: 横に平たく開いた口 → い
+ *   - u.png（ほう）    : 大きな丸口       → お
+ *   - o.png（お）      : 小さくすぼめた口  → う
  */
 function convertToMouthType(mouth: string): MouthType {
   const mouthMap: Record<string, MouthType> = {
     a: "a",
-    i: "smile",
-    u: "u",
+    i: "uhee",   // 横に平たく開いた口
+    u: "o",      // すぼめた小さい丸口
     e: "e",
-    o: "o",
+    o: "u",      // 大きく開いた丸口
     n: "n",
     closed: "closed",
-    smile: "smile",
+    smile: "uhee",  // 旧JSON互換（「い」がsmileで記録されていた時期のデータ用）
   };
 
   return mouthMap[mouth] || "closed";

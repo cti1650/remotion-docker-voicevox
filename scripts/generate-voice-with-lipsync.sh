@@ -35,12 +35,12 @@ data = json.load(sys.stdin)
 lipsync = []
 current_time = 0
 
-# 母音→口の形マッピング
+# 音素→母音キーの正規化（パーツ名への変換はsrc/hooks/useLipSync.ts側で行う）
 vowel_to_mouth = {
     'a': 'a',
     'A': 'a',
-    'i': 'smile',
-    'I': 'smile',
+    'i': 'i',
+    'I': 'i',
     'u': 'u',
     'U': 'u',
     'e': 'e',
