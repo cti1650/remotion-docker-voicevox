@@ -1,6 +1,7 @@
 import React from "react";
-import { Img, staticFile, useCurrentFrame, useVideoConfig, interpolate } from "remotion";
+import { Img, useCurrentFrame, useVideoConfig, interpolate } from "remotion";
 import { HighlightImage as HighlightImageConfig } from "../types/scene";
+import { resolveMediaSrc } from "../utils/media";
 
 interface HighlightImageProps {
   config: HighlightImageConfig | string;
@@ -81,7 +82,7 @@ export const HighlightImage: React.FC<HighlightImageProps> = ({ config }) => {
 
   return (
     <Img
-      src={staticFile(src)}
+      src={resolveMediaSrc(src)}
       style={baseStyle}
     />
   );

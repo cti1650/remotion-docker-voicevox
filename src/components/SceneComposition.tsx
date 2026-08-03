@@ -11,13 +11,17 @@ import {
 import { ZundamonCharacter, MouthType } from "./ZundamonCharacter";
 import { Background } from "./Background";
 import { HighlightImage } from "./HighlightImage";
+import { SlideFrame, SLIDE_AREA } from "./SlideFrame";
 import { useLipSync, LipSyncData, DialogueLipSync } from "../hooks/useLipSync";
+import { resolveMediaSrc } from "../utils/media";
 import {
   SceneConfig,
   VideoConfig,
   EmotionType,
   EMOTION_PRESETS,
   BackgroundConfig,
+  SlideConfig,
+  BgmConfig,
 } from "../types/scene";
 
 // 生成されたシーンデータ（音声・リップシンク情報を含む）
@@ -25,6 +29,14 @@ export interface GeneratedScene extends SceneConfig {
   audioFile: string;      // 音声ファイルパス
   lipsyncData: LipSyncData;  // リップシンクデータ
   startTime: number;      // 開始時間（秒）
+  slideIndex?: number;    // 表示中のスライド番号（1始まり）
+}
+
+// 同じスライドを表示し続けるシーンのまとまり
+interface SlideGroup {
+  slide: SlideConfig;
+  index: number;
+  startTime: number;
 }
 
 interface SceneCompositionProps {
@@ -33,7 +45,11 @@ interface SceneCompositionProps {
 }
 
 // 字幕コンポーネント
-const Subtitle: React.FC<{ text: string }> = ({ text }) => {
+// スライド表示中は字幕をスライドの真下に寄せて、キャラクターに被らないようにする
+const Subtitle: React.FC<{ text: string; withSlide?: boolean }> = ({
+  text,
+  withSlide = false,
+}) => {
   const frame = useCurrentFrame();
   const opacity = interpolate(frame, [0, 10], [0, 1], {
     extrapolateRight: "clamp",
@@ -43,9 +59,10 @@ const Subtitle: React.FC<{ text: string }> = ({ text }) => {
     <div
       style={{
         position: "absolute",
-        bottom: 80,
-        left: 0,
-        right: 0,
+        bottom: withSlide ? 60 : 80,
+        left: withSlide ? SLIDE_AREA.left : 0,
+        right: withSlide ? undefined : 0,
+        width: withSlide ? SLIDE_AREA.width : undefined,
         display: "flex",
         justifyContent: "center",
       }}
@@ -68,6 +85,49 @@ const Subtitle: React.FC<{ text: string }> = ({ text }) => {
         {text}
       </div>
     </div>
+  );
+};
+
+// BGM（ループ再生 + フェードイン/フェードアウト）
+const Bgm: React.FC<{
+  config: BgmConfig | string;
+  totalDuration: number;
+}> = ({ config, totalDuration }) => {
+  const { fps } = useVideoConfig();
+
+  const bgm: BgmConfig = typeof config === "string" ? { src: config } : config;
+  const { volume = 0.12, fadeIn = 1, fadeOut = 2, loop = true } = bgm;
+
+  const totalFrames = Math.ceil(totalDuration * fps);
+  const fadeInFrames = Math.max(1, Math.floor(fadeIn * fps));
+  const fadeOutFrames = Math.max(1, Math.floor(fadeOut * fps));
+
+  // URL指定の場合はダウンロードに時間がかかるため待ち時間を延ばす
+  // （デフォルトの28秒では回線状況によって失敗する）
+  const isRemote = /^https?:\/\//.test(bgm.src);
+
+  return (
+    <Audio
+      src={resolveMediaSrc(bgm.src)}
+      loop={loop}
+      delayRenderTimeoutInMilliseconds={isRemote ? 120000 : undefined}
+      delayRenderRetries={isRemote ? 2 : undefined}
+      // ループしても音量カーブを最初から数え直さない（フェードを1回だけにする）
+      loopVolumeCurveBehavior="extend"
+      volume={(f) =>
+        volume *
+        interpolate(f, [0, fadeInFrames], [0, 1], {
+          extrapolateLeft: "clamp",
+          extrapolateRight: "clamp",
+        }) *
+        interpolate(
+          f,
+          [Math.max(0, totalFrames - fadeOutFrames), totalFrames],
+          [1, 0],
+          { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+        )
+      }
+    />
   );
 };
 
@@ -102,9 +162,32 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
   const emotion: EmotionType = currentScene?.emotion ?? "normal";
   const emotionPreset = EMOTION_PRESETS[emotion];
 
+  // 連続して同じスライドを表示するシーンをまとめる（登場アニメーションを1回にするため）
+  const slideGroups: SlideGroup[] = [];
+  for (const scene of scenes) {
+    if (!scene.slide) continue;
+
+    const last = slideGroups[slideGroups.length - 1];
+    if (last && last.index === scene.slideIndex) continue;
+
+    slideGroups.push({
+      slide: scene.slide,
+      index: scene.slideIndex ?? slideGroups.length + 1,
+      startTime: scene.startTime,
+    });
+  }
+
+  const activeSlideGroup = currentScene?.slide
+    ? slideGroups.find((g) => g.index === currentScene.slideIndex)
+    : undefined;
+
   // 背景の取得
   const background: BackgroundConfig | string =
     currentScene?.background ?? config.defaultBackground ?? "gradient";
+
+  // BGMのクレジット表記（設定されていれば動画末尾に追記する）
+  const bgmCredit =
+    typeof config.bgm === "object" ? config.bgm.credit : undefined;
 
   // キャラクター配置
   const characterScale = 0.55;
@@ -120,8 +203,24 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
 
   return (
     <AbsoluteFill>
+      {/* BGM */}
+      {config.bgm && (
+        <Bgm config={config.bgm} totalDuration={totalDuration} />
+      )}
+
       {/* 背景 */}
       <Background config={background} />
+
+      {/* スライド */}
+      {activeSlideGroup && (
+        <SlideFrame
+          slide={activeSlideGroup.slide}
+          startFrame={Math.floor(activeSlideGroup.startTime * fps)}
+          highlight={currentScene?.highlight}
+          index={activeSlideGroup.index}
+          total={slideGroups.length}
+        />
+      )}
 
       {/* キャラクター */}
       <ZundamonCharacter
@@ -145,7 +244,7 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
 
         return (
           <Sequence key={i} from={startFrame} durationInFrames={durationInFrames}>
-            <Subtitle text={scene.text} />
+            <Subtitle text={scene.text} withSlide={Boolean(scene.slide)} />
             <Audio src={staticFile(scene.audioFile)} />
             {scene.image && <HighlightImage config={scene.image} />}
           </Sequence>
@@ -175,6 +274,7 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
         >
           <div>VOICEVOX:ずんだもん</div>
           <div>立ち絵素材: 坂本アヒル</div>
+          {bgmCredit && <div>{bgmCredit}</div>}
         </div>
       </Sequence>
     </AbsoluteFill>

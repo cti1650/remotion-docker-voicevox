@@ -6,10 +6,12 @@ import { SceneVideo, GeneratedVideoData } from "./SceneVideo";
 // 生成された動画データを直接インポート
 // generate-from-scenes.sh実行時に自動更新
 import * as demoData from "./generated/demo.json";
+import * as slide_demoData from "./generated/slide-demo.json";
 
 // インポートした動画データを配列化
 const generatedVideos: GeneratedVideoData[] = [
   demoData as unknown as GeneratedVideoData,
+  slide_demoData as unknown as GeneratedVideoData,
 ].filter((v) => v && v.id); // 有効なデータのみ
 
 export const RemotionRoot: React.FC = () => {

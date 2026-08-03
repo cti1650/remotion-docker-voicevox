@@ -36,6 +36,9 @@ scripts/                   # ユーティリティ
 ```yaml
 title: "動画タイトル"
 speaker_id: 3
+bgm:                  # オプション（動画全体にループ再生）
+  src: "audio/bgm/calm-loop.mp3"
+  volume: 0.10
 
 scenes:
   - text: "セリフ"
@@ -44,7 +47,16 @@ scenes:
     image:              # オプション
       src: "images/sample.png"
       position: "top-right"
+    slide:              # オプション（スライド解説形式）
+      title: "タイトル"
+      bullets: ["項目1", "項目2"]
+      image: "images/flow.png"  # オプション
+      imageLayout: split        # split=箇条書きの右 / stack=下
+    highlight: 1        # 箇条書きの強調（1始まり）
 ```
+
+スライドは指定したシーン以降も継続表示される（`slide: null`で消える）。
+サンプル: `scenes/slide-demo.yaml`
 
 ## 重要な知見
 

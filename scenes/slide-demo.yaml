@@ -1,0 +1,157 @@
+# スライドを見せながら解説する形式のサンプル
+#
+#   slide:      新しいスライドに切り替える（省略すると直前のスライドが続く）
+#   slide: null スライドを消す
+#   highlight:  今しゃべっている箇条書きを強調する（1始まり）
+#
+# 生成: ./scripts/generate-from-scenes.sh scenes/slide-demo.yaml
+
+title: "スライド解説デモ"
+speaker_id: 3
+fps: 30
+width: 1920
+height: 1080
+defaultBackground: "purple"
+defaultPause: 0.4
+
+# BGM（動画全体にループで流れる）
+# Internet Archive上のKevin MacLeod公式ディスコグラフィ (CC BY 4.0)
+# archive.orgは直リンクを許容し、CORSヘッダも付くためURL指定で使える
+# 一覧: https://archive.org/details/KevinMacLeod_2019-04_Discography
+#
+# ローカルに置く場合は "audio/bgm/xxx.mp3" のように書く
+bgm:
+  src: "https://archive.org/download/KevinMacLeod_2019-04_Discography/Kevin%20MacLeod/Calming/Kevin%20MacLeod%20-%2004%20-%20Carefree.mp3"
+  volume: 0.10
+  fadeIn: 1.5
+  fadeOut: 2.5
+  # CC BY 4.0は表示義務があるため必須
+  credit: "BGM: Carefree - Kevin MacLeod (incompetech.com) / CC BY 4.0"
+
+scenes:
+  # ---- オープニング（スライドなし）----
+  - text: "こんにちは！ずんだもんなのだ！"
+    emotion: happy
+
+  - text: "今日はスライドを使った解説動画の作り方を紹介するのだ"
+    emotion: normal
+
+  # ---- スライド1 ----
+  - text: "まずはこのデモでできることなのだ"
+    emotion: normal
+    slide:
+      title: "このデモでできること"
+      bullets:
+        - "スライドを見せながら解説できる"
+        - "話に合わせて項目を強調できる"
+        - "設定ファイルを書くだけで作れる"
+      note: "Remotion + VOICEVOX"
+
+  - text: "画面の左側にスライドの枠が出るのだ"
+    emotion: happy
+    highlight: 1
+
+  - text: "今しゃべっている項目は、こうやって色が付くのだ"
+    emotion: smug
+    highlight: 2
+
+  - text: "しかも全部、設定ファイルを書くだけなのだ"
+    emotion: happy
+    highlight: 3
+
+  # ---- スライド2 ----
+  - text: "作り方はたったの3ステップなのだ"
+    emotion: normal
+    background: blue
+    slide:
+      title: "作り方は3ステップ"
+      accent: "#0984e3"
+      bullets:
+        - "セリフとスライドを設定ファイルに書く"
+        - "コマンドで音声とリップシンクを生成"
+        - "レンダリングして動画が完成"
+      note: "所要時間は数分"
+
+  # 背景はシーンごとに指定する（スライドと違って引き継がれない）
+  - text: "最初にセリフとスライドの中身を書くのだ"
+    emotion: normal
+    background: blue
+    highlight: 1
+
+  - text: "次にコマンドを叩くと、音声と口パクが自動で作られるのだ"
+    emotion: surprised
+    background: blue
+    highlight: 2
+
+  - text: "最後にレンダリングすれば、この動画のできあがりなのだ"
+    emotion: happy
+    background: blue
+    highlight: 3
+
+  # ---- スライド3 ----
+  - text: "スライドの書き方も見ておくのだ"
+    emotion: thinking
+    background: green
+    slide:
+      title: "スライドの書き方"
+      accent: "#00b894"
+      bullets:
+        - "タイトルと箇条書きを並べるだけ"
+        - "強調したい番号を指定できる"
+        - "省略すると前のスライドが続く"
+      note: "画像を1枚だけ表示することもできる"
+
+  - text: "タイトルと箇条書きを並べれば、それがそのままスライドになるのだ"
+    emotion: normal
+    background: green
+    highlight: 1
+
+  - text: "強調したい番号を書けば、そこだけ目立たせられるのだ"
+    emotion: smug
+    background: green
+    highlight: 2
+
+  - text: "スライドを書かないシーンは、前のスライドがそのまま残るのだ"
+    emotion: normal
+    background: green
+    highlight: 3
+
+  # ---- スライド4: 箇条書き + 画像（横並び）----
+  - text: "画像を差し込むこともできるのだ"
+    emotion: happy
+    background: orange
+    slide:
+      title: "画像も差し込める"
+      accent: "#e17055"
+      bullets:
+        - "箇条書きの横に並べられる"
+        - "下に置くこともできる"
+        - "画像だけでも表示できる"
+      image: "images/flow.png"
+      imageLayout: split
+      caption: "図: 動画ができるまで"
+
+  - text: "箇条書きの横に図を置けば、説明しながら見せられるのだ"
+    emotion: normal
+    background: orange
+    highlight: 1
+
+  # ---- スライド5: 画像だけ ----
+  - text: "箇条書きを書かなければ、画像だけを大きく表示するのだ"
+    emotion: smug
+    background: orange
+    slide:
+      title: "画面のレイアウト"
+      accent: "#e17055"
+      image: "images/layout.png"
+      caption: "左がスライド、右がキャラクター"
+
+  # ---- まとめ（スライドを消す）----
+  - text: "というわけで、解説動画がかんたんに作れるのだ！"
+    emotion: happy
+    background: gradient
+    slide: null
+
+  - text: "ぜひ試してみてほしいのだ！"
+    emotion: happy
+    pause: 1.0

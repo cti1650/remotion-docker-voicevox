@@ -49,6 +49,56 @@ scenes:
     emotion: surprised
 ```
 
+#### スライドを見せながら解説する
+
+`slide` を指定すると、画面左側にスライド枠が表示される（キャラクターは右側）。
+
+```yaml
+scenes:
+  - text: "3ステップで作れるのだ"
+    slide:
+      title: "作り方は3ステップ"
+      bullets:
+        - "設定ファイルを書く"
+        - "音声を生成する"
+        - "レンダリングする"
+
+  - text: "まずは設定ファイルを書くのだ"
+    highlight: 1      # 1番目の箇条書きを強調
+
+  - text: "スライドはここで消すのだ"
+    slide: null
+```
+
+`slide` を書かないシーンは直前のスライドを継続表示する。
+
+スライドには画像も差し込める:
+
+```yaml
+    slide:
+      title: "画像も差し込める"
+      bullets: ["箇条書きの横に並べられる"]
+      image: "images/flow.png"
+      imageLayout: split   # split=箇条書きの右 / stack=箇条書きの下
+      caption: "図: 動画ができるまで"
+```
+
+`bullets` を書かなければ画像だけを大きく表示する。
+
+#### BGMを流す
+
+トップレベルに `bgm` を書くと、動画全体にループで流れる（フェードイン・アウト付き）。
+
+```yaml
+bgm:
+  src: "audio/bgm/calm-loop.mp3"   # public/audio/bgm/ に配置
+  volume: 0.10                      # セリフを邪魔しない程度に
+  fadeIn: 1.5
+  fadeOut: 2.5
+```
+
+動作するサンプルは `scenes/slide-demo.yaml` を参照。
+
 ### 2. 音声とリップシンク生成
 
 ```bash

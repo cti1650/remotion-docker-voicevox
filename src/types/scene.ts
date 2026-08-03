@@ -39,14 +39,42 @@ export interface HighlightImage {
   animation?: "fade-in" | "slide-in" | "zoom-in" | "none";
 }
 
+// スライド内の画像配置
+// split: 箇条書きの右に並べる / stack: 箇条書きの下に置く
+// 箇条書きが無い場合はレイアウトに関わらず画像だけを大きく表示する
+export type SlideImageLayout = "split" | "stack";
+
+// スライド設定
+export interface SlideConfig {
+  title?: string;        // スライドのタイトル
+  bullets?: string[];    // 箇条書き
+  image?: string;        // 画像パス (public/からの相対パス)
+  imageLayout?: SlideImageLayout;  // 画像の配置 (デフォルト: split)
+  caption?: string;      // 画像のキャプション
+  note?: string;         // 下部の補足テキスト
+  accent?: string;       // アクセントカラー (デフォルト: #6c5ce7)
+}
+
 // 1シーンの定義
 export interface SceneConfig {
   text: string;                    // セリフ
   emotion?: EmotionType;           // 表情 (デフォルト: normal)
   background?: BackgroundConfig | string;  // 背景 (文字列の場合はgradientプリセット)
   image?: HighlightImage | string; // 強調画像 (文字列の場合はsrcのみ)
+  slide?: SlideConfig | null;      // スライド (省略時は直前のスライドを継続、nullで非表示)
+  highlight?: number;              // 強調する箇条書きの番号 (1始まり)
   duration?: number;               // 表示時間の上書き (秒、通常は音声長+余白)
   pause?: number;                  // セリフ後の間 (秒、デフォルト: 0.5)
+}
+
+// BGM設定
+export interface BgmConfig {
+  src: string;       // 音声ファイルパス (public/からの相対パス)
+  volume?: number;   // 音量 0〜1 (デフォルト: 0.12)
+  fadeIn?: number;   // フェードイン (秒、デフォルト: 1)
+  fadeOut?: number;  // フェードアウト (秒、デフォルト: 2)
+  loop?: boolean;    // 動画が長い場合に繰り返すか (デフォルト: true)
+  credit?: string;   // 動画末尾のクレジットに追記する表記
 }
 
 // 動画全体の設定（YAML入力用 - scenesが必須）
@@ -58,6 +86,7 @@ export interface VideoConfigInput {
   height?: number;                 // 高さ (デフォルト: 1080)
   defaultBackground?: BackgroundConfig | string;
   defaultPause?: number;           // デフォルトの間 (デフォルト: 0.5)
+  bgm?: BgmConfig | string;        // BGM (文字列の場合はsrcのみ)
   scenes: SceneConfig[];
 }
 
@@ -70,6 +99,7 @@ export interface VideoConfig {
   height?: number;
   defaultBackground?: BackgroundConfig | string;
   defaultPause?: number;
+  bgm?: BgmConfig | string;
 }
 
 // 表情プリセット → パーツマッピング

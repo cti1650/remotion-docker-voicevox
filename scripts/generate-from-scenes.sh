@@ -60,6 +60,10 @@ scenes = config.get('scenes', [])
 generated_scenes = []
 current_time = 0.5  # 開始前のマージン
 
+# スライドは明示的に切り替えるまで次のシーンへ引き継ぐ
+current_slide = None
+slide_index = 0
+
 print(f"  Processing {len(scenes)} scenes...")
 
 for i, scene in enumerate(scenes):
@@ -95,11 +99,25 @@ for i, scene in enumerate(scenes):
         'pause': pause,
     }
 
+    # スライドの切り替え（未指定なら直前のスライドを継続、nullで非表示に戻す）
+    if 'slide' in scene:
+        if scene['slide'] is None:
+            current_slide = None
+        else:
+            current_slide = scene['slide']
+            slide_index += 1
+
+    if current_slide:
+        generated_scene['slide'] = current_slide
+        generated_scene['slideIndex'] = slide_index
+
     # Optional fields
     if 'background' in scene:
         generated_scene['background'] = scene['background']
     if 'image' in scene:
         generated_scene['image'] = scene['image']
+    if 'highlight' in scene:
+        generated_scene['highlight'] = scene['highlight']
 
     generated_scenes.append(generated_scene)
     current_time += lipsync_data['duration'] + pause
@@ -115,6 +133,7 @@ output = {
         'height': config.get('height', 1080),
         'defaultBackground': config.get('defaultBackground', 'gradient'),
         'defaultPause': default_pause,
+        **({'bgm': config['bgm']} if 'bgm' in config else {}),
     },
     'scenes': generated_scenes,
     'totalDuration': round(current_time + 0.5, 3),

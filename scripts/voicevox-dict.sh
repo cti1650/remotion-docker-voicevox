@@ -100,7 +100,7 @@ with open('$file') as f:
     words = json.load(f)
 
 for w in words:
-    surface = w['surface']
+    surface = urllib.parse.quote(w['surface'])
     pronunciation = urllib.parse.quote(w['pronunciation'])
     accent_type = w.get('accent_type', 0)
 
@@ -110,9 +110,9 @@ for w in words:
 
     try:
         urllib.request.urlopen(req)
-        print(f'Imported: {surface} → {w[\"pronunciation\"]}')
+        print(f'Imported: {w[\"surface\"]} → {w[\"pronunciation\"]}')
     except Exception as e:
-        print(f'Error importing {surface}: {e}')
+        print(f'Error importing {w[\"surface\"]}: {e}')
 "
 }
 
