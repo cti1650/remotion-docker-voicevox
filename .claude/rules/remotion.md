@@ -79,17 +79,37 @@ scenes:
 
 ```yaml
 bgm:
-  src: "audio/bgm/calm-loop.mp3"
+  src: "audio/bgm/carefree-kevin-macleod.mp3"
   volume: 0.10    # デフォルト 0.12
   fadeIn: 1.5     # 秒（デフォルト 1）
   fadeOut: 2.5    # 秒（デフォルト 2）
   loop: true      # デフォルト true
 ```
 
-- 文字列だけ書くこともできる: `bgm: "audio/bgm/calm-loop.mp3"`
-- 音声ファイルは`public/audio/bgm/`に置く
+- 文字列だけ書くこともできる: `bgm: "audio/bgm/carefree-kevin-macleod.mp3"`
 - セリフを邪魔しないよう`volume`は0.1前後を推奨
 - `credit`を書くと動画末尾のクレジットに追記される
+
+### BGMの置き場所（重要）
+
+再配布の可否で置き場所を分ける。
+
+| 置き場所 | 用途 | git管理 |
+|----------|------|---------|
+| `public/audio/bgm/` | 再配布OK（CC BY・パブリックドメインなど） | する |
+| `public/audio/bgm/local/` | **再配布NG**（DOVA-SYNDROME・魔王魂・購入音源） | しない |
+
+```yaml
+bgm:
+  src: "audio/bgm/local/shuffle-shuffle.mp3"   # 再配布NGの素材
+  credit: "BGM: shuffle shuffle / KK (DOVA-SYNDROME)"
+```
+
+- `local/`は`.gitignore`で除外済みなので`git add -A`しても混入しない
+- 迷ったら`local/`に置けば規約違反にはならない
+- コミットする音源は`public/audio/bgm/CREDITS.md`にライセンスを追記する
+- `generate-from-scenes.sh`がファイルの実在と置き場所をチェックする
+  （見つからなければエラー終了、コミット対象の場所なら注意を表示）
 
 ## メディアパスの解決
 

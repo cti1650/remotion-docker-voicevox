@@ -15,13 +15,12 @@ defaultBackground: "purple"
 defaultPause: 0.4
 
 # BGM（動画全体にループで流れる）
-# Internet Archive上のKevin MacLeod公式ディスコグラフィ (CC BY 4.0)
-# archive.orgは直リンクを許容し、CORSヘッダも付くためURL指定で使える
-# 一覧: https://archive.org/details/KevinMacLeod_2019-04_Discography
+# Kevin MacLeodのCarefree (CC BY 4.0)。再配布可能なのでリポジトリに同梱している
+# 入手元: https://archive.org/details/KevinMacLeod_2019-04_Discography
 #
-# ローカルに置く場合は "audio/bgm/xxx.mp3" のように書く
+# URLを直接書くこともできる（配布元が直リンクを許容している場合のみ）
 bgm:
-  src: "https://archive.org/download/KevinMacLeod_2019-04_Discography/Kevin%20MacLeod/Calming/Kevin%20MacLeod%20-%2004%20-%20Carefree.mp3"
+  src: "audio/bgm/carefree-kevin-macleod.mp3"
   volume: 0.10
   fadeIn: 1.5
   fadeOut: 2.5

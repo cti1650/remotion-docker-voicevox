@@ -19,10 +19,10 @@ download-linux-x64
 # Audio files (generated)
 *.wav
 
-# サードパーティのBGM素材（配布元の規約で再配布が禁止されているため管理対象外）
-# 自作のサンプルBGMのみコミットする
-public/audio/bgm/*
-!public/audio/bgm/calm-loop.mp3
+# 再配布が禁止されているBGM素材の置き場（DOVA-SYNDROME・魔王魂など）
+# ここに置けば誤ってコミットすることはない
+public/audio/bgm/local/*
+!public/audio/bgm/local/README.md
 
 # Environment
 .env

@@ -37,7 +37,7 @@ scripts/                   # ユーティリティ
 title: "動画タイトル"
 speaker_id: 3
 bgm:                  # オプション（動画全体にループ再生）
-  src: "audio/bgm/calm-loop.mp3"
+  src: "audio/bgm/carefree-kevin-macleod.mp3"
   volume: 0.10
 
 scenes:

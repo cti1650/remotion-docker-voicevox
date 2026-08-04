@@ -91,11 +91,24 @@ scenes:
 
 ```yaml
 bgm:
-  src: "audio/bgm/calm-loop.mp3"   # public/audio/bgm/ に配置
-  volume: 0.10                      # セリフを邪魔しない程度に
+  src: "audio/bgm/carefree-kevin-macleod.mp3"  # public/audio/bgm/ に配置
+  volume: 0.10                                  # セリフを邪魔しない程度に
   fadeIn: 1.5
   fadeOut: 2.5
+  credit: "BGM: Carefree - Kevin MacLeod (incompetech.com) / CC BY 4.0"
 ```
+
+`src` にはHTTPS URLも書ける（配布元が直リンクを許容している場合のみ）。
+
+音源は再配布の可否で置き場所を分ける。
+
+| 置き場所 | 用途 | git管理 |
+|----------|------|---------|
+| `public/audio/bgm/` | 再配布OK（CC BY・パブリックドメインなど） | する |
+| `public/audio/bgm/local/` | **再配布NG**（DOVA-SYNDROME・魔王魂・購入音源など） | しない |
+
+`local/` は `.gitignore` で除外しているので、規約違反の素材を誤ってコミットする心配がない。
+同梱音源のライセンスは `public/audio/bgm/CREDITS.md` を参照。
 
 動作するサンプルは `scenes/slide-demo.yaml` を参照。
 

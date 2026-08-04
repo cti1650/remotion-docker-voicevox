@@ -57,6 +57,25 @@ speaker_id = config.get('speaker_id', 3)
 default_pause = config.get('defaultPause', 0.5)
 scenes = config.get('scenes', [])
 
+# BGMの置き場所チェック
+# 再配布できない素材をコミットしてしまわないよう、生成時に気付けるようにする
+bgm = config.get('bgm')
+if bgm:
+    bgm_src = bgm if isinstance(bgm, str) else bgm.get('src', '')
+    if bgm_src.startswith(('http://', 'https://')):
+        print(f"  BGM: {bgm_src} (URL参照)")
+    else:
+        bgm_path = os.path.join('public', bgm_src)
+        if not os.path.isfile(bgm_path):
+            print(f"ERROR: BGMファイルが見つかりません: {bgm_path}")
+            if 'audio/bgm/local/' in bgm_src:
+                print("  local/はgit管理外です。配布元からダウンロードして配置してください")
+            sys.exit(1)
+        if 'audio/bgm/local/' not in bgm_src:
+            print(f"  BGM: {bgm_src}")
+            print("  ※ここはコミット対象です。再配布が禁止されている素材は")
+            print("    public/audio/bgm/local/ に置いてください")
+
 generated_scenes = []
 current_time = 0.5  # 開始前のマージン
 

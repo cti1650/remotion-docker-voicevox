@@ -9,7 +9,7 @@
     "defaultBackground": "purple",
     "defaultPause": 0.4,
     "bgm": {
-      "src": "https://archive.org/download/KevinMacLeod_2019-04_Discography/Kevin%20MacLeod/Calming/Kevin%20MacLeod%20-%2004%20-%20Carefree.mp3",
+      "src": "audio/bgm/carefree-kevin-macleod.mp3",
       "volume": 0.1,
       "fadeIn": 1.5,
       "fadeOut": 2.5,
