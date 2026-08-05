@@ -27,7 +27,7 @@ curl -s http://localhost:50021/version  # 起動確認
 ./scripts/generate-voice-with-lipsync.sh "テキスト" <speaker_id> <output_base>
 
 # 例
-./scripts/generate-voice-with-lipsync.sh "こんにちは！" 3 public/audio/demo/scene_001
+./scripts/generate-voice-with-lipsync.sh "こんにちは！" 3 public/audio/voice/demo/scene_001
 # 出力: scene_001.wav, scene_001.json
 ```
 

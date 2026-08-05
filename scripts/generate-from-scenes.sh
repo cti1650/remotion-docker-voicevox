@@ -23,7 +23,8 @@ check_voicevox() {
 process_yaml() {
     local yaml_file="$1"
     local basename=$(basename "$yaml_file" .yaml)
-    local output_dir="public/audio/${basename}"
+    # 生成物はpublic/audio/voice/配下にまとめる（ここは丸ごとgit管理外）
+    local output_dir="public/audio/voice/${basename}"
     local generated_json="src/generated/${basename}.json"
 
     echo "==> Processing: $yaml_file"
@@ -112,7 +113,7 @@ for i, scene in enumerate(scenes):
     generated_scene = {
         'text': text,
         'emotion': scene.get('emotion', 'normal'),
-        'audioFile': f"audio/{basename}/scene_{i+1:03d}.wav",
+        'audioFile': f"audio/voice/{basename}/scene_{i+1:03d}.wav",
         'lipsyncData': lipsync_data,
         'startTime': round(current_time, 3),
         'pause': pause,

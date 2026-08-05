@@ -20,7 +20,7 @@
     {
       "text": "こんにちは！ずんだもんなのだ！",
       "emotion": "happy",
-      "audioFile": "audio/slide-demo/scene_001.wav",
+      "audioFile": "audio/voice/slide-demo/scene_001.wav",
       "lipsyncData": {
         "text": "こんにちは！ずんだもんなのだ！",
         "speaker_id": 3,
@@ -184,7 +184,7 @@
     {
       "text": "今日はスライドを使った解説動画の作り方を紹介するのだ",
       "emotion": "normal",
-      "audioFile": "audio/slide-demo/scene_002.wav",
+      "audioFile": "audio/voice/slide-demo/scene_002.wav",
       "lipsyncData": {
         "text": "今日はスライドを使った解説動画の作り方を紹介するのだ",
         "speaker_id": 3,
@@ -558,7 +558,7 @@
     {
       "text": "まずはこのデモでできることなのだ",
       "emotion": "normal",
-      "audioFile": "audio/slide-demo/scene_003.wav",
+      "audioFile": "audio/voice/slide-demo/scene_003.wav",
       "lipsyncData": {
         "text": "まずはこのデモでできることなのだ",
         "speaker_id": 3,
@@ -780,7 +780,7 @@
     {
       "text": "画面の左側にスライドの枠が出るのだ",
       "emotion": "happy",
-      "audioFile": "audio/slide-demo/scene_004.wav",
+      "audioFile": "audio/voice/slide-demo/scene_004.wav",
       "lipsyncData": {
         "text": "画面の左側にスライドの枠が出るのだ",
         "speaker_id": 3,
@@ -1063,7 +1063,7 @@
     {
       "text": "今しゃべっている項目は、こうやって色が付くのだ",
       "emotion": "smug",
-      "audioFile": "audio/slide-demo/scene_005.wav",
+      "audioFile": "audio/voice/slide-demo/scene_005.wav",
       "lipsyncData": {
         "text": "今しゃべっている項目は、こうやって色が付くのだ",
         "speaker_id": 3,
@@ -1358,7 +1358,7 @@
     {
       "text": "しかも全部、設定ファイルを書くだけなのだ",
       "emotion": "happy",
-      "audioFile": "audio/slide-demo/scene_006.wav",
+      "audioFile": "audio/voice/slide-demo/scene_006.wav",
       "lipsyncData": {
         "text": "しかも全部、設定ファイルを書くだけなのだ",
         "speaker_id": 3,
@@ -1617,7 +1617,7 @@
     {
       "text": "作り方はたったの3ステップなのだ",
       "emotion": "normal",
-      "audioFile": "audio/slide-demo/scene_007.wav",
+      "audioFile": "audio/voice/slide-demo/scene_007.wav",
       "lipsyncData": {
         "text": "作り方はたったの3ステップなのだ",
         "speaker_id": 3,
@@ -1859,7 +1859,7 @@
     {
       "text": "最初にセリフとスライドの中身を書くのだ",
       "emotion": "normal",
-      "audioFile": "audio/slide-demo/scene_008.wav",
+      "audioFile": "audio/voice/slide-demo/scene_008.wav",
       "lipsyncData": {
         "text": "最初にセリフとスライドの中身を書くのだ",
         "speaker_id": 3,
@@ -2126,7 +2126,7 @@
     {
       "text": "次にコマンドを叩くと、音声と口パクが自動で作られるのだ",
       "emotion": "surprised",
-      "audioFile": "audio/slide-demo/scene_009.wav",
+      "audioFile": "audio/voice/slide-demo/scene_009.wav",
       "lipsyncData": {
         "text": "次にコマンドを叩くと、音声と口パクが自動で作られるのだ",
         "speaker_id": 3,
@@ -2525,7 +2525,7 @@
     {
       "text": "最後にレンダリングすれば、この動画のできあがりなのだ",
       "emotion": "happy",
-      "audioFile": "audio/slide-demo/scene_010.wav",
+      "audioFile": "audio/voice/slide-demo/scene_010.wav",
       "lipsyncData": {
         "text": "最後にレンダリングすれば、この動画のできあがりなのだ",
         "speaker_id": 3,
@@ -2858,7 +2858,7 @@
     {
       "text": "スライドの書き方も見ておくのだ",
       "emotion": "thinking",
-      "audioFile": "audio/slide-demo/scene_011.wav",
+      "audioFile": "audio/voice/slide-demo/scene_011.wav",
       "lipsyncData": {
         "text": "スライドの書き方も見ておくのだ",
         "speaker_id": 3,
@@ -3070,7 +3070,7 @@
     {
       "text": "タイトルと箇条書きを並べれば、それがそのままスライドになるのだ",
       "emotion": "normal",
-      "audioFile": "audio/slide-demo/scene_012.wav",
+      "audioFile": "audio/voice/slide-demo/scene_012.wav",
       "lipsyncData": {
         "text": "タイトルと箇条書きを並べれば、それがそのままスライドになるのだ",
         "speaker_id": 3,
@@ -3469,7 +3469,7 @@
     {
       "text": "強調したい番号を書けば、そこだけ目立たせられるのだ",
       "emotion": "smug",
-      "audioFile": "audio/slide-demo/scene_013.wav",
+      "audioFile": "audio/voice/slide-demo/scene_013.wav",
       "lipsyncData": {
         "text": "強調したい番号を書けば、そこだけ目立たせられるのだ",
         "speaker_id": 3,
@@ -3808,7 +3808,7 @@
     {
       "text": "スライドを書かないシーンは、前のスライドがそのまま残るのだ",
       "emotion": "normal",
-      "audioFile": "audio/slide-demo/scene_014.wav",
+      "audioFile": "audio/voice/slide-demo/scene_014.wav",
       "lipsyncData": {
         "text": "スライドを書かないシーンは、前のスライドがそのまま残るのだ",
         "speaker_id": 3,
@@ -4165,7 +4165,7 @@
     {
       "text": "画像を差し込むこともできるのだ",
       "emotion": "happy",
-      "audioFile": "audio/slide-demo/scene_015.wav",
+      "audioFile": "audio/voice/slide-demo/scene_015.wav",
       "lipsyncData": {
         "text": "画像を差し込むこともできるのだ",
         "speaker_id": 3,
@@ -4379,7 +4379,7 @@
     {
       "text": "箇条書きの横に図を置けば、説明しながら見せられるのだ",
       "emotion": "normal",
-      "audioFile": "audio/slide-demo/scene_016.wav",
+      "audioFile": "audio/voice/slide-demo/scene_016.wav",
       "lipsyncData": {
         "text": "箇条書きの横に図を置けば、説明しながら見せられるのだ",
         "speaker_id": 3,
@@ -4744,7 +4744,7 @@
     {
       "text": "箇条書きを書かなければ、画像だけを大きく表示するのだ",
       "emotion": "smug",
-      "audioFile": "audio/slide-demo/scene_017.wav",
+      "audioFile": "audio/voice/slide-demo/scene_017.wav",
       "lipsyncData": {
         "text": "箇条書きを書かなければ、画像だけを大きく表示するのだ",
         "speaker_id": 3,
@@ -5084,7 +5084,7 @@
     {
       "text": "というわけで、解説動画がかんたんに作れるのだ！",
       "emotion": "happy",
-      "audioFile": "audio/slide-demo/scene_018.wav",
+      "audioFile": "audio/voice/slide-demo/scene_018.wav",
       "lipsyncData": {
         "text": "というわけで、解説動画がかんたんに作れるのだ！",
         "speaker_id": 3,
@@ -5375,7 +5375,7 @@
     {
       "text": "ぜひ試してみてほしいのだ！",
       "emotion": "happy",
-      "audioFile": "audio/slide-demo/scene_019.wav",
+      "audioFile": "audio/voice/slide-demo/scene_019.wav",
       "lipsyncData": {
         "text": "ぜひ試してみてほしいのだ！",
         "speaker_id": 3,

@@ -1,15 +1,16 @@
 import React from "react";
 import { Composition, Folder } from "remotion";
-import { MyComposition } from "./Composition";
 import { SceneVideo, GeneratedVideoData } from "./SceneVideo";
 
 // 生成された動画データを直接インポート
 // generate-from-scenes.sh実行時に自動更新
+import * as cosenseData from "./generated/cosense.json";
 import * as demoData from "./generated/demo.json";
 import * as slide_demoData from "./generated/slide-demo.json";
 
 // インポートした動画データを配列化
 const generatedVideos: GeneratedVideoData[] = [
+  cosenseData as unknown as GeneratedVideoData,
   demoData as unknown as GeneratedVideoData,
   slide_demoData as unknown as GeneratedVideoData,
 ].filter((v) => v && v.id); // 有効なデータのみ
@@ -17,18 +18,6 @@ const generatedVideos: GeneratedVideoData[] = [
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      {/* デモ用コンポジション */}
-      <Folder name="Demo">
-        <Composition
-          id="MyComposition"
-          component={MyComposition}
-          durationInFrames={390}
-          fps={30}
-          width={1920}
-          height={1080}
-        />
-      </Folder>
-
       {/* 生成された動画 */}
       {generatedVideos.length > 0 && (
         <Folder name="Generated">

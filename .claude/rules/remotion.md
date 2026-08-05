@@ -141,10 +141,18 @@ URLを使う場合の注意:
 
 ```
 scenes/                    # シーン定義YAML
-src/generated/             # 生成されたシーンJSON
+src/generated/             # 生成されたシーンJSON（git管理する）
 public/parts/zundamon_en/  # パーツ
-public/audio/<video>/      # 音声+JSON
+public/audio/bgm/          # BGM（手で配置・git管理する）
+public/audio/voice/<video>/  # 音声+JSON（git管理外・再生成する）
 ```
+
+`src/generated/<video>.json`だけは`src/Root.tsx`がimportするためコミットする。
+`public/audio/voice/`は`.gitignore`で丸ごと除外しているので、
+別環境では`generate-from-scenes.sh`を実行してから使う。
+動画を追加しても`.gitignore`を編集する必要はない。
+
+Remotionに登録されるコンポジションは、このYAML由来の`SceneVideo`のみ。
 
 ## クレジット（自動表示）
 

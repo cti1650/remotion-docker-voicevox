@@ -34,7 +34,7 @@ docker compose up -d voicevox
 ## 出力ファイル
 
 ```
-public/audio/<video-name>/
+public/audio/voice/<video-name>/   # 丸ごとgit管理外（再生成できるため）
 ├── scene_001.wav  # 音声
 ├── scene_001.json # リップシンク
 ├── scene_002.wav

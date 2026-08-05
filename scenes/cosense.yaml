@@ -1,0 +1,321 @@
+# 東京大学 utelecon「Cosenseの基本的な使い方」の解説動画
+# 元記事: https://utelecon.adm.u-tokyo.ac.jp/articles/cosense/
+#
+# 生成: ./scripts/generate-from-scenes.sh scenes/cosense.yaml
+
+title: "Cosenseの基本的な使い方"
+speaker_id: 3
+fps: 30
+width: 1920
+height: 1080
+defaultBackground: "gradient"
+defaultPause: 0.4
+
+bgm:
+  src: "audio/bgm/carefree-kevin-macleod.mp3"
+  volume: 0.10
+  fadeIn: 1.5
+  fadeOut: 2.5
+  credit: "BGM: Carefree - Kevin MacLeod (incompetech.com) / CC BY 4.0"
+
+scenes:
+  # ---- オープニング ----
+  - text: "こんにちは！ずんだもんなのだ！"
+    emotion: happy
+
+  - text: "今日はコセンスというメモツールの使い方を紹介するのだ"
+    emotion: normal
+
+  - text: "東京大学のユーテレコンで公開されている記事を、動画にまとめてみたのだ"
+    emotion: normal
+    pause: 0.6
+
+  # ---- スライド1: Cosenseってなに？ ----
+  - text: "まずはコセンスがどんなツールなのか見ていくのだ"
+    emotion: normal
+    background: purple
+    slide:
+      title: "Cosenseってなに？"
+      bullets:
+        - "オンラインでメモやノートを整理するツール"
+        - "みんなで同時に編集できる"
+        - "リンクやタグでページ同士をつなげられる"
+      note: "提供: Helpfeel株式会社"
+
+  - text: "オンラインでメモやノートを保存して、整理できるツールなのだ"
+    emotion: normal
+    background: purple
+    highlight: 1
+
+  - text: "しかも複数人で同時に編集できるから、共同作業にぴったりなのだ"
+    emotion: happy
+    background: purple
+    highlight: 2
+
+  - text: "ページ同士をリンクやタグでつなげられるのが、いちばんの特徴なのだ"
+    emotion: smug
+    background: purple
+    highlight: 3
+
+  # ---- スライド2: 料金 ----
+  - text: "気になるお値段の話もしておくのだ"
+    emotion: thinking
+    background: purple
+    slide:
+      title: "料金はどうなってるの？"
+      accent: "#6c5ce7"
+      bullets:
+        - "公開プロジェクトは無料"
+        - "個人利用・教育利用のプライベートも無料"
+        - "ビジネス利用だけ有料プラン"
+      note: "授業や研究なら無料で使える"
+
+  - text: "誰でも見られる公開プロジェクトは、ぜんぶ無料なのだ"
+    emotion: normal
+    background: purple
+    highlight: 1
+
+  - text: "個人で使うぶんや、教育で使うぶんも無料なのだ！"
+    emotion: surprised
+    background: purple
+    highlight: 2
+
+  # ---- スライド3: 何に使える？ ----
+  - text: "次に、どんな場面で活躍するのか見てみるのだ"
+    emotion: normal
+    background: blue
+    slide:
+      title: "こんな場面で使えるのだ"
+      accent: "#0984e3"
+      bullets:
+        - "授業の内容をまとめたページを作る"
+        - "何人かで資料を共同編集する"
+        - "作った資料をすぐに共有する"
+        - "学習者が情報を探しやすくなる"
+
+  - text: "授業の内容を、学習しやすくまとめたページが作れるのだ"
+    emotion: normal
+    background: blue
+    highlight: 1
+
+  - text: "先生と学生が一緒に、ひとつの資料を育てていくこともできるのだ"
+    emotion: happy
+    background: blue
+    highlight: 2
+
+  - text: "書いたそばから共有できるから、やりとりがどんどん進むのだ"
+    emotion: happy
+    background: blue
+    highlight: 3
+
+  # ---- スライド4: 始め方 ----
+  - text: "それじゃあ、始め方を見ていくのだ"
+    emotion: normal
+    background: green
+    slide:
+      title: "始め方は3ステップ"
+      accent: "#00b894"
+      bullets:
+        - "「いますぐお試し」からGoogleアカウントでログイン"
+        - "名前とユーザー名を入力する"
+        - "ロゴから新しいプロジェクトを作る"
+      note: "プロジェクト = 情報をまとめるスペース"
+
+  - text: "コセンスのサイトを開いて、いますぐお試しをクリックするのだ"
+    emotion: normal
+    background: green
+    highlight: 1
+
+  - text: "グーグルアカウントでログインして、名前とユーザー名を入れるだけなのだ"
+    emotion: normal
+    background: green
+    highlight: 2
+
+  - text: "あとは左上のロゴから、新しいプロジェクトを作れば準備完了なのだ"
+    emotion: happy
+    background: green
+    highlight: 3
+
+  - text: "プロジェクトっていうのは、情報をまとめておくスペースのことなのだ"
+    emotion: thinking
+    background: green
+
+  # ---- スライド5: 公開設定 ----
+  - text: "プロジェクトを作るときは、公開範囲を選ぶのだ"
+    emotion: normal
+    background: green
+    slide:
+      title: "公開？ プライベート？"
+      accent: "#00b894"
+      bullets:
+        - "公開: 誰でも見られる・検索にも出る"
+        - "プライベート: 招待リンクを持つ人だけ"
+        - "編集して欲しい人にはインバイトリンクを送る"
+      note: "プロジェクト名がそのままURLになる"
+
+  - text: "公開にすると、ログインしていない人でも読めるようになるのだ"
+    emotion: normal
+    background: green
+    highlight: 1
+
+  - text: "見せたくない資料は、プライベートにしておけば安心なのだ"
+    emotion: normal
+    background: green
+    highlight: 2
+
+  - text: "一緒に編集したい人には、メンバーの画面からリンクを送るのだ"
+    emotion: happy
+    background: green
+    highlight: 3
+
+  # ---- スライド6: ページの書き方 ----
+  - text: "ページの書き方は、とってもかんたんなのだ"
+    emotion: happy
+    background: orange
+    slide:
+      title: "ページの書き方"
+      accent: "#e17055"
+      bullets:
+        - "1行目がタイトル、2行目からが本文"
+        - "行の頭に半角スペースで箇条書き"
+        - "スペースを増やすと段差がつく"
+        - "文字を選ぶと太字や斜体にできる"
+
+  - text: "1行目に書いたものが、そのままページのタイトルになるのだ"
+    emotion: normal
+    background: orange
+    highlight: 1
+
+  - text: "行の頭に半角スペースを入れると、箇条書きになるのだ"
+    emotion: normal
+    background: orange
+    highlight: 2
+
+  - text: "スペースを増やせば、そのぶん階層が深くなるのだ"
+    emotion: smug
+    background: orange
+    highlight: 3
+
+  # ---- スライド7: リンクとタグ ----
+  - text: "ここからがコセンスのおもしろいところなのだ"
+    emotion: surprised
+    background: orange
+    slide:
+      title: "ページ同士をつなげる"
+      accent: "#e17055"
+      bullets:
+        - "角カッコで囲むとリンクになる"
+        - "シャープを付けるとハッシュタグになる"
+        - "同じタグのページが下にまとまる"
+      note: "リンク先が無いときはオレンジ色で表示される"
+
+  - text: "書いた言葉を角カッコで囲むと、それだけでリンクになるのだ"
+    emotion: normal
+    background: orange
+    highlight: 1
+
+  - text: "シャープを付ければ、ハッシュタグとして扱われるのだ"
+    emotion: normal
+    background: orange
+    highlight: 2
+
+  - text: "同じタグを付けたページは、画面の下にずらっと並ぶのだ"
+    emotion: happy
+    background: orange
+    highlight: 3
+
+  - text: "こうやってページ同士がつながって、知識の地図ができあがるのだ！"
+    emotion: happy
+    background: orange
+    pause: 0.6
+
+  # ---- スライド8: 画像 ----
+  - text: "もちろん画像も貼れるのだ"
+    emotion: normal
+    background: pink
+    slide:
+      title: "画像や手書きの図も貼れる"
+      accent: "#e84393"
+      bullets:
+        - "パソコンはドラッグ&ドロップで貼り付け"
+        - "スマホはアイコンからアップロード"
+        - "Drawing機能で手書きの図も描ける"
+
+  - text: "パソコンなら、画像をドラッグして落とすだけで貼れるのだ"
+    emotion: normal
+    background: pink
+    highlight: 1
+
+  - text: "手書きの図を描く機能もあるから、板書の代わりにもなるのだ"
+    emotion: happy
+    background: pink
+    highlight: 3
+
+  # ---- スライド9: Slack連携 ----
+  - text: "スラックと組み合わせると、もっと便利になるのだ"
+    emotion: smug
+    background: dark
+    slide:
+      title: "Slackに更新を通知できる"
+      accent: "#4a154b"
+      bullets:
+        - "設定画面のNotificationsから設定する"
+        - "SlackでWebhookを作ってURLを貼るだけ"
+        - "最後の入力から90秒後に通知が届く"
+      note: "誰かがページを更新したらすぐ気付ける"
+
+  - text: "プロジェクトの設定から、通知の画面を開くのだ"
+    emotion: normal
+    background: dark
+    highlight: 1
+
+  - text: "スラック側で作ったウェブフックのユーアールエルを貼り付ければ完了なのだ"
+    emotion: normal
+    background: dark
+    highlight: 2
+
+  - text: "編集が止まってから90秒後に、まとめて通知が飛んでくるのだ"
+    emotion: normal
+    background: dark
+    highlight: 3
+
+  # ---- スライド10: 注意点 ----
+  - text: "でも、苦手なこともあるから気を付けるのだ"
+    emotion: sad
+    background: purple
+    slide:
+      title: "できないこともあるのだ"
+      accent: "#d63031"
+      bullets:
+        - "ページごとに細かく権限を分けられない"
+        - "ページ単位の共有設定もできない"
+        - "自動では構造化されない"
+      note: "見せたくない情報は書かないのが安全"
+
+  - text: "編集できる人と読むだけの人を、ページごとに分けることはできないのだ"
+    emotion: sad
+    background: purple
+    highlight: 1
+
+  - text: "だから、見せたくない情報は最初から書かないのが安全なのだ"
+    emotion: normal
+    background: purple
+    highlight: 2
+
+  - text: "整理は自動ではしてくれないから、リンクやタグは自分で付けるのだ"
+    emotion: thinking
+    background: purple
+    highlight: 3
+
+  # ---- まとめ ----
+  - text: "というわけで、コセンスの基本を紹介したのだ！"
+    emotion: happy
+    background: gradient
+    slide: null
+
+  - text: "無料で始められるから、授業のまとめや共同作業にぜひ使ってみてほしいのだ"
+    emotion: happy
+
+  - text: "くわしくは、東京大学ユーテレコンの記事を見てみるのだ！"
+    emotion: happy
+    pause: 1.0

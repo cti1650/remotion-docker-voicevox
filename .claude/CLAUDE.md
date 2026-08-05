@@ -20,9 +20,13 @@ src/generated/             # 生成されたシーンJSON（自動更新）
 src/components/            # Remotionコンポーネント
 src/types/scene.ts         # シーン型定義・表情プリセット
 public/parts/zundamon_en/  # パーツ画像（英語名）
-public/audio/              # 音声(.wav) + リップシンク(.json)
+public/audio/bgm/          # BGM（手で配置・git管理する）
+public/audio/voice/        # 生成された音声(.wav)+リップシンク(.json) ※git管理外
 scripts/                   # ユーティリティ
 ```
+
+`public/audio/voice/` は`.gitignore`で丸ごと除外している（再生成できるため）。
+clone直後は `generate-from-scenes.sh` を実行しないと音声が鳴らない。
 
 ## ワークフロー
 
@@ -61,6 +65,7 @@ scenes:
 ## 重要な知見
 
 - **Root.tsx**: generate-from-scenes.sh実行時に自動更新
+- **コンポジション**: `SceneVideo`（YAML由来）のみ。手書きの`MyComposition`は廃止済み
 - **口のデフォルト**: `closed`（`むふ`から抽出）
 - **PSD抽出**: `layer.topil()`使用
 - **リップシンク**: JSONの最後に`end`エントリが自動追加

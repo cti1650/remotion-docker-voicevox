@@ -162,9 +162,32 @@ npm run dev
 │   └── types/scene.ts
 ├── public/
 │   ├── parts/zundamon_en/     # キャラクターパーツ
-│   └── audio/                 # 生成された音声
+│   └── audio/
+│       ├── bgm/               # BGM（手で置く・git管理する）
+│       └── voice/             # 生成された音声+リップシンク（git管理外）
 └── output/                    # 出力動画
 ```
+
+### 生成物のgit管理
+
+音声まわりは、手で用意するものと自動生成されるもので置き場所を分けている。
+
+| 置き場所 | 中身 | git管理 |
+|----------|------|---------|
+| `public/audio/bgm/` | BGM（手で配置） | する |
+| `public/audio/voice/` | `generate-from-scenes.sh` の出力（`.wav` + リップシンク`.json`） | **しない** |
+
+`public/audio/voice/` は `.gitignore` で丸ごと除外しているので、動画を増やしても
+`.gitignore` を触る必要がない。
+
+| ファイル | git管理 | 理由 |
+|----------|---------|------|
+| `src/generated/<動画名>.json` | する | `src/Root.tsx` がimportするため、無いとビルドが通らない |
+| `public/audio/voice/<動画名>/` | しない | コマンドで再生成できる。リップシンクの中身は `src/generated/` 側の `lipsyncData` と重複する |
+| `output/*.mp4` | しない | レンダリング成果物 |
+
+clone直後は音声が無い状態なので、`./scripts/generate-from-scenes.sh` を実行してから
+プレビュー・レンダリングする。
 
 ## コマンド一覧
 

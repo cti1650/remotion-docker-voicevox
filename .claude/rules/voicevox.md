@@ -25,7 +25,7 @@ description: VOICEVOX音声生成時のルール。シーンYAML使用、辞書�
 ## 個別音声生成
 
 ```bash
-./scripts/generate-voice-with-lipsync.sh "テキスト" 3 public/audio/demo/scene_001
+./scripts/generate-voice-with-lipsync.sh "テキスト" 3 public/audio/voice/demo/scene_001
 ```
 
 ## 辞書登録
