@@ -19,10 +19,27 @@ height: 1080
 defaultBackground: gradient
 defaultPause: 0.5
 
+dict:                      # この動画だけの読み（省略可）
+  Cosense: コセンス
+
 scenes:
   - text: "セリフ"
     emotion: normal
 ```
+
+## 読み方（dict）
+
+セリフはそのまま字幕になるので、**読みを直すためにカタカナで書かない**。
+表記は元のままにして`dict`で読みを指定する。
+
+```yaml
+dict:
+  Cosense: コセンス        # 英字は放置すると1文字ずつ読まれる
+  複数人: フクスウニン      # 日本語の複合語も誤読しやすい
+```
+
+全動画で使う語は`config/voicevox-dict.json`へ。生成時に自動適用される。
+誤読の確認方法は`.claude/rules/voicevox.md`を参照。
 
 ## シーンプロパティ
 

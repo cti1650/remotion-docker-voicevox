@@ -115,6 +115,32 @@ bgm:
 
 動作するサンプルは `scenes/slide-demo.yaml` を参照。
 
+#### 読み方を直す
+
+セリフは**そのまま字幕として表示される**ので、読みを直すためにカタカナで書いてはいけない。
+表記は元のまま書いて、読みは `dict` で指定する。
+
+```yaml
+dict:
+  Cosense: コセンス
+  複数人: フクスウニン     # デフォルトはフクスウジン
+  行の頭: ギョウノアタマ   # デフォルトはクダリノアタマ
+```
+
+- 英字はそのままだと1文字ずつ読まれる（`Cosense` → シイオオエスイイ…）ので必ず登録する
+- **日本語でも複合語は誤読しやすい**ので、気になったら確認して登録する
+- 全動画で使う語は `config/voicevox-dict.json` に置く（同じ語はYAML側が勝つ）
+- 辞書は生成のたびに自動で入れ替わるため、手動での登録・インポートは不要
+
+読みは生成前に確認できる。
+
+```bash
+curl -s -X POST "http://localhost:50021/audio_query?text=$(printf '複数人' | jq -sRr @uri)&speaker=3" | jq -r .kana
+# → フクスウ'ジン（辞書登録が必要とわかる）
+```
+
+サンプルは `scenes/cosense.yaml` を参照。
+
 ### 2. 動画を生成
 
 ```bash
@@ -205,8 +231,8 @@ clone直後は音声が無い状態なので、`npm run voice`（または `npm 
 | `npm run voicevox:up` / `npm run voicevox:down` | VOICEVOXの起動・停止 |
 
 ```bash
-# VOICEVOX辞書登録（発音修正）
-./scripts/voicevox-dict.sh add Remotion リモーション
+# エンジンに今入っている辞書を確認（デバッグ用）
+./scripts/voicevox-dict.sh list
 ```
 
 `npm run video` / `npm run voice` はVOICEVOXが止まっていれば自動で起動するので、

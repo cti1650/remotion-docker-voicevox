@@ -1,8 +1,14 @@
 #!/bin/bash
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+# shellcheck source=scripts/lib.sh
+source "$SCRIPT_DIR/lib.sh"
+
 ENGINE_URL="${VOICEVOX_ENGINE_URL:-http://127.0.0.1:50021}"
 DICT_FILE="${1:-config/voicevox-dict.json}"
+
+resolve_python || exit 1
 
 usage() {
     echo "Usage: voicevox-dict.sh [command] [options]"
@@ -20,7 +26,7 @@ usage() {
 }
 
 list_dict() {
-    curl -s "${ENGINE_URL}/user_dict" | python3 -c "
+    curl -s "${ENGINE_URL}/user_dict" | "$PYTHON" -c "
 import json,sys
 d = json.load(sys.stdin)
 if not d:
@@ -34,7 +40,7 @@ else:
 add_word() {
     local word="$1"
     local reading="$2"
-    local encoded_reading=$(python3 -c "import urllib.parse; print(urllib.parse.quote('$reading'))")
+    local encoded_reading=$("$PYTHON" -c "import urllib.parse; print(urllib.parse.quote('$reading'))")
 
     result=$(curl -s -X POST "${ENGINE_URL}/user_dict_word?surface=${word}&pronunciation=${encoded_reading}&accent_type=0" \
         -H "accept: application/json")
@@ -51,7 +57,7 @@ delete_word() {
     local word="$1"
 
     # Find UUID for the word
-    uuid=$(curl -s "${ENGINE_URL}/user_dict" | python3 -c "
+    uuid=$(curl -s "${ENGINE_URL}/user_dict" | "$PYTHON" -c "
 import json,sys
 d = json.load(sys.stdin)
 for k,v in d.items():
@@ -73,7 +79,7 @@ export_dict() {
     local file="${1:-config/voicevox-dict.json}"
     mkdir -p "$(dirname "$file")"
 
-    curl -s "${ENGINE_URL}/user_dict" | python3 -c "
+    curl -s "${ENGINE_URL}/user_dict" | "$PYTHON" -c "
 import json,sys
 d = json.load(sys.stdin)
 words = [{'surface': v['surface'], 'pronunciation': v['pronunciation'], 'accent_type': v.get('accent_type', 0)} for v in d.values()]
@@ -91,7 +97,7 @@ import_dict() {
         exit 1
     fi
 
-    python3 -c "
+    "$PYTHON" -c "
 import json
 import urllib.request
 import urllib.parse

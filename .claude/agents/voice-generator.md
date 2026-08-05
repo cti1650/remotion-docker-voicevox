@@ -23,8 +23,8 @@ npm run voice -- scenes/demo.yaml
 # 全YAMLを一括処理
 npm run voice
 
-# 辞書登録
-./scripts/voicevox-dict.sh add Remotion リモーション
+# エンジンの辞書を確認（登録はYAMLのdict:かconfig/voicevox-dict.jsonに書く）
+./scripts/voicevox-dict.sh list
 ```
 
 ## 出力ファイル
@@ -59,5 +59,5 @@ src/generated/<video-name>.json  # 統合シーンデータ
 | 問題 | 原因 | 対処 |
 |------|------|------|
 | VOICEVOXタイムアウト | 自動起動に失敗 | `docker compose logs voicevox` で確認 |
-| 読み方エラー | 辞書未登録 | `voicevox-dict.sh add` |
+| 読み方エラー | 辞書未登録 | YAMLの`dict:`に追加して再生成 |
 | Root.tsx更新失敗 | 正規表現不一致 | 手動でインポート追加 |

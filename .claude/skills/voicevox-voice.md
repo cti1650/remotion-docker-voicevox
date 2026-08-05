@@ -36,12 +36,19 @@ npm run voice -- scenes/demo.yaml
 
 話者ID: ずんだもん=3（ノーマル）、1（あまあま）、7（ツンツン）
 
-## 辞書登録
+## 辞書
 
-```bash
-./scripts/voicevox-dict.sh add Remotion リモーション
-./scripts/voicevox-dict.sh export config/voicevox-dict.json
+生成時に自動適用されるので、手動登録は不要。読みを直したい語は書く場所を選ぶだけ。
+
+```yaml
+# scenes/my-video.yaml — この動画だけで使う語
+dict:
+  Cosense: コセンス
+  複数人: フクスウニン     # 日本語でも誤読するものは必ず登録する
 ```
+
+全動画で使う語は `config/voicevox-dict.json` に置く。
+詳細と誤読の確認方法は `.claude/rules/voicevox.md` を参照。
 
 ## リップシンクJSON構造
 

@@ -11,6 +11,19 @@ height: 1080
 defaultBackground: "gradient"
 defaultPause: 0.4
 
+# この動画でしか使わない語の読み（全動画で使う語はconfig/voicevox-dict.jsonへ）
+# textはそのまま字幕になるので、読みは辞書で直して表記は元のまま書く
+dict:
+  Cosense: コセンス
+  Slack: スラック
+  Google: グーグル
+  Webhook: ウェブフック
+  utelecon: ユーテレコン
+  Helpfeel: ヘルプフィール
+  # 日本語でも誤読するもの
+  複数人: フクスウニン     # デフォルトはフクスウジン
+  行の頭: ギョウノアタマ   # デフォルトはクダリノアタマ
+
 bgm:
   src: "audio/bgm/carefree-kevin-macleod.mp3"
   volume: 0.10
@@ -23,15 +36,15 @@ scenes:
   - text: "こんにちは！ずんだもんなのだ！"
     emotion: happy
 
-  - text: "今日はコセンスというメモツールの使い方を紹介するのだ"
+  - text: "今日はCosenseというメモツールの使い方を紹介するのだ"
     emotion: normal
 
-  - text: "東京大学のユーテレコンで公開されている記事を、動画にまとめてみたのだ"
+  - text: "東京大学のuteleconで公開されている記事を、動画にまとめてみたのだ"
     emotion: normal
     pause: 0.6
 
   # ---- スライド1: Cosenseってなに？ ----
-  - text: "まずはコセンスがどんなツールなのか見ていくのだ"
+  - text: "まずはCosenseがどんなツールなのか見ていくのだ"
     emotion: normal
     background: purple
     slide:
@@ -121,12 +134,12 @@ scenes:
         - "ロゴから新しいプロジェクトを作る"
       note: "プロジェクト = 情報をまとめるスペース"
 
-  - text: "コセンスのサイトを開いて、いますぐお試しをクリックするのだ"
+  - text: "Cosenseのサイトを開いて、いますぐお試しをクリックするのだ"
     emotion: normal
     background: green
     highlight: 1
 
-  - text: "グーグルアカウントでログインして、名前とユーザー名を入れるだけなのだ"
+  - text: "Googleアカウントでログインして、名前とユーザー名を入れるだけなのだ"
     emotion: normal
     background: green
     highlight: 2
@@ -181,7 +194,7 @@ scenes:
         - "スペースを増やすと段差がつく"
         - "文字を選ぶと太字や斜体にできる"
 
-  - text: "1行目に書いたものが、そのままページのタイトルになるのだ"
+  - text: "1行目に書いたものが、そのまま、ページのタイトルになるのだ"
     emotion: normal
     background: orange
     highlight: 1
@@ -191,13 +204,13 @@ scenes:
     background: orange
     highlight: 2
 
-  - text: "スペースを増やせば、そのぶん階層が深くなるのだ"
+  - text: "スペースを増やせば、階層がどんどん深くなるのだ"
     emotion: smug
     background: orange
     highlight: 3
 
   # ---- スライド7: リンクとタグ ----
-  - text: "ここからがコセンスのおもしろいところなのだ"
+  - text: "ここからがCosenseのおもしろいところなのだ"
     emotion: surprised
     background: orange
     slide:
@@ -252,7 +265,7 @@ scenes:
     highlight: 3
 
   # ---- スライド9: Slack連携 ----
-  - text: "スラックと組み合わせると、もっと便利になるのだ"
+  - text: "Slackと組み合わせると、もっと便利になるのだ"
     emotion: smug
     background: dark
     slide:
@@ -269,7 +282,7 @@ scenes:
     background: dark
     highlight: 1
 
-  - text: "スラック側で作ったウェブフックのユーアールエルを貼り付ければ完了なのだ"
+  - text: "Slack側で作ったWebhookのURLを貼り付ければ完了なのだ"
     emotion: normal
     background: dark
     highlight: 2
@@ -308,7 +321,7 @@ scenes:
     highlight: 3
 
   # ---- まとめ ----
-  - text: "というわけで、コセンスの基本を紹介したのだ！"
+  - text: "というわけで、Cosenseの基本を紹介したのだ！"
     emotion: happy
     background: gradient
     slide: null
@@ -316,6 +329,6 @@ scenes:
   - text: "無料で始められるから、授業のまとめや共同作業にぜひ使ってみてほしいのだ"
     emotion: happy
 
-  - text: "くわしくは、東京大学ユーテレコンの記事を見てみるのだ！"
+  - text: "くわしくは、東京大学uteleconの記事を見てみるのだ！"
     emotion: happy
     pause: 1.0

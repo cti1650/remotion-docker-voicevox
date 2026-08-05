@@ -29,6 +29,8 @@ process_yaml() {
     export GENERATED_JSON="$generated_json"
     export SCRIPT_DIR="$SCRIPT_DIR"
     export BASENAME="$basename"
+    export ENGINE_URL="${VOICEVOX_ENGINE_URL:-http://127.0.0.1:50021}"
+    export SHARED_DICT="config/voicevox-dict.json"
 
 "$PYTHON" << 'PYTHON_SCRIPT'
 import yaml
@@ -36,6 +38,10 @@ import subprocess
 import json
 import os
 import sys
+import unicodedata
+import urllib.error
+import urllib.parse
+import urllib.request
 
 scenes_file = os.environ['SCENES_FILE']
 output_dir = os.environ['OUTPUT_DIR']
@@ -50,6 +56,91 @@ with open(scenes_file, 'r', encoding='utf-8') as f:
 speaker_id = config.get('speaker_id', 3)
 default_pause = config.get('defaultPause', 0.5)
 scenes = config.get('scenes', [])
+
+engine_url = os.environ['ENGINE_URL']
+shared_dict_file = os.environ['SHARED_DICT']
+
+
+def engine_request(path, method='GET', params=None):
+    url = engine_url + path
+    if params:
+        url += '?' + urllib.parse.urlencode(params)
+    req = urllib.request.Request(url, method=method)
+    req.add_header('accept', 'application/json')
+    with urllib.request.urlopen(req) as res:
+        body = res.read()
+    return json.loads(body) if body else None
+
+
+# 辞書は「読みを直すための上書き」なので、内蔵辞書に必ず勝たせる。
+# デフォルトのpriority=5だと日本語の複合語（例: 複数人）が
+# 内蔵辞書の分割に負けて登録した読みが効かない
+DEFAULT_PRIORITY = 10
+
+
+def build_dict_entries():
+    """共有辞書とYAMLの辞書をまとめる（同じ語はYAML側が勝つ）
+
+    VOICEVOXは表記を全角に正規化して保持するため、
+    重複判定はNFKC正規化した表記で行う。
+    """
+    entries = {}
+
+    def put(surface, value):
+        key = unicodedata.normalize('NFKC', str(surface))
+        if isinstance(value, dict):
+            entries[key] = {
+                'pronunciation': value['pronunciation'],
+                'accent_type': value.get('accent_type', 0),
+                'priority': value.get('priority', DEFAULT_PRIORITY),
+            }
+        else:
+            entries[key] = {
+                'pronunciation': str(value),
+                'accent_type': 0,
+                'priority': DEFAULT_PRIORITY,
+            }
+
+    if os.path.isfile(shared_dict_file):
+        with open(shared_dict_file, 'r', encoding='utf-8') as f:
+            for word in json.load(f):
+                put(word['surface'], word)
+
+    for surface, value in (config.get('dict') or {}).items():
+        put(surface, value)
+
+    return entries
+
+
+def apply_dict(entries):
+    """エンジンのユーザー辞書を毎回作り直す
+
+    エンジンの辞書はグローバルかつコンテナを作り直すと消えるため、
+    共有辞書とYAMLの辞書だけを正として総入れ替えする。
+    """
+    current = engine_request('/user_dict') or {}
+    for uuid in current:
+        engine_request(f'/user_dict_word/{uuid}', method='DELETE')
+
+    for surface, word in entries.items():
+        try:
+            engine_request('/user_dict_word', method='POST', params={
+                'surface': surface,
+                'pronunciation': word['pronunciation'],
+                'accent_type': word['accent_type'],
+                'priority': word['priority'],
+            })
+        except urllib.error.HTTPError as e:
+            print(f"ERROR: 辞書に登録できません: {surface} → {word['pronunciation']}")
+            print(f"  読みは全角カタカナで指定してください ({e.code})")
+            sys.exit(1)
+
+
+dict_entries = build_dict_entries()
+apply_dict(dict_entries)
+if dict_entries:
+    print(f"  辞書: {len(dict_entries)}語を登録 "
+          f"(共有 + {len(config.get('dict') or {})}語はこのYAML固有)")
 
 # BGMの置き場所チェック
 # 再配布できない素材をコミットしてしまわないよう、生成時に気付けるようにする

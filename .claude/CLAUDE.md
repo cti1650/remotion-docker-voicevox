@@ -47,6 +47,9 @@ clone直後は `npm run voice` を実行しないと音声が鳴らない。
 ```yaml
 title: "動画タイトル"
 speaker_id: 3
+dict:                 # オプション（この動画だけの読み。生成時に自動適用）
+  Cosense: コセンス
+  複数人: フクスウニン
 bgm:                  # オプション（動画全体にループ再生）
   src: "audio/bgm/carefree-kevin-macleod.mp3"
   volume: 0.10
@@ -78,6 +81,10 @@ scenes:
 - **口のデフォルト**: `closed`（`むふ`から抽出）
 - **PSD抽出**: `layer.topil()`使用
 - **リップシンク**: JSONの最後に`end`エントリが自動追加
+- **辞書**: 生成のたびに`config/voicevox-dict.json`+YAMLの`dict`で総入れ替え。
+  日本語の複合語は`priority=10`でないと内蔵辞書に負ける（詳細は`.claude/rules/voicevox.md`）
+- **読みの確認**: セリフは字幕にもなるので、カタカナ書きで誤読を回避しない。
+  `audio_query`の`kana`で読みを事前確認して辞書で直す
 - **JSON更新後**: Remotionサーバー再起動が必要
 
 ## クレジット
