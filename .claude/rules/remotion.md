@@ -60,7 +60,7 @@ scenes:
 
 - `slide`を省略したシーンは**直前のスライドを継続**する（登場アニメは再生されない）
 - `background`は引き継がれないため、同じスライド内でもシーンごとに指定する
-- 配置は`src/components/SlideFrame.tsx`の`SLIDE_AREA`で調整
+- 配置は`src/components/slide/layout.ts`の`SLIDE_AREA`で調整（全バリアント共通）
 
 ### スライドへの画像差し込み
 
@@ -128,6 +128,68 @@ URLを使う場合の注意:
 - 配布元が直リンク（ホットリンク）を禁止していないか確認する
 - 自前のS3/CDNなど、参照が許可されている場所を使う
 
+## 見た目のバリアント
+
+テロップとスライドは名前で切り替える。
+
+```yaml
+defaultSubtitle: boxed       # 動画全体の既定
+defaultSlideVariant: card
+
+scenes:
+  - text: "ここだけ帯にする"
+    subtitle: bar            # シーン単位で上書き
+    slide:
+      variant: title         # スライド単位で上書き
+```
+
+- `subtitle`: `boxed`（既定） / `bar` / `outline` / `card` / `none`
+- `slide.variant`: `card`（既定） / `fullbleed` / `title`
+- `opening.variant`: `center`（既定） / `band` / `minimal`
+- `thumbnail.variant`: `bold`（既定） / `split` / `simple`
+
+サンプル: `scenes/variants-demo.yaml`、`scenes/opening-demo.yaml`
+
+## オープニングとサムネイル
+
+```yaml
+opening:              # 本編の前に流れる
+  variant: center
+  title: "タイトル"
+  text: "喋らせたいセリフ"   # 書くと音声を生成し、尺は音声の長さになる
+  # duration: 3            # textが無いときの尺（既定3秒）
+  # character: false       # キャラクターを隠す
+
+thumbnail:            # 動画には出ない。静止画として書き出す
+  variant: bold
+  title: "サムネの文字"
+  # width: 1280 / height: 720（既定）
+```
+
+```bash
+npm run thumbnail -- scenes/my-video.yaml   # output/my-video-thumbnail.png
+```
+
+- `opening`があるとシーンの`startTime`はその分だけ後ろにずれる（生成時に計算済み）
+- サムネイルは`Still`コンポジションとして`Root.tsx`に自動登録される
+  （`thumbnail:`を書いたYAMLだけ）
+
+### バリアントの追加手順
+
+`subtitle` / `slide` / `opening` / `thumbnail` の4グループはすべて
+「共通パーツ → バリアント → レジストリ」の3層構成。追加は3ステップで済む。
+
+1. バリアントのコンポーネントを追加（`SubtitleVariantComponent`などを実装）
+2. 同ディレクトリの`index.tsx`のレジストリに登録
+3. `src/types/scene.ts`の対応する型（`SubtitleVariant` / `SlideVariant` /
+   `OpeningVariant` / `ThumbnailVariant`）に名前を追加
+
+`SceneComposition.tsx`は触らない。スライドのバリアントは
+`parts/`（SlideShell・SlideHeader・SlideBody・SlideFooter・Bullet・SlideImage）を
+組み合わせて作ると、配置と登場アニメーションが自動的に揃う。
+
+バリアントには絶対フレームではなく`localFrame`（表示開始からの経過フレーム）が渡る。
+
 ## SceneComposition
 
 シーンは`src/components/SceneComposition.tsx`で自動処理される。
@@ -154,7 +216,8 @@ public/audio/voice/<video>/  # 音声+JSON（git管理外・再生成する）
 別環境では`npm run voice`を実行してから使う。
 動画を追加しても`.gitignore`を編集する必要はない。
 
-Remotionに登録されるコンポジションは、このYAML由来の`SceneVideo`のみ。
+Remotionに登録されるのは、YAML由来の`SceneVideo`（動画）と、
+`thumbnail:`を書いたYAMLの`<id>-thumbnail`（静止画）だけ。
 
 ## クレジット（自動表示）
 

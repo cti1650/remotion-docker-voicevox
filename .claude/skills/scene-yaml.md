@@ -49,7 +49,29 @@ dict:
 | `emotion` | | 表情 | `happy` |
 | `background` | | 背景 | `purple` |
 | `image` | | 強調画像 | `{ src: "img.png" }` |
+| `subtitle` | | テロップの見た目 | `bar` |
 | `pause` | | セリフ後の間（秒） | `0.5` |
+
+## 見た目のバリアント
+
+- `subtitle`: `boxed`（既定） / `bar` / `outline` / `card` / `none`
+- `slide.variant`: `card`（既定） / `fullbleed` / `title`
+- `opening.variant`: `center`（既定） / `band` / `minimal`
+- `thumbnail.variant`: `bold`（既定） / `split` / `simple`
+
+## オープニングとサムネイル
+
+```yaml
+opening:            # 本編の前のタイトル演出
+  title: "タイトル"
+  text: "喋らせるセリフ"   # 省略すると無音（duration秒）
+
+thumbnail:          # npm run thumbnail -- scenes/x.yaml でPNG出力
+  title: "サムネの文字"
+```
+
+動画全体の既定は`defaultSubtitle` / `defaultSlideVariant`で指定する。
+サンプル: `scenes/variants-demo.yaml`、`scenes/opening-demo.yaml`
 
 ## 表情（emotion）
 

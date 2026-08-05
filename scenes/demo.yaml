@@ -1,28 +1,228 @@
-# シーン定義ファイル
-# このファイルを編集して ./scripts/generate-from-scenes.sh を実行すると動画が生成されます
+# このプロジェクトの機能を一通り詰め込んだデモ
+#
+#   opening   本編前のタイトル演出（セリフ付き）
+#   thumbnail サムネイル（npm run thumbnail で静止画出力）
+#   bgm       動画全体にループ再生
+#   dict      読み方の指定
+#   slide     card / fullbleed / title の3種
+#   subtitle  boxed / bar / outline / card / none の5種
+#   image     シーンへの強調画像
+#
+# 生成: npm run video -- scenes/demo.yaml
+# サムネ: npm run thumbnail -- scenes/demo.yaml
 
 title: "ずんだもん解説動画"
 speaker_id: 3          # ずんだもんノーマル
 fps: 30
 width: 1920
 height: 1080
-defaultBackground: "gradient"  # グラデーション背景
-defaultPause: 0.5              # セリフ間の間（秒）
+defaultBackground: "gradient"
+defaultPause: 0.4
+defaultSubtitle: boxed       # 何も書かないシーンはこれになる
+defaultSlideVariant: card
+
+# 読み方の指定（英字は放置すると1文字ずつ読まれる）
+dict:
+  YAML: ヤムル
+  Docker: ドッカー
+  # テロップの名前。放置すると1文字ずつ読まれる
+  boxed: ボックスド
+  bar: バー
+  outline: アウトライン
+  card: カード
+  none: ノン
+
+# BGM（Kevin MacLeodのCarefree。CC BY 4.0なのでクレジット必須）
+bgm:
+  src: "audio/bgm/carefree-kevin-macleod.mp3"
+  volume: 0.10
+  fadeIn: 1.5
+  fadeOut: 2.5
+  credit: "BGM: Carefree - Kevin MacLeod (incompetech.com) / CC BY 4.0"
+
+# 冒頭のタイトル演出（textがあるので喋る。尺は音声の長さ）
+opening:
+  variant: band
+  title: "Remotionで動画を作る"
+  subtitle: "コードとYAMLだけで完結"
+  badge: "入門"
+  accent: "#00d2a0"
+  background: "dark"
+  emotion: happy
+  text: "ずんだもんなのだ！今日はRemotionで動画を作る方法を紹介するのだ！"
+
+# サムネイル（動画には出ない）
+thumbnail:
+  variant: split
+  title: "Remotionで動画を作る"
+  subtitle: "音声もリップシンクも自動"
+  badge: "入門"
+  accent: "#00d2a0"
+  background: "dark"
+  emotion: smug
+  image: "images/flow.png"
 
 scenes:
-  - text: "こんにちは！ずんだもんなのだ！"
+  # ---- 導入（スライドなし）----
+  - text: "改めまして、ずんだもんなのだ！"
     emotion: happy
 
-  - text: "今日はRemotionで動画を作る方法を紹介するのだ"
+  - text: "このデモには、この仕組みでできることを全部詰め込んだのだ"
+    emotion: smug
+    pause: 0.6
+
+  # ---- スライド1: できること（card）----
+  - text: "まずは全体像を見てほしいのだ"
     emotion: normal
-
-  - text: "VOICEVOXと組み合わせると、自動で音声が生成されるのだ"
-    emotion: thinking
     background: purple
+    slide:
+      title: "このデモでできること"
+      accent: "#6c5ce7"
+      bullets:
+        - "セリフから音声とリップシンクを自動生成"
+        - "スライドを見せながら解説できる"
+        - "テロップの見た目を切り替えられる"
+        - "冒頭の演出とサムネイルも作れる"
+      note: "全部YAMLに書くだけ"
 
-  - text: "さらにリップシンクも自動で合わせてくれるのだ！"
+  - text: "セリフを書けば、音声も口パクも勝手に作られるのだ"
+    emotion: happy
+    background: purple
+    highlight: 1
+
+  - text: "こうやってスライドを出しながら喋れるのだ"
+    emotion: normal
+    background: purple
+    highlight: 2
+
+  - text: "今しゃべっている項目には色が付くのだ"
+    emotion: smug
+    background: purple
+    highlight: 3
+
+  # ---- スライド2: 作り方（画像を横に並べる）----
+  - text: "作り方はたったの3ステップなのだ"
+    emotion: normal
+    background: blue
+    slide:
+      title: "作り方は3ステップ"
+      accent: "#0984e3"
+      bullets:
+        - "セリフとスライドをYAMLに書く"
+        - "コマンドで音声を生成する"
+        - "レンダリングして動画になる"
+      image: "images/flow.png"
+      imageLayout: split
+      caption: "図: 動画ができるまで"
+
+  - text: "最初にYAMLへセリフを書くのだ"
+    emotion: normal
+    background: blue
+    highlight: 1
+
+  - text: "あとはコマンドをひとつ叩くだけで、動画までできあがるのだ！"
     emotion: surprised
+    background: blue
+    highlight: 3
 
-  - text: "簡単に動画が作れて、とっても便利なのだ！"
+  # ---- テロップのバリエーション ----
+  - text: "テロップの見た目も選べるのだ"
+    emotion: normal
+    background: green
+    slide:
+      variant: title
+      title: "テロップを選ぶ"
+      note: "boxed / bar / outline / card / none"
+      accent: "#00b894"
+
+  - text: "これが標準の boxed なのだ"
+    emotion: normal
+    background: green
+    subtitle: boxed
+
+  - text: "これが bar なのだ。ニュース番組みたいな帯なのだ"
+    emotion: smug
+    background: green
+    subtitle: bar
+
+  - text: "これが outline なのだ。背景を隠さないのだ"
+    emotion: surprised
+    background: green
+    subtitle: outline
+
+  - text: "これが card なのだ。スライドと雰囲気を揃えられるのだ"
     emotion: happy
     background: green
+    subtitle: card
+
+  # ---- 強調画像 + テロップなし ----
+  - text: "画面の隅に画像を出すこともできるのだ"
+    emotion: normal
+    background: orange
+    slide: null
+    image:
+      src: "images/layout.png"
+      position: "top-right"
+
+  - text: "テロップを消したいときは none にするのだ"
+    emotion: normal
+    background: orange
+    subtitle: none
+    pause: 0.8
+
+  # ---- スライド: fullbleed ----
+  - text: "スライドの見た目も切り替えられるのだ"
+    emotion: normal
+    background: dark
+    subtitle: boxed
+    slide:
+      variant: fullbleed
+      title: "枠なしでも見せられる"
+      accent: "#00d2a0"
+      bullets:
+        - "白いカードを外した見た目"
+        - "文字は自動で明るい色になる"
+        - "背景の色をそのまま活かせる"
+      note: "slide.variant: fullbleed"
+
+  - text: "背景が暗いときは、文字が自動で明るくなるのだ"
+    emotion: smug
+    background: dark
+    highlight: 2
+
+  # ---- BGMとサムネイル ----
+  - text: "BGMもYAMLに1行書くだけで流れているのだ"
+    emotion: happy
+    background: pink
+    slide:
+      variant: card
+      title: "音まわりも自動"
+      accent: "#e84393"
+      bullets:
+        - "BGMはループとフェードが自動"
+        - "読み方は辞書で直せる"
+        - "クレジットは動画の最後に出る"
+
+  - text: "DockerでVOICEVOXが動くから、環境構築もすぐなのだ"
+    emotion: normal
+    background: pink
+    highlight: 2
+
+  - text: "サムネイルも同じYAMLから作れるのだ！"
+    emotion: surprised
+    background: pink
+    slide:
+      variant: title
+      title: "サムネイルも1コマンド"
+      note: "npm run thumbnail -- scenes/demo.yaml"
+      accent: "#e84393"
+
+  # ---- まとめ ----
+  - text: "というわけで、YAMLを書くだけで動画が作れるのだ！"
+    emotion: happy
+    background: gradient
+    slide: null
+
+  - text: "ぜひ試してみてほしいのだ！"
+    emotion: happy
+    pause: 1.0

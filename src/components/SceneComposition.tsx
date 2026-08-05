@@ -11,7 +11,9 @@ import {
 import { ZundamonCharacter, MouthType } from "./ZundamonCharacter";
 import { Background } from "./Background";
 import { HighlightImage } from "./HighlightImage";
-import { SlideFrame, SLIDE_AREA } from "./SlideFrame";
+import { SlideRenderer } from "./slide";
+import { SubtitleRenderer } from "./subtitle";
+import { OpeningRenderer } from "./opening";
 import { useLipSync, LipSyncData, DialogueLipSync } from "../hooks/useLipSync";
 import { resolveMediaSrc } from "../utils/media";
 import {
@@ -43,50 +45,6 @@ interface SceneCompositionProps {
   config: VideoConfig;
   scenes: GeneratedScene[];
 }
-
-// 字幕コンポーネント
-// スライド表示中は字幕をスライドの真下に寄せて、キャラクターに被らないようにする
-const Subtitle: React.FC<{ text: string; withSlide?: boolean }> = ({
-  text,
-  withSlide = false,
-}) => {
-  const frame = useCurrentFrame();
-  const opacity = interpolate(frame, [0, 10], [0, 1], {
-    extrapolateRight: "clamp",
-  });
-
-  return (
-    <div
-      style={{
-        position: "absolute",
-        bottom: withSlide ? 60 : 80,
-        left: withSlide ? SLIDE_AREA.left : 0,
-        right: withSlide ? undefined : 0,
-        width: withSlide ? SLIDE_AREA.width : undefined,
-        display: "flex",
-        justifyContent: "center",
-      }}
-    >
-      <div
-        style={{
-          backgroundColor: "rgba(0, 0, 0, 0.75)",
-          color: "white",
-          padding: "20px 40px",
-          borderRadius: 12,
-          fontSize: 42,
-          fontFamily: "'Noto Sans JP', sans-serif",
-          fontWeight: 700,
-          opacity,
-          maxWidth: "85%",
-          textAlign: "center",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
-        }}
-      >
-        {text}
-      </div>
-    </div>
-  );
-};
 
 // BGM（ループ再生 + フェードイン/フェードアウト）
 const Bgm: React.FC<{
@@ -139,11 +97,22 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
   const { fps, width, height } = useVideoConfig();
   const currentTime = frame / fps;
 
+  // オープニング（本編の前のタイトル演出）
+  const opening = config.opening;
+  const openingDuration = opening?.duration ?? 0;
+  const inOpening = openingDuration > 0 && currentTime < openingDuration;
+
   // リップシンク用データを作成
-  const lipSyncDialogues: DialogueLipSync[] = scenes.map((scene) => ({
-    start: scene.startTime,
-    lipsyncData: scene.lipsyncData,
-  }));
+  // オープニングにセリフがあれば、それも口パクの対象にする
+  const lipSyncDialogues: DialogueLipSync[] = [
+    ...(opening?.lipsyncData
+      ? [{ start: 0, lipsyncData: opening.lipsyncData }]
+      : []),
+    ...scenes.map((scene) => ({
+      start: scene.startTime,
+      lipsyncData: scene.lipsyncData,
+    })),
+  ];
 
   const mouth = useLipSync(lipSyncDialogues, "closed");
 
@@ -159,8 +128,13 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
   };
 
   const currentScene = getCurrentScene();
-  const emotion: EmotionType = currentScene?.emotion ?? "normal";
+  const emotion: EmotionType = inOpening
+    ? opening?.emotion ?? "happy"
+    : currentScene?.emotion ?? "normal";
   const emotionPreset = EMOTION_PRESETS[emotion];
+
+  // オープニング中はキャラクターを隠せる（character: falseのとき）
+  const showCharacter = !inOpening || (opening?.character ?? true);
 
   // 連続して同じスライドを表示するシーンをまとめる（登場アニメーションを1回にするため）
   const slideGroups: SlideGroup[] = [];
@@ -181,9 +155,10 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
     ? slideGroups.find((g) => g.index === currentScene.slideIndex)
     : undefined;
 
-  // 背景の取得
-  const background: BackgroundConfig | string =
-    currentScene?.background ?? config.defaultBackground ?? "gradient";
+  // 背景の取得（オープニング中は専用の背景を使える）
+  const background: BackgroundConfig | string = inOpening
+    ? opening?.background ?? config.defaultBackground ?? "gradient"
+    : currentScene?.background ?? config.defaultBackground ?? "gradient";
 
   // BGMのクレジット表記（設定されていれば動画末尾に追記する）
   const bgmCredit =
@@ -196,10 +171,14 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
   const characterX = (width - characterWidth) / 2 + 400;
   const characterY = height - characterHeight - 730;
 
-  // 総フレーム数を計算
-  const totalDuration = scenes.reduce((acc, scene) => {
-    return acc + scene.lipsyncData.duration + (scene.pause ?? 0.5);
-  }, 0);
+  // 動画の長さ（最後のシーンが終わる時刻）
+  // scene.startTimeはオープニングの尺を含んだ絶対時刻なので、これだけで足りる
+  const lastScene = scenes[scenes.length - 1];
+  const totalDuration = lastScene
+    ? lastScene.startTime +
+      lastScene.lipsyncData.duration +
+      (lastScene.pause ?? 0.5)
+    : openingDuration;
 
   return (
     <AbsoluteFill>
@@ -213,28 +192,42 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
 
       {/* スライド */}
       {activeSlideGroup && (
-        <SlideFrame
+        <SlideRenderer
           slide={activeSlideGroup.slide}
           startFrame={Math.floor(activeSlideGroup.startTime * fps)}
           highlight={currentScene?.highlight}
           index={activeSlideGroup.index}
           total={slideGroups.length}
+          fallbackVariant={config.defaultSlideVariant}
         />
       )}
 
       {/* キャラクター */}
-      <ZundamonCharacter
-        scale={characterScale}
-        x={characterX}
-        y={characterY}
-        mouth={mouth}
-        eye={emotionPreset.eye}
-        eyebrow={emotionPreset.eyebrow}
-        faceColor={emotionPreset.faceColor}
-        edamame={emotionPreset.edamame}
-        enableBlink={true}
-        enableBreathing={true}
-      />
+      {showCharacter && (
+        <ZundamonCharacter
+          scale={characterScale}
+          x={characterX}
+          y={characterY}
+          mouth={mouth}
+          eye={emotionPreset.eye}
+          eyebrow={emotionPreset.eyebrow}
+          faceColor={emotionPreset.faceColor}
+          edamame={emotionPreset.edamame}
+          enableBlink={true}
+          enableBreathing={true}
+        />
+      )}
+
+      {/* オープニング */}
+      {opening && openingDuration > 0 && (
+        <Sequence from={0} durationInFrames={Math.ceil(openingDuration * fps)}>
+          <OpeningRenderer
+            opening={opening}
+            durationInFrames={Math.ceil(openingDuration * fps)}
+          />
+          {opening.audioFile && <Audio src={staticFile(opening.audioFile)} />}
+        </Sequence>
+      )}
 
       {/* シーンごとの字幕・音声・強調画像 */}
       {scenes.map((scene, i) => {
@@ -244,7 +237,13 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
 
         return (
           <Sequence key={i} from={startFrame} durationInFrames={durationInFrames}>
-            <Subtitle text={scene.text} withSlide={Boolean(scene.slide)} />
+            <SubtitleRenderer
+              text={scene.text}
+              withSlide={Boolean(scene.slide)}
+              variant={scene.subtitle}
+              fallbackVariant={config.defaultSubtitle}
+              accent={scene.slide?.accent}
+            />
             <Audio src={staticFile(scene.audioFile)} />
             {scene.image && <HighlightImage config={scene.image} />}
           </Sequence>

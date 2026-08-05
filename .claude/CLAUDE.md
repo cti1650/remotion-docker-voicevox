@@ -15,6 +15,7 @@ VOICEVOXは止まっていれば自動起動する（`scripts/lib.sh`の`ensure_
 npm run voice -- scenes/demo.yaml                  # 音声・リップシンクのみ
 npm run dev                                        # プレビュー
 npm run video -- scenes/demo.yaml --skip-generate  # レンダリングのみ
+npm run thumbnail -- scenes/demo.yaml              # サムネイルをPNG出力
 npm run voicevox:down                              # VOICEVOX停止
 ```
 
@@ -24,6 +25,10 @@ npm run voicevox:down                              # VOICEVOX停止
 scenes/                    # シーン定義YAML
 src/generated/             # 生成されたシーンJSON（自動更新）
 src/components/            # Remotionコンポーネント
+src/components/subtitle/   # テロップの見た目バリアント
+src/components/slide/      # スライドの見た目バリアント（parts/を組み合わせる）
+src/components/opening/    # 冒頭のタイトル演出バリアント
+src/components/thumbnail/  # サムネイルのバリアント（静止画）
 src/types/scene.ts         # シーン型定義・表情プリセット
 public/parts/zundamon_en/  # パーツ画像（英語名）
 public/audio/bgm/          # BGM（手で配置・git管理する）
@@ -53,15 +58,27 @@ dict:                 # オプション（この動画だけの読み。生成�
 bgm:                  # オプション（動画全体にループ再生）
   src: "audio/bgm/carefree-kevin-macleod.mp3"
   volume: 0.10
+opening:              # オプション（本編前のタイトル演出）
+  variant: center     # center/band/minimal
+  title: "タイトル"
+  text: "喋らせたいセリフ"   # 省略時は無音でduration秒
+thumbnail:            # オプション（npm run thumbnailで静止画出力）
+  variant: bold       # bold/split/simple
+  title: "サムネの文字"
+
+defaultSubtitle: boxed       # テロップの既定（boxed/bar/outline/card/none）
+defaultSlideVariant: card    # スライドの既定（card/fullbleed/title）
 
 scenes:
   - text: "セリフ"
     emotion: happy      # normal/happy/sad/angry/surprised/thinking/smug/tired
     background: purple  # gradient/purple/blue/green/orange/pink/dark/white
+    subtitle: bar       # このシーンだけテロップを変える
     image:              # オプション
       src: "images/sample.png"
       position: "top-right"
     slide:              # オプション（スライド解説形式）
+      variant: card     # card/fullbleed/title
       title: "タイトル"
       bullets: ["項目1", "項目2"]
       image: "images/flow.png"  # オプション
@@ -70,14 +87,20 @@ scenes:
 ```
 
 スライドは指定したシーン以降も継続表示される（`slide: null`で消える）。
-サンプル: `scenes/slide-demo.yaml`
+
+サンプル:
+- `scenes/demo.yaml` — 全機能入り（opening/thumbnail/bgm/dict/slide/subtitle/image）
+- `scenes/variants-demo.yaml` — テロップとスライドの見た目
+- `scenes/opening-demo.yaml` — 冒頭とサムネイル
+- `scenes/slide-demo.yaml` — スライドの基本
 
 ## 重要な知見
 
 - **Root.tsx**: generate-from-scenes.sh実行時に自動更新
 - **python3**: `scripts/lib.sh`の`resolve_python`が使えるものを探す
   （asdf等でshimがバージョン未設定だと素の`python3`は落ちるため）
-- **コンポジション**: `SceneVideo`（YAML由来）のみ。手書きの`MyComposition`は廃止済み
+- **コンポジション**: YAML由来の`SceneVideo`と、`thumbnail:`がある場合の
+  `<id>-thumbnail`（Still）のみ。手書きの`MyComposition`は廃止済み
 - **口のデフォルト**: `closed`（`むふ`から抽出）
 - **PSD抽出**: `layer.topil()`使用
 - **リップシンク**: JSONの最後に`end`エントリが自動追加

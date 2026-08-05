@@ -10,6 +10,7 @@ DockerでRemotionとVOICEVOXを使った動画作成環境。YAMLでシーンを
 
 ## クイックスタート
 
+`scenes/demo.yaml` に全機能を詰め込んだサンプルがある。
 `scenes/` にYAMLを置いたら、動画になるまでは1コマンド。
 
 ```bash
@@ -115,6 +116,97 @@ bgm:
 
 動作するサンプルは `scenes/slide-demo.yaml` を参照。
 
+#### 冒頭にタイトル演出を入れる
+
+トップレベルに `opening` を書くと、本編の前にタイトル演出が入る。
+
+```yaml
+opening:
+  variant: center       # center / band / minimal
+  title: "動画の冒頭を作る"
+  subtitle: "オープニングとサムネイルの紹介"
+  badge: "解説"          # 省略可
+  accent: "#6c5ce7"
+  background: "dark"    # 本編と違う背景にできる
+  emotion: happy
+  text: "今日は使い方を紹介するのだ！"   # 書くと喋る。尺は音声の長さ
+  # text を書かない場合:
+  # duration: 3         # 無音で3秒（デフォルト3秒）
+  # character: false    # キャラクターを隠す
+```
+
+`text` を書いた場合は音声とリップシンクも生成され、口が動く。
+
+| `variant` | 見た目 |
+|-----------|--------|
+| `center` | 画面中央に大きくタイトル。上下にアクセントの線（デフォルト） |
+| `band` | 斜めの帯が横から滑り込む |
+| `minimal` | 左下に控えめに置く。背景やキャラクターを見せたいとき |
+
+#### サムネイルを作る
+
+トップレベルに `thumbnail` を書くと、静止画として書き出せる。動画には出ない。
+
+```yaml
+thumbnail:
+  variant: bold         # bold / split / simple
+  title: "冒頭とサムネを自動で"
+  subtitle: "YAMLに書くだけ"
+  badge: "Remotion"
+  accent: "#6c5ce7"
+  background: "purple"
+  emotion: smug
+  image: "images/flow.png"   # split のときに使う
+  # width: 1280 / height: 720（省略時はこの値）
+```
+
+```bash
+npm run thumbnail -- scenes/my-video.yaml
+# output/my-video-thumbnail.png に出力
+```
+
+| `variant` | 見た目 |
+|-----------|--------|
+| `bold` | 左に特大タイトル、右にキャラクター（デフォルト） |
+| `split` | 上部にタイトルの帯、下に画像とキャラクター |
+| `simple` | 中央寄せの落ち着いた構成 |
+
+動作するサンプルは `scenes/opening-demo.yaml` を参照。
+
+#### 見た目を変える
+
+テロップとスライドは、名前を指定するだけで見た目を切り替えられる。
+
+```yaml
+defaultSubtitle: boxed       # 動画全体のテロップ（省略時 boxed）
+defaultSlideVariant: card    # 動画全体のスライド（省略時 card）
+
+scenes:
+  - text: "ここだけ帯にする"
+    subtitle: bar            # シーン単位で上書き
+    slide:
+      variant: title         # スライド単位で上書き
+      title: "章の切り替え"
+```
+
+| `subtitle` | 見た目 |
+|-----------|--------|
+| `boxed` | 黒い角丸ボックス（デフォルト） |
+| `bar` | 横幅いっぱいの帯。左端にアクセント色 |
+| `outline` | 背景なし・縁取り文字。背景を隠さない |
+| `card` | 白いカード + アクセントの縦線 |
+| `none` | 表示しない |
+
+| `slide.variant` | 見た目 |
+|-----------------|--------|
+| `card` | 白いカード（デフォルト） |
+| `fullbleed` | 枠なしで背景に直接置く。文字は自動で明るい色になる |
+| `title` | タイトルだけを大きく見せる章扉 |
+
+動作するサンプルは `scenes/variants-demo.yaml` を参照。
+
+新しい見た目を足したいときは [パーツ構成](#パーツ構成) を参照。
+
 #### 読み方を直す
 
 セリフは**そのまま字幕として表示される**ので、読みを直すためにカタカナで書いてはいけない。
@@ -168,7 +260,13 @@ npm run video -- scenes/my-video.yaml --skip-generate   # 音声を使い回し�
 | `emotion` | 表情 | `normal`, `happy`, `sad`, `angry`, `surprised`, `thinking`, `smug`, `tired` |
 | `background` | 背景 | `gradient`, `purple`, `blue`, `green`, `orange`, `pink`, `dark`, `white` |
 | `image` | 強調画像 | `{ src: "images/sample.png", position: "top-right" }` |
+| `slide` | スライド（`null`で非表示に戻す） | `{ title: "見出し", bullets: [...] }` |
+| `highlight` | 強調する箇条書き番号（1始まり） | `1` |
+| `subtitle` | テロップの見た目 | `boxed`, `bar`, `outline`, `card`, `none` |
 | `pause` | セリフ後の間（秒） | `0.5` |
+
+動画全体の設定は `opening`（冒頭演出）、`thumbnail`（サムネイル）、`bgm`、`dict`、
+`defaultSubtitle`、`defaultSlideVariant` をトップレベルに書く。
 
 ## ディレクトリ構成
 
@@ -178,15 +276,20 @@ npm run video -- scenes/my-video.yaml --skip-generate   # 音声を使い回し�
 │   └── demo.yaml
 ├── scripts/
 │   ├── render-video.sh           # 音声生成 + レンダリング（npm run video）
+│   ├── render-thumbnail.sh       # サムネイル出力（npm run thumbnail）
 │   ├── generate-from-scenes.sh   # 音声・リップシンク生成（npm run voice）
 │   ├── generate-voice-with-lipsync.sh
 │   └── lib.sh                    # python検出・VOICEVOX起動の共通処理
 ├── src/
 │   ├── components/
 │   │   ├── ZundamonCharacter.tsx
-│   │   ├── SceneComposition.tsx
+│   │   ├── SceneComposition.tsx   # 全体の組み立て
 │   │   ├── Background.tsx
-│   │   └── HighlightImage.tsx
+│   │   ├── HighlightImage.tsx
+│   │   ├── subtitle/          # テロップの見た目バリアント
+│   │   ├── slide/             # スライドの見た目バリアント
+│   │   ├── opening/           # 冒頭のタイトル演出バリアント
+│   │   └── thumbnail/         # サムネイルのバリアント
 │   ├── generated/             # 生成されたシーンJSON
 │   └── types/scene.ts
 ├── public/
@@ -196,6 +299,55 @@ npm run video -- scenes/my-video.yaml --skip-generate   # 音声を使い回し�
 │       └── voice/             # 生成された音声+リップシンク（git管理外）
 └── output/                    # 出力動画
 ```
+
+### パーツ構成
+
+テロップとスライドは「共通パーツ → バリアント → レジストリ」の3層に分けている。
+見た目を増やすときは既存のバリアントを触らずに済む。
+
+4つのグループ（`subtitle` / `slide` / `opening` / `thumbnail`）がすべて同じ形をしている。
+
+```
+src/components/subtitle/
+├── layout.ts          # 配置とフェードイン（全バリアント共通）
+├── types.ts           # SubtitleVariantProps
+├── BoxedSubtitle.tsx  # 各バリアント
+├── BarSubtitle.tsx
+├── OutlineSubtitle.tsx
+├── CardSubtitle.tsx
+└── index.tsx          # SUBTITLE_VARIANTS + SubtitleRenderer
+
+src/components/slide/
+├── layout.ts          # SLIDE_AREA・アクセント色・アニメの遅延
+├── types.ts           # SlideVariantProps
+├── parts/             # バリアントから組み合わせるパーツ
+│   ├── SlideShell.tsx   # 外枠と登場アニメーション
+│   ├── SlideHeader.tsx  # タイトル行
+│   ├── SlideBody.tsx    # 箇条書きと画像の並べ方
+│   ├── SlideFooter.tsx  # 補足とページ番号
+│   ├── Bullet.tsx       # 箇条書き1行（明暗2トーン）
+│   └── SlideImage.tsx
+├── CardSlide.tsx      # 各バリアント（partsを組み合わせるだけ）
+├── FullBleedSlide.tsx
+├── TitleSlide.tsx
+└── index.tsx          # SLIDE_VARIANTS + SlideRenderer
+
+src/components/opening/    # Center / Band / Minimal
+src/components/thumbnail/  # Bold / Split / Simple
+```
+
+`opening/parts/TitleStack.tsx`（バッジ+タイトル+サブタイトル）は
+オープニングとサムネイルで共用している。
+
+新しい見た目を足す手順は3つだけ。`SceneComposition.tsx` は触らなくてよい。
+
+1. バリアントのコンポーネントを追加（`SlideVariantComponent` などを実装）
+2. `index.tsx` のレジストリに登録
+3. `src/types/scene.ts` の `SlideVariant` / `SubtitleVariant` / `OpeningVariant` /
+   `ThumbnailVariant` に名前を追加
+
+バリアントには絶対フレームではなく `localFrame`（表示開始からの経過フレーム）が渡るので、
+配置やアニメーションのタイミングを気にせず中身だけ書けばよい。
 
 ### 生成物のgit管理
 
@@ -227,6 +379,7 @@ clone直後は音声が無い状態なので、`npm run voice`（または `npm 
 | `npm run video` | `scenes/` にあるYAMLの一覧を表示 |
 | `npm run voice -- scenes/demo.yaml` | 音声・リップシンクのみ生成 |
 | `npm run voice` | `scenes/*.yaml` を全部まとめて音声生成 |
+| `npm run thumbnail -- scenes/demo.yaml` | サムネイルをPNGで書き出す |
 | `npm run dev` | Remotion Studioでプレビュー |
 | `npm run voicevox:up` / `npm run voicevox:down` | VOICEVOXの起動・停止 |
 

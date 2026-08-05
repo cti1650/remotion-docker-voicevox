@@ -1,0 +1,77 @@
+# オープニングとサムネイルのサンプル
+#
+#   opening:    本編の前に流すタイトル演出
+#               text: を書くと喋る（尺は音声の長さ）／書かなければ無音でduration秒
+#   thumbnail:  npm run thumbnail -- scenes/opening-demo.yaml で静止画を書き出す
+#
+# 生成: npm run video -- scenes/opening-demo.yaml
+# サムネ: npm run thumbnail -- scenes/opening-demo.yaml
+
+title: "オープニングとサムネイルのデモ"
+speaker_id: 3
+fps: 30
+width: 1920
+height: 1080
+defaultBackground: "purple"
+defaultPause: 0.4
+
+# 冒頭のタイトル演出（セリフ付き）
+# textを消して duration: 3 にすれば無音のタイトルだけになる
+opening:
+  variant: center       # center / band / minimal
+  title: "動画の冒頭を作る"
+  subtitle: "オープニングとサムネイルの紹介"
+  badge: "解説"
+  accent: "#6c5ce7"
+  background: "dark"
+  emotion: happy
+  text: "今日はオープニングとサムネイルの作り方を紹介するのだ！"
+
+# サムネイル（動画には出ない。静止画として書き出す）
+thumbnail:
+  variant: bold         # bold / split / simple
+  title: "冒頭とサムネを自動で"
+  subtitle: "YAMLに書くだけ"
+  badge: "Remotion"
+  accent: "#6c5ce7"
+  background: "purple"
+  emotion: smug
+
+scenes:
+  - text: "オープニングは動画の一番前に入るのだ"
+    emotion: normal
+    slide:
+      variant: title
+      title: "オープニング"
+      note: "opening: に書くと本編の前に流れる"
+      accent: "#6c5ce7"
+
+  - text: "セリフを書けば喋るし、書かなければ無音のタイトルだけになるのだ"
+    emotion: normal
+    background: blue
+    slide:
+      variant: card
+      title: "2つの作り方"
+      accent: "#0984e3"
+      bullets:
+        - "text: を書く → 喋る。尺は音声の長さ"
+        - "text: を書かない → 無音。durationで長さを指定"
+        - "見た目は center / band / minimal から選ぶ"
+
+  - text: "サムネイルは動画とは別に、静止画として書き出せるのだ"
+    emotion: smug
+    background: green
+    slide:
+      variant: card
+      title: "サムネイルも作れる"
+      accent: "#00b894"
+      bullets:
+        - "YAMLに thumbnail: を書く"
+        - "npm run thumbnail で PNG が出る"
+        - "1280x720など動画と違うサイズにできる"
+
+  - text: "これで動画の入り口が整うのだ！"
+    emotion: happy
+    background: gradient
+    slide: null
+    pause: 1.0

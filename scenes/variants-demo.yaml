@@ -1,0 +1,96 @@
+# テロップとスライドの見た目バリアントのサンプル
+#
+#   subtitle:       テロップの見た目（シーン単位で切り替えられる）
+#   slide.variant:  スライドの見た目
+#   defaultSubtitle / defaultSlideVariant: 動画全体のデフォルト
+#
+# 生成: npm run video -- scenes/variants-demo.yaml
+
+title: "見た目バリアントのデモ"
+speaker_id: 3
+fps: 30
+width: 1920
+height: 1080
+defaultBackground: "purple"
+defaultPause: 0.4
+
+scenes:
+  # ---- テロップのバリアント ----
+  - text: "テロップの見た目は4種類から選べるのだ"
+    emotion: happy
+    slide:
+      variant: title
+      title: "テロップを選ぶ"
+      note: "subtitle: boxed / bar / outline / card"
+      accent: "#6c5ce7"
+
+  - text: "これが標準の boxed なのだ。黒いボックスで読みやすいのだ"
+    emotion: normal
+    subtitle: boxed
+
+  - text: "これが bar なのだ。ニュース番組みたいな帯になるのだ"
+    emotion: smug
+    subtitle: bar
+
+  - text: "これが outline なのだ。背景を隠さないのだ"
+    emotion: surprised
+    subtitle: outline
+
+  - text: "これが card なのだ。スライドと雰囲気を揃えられるのだ"
+    emotion: happy
+    subtitle: card
+
+  # ---- スライドのバリアント ----
+  - text: "スライドの見た目も切り替えられるのだ"
+    emotion: normal
+    background: blue
+    subtitle: boxed
+    slide:
+      variant: card
+      title: "スライドを選ぶ"
+      accent: "#0984e3"
+      bullets:
+        - "card は白いカード（標準）"
+        - "fullbleed は枠なしで背景に直接置く"
+        - "title は章扉として使う"
+      note: "slide.variant で指定する"
+
+  - text: "これが card なのだ。いつものスライドなのだ"
+    emotion: normal
+    background: blue
+    highlight: 1
+
+  - text: "これが fullbleed なのだ。背景の色がそのまま活きるのだ"
+    emotion: smug
+    background: dark
+    slide:
+      variant: fullbleed
+      title: "枠なしで見せる"
+      accent: "#00d2a0"
+      bullets:
+        - "白いカードを外した見た目"
+        - "文字は自動で明るい色になる"
+        - "画像を主役にしたいときに使う"
+      note: "slide.variant: fullbleed"
+
+  - text: "文字の色は自動で明るくなるから、そのまま読めるのだ"
+    emotion: normal
+    background: dark
+    highlight: 2
+
+  - text: "そして章の切り替えには title を使うのだ"
+    emotion: happy
+    background: green
+    subtitle: card
+    slide:
+      variant: title
+      title: "章の切り替えに"
+      note: "話題が変わるところで挟むと分かりやすい"
+      accent: "#00b894"
+
+  # ---- まとめ ----
+  - text: "組み合わせは自由なのだ。ぜひ試してみてほしいのだ！"
+    emotion: happy
+    background: gradient
+    slide: null
+    pause: 1.0

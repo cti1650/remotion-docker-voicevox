@@ -5,6 +5,7 @@
   "scripts": {
     "video": "./scripts/render-video.sh",
     "voice": "./scripts/generate-from-scenes.sh",
+    "thumbnail": "./scripts/render-thumbnail.sh",
     "dev": "remotion studio",
     "voicevox:up": "docker compose up -d voicevox",
     "voicevox:down": "docker compose stop voicevox",

@@ -161,8 +161,41 @@ if bgm:
             print("  ※ここはコミット対象です。再配布が禁止されている素材は")
             print("    public/audio/bgm/local/ に置いてください")
 
+def generate_voice(text, output_base):
+    """1つのセリフから音声とリップシンクを作る"""
+    result = subprocess.run(
+        [f'{script_dir}/generate-voice-with-lipsync.sh', text, str(speaker_id), output_base],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        print(f"ERROR generating {output_base}: {result.stderr}")
+        sys.exit(1)
+    with open(f"{output_base}.json", 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+
+# オープニング（本編の前のタイトル演出）
+# textがあれば音声を生成して尺を音声に合わせる。無ければdurationで固定
+generated_opening = None
+opening = config.get('opening')
+if opening:
+    generated_opening = dict(opening)
+    if opening.get('text'):
+        print("  オープニングの音声を生成...")
+        base = f"{output_dir}/opening"
+        lipsync = generate_voice(opening['text'], base)
+        generated_opening['audioFile'] = f"audio/voice/{basename}/opening.wav"
+        generated_opening['lipsyncData'] = lipsync
+        generated_opening['duration'] = round(
+            lipsync['duration'] + opening.get('pause', 0.6), 3)
+    else:
+        generated_opening['duration'] = round(opening.get('duration', 3), 3)
+    print(f"  オープニング: {generated_opening['duration']}s")
+
 generated_scenes = []
-current_time = 0.5  # 開始前のマージン
+# 開始前のマージン。オープニングがあればその後ろから本編を始める
+current_time = (generated_opening['duration'] if generated_opening else 0) + 0.5
 
 # スライドは明示的に切り替えるまで次のシーンへ引き継ぐ
 current_slide = None
@@ -176,21 +209,7 @@ for i, scene in enumerate(scenes):
 
     print(f"    Scene {i+1}: {text[:30]}...")
 
-    # Generate audio + lipsync
-    result = subprocess.run(
-        [f'{script_dir}/generate-voice-with-lipsync.sh', text, str(speaker_id), output_base],
-        capture_output=True,
-        text=True
-    )
-
-    if result.returncode != 0:
-        print(f"ERROR generating scene {i+1}: {result.stderr}")
-        sys.exit(1)
-
-    # Read generated lipsync data
-    json_file = f"{output_base}.json"
-    with open(json_file, 'r', encoding='utf-8') as f:
-        lipsync_data = json.load(f)
+    lipsync_data = generate_voice(text, output_base)
 
     # Build generated scene
     pause = scene.get('pause', default_pause)
@@ -216,12 +235,9 @@ for i, scene in enumerate(scenes):
         generated_scene['slideIndex'] = slide_index
 
     # Optional fields
-    if 'background' in scene:
-        generated_scene['background'] = scene['background']
-    if 'image' in scene:
-        generated_scene['image'] = scene['image']
-    if 'highlight' in scene:
-        generated_scene['highlight'] = scene['highlight']
+    for key in ('background', 'image', 'highlight', 'subtitle'):
+        if key in scene:
+            generated_scene[key] = scene[key]
 
     generated_scenes.append(generated_scene)
     current_time += lipsync_data['duration'] + pause
@@ -237,7 +253,11 @@ output = {
         'height': config.get('height', 1080),
         'defaultBackground': config.get('defaultBackground', 'gradient'),
         'defaultPause': default_pause,
+        # テロップ・スライドの見た目（未指定ならコンポーネント側のデフォルト）
+        **{k: config[k] for k in ('defaultSubtitle', 'defaultSlideVariant') if k in config},
         **({'bgm': config['bgm']} if 'bgm' in config else {}),
+        **({'opening': generated_opening} if generated_opening else {}),
+        **({'thumbnail': config['thumbnail']} if 'thumbnail' in config else {}),
     },
     'scenes': generated_scenes,
     'totalDuration': round(current_time + 0.5, 3),
