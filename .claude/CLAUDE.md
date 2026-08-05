@@ -6,10 +6,16 @@ YAMLでシーンを定義するだけで、音声・リップシンク・動画�
 ## クイックスタート
 
 ```bash
-docker compose up -d voicevox              # VOICEVOX起動
-./scripts/generate-from-scenes.sh scenes/demo.yaml  # 音声生成
-npm run dev                                 # プレビュー
-./scripts/render-video.sh scenes/demo.yaml  # レンダリング
+npm run video -- scenes/demo.yaml   # 音声生成→レンダリングを一括実行
+```
+
+VOICEVOXは止まっていれば自動起動する（`scripts/lib.sh`の`ensure_voicevox`）。
+
+```bash
+npm run voice -- scenes/demo.yaml                  # 音声・リップシンクのみ
+npm run dev                                        # プレビュー
+npm run video -- scenes/demo.yaml --skip-generate  # レンダリングのみ
+npm run voicevox:down                              # VOICEVOX停止
 ```
 
 ## ディレクトリ
@@ -26,14 +32,15 @@ scripts/                   # ユーティリティ
 ```
 
 `public/audio/voice/` は`.gitignore`で丸ごと除外している（再生成できるため）。
-clone直後は `generate-from-scenes.sh` を実行しないと音声が鳴らない。
+clone直後は `npm run voice` を実行しないと音声が鳴らない。
 
 ## ワークフロー
 
 1. `scenes/` にYAMLを作成
-2. `./scripts/generate-from-scenes.sh scenes/<name>.yaml` で音声生成
-3. `npm run dev` でプレビュー
-4. `./scripts/render-video.sh scenes/<name>.yaml` でレンダリング
+2. `npm run video -- scenes/<name>.yaml` で `output/<name>.mp4` まで生成
+
+途中で確認したいときは `npm run voice -- scenes/<name>.yaml` → `npm run dev` →
+`npm run video -- scenes/<name>.yaml --skip-generate` に分けて実行する。
 
 ## シーンYAML構造
 
@@ -65,6 +72,8 @@ scenes:
 ## 重要な知見
 
 - **Root.tsx**: generate-from-scenes.sh実行時に自動更新
+- **python3**: `scripts/lib.sh`の`resolve_python`が使えるものを探す
+  （asdf等でshimがバージョン未設定だと素の`python3`は落ちるため）
 - **コンポジション**: `SceneVideo`（YAML由来）のみ。手書きの`MyComposition`は廃止済み
 - **口のデフォルト**: `closed`（`むふ`から抽出）
 - **PSD抽出**: `layer.topil()`使用

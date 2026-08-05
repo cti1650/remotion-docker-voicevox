@@ -11,14 +11,16 @@ description: Remotionでの動画作成ルール。SceneComposition、シーンY
 # 1. シーンYAMLを作成
 vim scenes/my-video.yaml
 
-# 2. 音声+リップシンク生成
-./scripts/generate-from-scenes.sh scenes/my-video.yaml
+# 2. 音声生成からレンダリングまで一括実行（VOICEVOXは自動起動）
+npm run video -- scenes/my-video.yaml
+```
 
-# 3. プレビュー
-npm run dev
+途中で確認する場合:
 
-# 4. レンダリング
-./scripts/render-video.sh scenes/my-video.yaml
+```bash
+npm run voice -- scenes/my-video.yaml                  # 音声+リップシンクのみ
+npm run dev                                            # プレビュー
+npm run video -- scenes/my-video.yaml --skip-generate  # レンダリングのみ
 ```
 
 ## シーンYAML構造
@@ -149,7 +151,7 @@ public/audio/voice/<video>/  # 音声+JSON（git管理外・再生成する）
 
 `src/generated/<video>.json`だけは`src/Root.tsx`がimportするためコミットする。
 `public/audio/voice/`は`.gitignore`で丸ごと除外しているので、
-別環境では`generate-from-scenes.sh`を実行してから使う。
+別環境では`npm run voice`を実行してから使う。
 動画を追加しても`.gitignore`を編集する必要はない。
 
 Remotionに登録されるコンポジションは、このYAML由来の`SceneVideo`のみ。

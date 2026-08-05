@@ -6,25 +6,28 @@ DockerでRemotionとVOICEVOXを使った動画作成環境。YAMLでシーンを
 
 - Docker / Docker Compose
 - Node.js 18+ (ローカル開発時)
+- Python 3 + PyYAML（音声生成スクリプトが使用）
 
 ## クイックスタート
 
+`scenes/` にYAMLを置いたら、動画になるまでは1コマンド。
+
 ```bash
-# 1. VOICEVOXエンジン起動
-docker compose up -d voicevox
-
-# 2. 依存関係インストール（初回のみ）
-npm install
-
-# 3. シーンYAMLから音声・リップシンク生成
-./scripts/generate-from-scenes.sh scenes/demo.yaml
-
-# 4. プレビュー
-npm run dev
-
-# 5. 動画レンダリング
-./scripts/render-video.sh scenes/demo.yaml
+npm install                          # 初回のみ
+npm run video -- scenes/demo.yaml    # 音声生成 → レンダリング → output/demo.mp4
 ```
+
+VOICEVOXエンジンは起動していなければ自動で立ち上がる（初回はイメージのpullで数分かかる）。
+
+```bash
+npm run video -- scenes/demo.yaml                    # 音声生成 + レンダリング
+npm run video -- scenes/demo.yaml --skip-generate    # レンダリングのみ（音声は再利用）
+npm run voice -- scenes/demo.yaml                    # 音声・リップシンク生成のみ
+npm run dev                                          # Remotion Studioでプレビュー
+npm run voicevox:down                                # VOICEVOXを停止
+```
+
+`npm run video` を引数なしで実行すると、`scenes/` にあるYAMLの一覧が出る。
 
 ## ワークフロー
 
@@ -112,25 +115,24 @@ bgm:
 
 動作するサンプルは `scenes/slide-demo.yaml` を参照。
 
-### 2. 音声とリップシンク生成
+### 2. 動画を生成
 
 ```bash
-./scripts/generate-from-scenes.sh scenes/my-video.yaml
-```
-
-### 3. プレビュー
-
-```bash
-npm run dev
-# ブラウザで http://localhost:3000 を開く
-```
-
-### 4. 動画出力
-
-```bash
-./scripts/render-video.sh scenes/my-video.yaml
+npm run video -- scenes/my-video.yaml
 # output/my-video.mp4 に出力
 ```
+
+音声・リップシンクの生成からレンダリングまでを通しで実行する。
+
+### 3. 途中で確認したい場合
+
+```bash
+npm run voice -- scenes/my-video.yaml   # 音声とリップシンクだけ生成
+npm run dev                             # プレビュー（http://localhost:3000）
+npm run video -- scenes/my-video.yaml --skip-generate   # 音声を使い回してレンダリング
+```
+
+セリフを変えずにレイアウトだけ調整するときは `--skip-generate` を使うと速い。
 
 ## シーン設定オプション
 
@@ -149,9 +151,10 @@ npm run dev
 ├── scenes/                    # シーン定義YAML
 │   └── demo.yaml
 ├── scripts/
-│   ├── generate-from-scenes.sh   # 音声・リップシンク生成
-│   ├── render-video.sh           # 動画レンダリング
-│   └── generate-voice-with-lipsync.sh
+│   ├── render-video.sh           # 音声生成 + レンダリング（npm run video）
+│   ├── generate-from-scenes.sh   # 音声・リップシンク生成（npm run voice）
+│   ├── generate-voice-with-lipsync.sh
+│   └── lib.sh                    # python検出・VOICEVOX起動の共通処理
 ├── src/
 │   ├── components/
 │   │   ├── ZundamonCharacter.tsx
@@ -186,32 +189,35 @@ npm run dev
 | `public/audio/voice/<動画名>/` | しない | コマンドで再生成できる。リップシンクの中身は `src/generated/` 側の `lipsyncData` と重複する |
 | `output/*.mp4` | しない | レンダリング成果物 |
 
-clone直後は音声が無い状態なので、`./scripts/generate-from-scenes.sh` を実行してから
-プレビュー・レンダリングする。
+clone直後は音声が無い状態なので、`npm run voice`（または `npm run video`）を
+実行してからプレビュー・レンダリングする。
 
 ## コマンド一覧
 
+| コマンド | 説明 |
+|----------|------|
+| `npm run video -- scenes/demo.yaml` | 音声生成からレンダリングまで通しで実行 |
+| `npm run video -- scenes/demo.yaml --skip-generate` | 音声を使い回してレンダリングのみ |
+| `npm run video` | `scenes/` にあるYAMLの一覧を表示 |
+| `npm run voice -- scenes/demo.yaml` | 音声・リップシンクのみ生成 |
+| `npm run voice` | `scenes/*.yaml` を全部まとめて音声生成 |
+| `npm run dev` | Remotion Studioでプレビュー |
+| `npm run voicevox:up` / `npm run voicevox:down` | VOICEVOXの起動・停止 |
+
 ```bash
-# 開発サーバー
-npm run dev
-
-# 全シーンの音声生成
-./scripts/generate-from-scenes.sh
-
-# 特定のシーンの音声生成
-./scripts/generate-from-scenes.sh scenes/demo.yaml
-
-# 動画レンダリング
-./scripts/render-video.sh scenes/demo.yaml
-
-# 音声生成をスキップしてレンダリングのみ
-./scripts/render-video.sh scenes/demo.yaml --skip-generate
-
 # VOICEVOX辞書登録（発音修正）
 ./scripts/voicevox-dict.sh add Remotion リモーション
 ```
 
+`npm run video` / `npm run voice` はVOICEVOXが止まっていれば自動で起動するので、
+`voicevox:up` を先に叩く必要はない。
+
+スクリプトは `./scripts/render-video.sh scenes/demo.yaml` のように直接実行してもよい。
+
 ## Docker管理
+
+`npm run video` / `npm run voice` がVOICEVOXを自動起動するため、通常は以下の操作は不要。
+手動で管理したい場合や、トラブル時に使う。
 
 ### 初期設定
 

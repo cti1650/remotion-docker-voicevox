@@ -8,16 +8,9 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
-ENGINE_URL="${VOICEVOX_ENGINE_URL:-http://127.0.0.1:50021}"
 
-# Check VOICEVOX Engine
-check_voicevox() {
-    if ! curl -fs "${ENGINE_URL}/version" >/dev/null 2>&1; then
-        echo "ERROR: VOICEVOX Engine is not running at ${ENGINE_URL}"
-        echo "Run: docker compose up -d voicevox"
-        exit 1
-    fi
-}
+# shellcheck source=scripts/lib.sh
+source "$SCRIPT_DIR/lib.sh"
 
 # 単一のYAMLを処理
 process_yaml() {
@@ -37,7 +30,7 @@ process_yaml() {
     export SCRIPT_DIR="$SCRIPT_DIR"
     export BASENAME="$basename"
 
-python3 << 'PYTHON_SCRIPT'
+"$PYTHON" << 'PYTHON_SCRIPT'
 import yaml
 import subprocess
 import json
@@ -172,7 +165,8 @@ PYTHON_SCRIPT
 # メイン処理
 main() {
     cd "$PROJECT_DIR"
-    check_voicevox
+    resolve_python yaml || exit 1
+    ensure_voicevox || exit 1
 
     if [ $# -gt 0 ]; then
         # 引数で指定されたファイルを処理
@@ -206,7 +200,7 @@ main() {
     # Root.tsxを更新
     echo ""
     echo "==> Updating Root.tsx imports..."
-    python3 << 'PYTHON_UPDATE'
+    "$PYTHON" << 'PYTHON_UPDATE'
 import os
 import re
 from pathlib import Path

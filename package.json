@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Remotion + VOICEVOX video creation environment with Docker",
   "scripts": {
+    "video": "./scripts/render-video.sh",
+    "voice": "./scripts/generate-from-scenes.sh",
     "dev": "remotion studio",
+    "voicevox:up": "docker compose up -d voicevox",
+    "voicevox:down": "docker compose stop voicevox",
     "build": "remotion render",
     "preview": "remotion preview"
   },

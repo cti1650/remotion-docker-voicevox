@@ -11,21 +11,21 @@ description: |
 ## ワークフロー
 
 1. `scenes/` にYAMLファイル作成
-2. 音声+リップシンク生成（`generate-from-scenes.sh`）
-3. プレビュー確認（`npm run dev`）
-4. レンダリング（`render-video.sh`）
+2. `npm run video` で音声生成からレンダリングまで実行
 
 ## コマンド
 
 ```bash
-# 音声生成
-./scripts/generate-from-scenes.sh scenes/<name>.yaml
+# 音声生成→レンダリングを一括実行（VOICEVOXは自動起動）
+npm run video -- scenes/<name>.yaml
 
-# レンダリング
-./scripts/render-video.sh scenes/<name>.yaml
+# 音声だけ生成してプレビューで確認したい場合
+npm run voice -- scenes/<name>.yaml
+npm run dev
+npm run video -- scenes/<name>.yaml --skip-generate
 
-# 全YAMLを一括処理
-./scripts/generate-from-scenes.sh
+# 全YAMLを一括で音声生成
+npm run voice
 ```
 
 ## シーンYAMLテンプレート

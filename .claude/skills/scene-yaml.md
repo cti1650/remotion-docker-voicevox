@@ -100,5 +100,5 @@ scenes:
 
 ```bash
 scenes/my-video.yaml
-./scripts/generate-from-scenes.sh scenes/my-video.yaml
+npm run video -- scenes/my-video.yaml
 ```

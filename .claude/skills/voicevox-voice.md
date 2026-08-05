@@ -10,15 +10,18 @@ description: |
 
 ## 前提条件
 
+VOICEVOXは`npm run voice` / `npm run video`が自動起動するため、事前操作は不要。
+個別に確認・操作する場合:
+
 ```bash
-docker compose up -d voicevox
 curl -s http://localhost:50021/version  # 起動確認
+npm run voicevox:up                     # 手動起動
 ```
 
 ## シーンYAMLから一括生成（推奨）
 
 ```bash
-./scripts/generate-from-scenes.sh scenes/demo.yaml
+npm run voice -- scenes/demo.yaml
 ```
 
 ## 個別音声生成

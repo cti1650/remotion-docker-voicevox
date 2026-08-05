@@ -1,10 +1,17 @@
 #!/bin/bash
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+# shellcheck source=scripts/lib.sh
+source "$SCRIPT_DIR/lib.sh"
+
 TEXT="${1:-こんにちは}"
 SPEAKER_ID="${2:-3}"
 OUTPUT_BASE="${3:-output}"
 ENGINE_URL="${VOICEVOX_ENGINE_URL:-http://127.0.0.1:50021}"
+
+# 親スクリプトから呼ばれた場合は$PYTHONを引き継ぐ
+resolve_python || exit 1
 
 # 出力ファイル
 WAV_FILE="${OUTPUT_BASE}.wav"
@@ -23,11 +30,11 @@ fi
 
 # Generate audio query (contains timing data)
 QUERY=$(curl -s -X POST \
-    "${ENGINE_URL}/audio_query?text=$(echo -n "$TEXT" | python3 -c 'import sys,urllib.parse; print(urllib.parse.quote(sys.stdin.read()))')&speaker=${SPEAKER_ID}" \
+    "${ENGINE_URL}/audio_query?text=$(echo -n "$TEXT" | "$PYTHON" -c 'import sys,urllib.parse; print(urllib.parse.quote(sys.stdin.read()))')&speaker=${SPEAKER_ID}" \
     -H "accept: application/json")
 
 # Extract lip sync data from query
-echo "$QUERY" | python3 -c "
+echo "$QUERY" | "$PYTHON" -c "
 import json
 import sys
 
@@ -126,7 +133,7 @@ echo "    Audio: ${WAV_FILE}"
 echo "    Lip sync: ${JSON_FILE}"
 
 # Show summary
-python3 -c "
+"$PYTHON" -c "
 import json
 with open('${JSON_FILE}') as f:
     data = json.load(f)

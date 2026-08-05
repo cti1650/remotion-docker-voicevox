@@ -10,22 +10,18 @@ description: |
 
 ## 実行フロー
 
-1. VOICEVOX起動確認
-2. 辞書登録（必要な場合）
-3. 音声+リップシンク生成
-4. Root.tsx自動更新
+1. 辞書登録（必要な場合）
+2. 音声+リップシンク生成（VOICEVOXは`npm run voice`が自動起動する）
+3. Root.tsx自動更新
 
 ## コマンド
 
 ```bash
-# VOICEVOX起動
-docker compose up -d voicevox
-
-# 特定のYAMLを処理
-./scripts/generate-from-scenes.sh scenes/demo.yaml
+# 特定のYAMLを処理（VOICEVOXは自動起動する）
+npm run voice -- scenes/demo.yaml
 
 # 全YAMLを一括処理
-./scripts/generate-from-scenes.sh
+npm run voice
 
 # 辞書登録
 ./scripts/voicevox-dict.sh add Remotion リモーション
@@ -62,6 +58,6 @@ src/generated/<video-name>.json  # 統合シーンデータ
 
 | 問題 | 原因 | 対処 |
 |------|------|------|
-| VOICEVOXタイムアウト | エンジン未起動 | `docker compose up -d voicevox` |
+| VOICEVOXタイムアウト | 自動起動に失敗 | `docker compose logs voicevox` で確認 |
 | 読み方エラー | 辞書未登録 | `voicevox-dict.sh add` |
 | Root.tsx更新失敗 | 正規表現不一致 | 手動でインポート追加 |
