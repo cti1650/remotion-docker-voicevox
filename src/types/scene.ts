@@ -45,6 +45,16 @@ export interface HighlightImage {
 // 箇条書きが無い場合はレイアウトに関わらず画像だけを大きく表示する
 export type SlideImageLayout = "split" | "stack";
 
+// 効果音（1回だけ鳴らす音）
+export interface SoundEffectConfig {
+  src: string;       // 音声ファイルパス (public/からの相対パス)
+  volume?: number;   // 音量 0〜1 (デフォルト: 0.35)
+  delay?: number;    // 表示から遅らせる秒数 (デフォルト: 0)
+}
+
+// 文字列だけ書けばsrcのみ、nullを書くと鳴らさない
+export type SoundEffectInput = SoundEffectConfig | string | null;
+
 // テロップ（字幕）の見た目
 // 実体は src/components/subtitle/ の各バリアント
 export type SubtitleVariant =
@@ -71,6 +81,7 @@ export interface SlideConfig {
   note?: string;         // 下部の補足テキスト
   accent?: string;       // アクセントカラー (デフォルト: #6c5ce7)
   variant?: SlideVariant;  // 見た目 (デフォルト: card)
+  se?: SoundEffectInput;   // スライド登場時の効果音
 }
 
 // 1シーンの定義
@@ -82,6 +93,7 @@ export interface SceneConfig {
   slide?: SlideConfig | null;      // スライド (省略時は直前のスライドを継続、nullで非表示)
   highlight?: number;              // 強調する箇条書きの番号 (1始まり)
   subtitle?: SubtitleVariant;      // テロップの見た目 (省略時は動画全体の設定)
+  se?: SoundEffectInput;           // テロップ表示時の効果音 (nullで鳴らさない)
   duration?: number;               // 表示時間の上書き (秒、通常は音声長+余白)
   pause?: number;                  // セリフ後の間 (秒、デフォルト: 0.5)
 }
@@ -102,6 +114,7 @@ export interface OpeningConfig {
   background?: BackgroundConfig | string;
   emotion?: EmotionType;     // キャラクターの表情
   character?: boolean;       // キャラクターを出すか (デフォルト: true)
+  se?: SoundEffectInput;     // 冒頭で鳴らす効果音
   text?: string;             // セリフ。書くと音声を生成し、尺は音声の長さになる
   duration?: number;         // textが無いときの尺 (秒、デフォルト: 3)
   pause?: number;            // セリフ後の間 (秒)
@@ -149,6 +162,7 @@ export interface VideoConfigInput {
   defaultSubtitle?: SubtitleVariant;   // テロップの見た目 (デフォルト: boxed)
   defaultSlideVariant?: SlideVariant;  // スライドの見た目 (デフォルト: card)
   bgm?: BgmConfig | string;        // BGM (文字列の場合はsrcのみ)
+  defaultSe?: SoundEffectInput;    // 全シーンのテロップ表示で鳴らす効果音
   opening?: OpeningConfig;         // 本編前のタイトル演出
   thumbnail?: ThumbnailConfig;     // サムネイル (npm run thumbnail で静止画出力)
   scenes: SceneConfig[];
@@ -166,6 +180,7 @@ export interface VideoConfig {
   defaultSubtitle?: SubtitleVariant;
   defaultSlideVariant?: SlideVariant;
   bgm?: BgmConfig | string;
+  defaultSe?: SoundEffectInput;
   opening?: GeneratedOpening;
   thumbnail?: ThumbnailConfig;
 }

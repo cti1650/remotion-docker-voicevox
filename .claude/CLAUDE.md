@@ -32,6 +32,7 @@ src/components/thumbnail/  # サムネイルのバリアント（静止画）
 src/types/scene.ts         # シーン型定義・表情プリセット
 public/parts/zundamon_en/  # パーツ画像（英語名）
 public/audio/bgm/          # BGM（手で配置・git管理する）
+public/audio/se/           # 効果音（CC0素材を同梱。local/は再配布NG用）
 public/audio/voice/        # 生成された音声(.wav)+リップシンク(.json) ※git管理外
 scripts/                   # ユーティリティ
 ```
@@ -58,6 +59,9 @@ dict:                 # オプション（この動画だけの読み。生成�
 bgm:                  # オプション（動画全体にループ再生）
   src: "audio/bgm/carefree-kevin-macleod.mp3"
   volume: 0.10
+defaultSe:            # オプション（テロップ表示に合わせて鳴らす効果音）
+  src: "audio/se/pop.ogg"
+  volume: 0.22
 opening:              # オプション（本編前のタイトル演出）
   variant: center     # center/band/minimal
   title: "タイトル"
@@ -74,11 +78,13 @@ scenes:
     emotion: happy      # normal/happy/sad/angry/surprised/thinking/smug/tired
     background: purple  # gradient/purple/blue/green/orange/pink/dark/white
     subtitle: bar       # このシーンだけテロップを変える
+    se: "audio/se/chime.ogg"  # このシーンだけ効果音を変える（nullで無音）
     image:              # オプション
       src: "images/sample.png"
       position: "top-right"
     slide:              # オプション（スライド解説形式）
       variant: card     # card/fullbleed/title
+      se: "audio/se/slide-in.ogg"  # スライド登場時だけ鳴る
       title: "タイトル"
       bullets: ["項目1", "項目2"]
       image: "images/flow.png"  # オプション

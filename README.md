@@ -116,6 +116,56 @@ bgm:
 
 動作するサンプルは `scenes/slide-demo.yaml` を参照。
 
+#### 効果音を鳴らす
+
+テロップやスライドの表示に合わせて効果音を鳴らせる。
+
+```yaml
+# 動画全体の既定（全シーンのテロップ表示で鳴る）
+defaultSe:
+  src: "audio/se/pop.ogg"
+  volume: 0.22        # デフォルト 0.35
+  # delay: 0.1        # 表示から遅らせる秒数
+
+opening:
+  se: "audio/se/transition.ogg"   # 冒頭で鳴らす
+
+scenes:
+  - text: "ここは強調したいのだ"
+    se: "audio/se/chime.ogg"      # このシーンだけ差し替え
+    slide:
+      se: "audio/se/slide-in.ogg" # スライドが出るときに鳴らす
+
+  - text: "ここは静かにしたいのだ"
+    se: null                      # 鳴らさない
+```
+
+- 文字列だけ書けば `src` の指定になる
+- `slide.se` はスライドが**登場したときだけ**鳴る（継続表示のシーンでは鳴らない）
+- 音量はセリフを邪魔しない0.2〜0.35程度を推奨
+
+同梱している効果音（すべてCC0）:
+
+| ファイル | 想定用途 |
+|----------|----------|
+| `pop.ogg` | テロップの表示 |
+| `select.ogg` | 箇条書きの強調 |
+| `slide-in.ogg` | スライドの登場 |
+| `chime.ogg` | 注目させたいところ |
+| `confirm.ogg` | 決定・まとめ |
+| `transition.ogg` | 章の切り替え |
+
+素材はBGMと同じく再配布の可否で置き場所を分ける。
+
+| 置き場所 | 用途 | git管理 |
+|----------|------|---------|
+| `public/audio/se/` | 再配布OK（CC0など） | する |
+| `public/audio/se/local/` | **再配布NG**（効果音ラボ・魔王魂など） | しない |
+
+日本語のフリー効果音サイトは「商用利用OK」でも素材ファイルの再配布は禁止していることが
+多いので、その場合は `local/` に置く。同梱音源のライセンスは
+`public/audio/se/CREDITS.md` を参照。
+
 #### 冒頭にタイトル演出を入れる
 
 トップレベルに `opening` を書くと、本編の前にタイトル演出が入る。
@@ -263,10 +313,11 @@ npm run video -- scenes/my-video.yaml --skip-generate   # 音声を使い回し�
 | `slide` | スライド（`null`で非表示に戻す） | `{ title: "見出し", bullets: [...] }` |
 | `highlight` | 強調する箇条書き番号（1始まり） | `1` |
 | `subtitle` | テロップの見た目 | `boxed`, `bar`, `outline`, `card`, `none` |
+| `se` | テロップ表示時の効果音（`null`で無音） | `"audio/se/chime.ogg"` |
 | `pause` | セリフ後の間（秒） | `0.5` |
 
-動画全体の設定は `opening`（冒頭演出）、`thumbnail`（サムネイル）、`bgm`、`dict`、
-`defaultSubtitle`、`defaultSlideVariant` をトップレベルに書く。
+動画全体の設定は `opening`（冒頭演出）、`thumbnail`（サムネイル）、`bgm`、`defaultSe`、
+`dict`、`defaultSubtitle`、`defaultSlideVariant` をトップレベルに書く。
 
 ## ディレクトリ構成
 
@@ -296,6 +347,7 @@ npm run video -- scenes/my-video.yaml --skip-generate   # 音声を使い回し�
 │   ├── parts/zundamon_en/     # キャラクターパーツ
 │   └── audio/
 │       ├── bgm/               # BGM（手で置く・git管理する）
+│       ├── se/                # 効果音（同上。CC0素材を同梱）
 │       └── voice/             # 生成された音声+リップシンク（git管理外）
 └── output/                    # 出力動画
 ```

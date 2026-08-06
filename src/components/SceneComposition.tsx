@@ -14,6 +14,7 @@ import { HighlightImage } from "./HighlightImage";
 import { SlideRenderer } from "./slide";
 import { SubtitleRenderer } from "./subtitle";
 import { OpeningRenderer } from "./opening";
+import { SoundEffect } from "./SoundEffect";
 import { useLipSync, LipSyncData, DialogueLipSync } from "../hooks/useLipSync";
 import { resolveMediaSrc } from "../utils/media";
 import {
@@ -220,14 +221,26 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
 
       {/* オープニング */}
       {opening && openingDuration > 0 && (
-        <Sequence from={0} durationInFrames={Math.ceil(openingDuration * fps)}>
-          <OpeningRenderer
-            opening={opening}
-            durationInFrames={Math.ceil(openingDuration * fps)}
-          />
-          {opening.audioFile && <Audio src={staticFile(opening.audioFile)} />}
-        </Sequence>
+        <>
+          <Sequence from={0} durationInFrames={Math.ceil(openingDuration * fps)}>
+            <OpeningRenderer
+              opening={opening}
+              durationInFrames={Math.ceil(openingDuration * fps)}
+            />
+            {opening.audioFile && <Audio src={staticFile(opening.audioFile)} />}
+          </Sequence>
+          <SoundEffect config={opening.se} startFrame={0} />
+        </>
       )}
+
+      {/* スライド登場時の効果音（同じスライドを続けるシーンでは鳴らさない） */}
+      {slideGroups.map((group) => (
+        <SoundEffect
+          key={`slide-se-${group.index}`}
+          config={group.slide.se}
+          startFrame={Math.floor(group.startTime * fps)}
+        />
+      ))}
 
       {/* シーンごとの字幕・音声・強調画像 */}
       {scenes.map((scene, i) => {
@@ -235,18 +248,24 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
         const duration = scene.lipsyncData.duration + (scene.pause ?? 0.5);
         const durationInFrames = Math.ceil(duration * fps);
 
+        // シーンに書かれていなければ動画全体の設定を使う（nullなら鳴らさない）
+        const sceneSe = scene.se !== undefined ? scene.se : config.defaultSe;
+
         return (
-          <Sequence key={i} from={startFrame} durationInFrames={durationInFrames}>
-            <SubtitleRenderer
-              text={scene.text}
-              withSlide={Boolean(scene.slide)}
-              variant={scene.subtitle}
-              fallbackVariant={config.defaultSubtitle}
-              accent={scene.slide?.accent}
-            />
-            <Audio src={staticFile(scene.audioFile)} />
-            {scene.image && <HighlightImage config={scene.image} />}
-          </Sequence>
+          <React.Fragment key={i}>
+            <SoundEffect config={sceneSe} startFrame={startFrame} />
+            <Sequence from={startFrame} durationInFrames={durationInFrames}>
+              <SubtitleRenderer
+                text={scene.text}
+                withSlide={Boolean(scene.slide)}
+                variant={scene.subtitle}
+                fallbackVariant={config.defaultSubtitle}
+                accent={scene.slide?.accent}
+              />
+              <Audio src={staticFile(scene.audioFile)} />
+              {scene.image && <HighlightImage config={scene.image} />}
+            </Sequence>
+          </React.Fragment>
         );
       })}
 

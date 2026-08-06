@@ -7,6 +7,7 @@
 #   slide     card / fullbleed / title の3種
 #   subtitle  boxed / bar / outline / card / none の5種
 #   image     シーンへの強調画像
+#   se        効果音（テロップ・スライドの表示に合わせて鳴る）
 #
 # 生成: npm run video -- scenes/demo.yaml
 # サムネ: npm run thumbnail -- scenes/demo.yaml
@@ -20,6 +21,11 @@ defaultBackground: "gradient"
 defaultPause: 0.4
 defaultSubtitle: boxed       # 何も書かないシーンはこれになる
 defaultSlideVariant: card
+
+# テロップ表示に合わせて鳴らす効果音（シーンごとに上書き・null で無音にできる）
+defaultSe:
+  src: "audio/se/pop.ogg"
+  volume: 0.22
 
 # 読み方の指定（英字は放置すると1文字ずつ読まれる）
 dict:
@@ -49,6 +55,7 @@ opening:
   accent: "#00d2a0"
   background: "dark"
   emotion: happy
+  se: "audio/se/transition.ogg"
   text: "ずんだもんなのだ！今日はRemotionで動画を作る方法を紹介するのだ！"
 
 # サムネイル（動画には出ない）
@@ -76,6 +83,7 @@ scenes:
     emotion: normal
     background: purple
     slide:
+      se: "audio/se/slide-in.ogg"
       title: "このデモでできること"
       accent: "#6c5ce7"
       bullets:
@@ -86,16 +94,19 @@ scenes:
       note: "全部YAMLに書くだけ"
 
   - text: "セリフを書けば、音声も口パクも勝手に作られるのだ"
+    se: "audio/se/select.ogg"
     emotion: happy
     background: purple
     highlight: 1
 
   - text: "こうやってスライドを出しながら喋れるのだ"
+    se: "audio/se/select.ogg"
     emotion: normal
     background: purple
     highlight: 2
 
   - text: "今しゃべっている項目には色が付くのだ"
+    se: "audio/se/select.ogg"
     emotion: smug
     background: purple
     highlight: 3
@@ -105,6 +116,7 @@ scenes:
     emotion: normal
     background: blue
     slide:
+      se: "audio/se/slide-in.ogg"
       title: "作り方は3ステップ"
       accent: "#0984e3"
       bullets:
@@ -116,11 +128,13 @@ scenes:
       caption: "図: 動画ができるまで"
 
   - text: "最初にYAMLへセリフを書くのだ"
+    se: "audio/se/select.ogg"
     emotion: normal
     background: blue
     highlight: 1
 
   - text: "あとはコマンドをひとつ叩くだけで、動画までできあがるのだ！"
+    se: "audio/se/chime.ogg"
     emotion: surprised
     background: blue
     highlight: 3
@@ -131,6 +145,7 @@ scenes:
     background: green
     slide:
       variant: title
+      se: "audio/se/transition.ogg"
       title: "テロップを選ぶ"
       note: "boxed / bar / outline / card / none"
       accent: "#00b894"
@@ -168,6 +183,7 @@ scenes:
     emotion: normal
     background: orange
     subtitle: none
+    se: null          # テロップが出ないので効果音も鳴らさない
     pause: 0.8
 
   # ---- スライド: fullbleed ----
@@ -177,6 +193,7 @@ scenes:
     subtitle: boxed
     slide:
       variant: fullbleed
+      se: "audio/se/slide-in.ogg"
       title: "枠なしでも見せられる"
       accent: "#00d2a0"
       bullets:
@@ -186,6 +203,7 @@ scenes:
       note: "slide.variant: fullbleed"
 
   - text: "背景が暗いときは、文字が自動で明るくなるのだ"
+    se: "audio/se/select.ogg"
     emotion: smug
     background: dark
     highlight: 2
@@ -196,6 +214,7 @@ scenes:
     background: pink
     slide:
       variant: card
+      se: "audio/se/slide-in.ogg"
       title: "音まわりも自動"
       accent: "#e84393"
       bullets:
@@ -204,21 +223,25 @@ scenes:
         - "クレジットは動画の最後に出る"
 
   - text: "DockerでVOICEVOXが動くから、環境構築もすぐなのだ"
+    se: "audio/se/select.ogg"
     emotion: normal
     background: pink
     highlight: 2
 
   - text: "サムネイルも同じYAMLから作れるのだ！"
+    se: "audio/se/chime.ogg"
     emotion: surprised
     background: pink
     slide:
       variant: title
+      se: "audio/se/transition.ogg"
       title: "サムネイルも1コマンド"
       note: "npm run thumbnail -- scenes/demo.yaml"
       accent: "#e84393"
 
   # ---- まとめ ----
   - text: "というわけで、YAMLを書くだけで動画が作れるのだ！"
+    se: "audio/se/confirm.ogg"
     emotion: happy
     background: gradient
     slide: null

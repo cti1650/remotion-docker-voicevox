@@ -24,10 +24,12 @@ download-linux-x64
 # BGMはpublic/audio/bgm/に置くので巻き込まれない
 public/audio/voice/
 
-# 再配布が禁止されているBGM素材の置き場（DOVA-SYNDROME・魔王魂など）
+# 再配布が禁止されているBGM・効果音素材の置き場（DOVA-SYNDROME・効果音ラボなど）
 # ここに置けば誤ってコミットすることはない
 public/audio/bgm/local/*
 !public/audio/bgm/local/README.md
+public/audio/se/local/*
+!public/audio/se/local/README.md
 
 # Environment
 .env

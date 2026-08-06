@@ -113,9 +113,50 @@ bgm:
 - `generate-from-scenes.sh`がファイルの実在と置き場所をチェックする
   （見つからなければエラー終了、コミット対象の場所なら注意を表示）
 
+## 効果音
+
+テロップ・スライドの表示に合わせて1回だけ鳴らす。
+
+```yaml
+defaultSe:                        # 全シーンのテロップ表示で鳴る
+  src: "audio/se/pop.ogg"
+  volume: 0.22                    # 既定 0.35
+  # delay: 0.1                    # 表示から遅らせる秒数
+
+opening:
+  se: "audio/se/transition.ogg"
+
+scenes:
+  - text: "強調したいのだ"
+    se: "audio/se/chime.ogg"      # シーン単位で上書き
+    slide:
+      se: "audio/se/slide-in.ogg" # スライド登場時だけ鳴る
+
+  - text: "静かにしたいのだ"
+    se: null                      # 鳴らさない
+```
+
+- 文字列だけ書けば`src`の指定になる
+- `slide.se`は**スライドが切り替わったときだけ**鳴る（継続表示のシーンでは鳴らない）
+- 実装は`src/components/SoundEffect.tsx`。`Sequence`で開始フレームに合わせている
+
+### 効果音の置き場所（BGMと同じ）
+
+| 置き場所 | 用途 | git管理 |
+|----------|------|---------|
+| `public/audio/se/` | 再配布OK（CC0など） | する |
+| `public/audio/se/local/` | **再配布NG**（効果音ラボ・魔王魂など） | しない |
+
+同梱しているのはKenney Interface Sounds（CC0）から採った6種類。
+`pop` / `select` / `slide-in` / `chime` / `confirm` / `transition`。
+ライセンスは`public/audio/se/CREDITS.md`を参照。
+
+日本語のフリー効果音サイトは商用利用OKでも**素材の再配布は禁止**が多いので`local/`へ。
+`generate-from-scenes.sh`がファイルの実在と置き場所をチェックする。
+
 ## メディアパスの解決
 
-`bgm.src` / `slide.image` / `image.src`は`src/utils/media.ts`の
+`bgm.src` / `se.src` / `slide.image` / `image.src`は`src/utils/media.ts`の
 `resolveMediaSrc`で解決される。
 
 | 書き方 | 解決先 |

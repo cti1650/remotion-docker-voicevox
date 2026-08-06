@@ -10,6 +10,10 @@
     "defaultPause": 0.4,
     "defaultSubtitle": "boxed",
     "defaultSlideVariant": "card",
+    "defaultSe": {
+      "src": "audio/se/pop.ogg",
+      "volume": 0.22
+    },
     "bgm": {
       "src": "audio/bgm/carefree-kevin-macleod.mp3",
       "volume": 0.1,
@@ -25,6 +29,7 @@
       "accent": "#00d2a0",
       "background": "dark",
       "emotion": "happy",
+      "se": "audio/se/transition.ogg",
       "text": "ずんだもんなのだ！今日はRemotionで動画を作る方法を紹介するのだ！",
       "audioFile": "audio/voice/demo/opening.wav",
       "lipsyncData": {
@@ -1158,6 +1163,7 @@
       "startTime": 15.966,
       "pause": 0.4,
       "slide": {
+        "se": "audio/se/slide-in.ogg",
         "title": "このデモでできること",
         "accent": "#6c5ce7",
         "bullets": [
@@ -1503,6 +1509,7 @@
       "startTime": 19.38,
       "pause": 0.4,
       "slide": {
+        "se": "audio/se/slide-in.ogg",
         "title": "このデモでできること",
         "accent": "#6c5ce7",
         "bullets": [
@@ -1515,7 +1522,8 @@
       },
       "slideIndex": 1,
       "background": "purple",
-      "highlight": 1
+      "highlight": 1,
+      "se": "audio/se/select.ogg"
     },
     {
       "text": "こうやってスライドを出しながら喋れるのだ",
@@ -1765,6 +1773,7 @@
       "startTime": 24.669,
       "pause": 0.4,
       "slide": {
+        "se": "audio/se/slide-in.ogg",
         "title": "このデモでできること",
         "accent": "#6c5ce7",
         "bullets": [
@@ -1777,7 +1786,8 @@
       },
       "slideIndex": 1,
       "background": "purple",
-      "highlight": 2
+      "highlight": 2,
+      "se": "audio/se/select.ogg"
     },
     {
       "text": "今しゃべっている項目には色が付くのだ",
@@ -2021,6 +2031,7 @@
       "startTime": 28.419,
       "pause": 0.4,
       "slide": {
+        "se": "audio/se/slide-in.ogg",
         "title": "このデモでできること",
         "accent": "#6c5ce7",
         "bullets": [
@@ -2033,7 +2044,8 @@
       },
       "slideIndex": 1,
       "background": "purple",
-      "highlight": 3
+      "highlight": 3,
+      "se": "audio/se/select.ogg"
     },
     {
       "text": "作り方はたったの3ステップなのだ",
@@ -2265,6 +2277,7 @@
       "startTime": 32.214,
       "pause": 0.4,
       "slide": {
+        "se": "audio/se/slide-in.ogg",
         "title": "作り方は3ステップ",
         "accent": "#0984e3",
         "bullets": [
@@ -2473,6 +2486,7 @@
       "startTime": 35.783,
       "pause": 0.4,
       "slide": {
+        "se": "audio/se/slide-in.ogg",
         "title": "作り方は3ステップ",
         "accent": "#0984e3",
         "bullets": [
@@ -2486,7 +2500,8 @@
       },
       "slideIndex": 2,
       "background": "blue",
-      "highlight": 1
+      "highlight": 1,
+      "se": "audio/se/select.ogg"
     },
     {
       "text": "あとはコマンドをひとつ叩くだけで、動画までできあがるのだ！",
@@ -2832,6 +2847,7 @@
       "startTime": 39.089,
       "pause": 0.4,
       "slide": {
+        "se": "audio/se/slide-in.ogg",
         "title": "作り方は3ステップ",
         "accent": "#0984e3",
         "bullets": [
@@ -2845,7 +2861,8 @@
       },
       "slideIndex": 2,
       "background": "blue",
-      "highlight": 3
+      "highlight": 3,
+      "se": "audio/se/chime.ogg"
     },
     {
       "text": "テロップの見た目も選べるのだ",
@@ -3036,6 +3053,7 @@
       "pause": 0.4,
       "slide": {
         "variant": "title",
+        "se": "audio/se/transition.ogg",
         "title": "テロップを選ぶ",
         "note": "boxed / bar / outline / card / none",
         "accent": "#00b894"
@@ -3250,6 +3268,7 @@
       "pause": 0.4,
       "slide": {
         "variant": "title",
+        "se": "audio/se/transition.ogg",
         "title": "テロップを選ぶ",
         "note": "boxed / bar / outline / card / none",
         "accent": "#00b894"
@@ -3555,6 +3574,7 @@
       "pause": 0.4,
       "slide": {
         "variant": "title",
+        "se": "audio/se/transition.ogg",
         "title": "テロップを選ぶ",
         "note": "boxed / bar / outline / card / none",
         "accent": "#00b894"
@@ -3842,6 +3862,7 @@
       "pause": 0.4,
       "slide": {
         "variant": "title",
+        "se": "audio/se/transition.ogg",
         "title": "テロップを選ぶ",
         "note": "boxed / bar / outline / card / none",
         "accent": "#00b894"
@@ -4177,6 +4198,7 @@
       "pause": 0.4,
       "slide": {
         "variant": "title",
+        "se": "audio/se/transition.ogg",
         "title": "テロップを選ぶ",
         "note": "boxed / bar / outline / card / none",
         "accent": "#00b894"
@@ -4680,7 +4702,8 @@
       "startTime": 72.847,
       "pause": 0.8,
       "background": "orange",
-      "subtitle": "none"
+      "subtitle": "none",
+      "se": null
     },
     {
       "text": "スライドの見た目も切り替えられるのだ",
@@ -4907,6 +4930,7 @@
       "pause": 0.4,
       "slide": {
         "variant": "fullbleed",
+        "se": "audio/se/slide-in.ogg",
         "title": "枠なしでも見せられる",
         "accent": "#00d2a0",
         "bullets": [
@@ -5229,6 +5253,7 @@
       "pause": 0.4,
       "slide": {
         "variant": "fullbleed",
+        "se": "audio/se/slide-in.ogg",
         "title": "枠なしでも見せられる",
         "accent": "#00d2a0",
         "bullets": [
@@ -5240,7 +5265,8 @@
       },
       "slideIndex": 4,
       "background": "dark",
-      "highlight": 2
+      "highlight": 2,
+      "se": "audio/se/select.ogg"
     },
     {
       "text": "BGMもYAMLに1行書くだけで流れているのだ",
@@ -5563,6 +5589,7 @@
       "pause": 0.4,
       "slide": {
         "variant": "card",
+        "se": "audio/se/slide-in.ogg",
         "title": "音まわりも自動",
         "accent": "#e84393",
         "bullets": [
@@ -5937,6 +5964,7 @@
       "pause": 0.4,
       "slide": {
         "variant": "card",
+        "se": "audio/se/slide-in.ogg",
         "title": "音まわりも自動",
         "accent": "#e84393",
         "bullets": [
@@ -5947,7 +5975,8 @@
       },
       "slideIndex": 5,
       "background": "pink",
-      "highlight": 2
+      "highlight": 2,
+      "se": "audio/se/select.ogg"
     },
     {
       "text": "サムネイルも同じYAMLから作れるのだ！",
@@ -6198,12 +6227,14 @@
       "pause": 0.4,
       "slide": {
         "variant": "title",
+        "se": "audio/se/transition.ogg",
         "title": "サムネイルも1コマンド",
         "note": "npm run thumbnail -- scenes/demo.yaml",
         "accent": "#e84393"
       },
       "slideIndex": 6,
-      "background": "pink"
+      "background": "pink",
+      "se": "audio/se/chime.ogg"
     },
     {
       "text": "というわけで、YAMLを書くだけで動画が作れるのだ！",
@@ -6506,7 +6537,8 @@
       },
       "startTime": 100.515,
       "pause": 0.4,
-      "background": "gradient"
+      "background": "gradient",
+      "se": "audio/se/confirm.ogg"
     },
     {
       "text": "ぜひ試してみてほしいのだ！",

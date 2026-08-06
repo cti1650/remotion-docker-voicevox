@@ -161,6 +161,46 @@ if bgm:
             print("  ※ここはコミット対象です。再配布が禁止されている素材は")
             print("    public/audio/bgm/local/ に置いてください")
 
+
+def collect_se_sources():
+    """YAML中の効果音の指定を全部集める（重複は除く）"""
+    sources = []
+
+    def add(value):
+        if not value:
+            return
+        src = value if isinstance(value, str) else value.get('src', '')
+        if src and src not in sources:
+            sources.append(src)
+
+    add(config.get('defaultSe'))
+    add((config.get('opening') or {}).get('se'))
+    for scene in scenes:
+        add(scene.get('se'))
+        add((scene.get('slide') or {}).get('se'))
+    return sources
+
+
+# 効果音もBGMと同じく、再配布できない素材をコミットしないようチェックする
+se_sources = collect_se_sources()
+if se_sources:
+    committed = [s for s in se_sources
+                 if not s.startswith(('http://', 'https://')) and 'audio/se/local/' not in s]
+    for se_src in se_sources:
+        if se_src.startswith(('http://', 'https://')):
+            continue
+        se_path = os.path.join('public', se_src)
+        if not os.path.isfile(se_path):
+            print(f"ERROR: 効果音ファイルが見つかりません: {se_path}")
+            if 'audio/se/local/' in se_src:
+                print("  local/はgit管理外です。配布元からダウンロードして配置してください")
+            sys.exit(1)
+    print(f"  効果音: {len(se_sources)}種類")
+    if committed:
+        print("  ※ここはコミット対象です。再配布が禁止されている素材は")
+        print("    public/audio/se/local/ に置いてください")
+
+
 def generate_voice(text, output_base):
     """1つのセリフから音声とリップシンクを作る"""
     result = subprocess.run(
@@ -235,7 +275,7 @@ for i, scene in enumerate(scenes):
         generated_scene['slideIndex'] = slide_index
 
     # Optional fields
-    for key in ('background', 'image', 'highlight', 'subtitle'):
+    for key in ('background', 'image', 'highlight', 'subtitle', 'se'):
         if key in scene:
             generated_scene[key] = scene[key]
 
@@ -254,7 +294,7 @@ output = {
         'defaultBackground': config.get('defaultBackground', 'gradient'),
         'defaultPause': default_pause,
         # テロップ・スライドの見た目（未指定ならコンポーネント側のデフォルト）
-        **{k: config[k] for k in ('defaultSubtitle', 'defaultSlideVariant') if k in config},
+        **{k: config[k] for k in ('defaultSubtitle', 'defaultSlideVariant', 'defaultSe') if k in config},
         **({'bgm': config['bgm']} if 'bgm' in config else {}),
         **({'opening': generated_opening} if generated_opening else {}),
         **({'thumbnail': config['thumbnail']} if 'thumbnail' in config else {}),

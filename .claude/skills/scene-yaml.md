@@ -50,6 +50,7 @@ dict:
 | `background` | | 背景 | `purple` |
 | `image` | | 強調画像 | `{ src: "img.png" }` |
 | `subtitle` | | テロップの見た目 | `bar` |
+| `se` | | 効果音（`null`で無音） | `"audio/se/chime.ogg"` |
 | `pause` | | セリフ後の間（秒） | `0.5` |
 
 ## 見た目のバリアント
@@ -58,6 +59,23 @@ dict:
 - `slide.variant`: `card`（既定） / `fullbleed` / `title`
 - `opening.variant`: `center`（既定） / `band` / `minimal`
 - `thumbnail.variant`: `bold`（既定） / `split` / `simple`
+
+## 効果音
+
+```yaml
+defaultSe:                        # 全シーンのテロップ表示で鳴る
+  src: "audio/se/pop.ogg"
+  volume: 0.22
+
+scenes:
+  - text: "セリフ"
+    se: "audio/se/chime.ogg"      # シーン単位で上書き（nullで無音）
+    slide:
+      se: "audio/se/slide-in.ogg" # スライド登場時だけ鳴る
+```
+
+同梱: `pop` / `select` / `slide-in` / `chime` / `confirm` / `transition`（すべてCC0）。
+再配布NGの素材は`public/audio/se/local/`に置く。
 
 ## オープニングとサムネイル
 
