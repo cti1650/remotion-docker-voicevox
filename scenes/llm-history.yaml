@@ -1,0 +1,327 @@
+# 「LLMの歴史を振り返ってみる」の解説動画
+# 元記事: https://qiita.com/shikikensei/items/5b23230d5876754b95b4 (@shikikensei)
+#
+# 生成: npm run video -- scenes/llm-history.yaml
+
+title: "LLMの歴史を振り返ってみる"
+speaker_id: 3
+fps: 30
+width: 1920
+height: 1080
+defaultBackground: "gradient"
+defaultPause: 0.4
+
+# この動画でしか使わない語の読み（全動画で使う語はconfig/voicevox-dict.jsonへ）
+# textはそのまま字幕になるので、読みは辞書で直して表記は元のまま書く
+dict:
+  LLM: エルエルエム
+  ELIZA: イライザ
+  Transformer: トランスフォーマー
+  BERT: バート
+  GPT: ジーピーティー
+  GPT-2: ジーピーティーツー
+  GPT-3: ジーピーティースリー
+  GPT-4: ジーピーティーフォー
+  ChatGPT: チャットジーピーティー
+  Claude: クロード
+  Gemini: ジェミニ
+  Word2Vec: ワードトゥーベック
+  RNN: アールエヌエヌ
+  LSTM: エルエスティーエム
+  Seq2Seq: シークトゥーシーク
+  Attention: アテンション
+  OpenAI: オープンエーアイ
+  Google: グーグル
+  # 日本語でも誤読しやすい語
+  自己教師あり学習: ジコキョウシアリガクシュウ
+  事前学習: ジゼンガクシュウ
+
+bgm:
+  src: "audio/bgm/carefree-kevin-macleod.mp3"
+  volume: 0.10
+  fadeIn: 1.5
+  fadeOut: 2.5
+  credit: "BGM: Carefree - Kevin MacLeod (incompetech.com) / CC BY 4.0"
+
+defaultSe:
+  src: "audio/se/pop.ogg"
+  volume: 0.22
+
+opening:
+  variant: center
+  title: "LLMの歴史を振り返ってみる"
+  text: "今日はLLM、大規模言語モデルの歴史を振り返っていくのだ！"
+
+thumbnail:
+  variant: bold
+  title: "LLMの歴史を振り返ってみる"
+
+scenes:
+  # ---- オープニング ----
+  - text: "こんにちは！ずんだもんなのだ！"
+    emotion: happy
+
+  - text: "今日はChatGPTでおなじみの、LLMの歴史をたどっていくのだ"
+    emotion: normal
+
+  - text: "Qiitaで公開されている「LLMの歴史を振り返ってみる」という記事を、動画にまとめてみたのだ"
+    emotion: normal
+    pause: 0.6
+
+  # ---- スライド0: 全体像 ----
+  - text: "LLMがどうやって今の形になったのか、大きな流れを見ていくのだ"
+    emotion: normal
+    background: dark
+    slide:
+      variant: title
+      title: "LLM 進化のあゆみ"
+      accent: "#6c5ce7"
+      note: "ルールベースから大規模言語モデルまで"
+
+  # ---- スライド1: ELIZA ----
+  - text: "物語のはじまりは、なんと1966年までさかのぼるのだ"
+    emotion: surprised
+    background: purple
+    slide:
+      variant: card
+      title: "① 対話AIの原点 ELIZA"
+      accent: "#6c5ce7"
+      bullets:
+        - "1966年に作られた初期の対話プログラム"
+        - "決められたルールでパターンを判定して返す"
+        - "意味を理解しているわけではなかった"
+      note: "1966年 / ルールベース"
+
+  - text: "ELIZAは、決められたルールに沿って言葉を返すだけの、素朴なプログラムだったのだ"
+    emotion: normal
+    background: purple
+    highlight: 1
+
+  - text: "文章の意味を理解していたわけではなくて、パターンに反応していただけなのだ"
+    emotion: thinking
+    background: purple
+    highlight: 3
+
+  # ---- スライド2: 統計的手法 ----
+  - text: "その後、言葉を確率でとらえる、統計的な手法の時代がやってくるのだ"
+    emotion: normal
+    background: blue
+    slide:
+      variant: card
+      title: "② 統計で言葉を予測する"
+      accent: "#0984e3"
+      bullets:
+        - "直前の単語から次の単語を確率で予測する"
+        - "n-gramなどの統計モデルが使われた"
+        - "長い文脈を覚えておくのは苦手だった"
+      note: "統計モデルの時代"
+
+  - text: "直前の単語から、次に来る単語を確率で予測する、という考え方なのだ"
+    emotion: normal
+    background: blue
+    highlight: 1
+
+  - text: "でも、離れた場所にある言葉のつながりを覚えておくのは苦手だったのだ"
+    emotion: sad
+    background: blue
+    highlight: 3
+
+  # ---- スライド3: 深層学習の登場 ----
+  - text: "そこに登場したのが、深層学習、ディープラーニングなのだ"
+    emotion: happy
+    background: green
+    slide:
+      variant: card
+      title: "③ 深層学習で意味をつかむ"
+      accent: "#00b894"
+      bullets:
+        - "Word2Vecが単語を意味のベクトルに変換"
+        - "似た意味の単語が近くに並ぶようになった"
+        - "コンピュータが言葉の意味を扱えるように"
+      note: "2013年 Word2Vec"
+
+  - text: "2013年のWord2Vecは、単語を意味を持ったベクトルに変換したのだ"
+    emotion: normal
+    background: green
+    highlight: 1
+
+  - text: "これで、似た意味の言葉どうしが近くに集まるようになったのだ！"
+    emotion: surprised
+    background: green
+    highlight: 2
+
+  # ---- スライド4: RNN / LSTM ----
+  - text: "文章のような、順番のあるデータを扱う仕組みも進化していくのだ"
+    emotion: normal
+    background: green
+    slide:
+      variant: card
+      title: "④ 順番を扱うRNNとLSTM"
+      accent: "#00b894"
+      bullets:
+        - "RNNは前の情報を受け取りながら順に読む"
+        - "LSTMは長い文脈を覚えやすく改良した"
+        - "Seq2Seqで翻訳などの変換ができるように"
+      note: "RNN → LSTM → Seq2Seq"
+
+  - text: "RNNは、前の言葉の情報を受け取りながら、文章を順番に読んでいく仕組みなのだ"
+    emotion: normal
+    background: green
+    highlight: 1
+
+  - text: "それを改良したLSTMは、長い文脈も覚えやすくなったのだ"
+    emotion: normal
+    background: green
+    highlight: 2
+
+  - text: "この流れで、入力を別の文に変換するSeq2Seqが、翻訳などで活躍したのだ"
+    emotion: happy
+    background: green
+    highlight: 3
+
+  # ---- スライド5: Attention / Transformer ----
+  - text: "そして2017年、歴史が大きく動くのだ"
+    emotion: surprised
+    background: orange
+    slide:
+      variant: card
+      title: "⑤ 転換点 Transformer"
+      accent: "#e17055"
+      bullets:
+        - "Attentionで大事な単語に注目する"
+        - "2017年のTransformerが基盤技術になった"
+        - "並列で学習でき、学習時間が大きく短縮"
+      note: "2017年 / 現在のLLMの土台"
+
+  - text: "Attentionという仕組みで、文の中の大事な単語に注目できるようになったのだ"
+    emotion: normal
+    background: orange
+    highlight: 1
+
+  - text: "そのAttentionを土台にしたTransformerが、今のLLMすべての基盤になっているのだ"
+    emotion: smug
+    background: orange
+    highlight: 2
+
+  - text: "しかも並列で学習できるから、学習にかかる時間がぐっと短くなったのだ！"
+    emotion: happy
+    background: orange
+    highlight: 3
+
+  # ---- スライド6: 事前学習 / BERT ----
+  - text: "ここから、事前学習という考え方が広まっていくのだ"
+    emotion: normal
+    background: pink
+    slide:
+      variant: card
+      title: "⑥ 事前学習の確立 BERT"
+      accent: "#e84393"
+      bullets:
+        - "2018年にGoogleがBERTを発表"
+        - "大量の文章で汎用モデルを事前学習する"
+        - "個別タスクはファインチューニングで対応"
+      note: "2018年 / 事前学習＋ファインチューニング"
+
+  - text: "2018年のBERTは、まず大量の文章でモデルを事前学習しておくのだ"
+    emotion: normal
+    background: pink
+    highlight: 1
+
+  - text: "あとは目的に合わせて少し調整する、ファインチューニングで使い回せるようになったのだ"
+    emotion: happy
+    background: pink
+    highlight: 3
+
+  # ---- スライド7: GPTシリーズ ----
+  - text: "そしていよいよ、GPTシリーズの登場なのだ"
+    emotion: surprised
+    background: dark
+    slide:
+      variant: card
+      title: "⑦ 大規模化するGPT"
+      accent: "#6c5ce7"
+      bullets:
+        - "2019年 GPT-2 が生成の可能性を示す"
+        - "2020年 GPT-3 はパラメータ1750億"
+        - "モデルを大きくするほど賢くなっていった"
+      note: "OpenAI / 2019〜2020年"
+
+  - text: "2019年のGPT-2は、文章を自然に生成できる可能性を見せつけたのだ"
+    emotion: normal
+    background: dark
+    highlight: 1
+
+  - text: "2020年のGPT-3は、なんとパラメータが1750億もある巨大なモデルなのだ！"
+    emotion: surprised
+    background: dark
+    highlight: 2
+
+  - text: "モデルを大きくするほど賢くなる、とわかって、LLMの時代が本格化したのだ"
+    emotion: smug
+    background: dark
+    highlight: 3
+
+  # ---- スライド8: ChatGPTと現在 ----
+  - text: "そして2022年、みんなが知っているあのAIが登場するのだ"
+    emotion: happy
+    background: purple
+    slide:
+      variant: card
+      title: "⑧ ChatGPTと現在"
+      accent: "#6c5ce7"
+      bullets:
+        - "2022年 ChatGPTで対話AIが一気に普及"
+        - "2023年〜 GPT-4・Claude・Geminiが登場"
+        - "今もLLMは進化を続けている"
+      note: "2022年〜"
+
+  - text: "2022年のChatGPTで、実用的な対話AIが一気に広まったのだ"
+    emotion: happy
+    background: purple
+    highlight: 1
+
+  - text: "その後もGPT-4やClaude、Geminiなど、いろんなLLMが登場しているのだ"
+    emotion: normal
+    background: purple
+    highlight: 2
+
+  # ---- スライド9: なぜここまで発展したのか ----
+  - text: "どうしてここまで急に発展したのか、ポイントをまとめておくのだ"
+    emotion: thinking
+    background: blue
+    slide:
+      variant: card
+      title: "⑨ 発展を支えた2つの鍵"
+      accent: "#0984e3"
+      bullets:
+        - "Transformerで学習時間が大きく短縮された"
+        - "自己教師あり学習でWebの大量テキストを活用"
+        - "精度を上げ続けられる仕組みができた"
+
+  - text: "Transformerのおかげで、大量のデータでも短い時間で学習できるようになったのだ"
+    emotion: normal
+    background: blue
+    highlight: 1
+
+  - text: "さらに自己教師あり学習で、Web上の大量のテキストをそのまま学習に使えるのだ"
+    emotion: happy
+    background: blue
+    highlight: 2
+
+  - text: "だから、精度を半永久的に上げ続けられる、というわけなのだ！"
+    emotion: smug
+    background: blue
+    highlight: 3
+
+  # ---- まとめ ----
+  - text: "というわけで、LLMの歴史をざっと振り返ってみたのだ！"
+    emotion: happy
+    background: gradient
+    slide: null
+
+  - text: "ルールベースのELIZAから、Transformerを土台にした今のLLMまで、長い積み重ねがあったのだ"
+    emotion: normal
+
+  - text: "くわしくは、元になったQiitaの記事もぜひ読んでみてほしいのだ！"
+    emotion: happy
+    pause: 1.0
