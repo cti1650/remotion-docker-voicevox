@@ -1,0 +1,194 @@
+# Reactの解説動画（サンプル）
+#
+# 生成: npm run video -- scenes/react.yaml
+# サムネ: npm run thumbnail -- scenes/react.yaml
+
+title: "Reactってなに？"
+character: zundamon
+speaker_id: 3
+fps: 30
+width: 1920
+height: 1080
+defaultBackground: "gradient"
+defaultPause: 0.4
+defaultSubtitle: boxed
+defaultSlideVariant: card
+
+defaultSe:
+  src: "audio/se/pop.ogg"
+  volume: 0.20
+
+# セリフとして読ませる語だけを書く（Webは辞書なしでもウェブと読める）
+dict:
+  React: リアクト
+
+bgm:
+  src: "audio/bgm/carefree-kevin-macleod.mp3"
+  volume: 0.10
+  fadeIn: 1.5
+  fadeOut: 2.5
+  credit: "BGM: Carefree - Kevin MacLeod (incompetech.com) / CC BY 4.0"
+
+opening:
+  variant: center
+  title: "Reactってなに？"
+  subtitle: "画面を部品で組み立てる"
+  badge: "解説"
+  accent: "#61dafb"
+  background: "dark"
+  emotion: happy
+  se: "audio/se/transition.ogg"
+  text: "ずんだもんなのだ！今日はReactについて話すのだ！"
+
+thumbnail:
+  # splitは画像を置く前提の構成で、imageが無いと下半分が空くのでboldにする
+  variant: bold
+  title: "Reactってなに？"
+  subtitle: "画面を部品で組み立てる"
+  badge: "解説"
+  accent: "#61dafb"
+  background: "dark"
+  emotion: smug
+
+scenes:
+  # ---- 導入 ----
+  - text: "Webサイトの画面を作る道具として、Reactはとても有名なのだ"
+    emotion: normal
+
+  - text: "名前は聞いたことあるけど、何なのかよく分からない人も多いと思うのだ"
+    emotion: thinking
+    pause: 0.6
+
+  # ---- スライド1: Reactとは ----
+  - text: "まずはReactがどんなものか整理するのだ"
+    emotion: normal
+    background: purple
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "Reactとは"
+      accent: "#6c5ce7"
+      bullets:
+        - "画面を作るための道具"
+        - "画面を小さな部品に分けて組み立てる"
+        - "同じ部品を何度でも使い回せる"
+      note: "Metaが作って公開している"
+
+  - text: "Reactは、画面を作るための道具なのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: purple
+    highlight: 1
+
+  - text: "一番の特徴は、画面を小さな部品に分けて組み立てることなのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: purple
+    highlight: 2
+
+  - text: "一度作った部品は、何度でも使い回せるのだ"
+    se: "audio/se/select.ogg"
+    emotion: smug
+    background: purple
+    highlight: 3
+
+  # ---- スライド2: 部品の考え方 ----
+  - text: "部品に分けるって、どういうことなのだ？"
+    emotion: thinking
+    background: blue
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "画面を部品に分ける"
+      accent: "#0984e3"
+      bullets:
+        - "ボタン、入力欄、見出しをそれぞれ部品にする"
+        - "部品を組み合わせて1つの画面にする"
+        - "直すときは、その部品だけ直せばいい"
+
+  - text: "たとえばボタンや入力欄を、ひとつずつ部品にしておくのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: blue
+    highlight: 1
+
+  - text: "それを組み合わせて、ひとつの画面を作るのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: blue
+    highlight: 2
+
+  - text: "ボタンの見た目を変えたくなったら、その部品だけ直せば全部に反映されるのだ"
+    se: "audio/se/chime.ogg"
+    emotion: surprised
+    background: blue
+    highlight: 3
+
+  # ---- スライド3: 状態が変わると画面が変わる ----
+  - text: "もうひとつ大事な考え方があるのだ"
+    emotion: normal
+    background: green
+    slide:
+      variant: fullbleed
+      se: "audio/se/slide-in.ogg"
+      title: "データが変われば画面も変わる"
+      accent: "#00b894"
+      bullets:
+        - "画面が持っているデータを書き換える"
+        - "画面の書き換えはReactがやってくれる"
+        - "どこをどう直すかを自分で書かなくていい"
+
+  - text: "むかしは、画面のどこをどう書き換えるかを自分で全部指示していたのだ"
+    emotion: tired
+    background: green
+
+  - text: "Reactでは、データを書き換えるだけでいいのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: green
+    highlight: 1
+
+  - text: "画面のほうは、Reactが勝手に合わせてくれるのだ"
+    se: "audio/se/select.ogg"
+    emotion: smug
+    background: green
+    highlight: 2
+
+  - text: "たとえば買い物かごの数を増やせば、表示される数字も自動で変わるのだ"
+    emotion: normal
+    background: green
+    subtitle: bar
+
+  # ---- どこで使われているか ----
+  - text: "Reactは、いろいろな場所で使われているのだ"
+    emotion: normal
+    background: orange
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "どこで使われている？"
+      accent: "#e17055"
+      bullets:
+        - "Webサイトやサービスの画面"
+        - "スマートフォンのアプリ"
+        - "Remotionのように動画を作る道具"
+
+  - text: "Webだけじゃなく、スマートフォンのアプリにも使われているのだ"
+    se: "audio/se/select.ogg"
+    emotion: surprised
+    background: orange
+    highlight: 2
+
+  - text: "この動画を作っているRemotionも、実はReactでできているのだ"
+    se: "audio/se/chime.ogg"
+    emotion: smug
+    background: orange
+    highlight: 3
+
+  # ---- まとめ ----
+  - text: "まとめると、Reactは画面を部品で組み立てる道具なのだ！"
+    se: "audio/se/confirm.ogg"
+    emotion: happy
+    background: gradient
+    slide: null
+
+  - text: "部品に分ける考え方は、覚えておくと役に立つのだ！"
+    emotion: happy
+    pause: 1.0

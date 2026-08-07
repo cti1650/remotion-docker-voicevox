@@ -1,0 +1,206 @@
+# Remotionの解説動画（サンプル）
+#
+# 生成: npm run video -- scenes/remotion.yaml
+# サムネ: npm run thumbnail -- scenes/remotion.yaml
+
+title: "Remotionってなに？"
+character: zundamon
+speaker_id: 3
+fps: 30
+width: 1920
+height: 1080
+defaultBackground: "gradient"
+defaultPause: 0.4
+defaultSubtitle: boxed
+defaultSlideVariant: card
+
+defaultSe:
+  src: "audio/se/pop.ogg"
+  volume: 0.20
+
+# この動画でしか使わない語の読み（Remotionは共有辞書にある）
+# セリフとして読ませる語だけを書く。スライドの文字は音声にならないので不要
+dict:
+  React: リアクト
+  微調整: ビチョウセイ    # デフォルトはホロチョウセイ
+
+bgm:
+  src: "audio/bgm/carefree-kevin-macleod.mp3"
+  volume: 0.10
+  fadeIn: 1.5
+  fadeOut: 2.5
+  credit: "BGM: Carefree - Kevin MacLeod (incompetech.com) / CC BY 4.0"
+
+opening:
+  variant: band
+  title: "Remotionってなに？"
+  subtitle: "コードで動画を作るしくみ"
+  badge: "解説"
+  accent: "#00d2a0"
+  background: "dark"
+  emotion: happy
+  se: "audio/se/transition.ogg"
+  text: "ずんだもんなのだ！今日はRemotionというツールを紹介するのだ！"
+
+thumbnail:
+  variant: bold
+  title: "Remotionってなに？"
+  subtitle: "コードで動画を作る"
+  badge: "解説"
+  accent: "#00d2a0"
+  background: "dark"
+  emotion: smug
+
+scenes:
+  # ---- 導入 ----
+  - text: "動画を作るとき、ふつうは編集ソフトを使うのだ"
+    emotion: normal
+
+  - text: "でもRemotionを使うと、コードを書いて動画が作れるのだ"
+    emotion: surprised
+    pause: 0.6
+
+  # ---- スライド1: Remotionとは ----
+  - text: "Remotionがどんなものなのか、まとめてみたのだ"
+    emotion: normal
+    background: purple
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "Remotionとは"
+      accent: "#6c5ce7"
+      bullets:
+        - "Reactで動画を作るためのしくみ"
+        - "画面を作る感覚で動画が作れる"
+        - "同じ形の動画を量産するのが得意"
+      note: "Webの技術がそのまま使える"
+
+  - text: "ひとことで言うと、Reactで動画を作るためのしくみなのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: purple
+    highlight: 1
+
+  - text: "Webページを作るのと同じ感覚で、動画の中身を書いていくのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: purple
+    highlight: 2
+
+  - text: "だから、中身だけ違う同じ形の動画をたくさん作るのが得意なのだ"
+    se: "audio/se/select.ogg"
+    emotion: smug
+    background: purple
+    highlight: 3
+
+  # ---- スライド2: しくみ ----
+  - text: "どうやって動画になるのか、しくみを見てみるのだ"
+    emotion: normal
+    background: blue
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "動画になるまで"
+      accent: "#0984e3"
+      bullets:
+        - "動画を静止画の連続として考える"
+        - "今が何枚目かをコードで受け取る"
+        - "1枚ずつ描いて、つなげて動画にする"
+      note: "描画にはChromeを使っている"
+
+  - text: "動画は、パラパラ漫画のように静止画が並んだものなのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: blue
+    highlight: 1
+
+  - text: "Remotionでは、今が何枚目なのかをコードで受け取れるのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: blue
+    highlight: 2
+
+  - text: "その番号に合わせて絵を描けば、動きになるという仕組みなのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: blue
+    highlight: 3
+
+  - text: "たとえば、番号が増えるほど文字を右にずらせば、文字が動いて見えるのだ"
+    emotion: smug
+    background: blue
+    subtitle: bar
+
+  # ---- スライド3: うれしいところ ----
+  - text: "コードで書けると、どんないいことがあるのだ？"
+    emotion: thinking
+    background: green
+    slide:
+      variant: fullbleed
+      se: "audio/se/slide-in.ogg"
+      title: "コードで書くとうれしいこと"
+      accent: "#00b894"
+      bullets:
+        - "文字や色を差し替えるだけで作り直せる"
+        - "変更した場所が履歴に残る"
+        - "データを読み込んで自動で作れる"
+
+  - text: "文字を差し替えてもう一度動かせば、それだけで別の動画になるのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: green
+    highlight: 1
+
+  - text: "どこを直したかも記録に残るから、あとから見返せるのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: green
+    highlight: 2
+
+  - text: "表のデータを読み込んで、百本の動画を一気に作ることもできるのだ"
+    se: "audio/se/chime.ogg"
+    emotion: surprised
+    background: green
+    highlight: 3
+
+  # ---- 苦手なところ（正直に）----
+  - text: "もちろん、苦手なこともあるのだ"
+    emotion: normal
+    background: dark
+    slide:
+      variant: title
+      se: "audio/se/transition.ogg"
+      title: "苦手なこともある"
+      note: "感覚で細かく詰めたい動きは編集ソフトが得意"
+      accent: "#e17055"
+
+  - text: "手で動かしながら微調整したい演出は、編集ソフトのほうが速いのだ"
+    emotion: normal
+    background: dark
+
+  - text: "コードを書くこと自体に慣れも必要なのだ"
+    emotion: tired
+    background: dark
+    pause: 0.6
+
+  # ---- 使いどころ ----
+  - text: "つまり、決まった形の動画を何度も作るときに向いているのだ"
+    emotion: smug
+    background: orange
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "向いている使い方"
+      accent: "#e17055"
+      bullets:
+        - "解説動画やニュース動画"
+        - "商品ごとの紹介動画"
+        - "毎週おなじ形式で出す動画"
+
+  # ---- まとめ ----
+  - text: "というわけで、Remotionはコードで動画を作るしくみなのだ！"
+    se: "audio/se/confirm.ogg"
+    emotion: happy
+    background: gradient
+    slide: null
+
+  - text: "気になったら、ぜひ触ってみてほしいのだ！"
+    emotion: happy
+    pause: 1.0
