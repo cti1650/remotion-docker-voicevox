@@ -1,0 +1,32 @@
+# キャラクターの差し替えを確認するためのサンプル
+# character: を書くだけで立ち絵・表情・声・クレジットがまとめて切り替わる
+title: "キャラクターを差し替える"
+character: presenter
+# speaker_id は書かなければ character.json の voice.defaultSpeakerId になる
+
+defaultBackground: blue
+
+thumbnail:
+  variant: bold
+  title: "キャラは差し替えられる"
+  badge: "サンプル"
+
+scenes:
+  - text: "こんにちは。ナレーションを担当します。"
+    emotion: normal
+
+  - text: "立ち絵の差し替えを試すためのキャラクターです。"
+    emotion: happy
+    background: green
+
+  - text: "表情も切り替わります。これは驚いた顔です。"
+    emotion: surprised
+    background: purple
+
+  - text: "考えているときは、こんな顔になります。"
+    emotion: thinking
+    background: dark
+
+  - text: "口の動きは音声に合わせて自動で作られます。"
+    emotion: normal
+    background: blue

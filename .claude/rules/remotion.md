@@ -27,7 +27,8 @@ npm run video -- scenes/my-video.yaml --skip-generate  # レンダリングの�
 
 ```yaml
 title: "動画タイトル"
-speaker_id: 3
+character: zundamon   # 立ち絵と声をまとめて切り替える（省略時 zundamon）
+speaker_id: 3         # 省略時はキャラクターの既定値
 defaultBackground: gradient
 
 scenes:
@@ -190,6 +191,20 @@ scenes:
 - `thumbnail.variant`: `bold`（既定） / `split` / `simple`
 
 サンプル: `scenes/variants-demo.yaml`、`scenes/opening-demo.yaml`
+
+### キャラクターの切り替え
+
+立ち絵はバリアントではなく`character:`で切り替える。
+声・表情・クレジットも一緒に切り替わる。
+
+```yaml
+character: presenter    # src/characters/presenter/character.json
+```
+
+同梱しているのは`zundamon`（既定）と`presenter`（Avataaars / MIT）。
+追加手順は`.claude/rules/character.md`、
+静止画1枚から作る場合は`character-from-image`スキルを参照。
+サンプル: `scenes/presenter-demo.yaml`
 
 ## オープニングとサムネイル
 

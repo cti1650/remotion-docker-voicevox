@@ -29,7 +29,9 @@ src/components/subtitle/   # テロップの見た目バリアント
 src/components/slide/      # スライドの見た目バリアント（parts/を組み合わせる）
 src/components/opening/    # 冒頭のタイトル演出バリアント
 src/components/thumbnail/  # サムネイルのバリアント（静止画）
-src/types/scene.ts         # シーン型定義・表情プリセット
+src/characters/            # キャラクター定義（立ち絵・表情・声・クレジット）
+public/parts/presenter/    # Avataaars由来のSVGパーツ（MIT。CREDITS.md参照）
+src/types/scene.ts         # シーン型定義
 public/parts/zundamon_en/  # パーツ画像（英語名）
 public/audio/bgm/          # BGM（手で配置・git管理する）
 public/audio/se/           # 効果音（CC0素材を同梱。local/は再配布NG用）
@@ -52,7 +54,11 @@ clone直後は `npm run voice` を実行しないと音声が鳴らない。
 
 ```yaml
 title: "動画タイトル"
-speaker_id: 3
+character: zundamon   # オプション（省略時 zundamon。立ち絵と声がまとめて切り替わる）
+speaker_id: 3         # オプション（省略時はキャラクターの既定の話者ID）
+voice:                # オプション（声の調整。省略時はキャラクターの既定値）
+  pitchScale: 0.1     # 音高 -0.15〜0.15
+  speedScale: 1.0     # 話速 0.5〜2.0（変えたら音声を作り直す）
 dict:                 # オプション（この動画だけの読み。生成時に自動適用）
   Cosense: コセンス
   複数人: フクスウニン
@@ -99,6 +105,7 @@ scenes:
 - `scenes/variants-demo.yaml` — テロップとスライドの見た目
 - `scenes/opening-demo.yaml` — 冒頭とサムネイル
 - `scenes/slide-demo.yaml` — スライドの基本
+- `scenes/presenter-demo.yaml` — キャラクターの差し替え
 
 ## 重要な知見
 
@@ -108,6 +115,10 @@ scenes:
 - **コンポジション**: YAML由来の`SceneVideo`と、`thumbnail:`がある場合の
   `<id>-thumbnail`（Still）のみ。手書きの`MyComposition`は廃止済み
 - **口のデフォルト**: `closed`（`むふ`から抽出）
+- **キャラクター**: 立ち絵・表情・置き場所・声・クレジットは
+  `src/characters/<name>/character.json` に集約。TSとPythonの両方が読むのでJSON。
+  静止画1枚から作るなら`python3 scripts/create-character.py`
+  （詳細は`.claude/rules/character.md`）
 - **PSD抽出**: `layer.topil()`使用
 - **リップシンク**: JSONの最後に`end`エントリが自動追加
 - **辞書**: 生成のたびに`config/voicevox-dict.json`+YAMLの`dict`で総入れ替え。
@@ -117,6 +128,9 @@ scenes:
 - **JSON更新後**: Remotionサーバー再起動が必要
 
 ## クレジット
+
+動画末尾に自動表示される。表記は使うキャラクターの`character.json`の`credits`が持つ。
+既定のずんだもんは以下。
 
 - VOICEVOX:ずんだもん
 - 立ち絵素材: 坂本アヒル

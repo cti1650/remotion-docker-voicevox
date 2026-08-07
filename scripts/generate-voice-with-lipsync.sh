@@ -8,6 +8,9 @@ source "$SCRIPT_DIR/lib.sh"
 TEXT="${1:-こんにちは}"
 SPEAKER_ID="${2:-3}"
 OUTPUT_BASE="${3:-output}"
+# 声の調整をJSONで受け取る（例: '{"pitchScale":0.08,"speedScale":1.05}'）
+VOICE_PARAMS="${4:-}"
+[ -z "$VOICE_PARAMS" ] && VOICE_PARAMS='{}'
 ENGINE_URL="${VOICEVOX_ENGINE_URL:-http://127.0.0.1:50021}"
 
 # 親スクリプトから呼ばれた場合は$PYTHONを引き継ぐ
@@ -33,6 +36,39 @@ QUERY=$(curl -s -X POST \
     "${ENGINE_URL}/audio_query?text=$(echo -n "$TEXT" | "$PYTHON" -c 'import sys,urllib.parse; print(urllib.parse.quote(sys.stdin.read()))')&speaker=${SPEAKER_ID}" \
     -H "accept: application/json")
 
+# 声の調整をクエリに反映する
+# リップシンクも音声も同じクエリから作るので、ここで一度上書きすれば両方に効く
+if [ "$VOICE_PARAMS" != '{}' ]; then
+    QUERY=$(echo "$QUERY" | VOICE_PARAMS="$VOICE_PARAMS" "$PYTHON" -c '
+import json
+import os
+import sys
+
+query = json.load(sys.stdin)
+params = json.loads(os.environ["VOICE_PARAMS"])
+
+# VOICEVOXのaudio_queryが受け付ける調整項目だけを通す
+LIMITS = {
+    "speedScale": (0.5, 2.0),
+    "pitchScale": (-0.15, 0.15),
+    "intonationScale": (0.0, 2.0),
+    "volumeScale": (0.0, 2.0),
+}
+
+for key, (low, high) in LIMITS.items():
+    if params.get(key) is None:
+        continue
+    value = float(params[key])
+    if not low <= value <= high:
+        print(f"ERROR: {key}={value} は範囲外です ({low}〜{high})", file=sys.stderr)
+        sys.exit(1)
+    query[key] = value
+
+print(json.dumps(query, ensure_ascii=False))
+')
+    echo "    Voice: ${VOICE_PARAMS}"
+fi
+
 # Extract lip sync data from query
 echo "$QUERY" | "$PYTHON" -c "
 import json
@@ -41,6 +77,10 @@ import sys
 data = json.load(sys.stdin)
 lipsync = []
 current_time = 0
+
+# accent_phrasesの長さは話速をかける前の値なので、ここで割って実時間に直す
+# （speedScaleが既定の1.0なら何も変わらない）
+speed = float(data.get('speedScale', 1.0)) or 1.0
 
 # 音素→母音キーの正規化（パーツ名への変換はsrc/hooks/useLipSync.ts側で行う）
 vowel_to_mouth = {
@@ -63,9 +103,9 @@ vowel_to_mouth = {
 for phrase in data.get('accent_phrases', []):
     for mora in phrase.get('moras', []):
         consonant = mora.get('consonant')
-        consonant_len = mora.get('consonant_length', 0) or 0
+        consonant_len = (mora.get('consonant_length', 0) or 0) / speed
         vowel = mora.get('vowel', '')
-        vowel_len = mora.get('vowel_length', 0) or 0
+        vowel_len = (mora.get('vowel_length', 0) or 0) / speed
 
         # 子音部分（口は閉じ気味または前の形を維持）
         if consonant and consonant_len > 0:
@@ -91,7 +131,7 @@ for phrase in data.get('accent_phrases', []):
     # フレーズ間のポーズ
     pause = phrase.get('pause_mora')
     if pause:
-        pause_len = pause.get('vowel_length', 0) or 0
+        pause_len = (pause.get('vowel_length', 0) or 0) / speed
         if pause_len > 0:
             lipsync.append({
                 'time': round(current_time, 3),

@@ -1,6 +1,7 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
 import { ThumbnailConfig, ThumbnailVariant } from "../../types/scene";
+import { CharacterProvider } from "../../characters";
 import { DEFAULT_ACCENT } from "../slide/layout";
 import { Background } from "../Background";
 import { ThumbnailVariantComponent, THUMBNAIL_SIZE } from "./types";
@@ -37,21 +38,28 @@ export const thumbnailSize = (thumbnail?: ThumbnailConfig) => ({
 /**
  * サムネイル1枚を描画するコンポジション
  * `npx remotion still` で静止画として書き出す
+ *
+ * キャラクターはコンテキストで配るので、
+ * 各バリアントは ThumbnailCharacter を置くだけでよく、
+ * どのキャラクターかを知る必要がない。
  */
-export const ThumbnailComposition: React.FC<{ thumbnail: ThumbnailConfig }> = ({
-  thumbnail,
-}) => {
+export const ThumbnailComposition: React.FC<{
+  thumbnail: ThumbnailConfig;
+  character?: string;
+}> = ({ thumbnail, character }) => {
   const name = thumbnail.variant ?? DEFAULT_THUMBNAIL_VARIANT;
   const Variant =
     THUMBNAIL_VARIANTS[name] ?? THUMBNAIL_VARIANTS[DEFAULT_THUMBNAIL_VARIANT];
 
   return (
-    <AbsoluteFill>
-      <Background config={thumbnail.background ?? "gradient"} />
-      <Variant
-        thumbnail={thumbnail}
-        accent={thumbnail.accent ?? DEFAULT_ACCENT}
-      />
-    </AbsoluteFill>
+    <CharacterProvider name={character}>
+      <AbsoluteFill>
+        <Background config={thumbnail.background ?? "gradient"} />
+        <Variant
+          thumbnail={thumbnail}
+          accent={thumbnail.accent ?? DEFAULT_ACCENT}
+        />
+      </AbsoluteFill>
+    </CharacterProvider>
   );
 };

@@ -87,6 +87,20 @@ npm run voice
 `add`で足した語は次回の生成時に消える（`config/`とYAMLだけが正のため）。
 残したい語は`config/voicevox-dict.json`かYAMLの`dict:`に書く。
 
+## 声の調整（ピッチ・話速）
+
+`audio_query`の結果に上書きして合成する。キャラクター定義の`voice`か
+シーンYAMLの`voice:`で指定する（詳細は`.claude/rules/character.md`）。
+
+```bash
+# 単発で聴き比べるとき
+./scripts/generate-voice-with-lipsync.sh "テスト" 3 /tmp/p010 '{"pitchScale":0.10}'
+```
+
+- `pitchScale`を変えても**尺は変わらない**ので、リップシンクはそのまま合う
+- `speedScale`を変えると尺が変わる。リップシンクの時刻も自動で割り戻すが、
+  既存の音声とは合わなくなるので`npm run voice`で作り直す
+
 ## 話者ID
 
 | ID | キャラクター |

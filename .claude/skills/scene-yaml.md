@@ -12,7 +12,8 @@ description: |
 
 ```yaml
 title: "動画タイトル"
-speaker_id: 3              # ずんだもん=3
+character: zundamon        # 省略可（既定 zundamon）。立ち絵・声・クレジットが切り替わる
+speaker_id: 3               # ずんだもん=3（省略時はキャラクターの既定値）
 fps: 30
 width: 1920
 height: 1080
@@ -92,6 +93,9 @@ thumbnail:          # npm run thumbnail -- scenes/x.yaml でPNG出力
 サンプル: `scenes/variants-demo.yaml`、`scenes/opening-demo.yaml`
 
 ## 表情（emotion）
+
+表情の見た目はキャラクターごとに違う（`character.json`の`emotions`）。
+以下は既定キャラクター`zundamon`の場合。
 
 - `normal` - 通常
 - `happy` - 嬉しい（笑顔、赤い頬）

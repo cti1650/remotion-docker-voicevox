@@ -53,9 +53,47 @@ basename = os.environ['BASENAME']
 with open(scenes_file, 'r', encoding='utf-8') as f:
     config = yaml.safe_load(f)
 
-speaker_id = config.get('speaker_id', 3)
 default_pause = config.get('defaultPause', 0.5)
 scenes = config.get('scenes', [])
+
+# キャラクター定義（src/characters/<name>/character.json）
+# 見た目はTypeScript側が読むが、話者IDはここでも要るので同じファイルを見る
+DEFAULT_CHARACTER = 'zundamon'
+character_name = config.get('character', DEFAULT_CHARACTER)
+character_file = os.path.join('src', 'characters', character_name, 'character.json')
+
+if not os.path.isfile(character_file):
+    available = sorted(
+        d for d in os.listdir('src/characters')
+        if os.path.isfile(os.path.join('src/characters', d, 'character.json'))
+    )
+    print(f"ERROR: キャラクター \"{character_name}\" が見つかりません: {character_file}")
+    print(f"  登録済み: {' / '.join(available)}")
+    print("  静止画から作るには scripts/create-character.py を使ってください")
+    sys.exit(1)
+
+with open(character_file, 'r', encoding='utf-8') as f:
+    character = json.load(f)
+
+# 話者IDはYAMLで上書きできる（省略時はキャラクターの既定値）
+character_voice = character['voice']
+speaker_id = config.get('speaker_id', character_voice['defaultSpeakerId'])
+
+# 声の調整もキャラクターの既定値をYAMLの`voice:`で上書きできる
+VOICE_PARAM_KEYS = ('speedScale', 'pitchScale', 'intonationScale', 'volumeScale')
+voice_params = {
+    key: value for key, value in character_voice.items()
+    if key in VOICE_PARAM_KEYS and value is not None
+}
+voice_params.update({
+    key: value for key, value in (config.get('voice') or {}).items()
+    if key in VOICE_PARAM_KEYS and value is not None
+})
+
+print(f"  キャラクター: {character.get('displayName', character_name)} "
+      f"(話者ID: {speaker_id})")
+if voice_params:
+    print(f"  声の調整: {voice_params}")
 
 engine_url = os.environ['ENGINE_URL']
 shared_dict_file = os.environ['SHARED_DICT']
@@ -204,7 +242,8 @@ if se_sources:
 def generate_voice(text, output_base):
     """1つのセリフから音声とリップシンクを作る"""
     result = subprocess.run(
-        [f'{script_dir}/generate-voice-with-lipsync.sh', text, str(speaker_id), output_base],
+        [f'{script_dir}/generate-voice-with-lipsync.sh', text, str(speaker_id),
+         output_base, json.dumps(voice_params)],
         capture_output=True,
         text=True,
     )
@@ -287,7 +326,10 @@ output = {
     'id': basename,
     'config': {
         'title': config.get('title', basename),
+        # 既定値が将来変わっても古いJSONの見た目が変わらないよう、常に書き出す
+        'character': character_name,
         'speaker_id': speaker_id,
+        **({'voice': voice_params} if voice_params else {}),
         'fps': config.get('fps', 30),
         'width': config.get('width', 1920),
         'height': config.get('height', 1080),

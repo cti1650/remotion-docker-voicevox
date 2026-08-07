@@ -27,14 +27,22 @@ npm run voice -- scenes/demo.yaml
 ## 個別音声生成
 
 ```bash
-./scripts/generate-voice-with-lipsync.sh "テキスト" <speaker_id> <output_base>
+./scripts/generate-voice-with-lipsync.sh "テキスト" <speaker_id> <output_base> [voice_params]
 
 # 例
 ./scripts/generate-voice-with-lipsync.sh "こんにちは！" 3 public/audio/voice/demo/scene_001
 # 出力: scene_001.wav, scene_001.json
+
+# 声を調整する場合（省略可。JSON文字列で渡す）
+./scripts/generate-voice-with-lipsync.sh "テスト" 3 /tmp/p010 '{"pitchScale":0.10}'
 ```
 
 話者ID: ずんだもん=3（ノーマル）、1（あまあま）、7（ツンツン）
+
+`voice_params`で`speedScale`（0.5〜2.0）/`pitchScale`（-0.15〜0.15）/
+`intonationScale`（0〜2.0）/`volumeScale`（0〜2.0）を調整できる。
+`speedScale`を変えるとリップシンクの尺も自動で追従する。
+詳細は`.claude/rules/character.md`を参照。
 
 ## 辞書
 

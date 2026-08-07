@@ -39,7 +39,8 @@ npm run voicevox:down                                # VOICEVOXを停止
 ```yaml
 # scenes/my-video.yaml
 title: "説明動画"
-speaker_id: 3          # ずんだもんノーマル
+character: zundamon    # 省略時 zundamon。立ち絵・声・クレジットがまとめて切り替わる
+speaker_id: 3           # ずんだもんノーマル（省略時はキャラクターの既定値）
 
 scenes:
   - text: "こんにちは！ずんだもんなのだ！"
@@ -257,6 +258,24 @@ scenes:
 
 新しい見た目を足したいときは [パーツ構成](#パーツ構成) を参照。
 
+#### キャラクターを切り替える
+
+立ち絵・表情・声・クレジットはキャラクター定義（`src/characters/<name>/character.json`）
+にまとまっていて、トップレベルの `character` で切り替えられる。
+
+```yaml
+character: presenter   # 省略時 zundamon
+speaker_id: 3           # 省略時はキャラクターの既定値
+voice:                  # 省略時はキャラクターの既定値
+  pitchScale: 0.1        # 音高 -0.15〜0.15
+  speedScale: 1.0        # 話速 0.5〜2.0（変えたら音声を作り直す）
+```
+
+同梱しているのは `zundamon`（既定。PNGパーツ）と `presenter`（Avataaars由来のSVGパーツ）。
+動作するサンプルは `scenes/presenter-demo.yaml` を参照。
+
+新しいキャラクターを追加する手順は `.claude/rules/character.md` を参照。
+
 #### 読み方を直す
 
 セリフは**そのまま字幕として表示される**ので、読みを直すためにカタカナで書いてはいけない。
@@ -332,8 +351,12 @@ npm run video -- scenes/my-video.yaml --skip-generate   # 音声を使い回し�
 │   ├── generate-voice-with-lipsync.sh
 │   └── lib.sh                    # python検出・VOICEVOX起動の共通処理
 ├── src/
+│   ├── characters/             # キャラクター定義（立ち絵・表情・声・クレジット）
+│   │   ├── CharacterRenderer.tsx  # layersを重ねるだけの汎用描画
+│   │   ├── registry.ts            # 名前 → 定義のレジストリ
+│   │   ├── zundamon/character.json
+│   │   └── presenter/character.json
 │   ├── components/
-│   │   ├── ZundamonCharacter.tsx
 │   │   ├── SceneComposition.tsx   # 全体の組み立て
 │   │   ├── Background.tsx
 │   │   ├── HighlightImage.tsx
@@ -344,7 +367,8 @@ npm run video -- scenes/my-video.yaml --skip-generate   # 音声を使い回し�
 │   ├── generated/             # 生成されたシーンJSON
 │   └── types/scene.ts
 ├── public/
-│   ├── parts/zundamon_en/     # キャラクターパーツ
+│   ├── parts/zundamon_en/     # ずんだもんのパーツ（PNG）
+│   ├── parts/presenter/       # Avataaars由来のパーツ（SVG。CREDITS.md参照）
 │   └── audio/
 │       ├── bgm/               # BGM（手で置く・git管理する）
 │       ├── se/                # 効果音（同上。CC0素材を同梱）
@@ -529,11 +553,17 @@ curl http://localhost:50021/speakers | jq
 
 ### 立ち絵素材
 
+動画内のクレジットはキャラクターごとの `character.json` の `credits` から自動表示される。
+
+**zundamon**（既定）
 - 作者: 坂本アヒル
 - [ニコニコ静画](https://seiga.nicovideo.jp/seiga/im10788496)
 
-動画内に以下を表示（自動表示済み）:
 ```
 VOICEVOX:ずんだもん
 立ち絵素材: 坂本アヒル
 ```
+
+**presenter**
+- 素材: [Avataaars](https://avataaars.com/)（作者: Pablo Stanley）
+- ライセンス: MIT（[fangpenlin/avataaars](https://github.com/fangpenlin/avataaars)。全文は `public/parts/presenter/CREDITS.md`）

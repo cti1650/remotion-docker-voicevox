@@ -8,6 +8,7 @@ import { ThumbnailComposition, thumbnailSize } from "./components/thumbnail";
 import * as cosenseData from "./generated/cosense.json";
 import * as demoData from "./generated/demo.json";
 import * as opening_demoData from "./generated/opening-demo.json";
+import * as presenter_demoData from "./generated/presenter-demo.json";
 import * as slide_demoData from "./generated/slide-demo.json";
 import * as variants_demoData from "./generated/variants-demo.json";
 
@@ -16,6 +17,7 @@ const generatedVideos: GeneratedVideoData[] = [
   cosenseData as unknown as GeneratedVideoData,
   demoData as unknown as GeneratedVideoData,
   opening_demoData as unknown as GeneratedVideoData,
+  presenter_demoData as unknown as GeneratedVideoData,
   slide_demoData as unknown as GeneratedVideoData,
   variants_demoData as unknown as GeneratedVideoData,
 ].filter((v) => v && v.id); // 有効なデータのみ
@@ -58,7 +60,10 @@ export const RemotionRoot: React.FC = () => {
                   component={ThumbnailComposition}
                   width={width}
                   height={height}
-                  defaultProps={{ thumbnail }}
+                  defaultProps={{
+                    thumbnail,
+                    character: videoData.config.character,
+                  }}
                 />
               );
             })}

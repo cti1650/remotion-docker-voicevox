@@ -3,7 +3,6 @@
  * scenes.yamlから読み込むデータ構造
  */
 
-import type { EyeType, EyebrowType, FaceColorType, EdamameType } from "../components/ZundamonCharacter";
 import type { LipSyncData } from "../hooks/useLipSync";
 
 // 表情プリセット
@@ -150,10 +149,21 @@ export interface BgmConfig {
   credit?: string;   // 動画末尾のクレジットに追記する表記
 }
 
+// 声の調整（VOICEVOXのaudio_queryに渡す。音声生成にだけ効く）
+// 既定値と範囲は src/characters/types.ts の CharacterVoice を参照
+export interface VoiceParams {
+  speedScale?: number;
+  pitchScale?: number;
+  intonationScale?: number;
+  volumeScale?: number;
+}
+
 // 動画全体の設定（YAML入力用 - scenesが必須）
 export interface VideoConfigInput {
   title?: string;
-  speaker_id?: number;             // VOICEVOXの話者ID (デフォルト: 3)
+  character?: string;              // キャラクターID (デフォルト: zundamon)
+  speaker_id?: number;             // VOICEVOXの話者ID (省略時はキャラクターの既定値)
+  voice?: VoiceParams;             // 声の調整 (省略時はキャラクターの既定値)
   fps?: number;                    // フレームレート (デフォルト: 30)
   width?: number;                  // 幅 (デフォルト: 1920)
   height?: number;                 // 高さ (デフォルト: 1080)
@@ -171,7 +181,9 @@ export interface VideoConfigInput {
 // 動画設定（生成後用 - scenesなし）
 export interface VideoConfig {
   title?: string;
+  character?: string;
   speaker_id?: number;
+  voice?: VoiceParams;
   fps?: number;
   width?: number;
   height?: number;
@@ -192,65 +204,8 @@ export interface GeneratedOpening extends OpeningConfig {
   lipsyncData?: LipSyncData;    // 同上。口パクに使う
 }
 
-// 表情プリセット → パーツマッピング
-export interface EmotionPreset {
-  eye: EyeType;
-  eyebrow: EyebrowType;
-  faceColor: FaceColorType;
-  edamame: EdamameType;
-}
-
-// 表情プリセット定義
-export const EMOTION_PRESETS: Record<EmotionType, EmotionPreset> = {
-  normal: {
-    eye: "normal",
-    eyebrow: "normal",
-    faceColor: "cheek_normal",
-    edamame: "normal",
-  },
-  happy: {
-    eye: "smile",
-    eyebrow: "normal",
-    faceColor: "cheek_red",
-    edamame: "normal",
-  },
-  sad: {
-    eye: "normal",
-    eyebrow: "troubled",
-    faceColor: "cheek_normal",
-    edamame: "wilted",
-  },
-  angry: {
-    eye: "jitome",
-    eyebrow: "angry",
-    faceColor: "cheek_red",
-    edamame: "normal",
-  },
-  surprised: {
-    eye: "circle",
-    eyebrow: "raised",
-    faceColor: "cheek_normal",
-    edamame: "standing",
-  },
-  thinking: {
-    eye: "normal_up",
-    eyebrow: "normal",
-    faceColor: "cheek_normal",
-    edamame: "normal",
-  },
-  smug: {
-    eye: "jitome",
-    eyebrow: "normal",
-    faceColor: "cheek_normal",
-    edamame: "normal",
-  },
-  tired: {
-    eye: "relaxed",
-    eyebrow: "troubled",
-    faceColor: "pale",
-    edamame: "wilted",
-  },
-};
+// 表情プリセットは各キャラクターが持つ（src/characters/<name>/character.json の emotions）
+// 表情パーツを持たないキャラでは、どの表情でも既定の見た目になる
 
 // 背景プリセット
 export const BACKGROUND_PRESETS: Record<string, BackgroundConfig> = {
