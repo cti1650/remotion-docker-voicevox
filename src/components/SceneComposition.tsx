@@ -135,8 +135,11 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
     ? opening?.emotion ?? "happy"
     : currentScene?.emotion ?? "normal";
 
-  // オープニング中はキャラクターを隠せる（character: falseのとき）
-  const showCharacter = !inOpening || (opening?.character ?? true);
+  // オープニングもシーンも character: false でキャラクターを隠せる
+  // （画像やスライドだけを大きく見せたいとき）
+  const showCharacter = inOpening
+    ? opening?.character ?? true
+    : currentScene?.character ?? true;
 
   // 連続して同じスライドを表示するシーンをまとめる（登場アニメーションを1回にするため）
   const slideGroups: SlideGroup[] = [];

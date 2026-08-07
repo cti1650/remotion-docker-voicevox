@@ -6,7 +6,7 @@
 #   dict      読み方の指定
 #   slide     card / fullbleed / title の3種
 #   subtitle  boxed / bar / outline / card / none の5種
-#   image     シーンへの強調画像
+#   image     シーンへの強調画像（character: false で画像だけを大きく見せられる）
 #   se        効果音（テロップ・スライドの表示に合わせて鳴る）
 #
 # 生成: npm run video -- scenes/demo.yaml
@@ -178,6 +178,18 @@ scenes:
     image:
       src: "images/layout.png"
       position: "top-right"
+
+  # ずんだもんを消して、画像だけを大きく見せる
+  - text: "図をじっくり見せたいときは、ずんだもんを消して大きく出せるのだ"
+    background: orange
+    character: false
+    se: "audio/se/transition.ogg"
+    pause: 0.8
+    image:
+      src: "images/layout.png"
+      position: "center"
+      scale: 2.6
+      animation: "zoom-in"
 
   - text: "テロップを消したいときは none にするのだ"
     emotion: normal

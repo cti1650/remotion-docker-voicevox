@@ -332,6 +332,7 @@ npm run video -- scenes/my-video.yaml --skip-generate   # 音声を使い回し�
 | `slide` | スライド（`null`で非表示に戻す） | `{ title: "見出し", bullets: [...] }` |
 | `highlight` | 強調する箇条書き番号（1始まり） | `1` |
 | `subtitle` | テロップの見た目 | `boxed`, `bar`, `outline`, `card`, `none` |
+| `character` | キャラクターを出すか（デフォルト`true`） | `false` |
 | `se` | テロップ表示時の効果音（`null`で無音） | `"audio/se/chime.ogg"` |
 | `pause` | セリフ後の間（秒） | `0.5` |
 

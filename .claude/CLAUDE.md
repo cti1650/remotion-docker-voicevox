@@ -85,9 +85,10 @@ scenes:
     background: purple  # gradient/purple/blue/green/orange/pink/dark/white
     subtitle: bar       # このシーンだけテロップを変える
     se: "audio/se/chime.ogg"  # このシーンだけ効果音を変える（nullで無音）
+    character: false    # このシーンだけキャラクターを隠す（デフォルトtrue）
     image:              # オプション
       src: "images/sample.png"
-      position: "top-right"
+      position: "top-right"  # top-right/top-left/center/bottom-right/bottom-left
     slide:              # オプション（スライド解説形式）
       variant: card     # card/fullbleed/title
       se: "audio/se/slide-in.ogg"  # スライド登場時だけ鳴る

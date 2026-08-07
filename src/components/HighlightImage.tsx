@@ -24,11 +24,11 @@ export const HighlightImage: React.FC<HighlightImageProps> = ({ config }) => {
     animation = "fade-in",
   } = imageConfig;
 
-  // 位置の計算
+  // 位置の計算（transformはアニメーションと組み立てるのでここには書かない）
   const positionStyles: Record<string, React.CSSProperties> = {
     "top-right": { top: 40, right: 40 },
     "top-left": { top: 40, left: 40 },
-    "center": { top: "50%", left: "50%", transform: `translate(-50%, -50%) scale(${scale})` },
+    "center": { top: "50%", left: "50%" },
     "bottom-right": { bottom: 120, right: 40 },
     "bottom-left": { bottom: 120, left: 40 },
   };
@@ -66,6 +66,16 @@ export const HighlightImage: React.FC<HighlightImageProps> = ({ config }) => {
       break;
   }
 
+  // centerは中央寄せのtranslateを先に掛ける。
+  // 位置指定のあとにtransformを組み立てないと、拡大やスライドの動きが打ち消される
+  const transform = [
+    position === "center" ? "translate(-50%, -50%)" : "",
+    `scale(${scaleValue})`,
+    `translateY(${translateY}px)`,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   const baseStyle: React.CSSProperties = {
     position: "absolute",
     maxWidth: 400,
@@ -74,10 +84,8 @@ export const HighlightImage: React.FC<HighlightImageProps> = ({ config }) => {
     borderRadius: 12,
     boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
     opacity,
-    transform: position === "center"
-      ? `translate(-50%, -50%) scale(${scaleValue}) translateY(${translateY}px)`
-      : `scale(${scaleValue}) translateY(${translateY}px)`,
     ...positionStyles[position],
+    transform,
   };
 
   return (

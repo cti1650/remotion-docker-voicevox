@@ -51,6 +51,7 @@ dict:
 | `background` | | 背景 | `purple` |
 | `image` | | 強調画像 | `{ src: "img.png" }` |
 | `subtitle` | | テロップの見た目 | `bar` |
+| `character` | | キャラクターを出すか（デフォルト`true`） | `false` |
 | `se` | | 効果音（`null`で無音） | `"audio/se/chime.ogg"` |
 | `pause` | | セリフ後の間（秒） | `0.5` |
 
@@ -131,6 +132,24 @@ image:
 ```yaml
 image: "images/sample.png"
 ```
+
+図をじっくり見せたいときは`character: false`でキャラクターを隠し、
+`position: center`で大きく表示できる。
+
+```yaml
+scenes:
+  - text: "図をじっくり見せるのだ"
+    character: false
+    image:
+      src: "images/diagram.png"
+      position: "center"
+      scale: 2.6
+      animation: "zoom-in"
+```
+
+`character`はそのシーンだけの表示切り替え（真偽値）で、
+トップレベルの`character:`（キャラクターID）とは別物。
+動画の途中でキャラクターそのものを差し替えることはできない。
 
 ## サンプル
 

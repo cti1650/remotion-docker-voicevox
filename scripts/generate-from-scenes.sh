@@ -313,8 +313,18 @@ for i, scene in enumerate(scenes):
         generated_scene['slide'] = current_slide
         generated_scene['slideIndex'] = slide_index
 
+    # シーンのcharacterは「出すか出さないか」の真偽値。
+    # トップレベルのcharacter（キャラクターID）と紛らわしいので、
+    # 文字列を書かれたら黙って無視せずここで止める
+    if 'character' in scene and not isinstance(scene['character'], bool):
+        print(f"ERROR: scene {i+1} の character は true/false で書いてください "
+              f"(指定値: {scene['character']!r})")
+        print("  キャラクターを変えるのはYAMLのトップレベルだけです。"
+              "動画の途中では切り替えられません")
+        sys.exit(1)
+
     # Optional fields
-    for key in ('background', 'image', 'highlight', 'subtitle', 'se'):
+    for key in ('background', 'image', 'highlight', 'subtitle', 'se', 'character'):
         if key in scene:
             generated_scene[key] = scene[key]
 
