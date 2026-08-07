@@ -120,7 +120,9 @@ scenes:
   静止画1枚から作るなら`python3 scripts/create-character.py`
   （詳細は`.claude/rules/character.md`）
 - **PSD抽出**: `layer.topil()`使用
-- **リップシンク**: JSONの最後に`end`エントリが自動追加
+- **リップシンク**: JSONの最後に`end`エントリが自動追加。
+  子音は後ろに続く母音と同じ口にする（両唇音だけ`closed`）。
+  子音に専用の形を割り当てると1フレームだけ口が閉じてチラつくため
 - **辞書**: 生成のたびに`config/voicevox-dict.json`+YAMLの`dict`で総入れ替え。
   日本語の複合語は`priority=10`でないと内蔵辞書に負ける（詳細は`.claude/rules/voicevox.md`）
 - **読みの確認**: セリフは字幕にもなるので、カタカナ書きで誤読を回避しない。

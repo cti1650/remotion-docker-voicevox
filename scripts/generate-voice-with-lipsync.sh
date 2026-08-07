@@ -100,20 +100,27 @@ vowel_to_mouth = {
     'pau': 'closed', # ポーズ
 }
 
+# 唇を閉じてから発音する音（両唇音）。ここだけは子音の区間で口を閉じる
+BILABIAL = {'m', 'my', 'p', 'py', 'b', 'by'}
+
 for phrase in data.get('accent_phrases', []):
     for mora in phrase.get('moras', []):
         consonant = mora.get('consonant')
         consonant_len = (mora.get('consonant_length', 0) or 0) / speed
         vowel = mora.get('vowel', '')
         vowel_len = (mora.get('vowel_length', 0) or 0) / speed
+        vowel_mouth = vowel_to_mouth.get(vowel, 'closed')
 
-        # 子音部分（口は閉じ気味または前の形を維持）
+        # 子音部分
+        # 両唇音以外は後ろに続く母音と同じ形にする。
+        # 実際の発音でも口は母音に向かって動いているし、子音は1フレーム程度しか
+        # ないことが多いため、専用の形にするとチラついて見える
         if consonant and consonant_len > 0:
             lipsync.append({
                 'time': round(current_time, 3),
                 'duration': round(consonant_len, 3),
                 'phoneme': consonant,
-                'mouth': 'closed' if consonant in ['m', 'p', 'b'] else 'n'
+                'mouth': 'closed' if consonant in BILABIAL else vowel_mouth
             })
             current_time += consonant_len
 
