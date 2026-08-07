@@ -1,0 +1,99 @@
+{
+  "name": "presenter",
+  "displayName": "プレゼンター",
+  "art": {
+    "basePath": "parts/presenter",
+    "ext": "svg",
+    "width": 280,
+    "height": 280,
+    "layers": [
+      {
+        "file": "static/0.svg"
+      },
+      {
+        "dir": "mouth",
+        "slot": "mouth"
+      },
+      {
+        "file": "static/1.svg"
+      },
+      {
+        "dir": "eye",
+        "slot": "eye"
+      },
+      {
+        "dir": "eyebrow",
+        "slot": "eyebrow"
+      },
+      {
+        "file": "static/2.svg"
+      }
+    ]
+  },
+  "placement": {
+    "scale": 2.7857,
+    "offsetX": 790.0,
+    "offsetY": -500.0
+  },
+  "defaultSlots": {
+    "mouth": "twinkle",
+    "eye": "default",
+    "eyebrow": "default"
+  },
+  "emotions": {
+    "normal": {
+      "eye": "default",
+      "eyebrow": "default"
+    },
+    "happy": {
+      "eye": "happy",
+      "eyebrow": "raisedExcited"
+    },
+    "sad": {
+      "eye": "cry",
+      "eyebrow": "sadConcerned"
+    },
+    "angry": {
+      "eye": "squint",
+      "eyebrow": "angry"
+    },
+    "surprised": {
+      "eye": "surprised",
+      "eyebrow": "raisedExcitedNatural"
+    },
+    "thinking": {
+      "eye": "side",
+      "eyebrow": "upDownNatural"
+    },
+    "smug": {
+      "eye": "wink",
+      "eyebrow": "upDown"
+    },
+    "tired": {
+      "eye": "squint",
+      "eyebrow": "sadConcernedNatural"
+    }
+  },
+  "blink": {
+    "slot": "eye",
+    "closed": "closed"
+  },
+  "mouthSlot": "mouth",
+  "mouthMap": {
+    "a": "screamOpen",
+    "i": "grimace",
+    "u": "disbelief",
+    "e": "smile",
+    "o": "default",
+    "n": "serious",
+    "closed": "twinkle",
+    "smile": "grimace"
+  },
+  "voice": {
+    "defaultSpeakerId": 3
+  },
+  "credits": [
+    "VOICEVOX（話者ID: 3）",
+    "立ち絵: Avataaars by Pablo Stanley (MIT)"
+  ]
+}

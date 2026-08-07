@@ -48,4 +48,5 @@ public/parts/<character>_en/
 
 - `scripts/extract-psd-parts.py` - PSD抽出
 - `scripts/rename-parts-to-english.py` - 英語名変換
-- `src/components/ZundamonCharacter.tsx` - キャラクターコンポーネント
+- `src/characters/CharacterRenderer.tsx` - キャラクター描画（全キャラクター共通）
+- `src/characters/zundamon/character.json` - ずんだもんの定義（パーツ・表情・声・クレジット）

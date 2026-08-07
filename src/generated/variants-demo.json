@@ -2,6 +2,7 @@
   "id": "variants-demo",
   "config": {
     "title": "見た目バリアントのデモ",
+    "character": "zundamon",
     "speaker_id": 3,
     "fps": 30,
     "width": 1920,
@@ -23,7 +24,7 @@
             "time": 0,
             "duration": 0.082,
             "phoneme": "t",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 0.082,
@@ -35,7 +36,7 @@
             "time": 0.171,
             "duration": 0.05,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 0.22,
@@ -65,7 +66,7 @@
             "time": 0.563,
             "duration": 0.048,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 0.611,
@@ -89,7 +90,7 @@
             "time": 0.824,
             "duration": 0.055,
             "phoneme": "t",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 0.879,
@@ -113,7 +114,7 @@
             "time": 1.11,
             "duration": 0.053,
             "phoneme": "w",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 1.163,
@@ -125,7 +126,7 @@
             "time": 1.264,
             "duration": 0.079,
             "phoneme": "y",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 1.342,
@@ -143,7 +144,7 @@
             "time": 1.515,
             "duration": 0.083,
             "phoneme": "sh",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 1.599,
@@ -155,7 +156,7 @@
             "time": 1.673,
             "duration": 0.038,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 1.71,
@@ -173,7 +174,7 @@
             "time": 1.898,
             "duration": 0.063,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 1.961,
@@ -185,7 +186,7 @@
             "time": 2.052,
             "duration": 0.04,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 2.092,
@@ -203,7 +204,7 @@
             "time": 2.282,
             "duration": 0.036,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 2.318,
@@ -227,7 +228,7 @@
             "time": 2.552,
             "duration": 0.032,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 2.584,
@@ -239,7 +240,7 @@
             "time": 2.657,
             "duration": 0.059,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 2.716,
@@ -251,7 +252,7 @@
             "time": 2.815,
             "duration": 0.051,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 2.866,
@@ -290,7 +291,7 @@
             "time": 0,
             "duration": 0.082,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 0.082,
@@ -302,7 +303,7 @@
             "time": 0.165,
             "duration": 0.036,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 0.201,
@@ -314,7 +315,7 @@
             "time": 0.295,
             "duration": 0.057,
             "phoneme": "g",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 0.351,
@@ -326,7 +327,7 @@
             "time": 0.458,
             "duration": 0.106,
             "phoneme": "hy",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 0.564,
@@ -344,7 +345,7 @@
             "time": 0.737,
             "duration": 0.083,
             "phoneme": "j",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 0.82,
@@ -362,7 +363,7 @@
             "time": 0.993,
             "duration": 0.042,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 1.035,
@@ -422,7 +423,7 @@
             "time": 2.381,
             "duration": 0.066,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 2.448,
@@ -434,7 +435,7 @@
             "time": 2.509,
             "duration": 0.102,
             "phoneme": "s",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 2.611,
@@ -458,7 +459,7 @@
             "time": 2.904,
             "duration": 0.069,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 2.973,
@@ -482,7 +483,7 @@
             "time": 3.668,
             "duration": 0.082,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 3.75,
@@ -494,7 +495,7 @@
             "time": 3.841,
             "duration": 0.062,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 3.903,
@@ -506,7 +507,7 @@
             "time": 3.998,
             "duration": 0.05,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 4.048,
@@ -524,7 +525,7 @@
             "time": 4.511,
             "duration": 0.09,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 4.601,
@@ -536,7 +537,7 @@
             "time": 4.66,
             "duration": 0.042,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 4.702,
@@ -572,7 +573,7 @@
             "time": 5.138,
             "duration": 0.062,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 5.2,
@@ -584,7 +585,7 @@
             "time": 5.256,
             "duration": 0.075,
             "phoneme": "s",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 5.331,
@@ -596,7 +597,7 @@
             "time": 5.395,
             "duration": 0.059,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 5.454,
@@ -608,7 +609,7 @@
             "time": 5.551,
             "duration": 0.061,
             "phoneme": "y",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 5.611,
@@ -632,7 +633,7 @@
             "time": 5.833,
             "duration": 0.059,
             "phoneme": "y",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 5.893,
@@ -644,7 +645,7 @@
             "time": 5.991,
             "duration": 0.098,
             "phoneme": "s",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 6.089,
@@ -662,7 +663,7 @@
             "time": 6.241,
             "duration": 0.059,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 6.3,
@@ -674,7 +675,7 @@
             "time": 6.4,
             "duration": 0.052,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 6.452,
@@ -714,7 +715,7 @@
             "time": 0,
             "duration": 0.081,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 0.081,
@@ -726,7 +727,7 @@
             "time": 0.167,
             "duration": 0.03,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 0.197,
@@ -738,7 +739,7 @@
             "time": 0.306,
             "duration": 0.057,
             "phoneme": "g",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 0.363,
@@ -780,7 +781,7 @@
             "time": 1.793,
             "duration": 0.075,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 1.869,
@@ -792,7 +793,7 @@
             "time": 1.96,
             "duration": 0.058,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 2.018,
@@ -804,7 +805,7 @@
             "time": 2.112,
             "duration": 0.051,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 2.163,
@@ -822,7 +823,7 @@
             "time": 2.646,
             "duration": 0.149,
             "phoneme": "ny",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 2.796,
@@ -840,7 +841,7 @@
             "time": 2.946,
             "duration": 0.081,
             "phoneme": "s",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 3.027,
@@ -870,7 +871,7 @@
             "time": 3.376,
             "duration": 0.045,
             "phoneme": "g",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 3.421,
@@ -906,7 +907,7 @@
             "time": 3.765,
             "duration": 0.066,
             "phoneme": "t",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 3.83,
@@ -924,7 +925,7 @@
             "time": 4.014,
             "duration": 0.063,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 4.077,
@@ -954,7 +955,7 @@
             "time": 4.409,
             "duration": 0.053,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 4.462,
@@ -966,7 +967,7 @@
             "time": 4.532,
             "duration": 0.064,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 4.596,
@@ -978,7 +979,7 @@
             "time": 4.69,
             "duration": 0.032,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 4.723,
@@ -990,7 +991,7 @@
             "time": 4.788,
             "duration": 0.058,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 4.846,
@@ -1002,7 +1003,7 @@
             "time": 4.942,
             "duration": 0.05,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 4.993,
@@ -1042,7 +1043,7 @@
             "time": 0,
             "duration": 0.081,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 0.081,
@@ -1054,7 +1055,7 @@
             "time": 0.168,
             "duration": 0.031,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 0.199,
@@ -1066,7 +1067,7 @@
             "time": 0.303,
             "duration": 0.049,
             "phoneme": "g",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 0.352,
@@ -1096,7 +1097,7 @@
             "time": 1.097,
             "duration": 0.086,
             "phoneme": "y",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 1.183,
@@ -1114,7 +1115,7 @@
             "time": 1.353,
             "duration": 0.078,
             "phoneme": "t",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 1.431,
@@ -1138,7 +1139,7 @@
             "time": 1.77,
             "duration": 0.042,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 1.812,
@@ -1168,7 +1169,7 @@
             "time": 2.253,
             "duration": 0.066,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 2.319,
@@ -1198,7 +1199,7 @@
             "time": 3.161,
             "duration": 0.083,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 3.243,
@@ -1210,7 +1211,7 @@
             "time": 3.332,
             "duration": 0.062,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 3.395,
@@ -1222,7 +1223,7 @@
             "time": 3.493,
             "duration": 0.047,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 3.54,
@@ -1240,7 +1241,7 @@
             "time": 3.999,
             "duration": 0.098,
             "phoneme": "h",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 4.096,
@@ -1258,7 +1259,7 @@
             "time": 4.304,
             "duration": 0.074,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 4.377,
@@ -1282,7 +1283,7 @@
             "time": 4.688,
             "duration": 0.063,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 4.751,
@@ -1294,7 +1295,7 @@
             "time": 4.84,
             "duration": 0.058,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 4.898,
@@ -1306,7 +1307,7 @@
             "time": 4.95,
             "duration": 0.083,
             "phoneme": "s",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 5.033,
@@ -1318,7 +1319,7 @@
             "time": 5.117,
             "duration": 0.057,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 5.174,
@@ -1336,7 +1337,7 @@
             "time": 5.346,
             "duration": 0.058,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 5.404,
@@ -1348,7 +1349,7 @@
             "time": 5.506,
             "duration": 0.049,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 5.555,
@@ -1388,7 +1389,7 @@
             "time": 0,
             "duration": 0.081,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 0.081,
@@ -1400,7 +1401,7 @@
             "time": 0.167,
             "duration": 0.03,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 0.198,
@@ -1412,7 +1413,7 @@
             "time": 0.306,
             "duration": 0.059,
             "phoneme": "g",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 0.366,
@@ -1430,7 +1431,7 @@
             "time": 0.807,
             "duration": 0.152,
             "phoneme": "sh",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 0.958,
@@ -1472,7 +1473,7 @@
             "time": 1.659,
             "duration": 0.041,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 1.7,
@@ -1484,7 +1485,7 @@
             "time": 1.781,
             "duration": 0.069,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 1.851,
@@ -1508,7 +1509,7 @@
             "time": 2.53,
             "duration": 0.084,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 2.614,
@@ -1520,7 +1521,7 @@
             "time": 2.705,
             "duration": 0.062,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 2.767,
@@ -1532,7 +1533,7 @@
             "time": 2.865,
             "duration": 0.051,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 2.916,
@@ -1550,7 +1551,7 @@
             "time": 3.376,
             "duration": 0.111,
             "phoneme": "s",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 3.488,
@@ -1562,7 +1563,7 @@
             "time": 3.55,
             "duration": 0.032,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 3.582,
@@ -1580,7 +1581,7 @@
             "time": 3.78,
             "duration": 0.052,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 3.832,
@@ -1592,7 +1593,7 @@
             "time": 3.924,
             "duration": 0.063,
             "phoneme": "t",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 3.987,
@@ -1604,7 +1605,7 @@
             "time": 4.081,
             "duration": 0.079,
             "phoneme": "f",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 4.16,
@@ -1628,7 +1629,7 @@
             "time": 4.438,
             "duration": 0.088,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 4.527,
@@ -1646,7 +1647,7 @@
             "time": 4.718,
             "duration": 0.088,
             "phoneme": "s",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 4.806,
@@ -1658,7 +1659,7 @@
             "time": 4.884,
             "duration": 0.039,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 4.923,
@@ -1676,7 +1677,7 @@
             "time": 5.12,
             "duration": 0.037,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 5.157,
@@ -1688,7 +1689,7 @@
             "time": 5.255,
             "duration": 0.039,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 5.294,
@@ -1700,7 +1701,7 @@
             "time": 5.37,
             "duration": 0.036,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 5.406,
@@ -1712,7 +1713,7 @@
             "time": 5.478,
             "duration": 0.06,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 5.538,
@@ -1724,7 +1725,7 @@
             "time": 5.638,
             "duration": 0.051,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 5.688,
@@ -1764,7 +1765,7 @@
             "time": 0,
             "duration": 0.109,
             "phoneme": "s",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 0.109,
@@ -1776,7 +1777,7 @@
             "time": 0.182,
             "duration": 0.032,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 0.214,
@@ -1794,7 +1795,7 @@
             "time": 0.422,
             "duration": 0.052,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 0.474,
@@ -1806,7 +1807,7 @@
             "time": 0.557,
             "duration": 0.054,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 0.61,
@@ -1830,7 +1831,7 @@
             "time": 0.812,
             "duration": 0.057,
             "phoneme": "t",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 0.869,
@@ -1866,7 +1867,7 @@
             "time": 1.226,
             "duration": 0.083,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 1.309,
@@ -1878,7 +1879,7 @@
             "time": 1.37,
             "duration": 0.041,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 1.411,
@@ -1890,7 +1891,7 @@
             "time": 1.513,
             "duration": 0.072,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 1.585,
@@ -1908,7 +1909,7 @@
             "time": 1.783,
             "duration": 0.036,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 1.819,
@@ -1920,7 +1921,7 @@
             "time": 1.915,
             "duration": 0.04,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 1.956,
@@ -1932,7 +1933,7 @@
             "time": 2.032,
             "duration": 0.036,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 2.068,
@@ -1944,7 +1945,7 @@
             "time": 2.14,
             "duration": 0.06,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 2.2,
@@ -1956,7 +1957,7 @@
             "time": 2.3,
             "duration": 0.051,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 2.351,
@@ -2002,7 +2003,7 @@
             "time": 0,
             "duration": 0.081,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 0.081,
@@ -2014,7 +2015,7 @@
             "time": 0.167,
             "duration": 0.03,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 0.198,
@@ -2026,7 +2027,7 @@
             "time": 0.306,
             "duration": 0.059,
             "phoneme": "g",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 0.366,
@@ -2044,7 +2045,7 @@
             "time": 0.807,
             "duration": 0.152,
             "phoneme": "sh",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 0.958,
@@ -2086,7 +2087,7 @@
             "time": 1.659,
             "duration": 0.041,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 1.7,
@@ -2098,7 +2099,7 @@
             "time": 1.781,
             "duration": 0.069,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 1.851,
@@ -2122,7 +2123,7 @@
             "time": 2.53,
             "duration": 0.084,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 2.614,
@@ -2134,7 +2135,7 @@
             "time": 2.705,
             "duration": 0.062,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 2.767,
@@ -2146,7 +2147,7 @@
             "time": 2.867,
             "duration": 0.05,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 2.918,
@@ -2170,7 +2171,7 @@
             "time": 3.555,
             "duration": 0.091,
             "phoneme": "ts",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 3.647,
@@ -2194,7 +2195,7 @@
             "time": 3.85,
             "duration": 0.054,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 3.904,
@@ -2206,7 +2207,7 @@
             "time": 3.983,
             "duration": 0.079,
             "phoneme": "s",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 4.063,
@@ -2218,7 +2219,7 @@
             "time": 4.129,
             "duration": 0.035,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 4.164,
@@ -2236,7 +2237,7 @@
             "time": 4.353,
             "duration": 0.052,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 4.405,
@@ -2248,7 +2249,7 @@
             "time": 4.485,
             "duration": 0.05,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 4.536,
@@ -2260,7 +2261,7 @@
             "time": 4.615,
             "duration": 0.056,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 4.671,
@@ -2272,7 +2273,7 @@
             "time": 4.765,
             "duration": 0.048,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 4.813,
@@ -2318,7 +2319,7 @@
             "time": 0,
             "duration": 0.081,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 0.081,
@@ -2330,7 +2331,7 @@
             "time": 0.168,
             "duration": 0.031,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 0.198,
@@ -2342,7 +2343,7 @@
             "time": 0.308,
             "duration": 0.051,
             "phoneme": "g",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 0.358,
@@ -2366,7 +2367,7 @@
             "time": 1.062,
             "duration": 0.074,
             "phoneme": "f",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 1.136,
@@ -2378,7 +2379,7 @@
             "time": 1.23,
             "duration": 0.074,
             "phoneme": "y",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 1.305,
@@ -2402,7 +2403,7 @@
             "time": 1.607,
             "duration": 0.042,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 1.649,
@@ -2420,7 +2421,7 @@
             "time": 1.856,
             "duration": 0.04,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 1.896,
@@ -2456,7 +2457,7 @@
             "time": 2.389,
             "duration": 0.042,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 2.431,
@@ -2492,7 +2493,7 @@
             "time": 2.995,
             "duration": 0.074,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 3.069,
@@ -2516,7 +2517,7 @@
             "time": 3.761,
             "duration": 0.082,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 3.843,
@@ -2528,7 +2529,7 @@
             "time": 3.933,
             "duration": 0.062,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 3.995,
@@ -2540,7 +2541,7 @@
             "time": 4.093,
             "duration": 0.047,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 4.141,
@@ -2558,7 +2559,7 @@
             "time": 4.599,
             "duration": 0.097,
             "phoneme": "h",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 4.696,
@@ -2576,7 +2577,7 @@
             "time": 4.903,
             "duration": 0.075,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 4.978,
@@ -2594,7 +2595,7 @@
             "time": 5.159,
             "duration": 0.057,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 5.216,
@@ -2612,7 +2613,7 @@
             "time": 5.402,
             "duration": 0.04,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 5.442,
@@ -2624,7 +2625,7 @@
             "time": 5.528,
             "duration": 0.054,
             "phoneme": "g",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 5.582,
@@ -2636,7 +2637,7 @@
             "time": 5.667,
             "duration": 0.082,
             "phoneme": "s",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 5.75,
@@ -2648,7 +2649,7 @@
             "time": 5.818,
             "duration": 0.053,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 5.872,
@@ -2690,7 +2691,7 @@
             "time": 6.337,
             "duration": 0.076,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 6.413,
@@ -2702,7 +2703,7 @@
             "time": 6.474,
             "duration": 0.037,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 6.511,
@@ -2714,7 +2715,7 @@
             "time": 6.585,
             "duration": 0.058,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 6.642,
@@ -2726,7 +2727,7 @@
             "time": 6.74,
             "duration": 0.05,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 6.79,
@@ -2783,7 +2784,7 @@
             "time": 0.183,
             "duration": 0.068,
             "phoneme": "j",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 0.251,
@@ -2795,7 +2796,7 @@
             "time": 0.331,
             "duration": 0.062,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 0.393,
@@ -2813,7 +2814,7 @@
             "time": 0.583,
             "duration": 0.042,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 0.625,
@@ -2825,7 +2826,7 @@
             "time": 0.718,
             "duration": 0.051,
             "phoneme": "w",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 0.768,
@@ -2837,7 +2838,7 @@
             "time": 0.869,
             "duration": 0.08,
             "phoneme": "j",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 0.95,
@@ -2849,7 +2850,7 @@
             "time": 1.017,
             "duration": 0.063,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 1.08,
@@ -2867,7 +2868,7 @@
             "time": 1.268,
             "duration": 0.055,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 1.322,
@@ -2885,7 +2886,7 @@
             "time": 1.514,
             "duration": 0.066,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 1.58,
@@ -2897,7 +2898,7 @@
             "time": 1.66,
             "duration": 0.037,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 1.697,
@@ -2909,7 +2910,7 @@
             "time": 1.78,
             "duration": 0.061,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 1.841,
@@ -2921,7 +2922,7 @@
             "time": 1.898,
             "duration": 0.055,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 1.952,
@@ -2933,7 +2934,7 @@
             "time": 2.05,
             "duration": 0.036,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 2.086,
@@ -2945,7 +2946,7 @@
             "time": 2.162,
             "duration": 0.065,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 2.227,
@@ -2957,7 +2958,7 @@
             "time": 2.323,
             "duration": 0.032,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 2.355,
@@ -2975,7 +2976,7 @@
             "time": 2.767,
             "duration": 0.108,
             "phoneme": "s",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 2.875,
@@ -2987,7 +2988,7 @@
             "time": 2.94,
             "duration": 0.054,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 2.995,
@@ -3023,7 +3024,7 @@
             "time": 3.378,
             "duration": 0.063,
             "phoneme": "y",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 3.441,
@@ -3047,7 +3048,7 @@
             "time": 3.656,
             "duration": 0.033,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 3.688,
@@ -3059,7 +3060,7 @@
             "time": 3.761,
             "duration": 0.06,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 3.821,
@@ -3071,7 +3072,7 @@
             "time": 3.919,
             "duration": 0.051,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 3.97,
@@ -3117,7 +3118,7 @@
             "time": 0,
             "duration": 0.103,
             "phoneme": "s",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 0.103,
@@ -3129,7 +3130,7 @@
             "time": 0.194,
             "duration": 0.037,
             "phoneme": "sh",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 0.231,
@@ -3141,7 +3142,7 @@
             "time": 0.306,
             "duration": 0.073,
             "phoneme": "t",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 0.379,
@@ -3159,7 +3160,7 @@
             "time": 0.569,
             "duration": 0.076,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 0.644,
@@ -3171,7 +3172,7 @@
             "time": 0.699,
             "duration": 0.033,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 0.732,
@@ -3183,7 +3184,7 @@
             "time": 0.825,
             "duration": 0.057,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 0.882,
@@ -3195,7 +3196,7 @@
             "time": 0.974,
             "duration": 0.086,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 1.059,
@@ -3207,7 +3208,7 @@
             "time": 1.119,
             "duration": 0.041,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 1.16,
@@ -3219,7 +3220,7 @@
             "time": 1.263,
             "duration": 0.075,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 1.339,
@@ -3237,7 +3238,7 @@
             "time": 1.532,
             "duration": 0.053,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 1.584,
@@ -3249,7 +3250,7 @@
             "time": 1.668,
             "duration": 0.072,
             "phoneme": "w",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 1.74,
@@ -3267,7 +3268,7 @@
             "time": 2.18,
             "duration": 0.096,
             "phoneme": "t",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 2.275,
@@ -3297,7 +3298,7 @@
             "time": 2.715,
             "duration": 0.08,
             "phoneme": "t",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 2.795,
@@ -3321,7 +3322,7 @@
             "time": 3.126,
             "duration": 0.039,
             "phoneme": "r",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 3.165,
@@ -3357,7 +3358,7 @@
             "time": 4.124,
             "duration": 0.076,
             "phoneme": "ts",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 4.2,
@@ -3369,7 +3370,7 @@
             "time": 4.265,
             "duration": 0.083,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 4.349,
@@ -3387,7 +3388,7 @@
             "time": 4.529,
             "duration": 0.057,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 4.586,
@@ -3399,7 +3400,7 @@
             "time": 4.682,
             "duration": 0.047,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 4.729,
@@ -3440,7 +3441,7 @@
             "time": 0,
             "duration": 0.094,
             "phoneme": "k",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 0.094,
@@ -3470,7 +3471,7 @@
             "time": 0.467,
             "duration": 0.057,
             "phoneme": "w",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 0.524,
@@ -3482,7 +3483,7 @@
             "time": 0.603,
             "duration": 0.085,
             "phoneme": "s",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 0.688,
@@ -3494,7 +3495,7 @@
             "time": 0.775,
             "duration": 0.049,
             "phoneme": "w",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 0.824,
@@ -3506,7 +3507,7 @@
             "time": 0.92,
             "duration": 0.088,
             "phoneme": "j",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 1.009,
@@ -3518,7 +3519,7 @@
             "time": 1.095,
             "duration": 0.073,
             "phoneme": "y",
-            "mouth": "n"
+            "mouth": "u"
           },
           {
             "time": 1.168,
@@ -3536,7 +3537,7 @@
             "time": 1.317,
             "duration": 0.052,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 1.369,
@@ -3548,7 +3549,7 @@
             "time": 1.457,
             "duration": 0.055,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 1.512,
@@ -3560,7 +3561,7 @@
             "time": 1.601,
             "duration": 0.049,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 1.65,
@@ -3578,7 +3579,7 @@
             "time": 2.172,
             "duration": 0.084,
             "phoneme": "z",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 2.256,
@@ -3590,7 +3591,7 @@
             "time": 2.349,
             "duration": 0.048,
             "phoneme": "h",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 2.397,
@@ -3602,7 +3603,7 @@
             "time": 2.449,
             "duration": 0.067,
             "phoneme": "t",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 2.516,
@@ -3626,7 +3627,7 @@
             "time": 2.73,
             "duration": 0.045,
             "phoneme": "sh",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 2.776,
@@ -3638,7 +3639,7 @@
             "time": 2.848,
             "duration": 0.06,
             "phoneme": "t",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 2.908,
@@ -3662,7 +3663,7 @@
             "time": 3.104,
             "duration": 0.055,
             "phoneme": "t",
-            "mouth": "n"
+            "mouth": "e"
           },
           {
             "time": 3.158,
@@ -3674,7 +3675,7 @@
             "time": 3.232,
             "duration": 0.069,
             "phoneme": "h",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 3.301,
@@ -3686,7 +3687,7 @@
             "time": 3.39,
             "duration": 0.108,
             "phoneme": "sh",
-            "mouth": "n"
+            "mouth": "i"
           },
           {
             "time": 3.497,
@@ -3704,7 +3705,7 @@
             "time": 3.664,
             "duration": 0.062,
             "phoneme": "n",
-            "mouth": "n"
+            "mouth": "o"
           },
           {
             "time": 3.726,
@@ -3716,7 +3717,7 @@
             "time": 3.826,
             "duration": 0.049,
             "phoneme": "d",
-            "mouth": "n"
+            "mouth": "a"
           },
           {
             "time": 3.875,

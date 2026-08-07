@@ -35,7 +35,8 @@ npm run voice
 
 ```yaml
 title: "動画タイトル"
-speaker_id: 3
+character: zundamon   # 省略可。立ち絵・声・クレジットがまとめて切り替わる
+speaker_id: 3          # 省略時はキャラクターの既定値
 
 dict:                 # 誤読する語（英字・日本語の複合語）
   Cosense: コセンス
@@ -69,7 +70,10 @@ scenes:
 
 全機能を使ったサンプルは `scenes/demo.yaml` を参照。
 
-## 表情プリセット
+## 表情プリセット（zundamon）
+
+表情パーツはキャラクターごとに違う（`src/characters/<name>/character.json`の`emotions`）。
+以下はずんだもんの場合。
 
 | emotion | 目 | 眉 | 頬 | 枝豆 |
 |---------|-----|-----|-----|------|
@@ -90,4 +94,5 @@ scenes:
 - リップシンク: 口パクが同期しているか
 - レイアウト: スライドやテロップがキャラクターに被っていないか
   （暗い背景を敷くバリアントは特に確認する）
-- クレジット: VOICEVOX:ずんだもん、立ち絵素材: 坂本アヒル（自動表示）
+- クレジット: 使用キャラクターの`character.json`の`credits`が自動表示される
+  （zundamonなら VOICEVOX:ずんだもん、立ち絵素材: 坂本アヒル）

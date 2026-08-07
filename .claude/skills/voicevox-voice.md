@@ -27,14 +27,22 @@ npm run voice -- scenes/demo.yaml
 ## 個別音声生成
 
 ```bash
-./scripts/generate-voice-with-lipsync.sh "テキスト" <speaker_id> <output_base>
+./scripts/generate-voice-with-lipsync.sh "テキスト" <speaker_id> <output_base> [voice_params]
 
 # 例
 ./scripts/generate-voice-with-lipsync.sh "こんにちは！" 3 public/audio/voice/demo/scene_001
 # 出力: scene_001.wav, scene_001.json
+
+# 声を調整する場合（省略可。JSON文字列で渡す）
+./scripts/generate-voice-with-lipsync.sh "テスト" 3 /tmp/p010 '{"pitchScale":0.10}'
 ```
 
 話者ID: ずんだもん=3（ノーマル）、1（あまあま）、7（ツンツン）
+
+`voice_params`で`speedScale`（0.5〜2.0）/`pitchScale`（-0.15〜0.15）/
+`intonationScale`（0〜2.0）/`volumeScale`（0〜2.0）を調整できる。
+`speedScale`を変えるとリップシンクの尺も自動で追従する。
+詳細は`.claude/rules/character.md`を参照。
 
 ## 辞書
 
@@ -67,12 +75,24 @@ dict:
 
 ## 口形状マッピング
 
+母音（大文字は無声化）:
+
 | 音素 | mouth |
 |------|-------|
 | a, A | a |
-| i, I | smile |
+| i, I | i |
 | u, U | u |
 | e, E | e |
 | o, O | o |
-| N, n | n |
-| pau, end | closed |
+| N | n |
+| cl（促音）, pau, end | closed |
+
+子音は**後ろに続く母音と同じ形**にする。ただし唇を閉じる両唇音
+（`m` / `my` / `p` / `py` / `b` / `by`）だけは `closed` にする。
+
+子音に専用の形を割り当てると、子音は1フレーム程度しかないことが多いため
+母音の合間で毎回口が閉じてチラついて見える。実際の発音でも子音を出す間に
+口はすでに母音の形へ動いているので、揃えたほうが自然になる。
+
+JSONに入るのは母音キー（`a`/`i`/`u`/`e`/`o`/`n`/`closed`）だけで、
+実際のパーツ名への変換はキャラクター定義の`mouthMap`が行う。

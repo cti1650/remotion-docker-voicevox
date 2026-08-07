@@ -1,0 +1,111 @@
+{
+  "name": "zundamon",
+  "displayName": "ずんだもん",
+  "art": {
+    "basePath": "parts/zundamon_en",
+    "width": 1082,
+    "height": 1594,
+    "layers": [
+      { "file": "tail.png", "when": "showTail" },
+      { "file": "body.png" },
+      { "dir": "arm_right", "slot": "rightArm" },
+      { "dir": "arm_left", "slot": "leftArm" },
+      { "file": "head_front/head.png" },
+      { "dir": "head_front/edamame", "slot": "edamame" },
+      { "dir": "head_front/face_color", "slot": "faceColor" },
+      { "dir": "head_front/eyebrow", "slot": "eyebrow" },
+      { "dir": "head_front/eye", "slot": "eye" },
+      { "dir": "head_front/mouth", "slot": "mouth" },
+      { "file": "head_front/sweat.png", "when": "showSweat" },
+      { "file": "head_front/tears.png", "when": "showTears" }
+    ]
+  },
+  "placement": {
+    "scale": 0.55,
+    "offsetX": 400,
+    "offsetY": 730
+  },
+  "defaultSlots": {
+    "mouth": "closed",
+    "eye": "normal",
+    "eyebrow": "normal",
+    "edamame": "normal",
+    "faceColor": "cheek_normal",
+    "rightArm": "waist",
+    "leftArm": "waist"
+  },
+  "defaultFlags": {
+    "showTail": true,
+    "showSweat": false,
+    "showTears": false
+  },
+  "emotions": {
+    "normal": {
+      "eye": "normal",
+      "eyebrow": "normal",
+      "faceColor": "cheek_normal",
+      "edamame": "normal"
+    },
+    "happy": {
+      "eye": "smile",
+      "eyebrow": "normal",
+      "faceColor": "cheek_red",
+      "edamame": "normal"
+    },
+    "sad": {
+      "eye": "normal",
+      "eyebrow": "troubled",
+      "faceColor": "cheek_normal",
+      "edamame": "wilted"
+    },
+    "angry": {
+      "eye": "jitome",
+      "eyebrow": "angry",
+      "faceColor": "cheek_red",
+      "edamame": "normal"
+    },
+    "surprised": {
+      "eye": "circle",
+      "eyebrow": "raised",
+      "faceColor": "cheek_normal",
+      "edamame": "standing"
+    },
+    "thinking": {
+      "eye": "normal_up",
+      "eyebrow": "normal",
+      "faceColor": "cheek_normal",
+      "edamame": "normal"
+    },
+    "smug": {
+      "eye": "jitome",
+      "eyebrow": "normal",
+      "faceColor": "cheek_normal",
+      "edamame": "normal"
+    },
+    "tired": {
+      "eye": "relaxed",
+      "eyebrow": "troubled",
+      "faceColor": "pale",
+      "edamame": "wilted"
+    }
+  },
+  "blink": {
+    "slot": "eye",
+    "closed": "closed"
+  },
+  "mouthSlot": "mouth",
+  "mouthMap": {
+    "a": "a",
+    "i": "i",
+    "u": "u",
+    "e": "e",
+    "o": "o",
+    "n": "n",
+    "closed": "closed",
+    "smile": "i"
+  },
+  "voice": {
+    "defaultSpeakerId": 3
+  },
+  "credits": ["VOICEVOX:ずんだもん", "立ち絵素材: 坂本アヒル"]
+}

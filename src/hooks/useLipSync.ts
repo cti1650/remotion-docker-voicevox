@@ -1,5 +1,6 @@
 import { useCurrentFrame, useVideoConfig } from "remotion";
-import { MouthType } from "../components/ZundamonCharacter";
+import { resolveMouth } from "../characters/registry";
+import type { CharacterDefinition } from "../characters/types";
 
 // ============================================
 // VOICEVOX リップシンクデータ型
@@ -33,14 +34,18 @@ export interface DialogueLipSync {
 
 /**
  * VOICEVOXのタイミングデータを使った正確なリップシンク
+ *
+ * リップシンクJSONに入っているのは母音キー（a/i/u/e/o/n/closed）だけで、
+ * それをどのパーツ名に対応させるかはキャラクター定義のmouthMapが決める。
+ *
  * @param dialogues セリフとリップシンクデータの配列
- * @param defaultMouth デフォルトの口の形
- * @returns 現在のフレームに対応する口の形
+ * @param character 表示中のキャラクター
+ * @returns 現在のフレームに対応する口のパーツ名
  */
 export function useLipSync(
   dialogues: DialogueLipSync[],
-  defaultMouth: MouthType = "closed"
-): MouthType {
+  character: CharacterDefinition
+): string {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const currentTime = frame / fps;
@@ -58,34 +63,14 @@ export function useLipSync(
         const entryEnd = entry.time + entry.duration;
 
         if (relativeTime >= entry.time && relativeTime < entryEnd) {
-          return convertToMouthType(entry.mouth);
+          return resolveMouth(character, entry.mouth);
         }
       }
     }
   }
 
-  return defaultMouth;
-}
-
-/**
- * 母音キーをMouthType（パーツ名）に変換
- *
- * 母音パーツは a/i/u/e/o に揃えてあるが、i.pngとu.pngはPSDに該当する絵が無く
- * scripts/generate-mouth-parts.py で生成した派生パーツである点に注意。
- */
-function convertToMouthType(mouth: string): MouthType {
-  const mouthMap: Record<string, MouthType> = {
-    a: "a",
-    i: "i",
-    u: "u",
-    e: "e",
-    o: "o",
-    n: "n",
-    closed: "closed",
-    smile: "i",   // 旧JSON互換（「い」がsmileで記録されていた時期のデータ用）
-  };
-
-  return mouthMap[mouth] || "closed";
+  // 喋っていないときは閉じた口
+  return resolveMouth(character, "closed");
 }
 
 // ============================================

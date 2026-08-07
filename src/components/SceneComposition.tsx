@@ -8,7 +8,7 @@ import {
   staticFile,
   interpolate,
 } from "remotion";
-import { ZundamonCharacter, MouthType } from "./ZundamonCharacter";
+import { CharacterRenderer, getCharacter } from "../characters";
 import { Background } from "./Background";
 import { HighlightImage } from "./HighlightImage";
 import { SlideRenderer } from "./slide";
@@ -21,7 +21,6 @@ import {
   SceneConfig,
   VideoConfig,
   EmotionType,
-  EMOTION_PRESETS,
   BackgroundConfig,
   SlideConfig,
   BgmConfig,
@@ -98,6 +97,9 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
   const { fps, width, height } = useVideoConfig();
   const currentTime = frame / fps;
 
+  // 立ち絵・表情・クレジットはキャラクター定義が持つ
+  const character = getCharacter(config.character);
+
   // オープニング（本編の前のタイトル演出）
   const opening = config.opening;
   const openingDuration = opening?.duration ?? 0;
@@ -115,7 +117,7 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
     })),
   ];
 
-  const mouth = useLipSync(lipSyncDialogues, "closed");
+  const mouth = useLipSync(lipSyncDialogues, character);
 
   // 現在のシーンを取得
   const getCurrentScene = (): GeneratedScene | undefined => {
@@ -132,7 +134,6 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
   const emotion: EmotionType = inOpening
     ? opening?.emotion ?? "happy"
     : currentScene?.emotion ?? "normal";
-  const emotionPreset = EMOTION_PRESETS[emotion];
 
   // オープニング中はキャラクターを隠せる（character: falseのとき）
   const showCharacter = !inOpening || (opening?.character ?? true);
@@ -165,12 +166,11 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
   const bgmCredit =
     typeof config.bgm === "object" ? config.bgm.credit : undefined;
 
-  // キャラクター配置
-  const characterScale = 0.55;
-  const characterWidth = 1082 * characterScale;
-  const characterHeight = 1594 * characterScale;
-  const characterX = (width - characterWidth) / 2 + 400;
-  const characterY = height - characterHeight - 730;
+  // キャラクター配置（原寸も置き場所もキャラクター定義から取る）
+  const { scale: characterScale, offsetX, offsetY } = character.placement;
+  const characterX =
+    (width - character.art.width * characterScale) / 2 + offsetX;
+  const characterY = height - character.art.height * characterScale - offsetY;
 
   // 動画の長さ（最後のシーンが終わる時刻）
   // scene.startTimeはオープニングの尺を含んだ絶対時刻なので、これだけで足りる
@@ -187,10 +187,8 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
       {config.bgm && (
         <Bgm config={config.bgm} totalDuration={totalDuration} />
       )}
-
       {/* 背景 */}
       <Background config={background} />
-
       {/* スライド */}
       {activeSlideGroup && (
         <SlideRenderer
@@ -202,23 +200,19 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
           fallbackVariant={config.defaultSlideVariant}
         />
       )}
-
       {/* キャラクター */}
       {showCharacter && (
-        <ZundamonCharacter
+        <CharacterRenderer
+          character={character}
           scale={characterScale}
           x={characterX}
           y={characterY}
           mouth={mouth}
-          eye={emotionPreset.eye}
-          eyebrow={emotionPreset.eyebrow}
-          faceColor={emotionPreset.faceColor}
-          edamame={emotionPreset.edamame}
+          emotion={emotion}
           enableBlink={true}
           enableBreathing={true}
         />
       )}
-
       {/* オープニング */}
       {opening && openingDuration > 0 && (
         <>
@@ -232,7 +226,6 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
           <SoundEffect config={opening.se} startFrame={0} />
         </>
       )}
-
       {/* スライド登場時の効果音（同じスライドを続けるシーンでは鳴らさない） */}
       {slideGroups.map((group) => (
         <SoundEffect
@@ -241,7 +234,6 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
           startFrame={Math.floor(group.startTime * fps)}
         />
       ))}
-
       {/* シーンごとの字幕・音声・強調画像 */}
       {scenes.map((scene, i) => {
         const startFrame = Math.floor(scene.startTime * fps);
@@ -268,7 +260,6 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
           </React.Fragment>
         );
       })}
-
       {/* クレジット（最後の2秒） */}
       <Sequence
         from={Math.floor((totalDuration - 2) * fps)}
@@ -290,8 +281,9 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
             ),
           }}
         >
-          <div>VOICEVOX:ずんだもん</div>
-          <div>立ち絵素材: 坂本アヒル</div>
+          {character.credits.map((credit) => (
+            <div key={credit}>{credit}</div>
+          ))}
           {bgmCredit && <div>{bgmCredit}</div>}
         </div>
       </Sequence>

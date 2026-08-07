@@ -3,14 +3,19 @@ name: character-animation
 description: |
   Remotionでキャラクターアニメーション（口パク・瞬き・呼吸・表情）を実装するスキル。
   トリガー: 「キャラクターを動かして」「表情を変えて」「アニメーションを実装して」
-  SceneCompositionコンポーネントとEMOTION_PRESETSの使い方。
+  SceneCompositionとキャラクター定義（character.json）の使い方。
 ---
 
 # キャラクターアニメーション
 
+口パク・瞬き・呼吸・表情はすべて`SceneComposition`が自動処理する。
+「何を描くか」はキャラクター定義（`src/characters/<name>/character.json`）が持ち、
+「どう動かすか」は`CharacterRenderer`が持つ。
+
 ## シーンYAMLでの表情指定（推奨）
 
 ```yaml
+character: zundamon   # 省略時 zundamon
 scenes:
   - text: "嬉しいのだ！"
     emotion: happy     # 自動で表情パーツが設定される
@@ -19,7 +24,13 @@ scenes:
     emotion: sad
 ```
 
-## 表情プリセット（src/types/scene.ts）
+表情は8種類（`normal` / `happy` / `sad` / `angry` / `surprised` / `thinking` /
+`smug` / `tired`）。**どのパーツになるかはキャラクターごとに違う。**
+表情パーツを持たないキャラでは、どの表情でも既定の見た目になる（エラーにはならない）。
+
+## 表情プリセット（ずんだもん）
+
+`src/characters/zundamon/character.json` の `emotions`。
 
 | emotion | eye | eyebrow | faceColor | edamame |
 |---------|-----|---------|-----------|---------|
@@ -35,45 +46,69 @@ scenes:
 ## 直接コンポーネント使用
 
 ```tsx
-<ZundamonCharacter
-  scale={0.55}
+import { CharacterRenderer, getCharacter } from "../characters";
+
+const character = getCharacter(config.character);
+
+<CharacterRenderer
+  character={character}
+  scale={character.placement.scale}
   x={characterX}
   y={characterY}
-  mouth={mouth}           // useLipSyncから取得
-  eye="normal"
-  eyebrow="normal"
-  faceColor="cheek_normal"
-  edamame="normal"
+  mouth={mouth}          // useLipSyncから取得（パーツ名）
+  emotion="happy"
+  slots={{ rightArm: "point_up" }}   // 表情以外のスロットを個別指定
+  flags={{ showTears: true }}        // whenを持つレイヤーの出し分け
   enableBlink={true}
   enableBreathing={true}
 />
 ```
 
+サムネイルのように間にバリアントを挟む場合は、propsではなくコンテキストを使う。
+
+```tsx
+import { useCharacter } from "../characters";
+const character = useCharacter();   // CharacterProviderが配る
+```
+
 ## リップシンク
 
-SceneCompositionでは自動処理。直接使用する場合:
+`SceneComposition`では自動処理。直接使う場合:
 
 ```tsx
 import { useLipSync } from "./hooks/useLipSync";
 
-const lipSyncDialogues = scenes.map((scene) => ({
-  start: scene.startTime,
-  lipsyncData: scene.lipsyncData,
-}));
-
-const mouth = useLipSync(lipSyncDialogues, "closed");
+const mouth = useLipSync(lipSyncDialogues, character);
 ```
 
-## 型定義
+リップシンクJSONに入っているのは母音キー（`a`/`i`/`u`/`e`/`o`/`n`/`closed`）だけで、
+実際のパーツ名への変換は`character.json`の`mouthMap`が決める。
+**新しいキャラクターは この7つのキーを埋めれば口パクが動く。**
 
-```tsx
-type MouthType = "closed" | "a" | "aa" | "u" | "e" | "o" | "n" | "smile" | ...;
-type EyeType = "normal" | "closed" | "smile" | "jitome" | "circle" | ...;
-type EyebrowType = "normal" | "angry" | "raised" | "troubled" | ...;
-type FaceColorType = "cheek_normal" | "cheek_red" | "blush" | "pale";
-type EdamameType = "normal" | "standing" | "standing_bent" | "wilted";
+## アニメーションの実装（CharacterRenderer.tsx）
+
+| 動き | 実装 |
+|------|------|
+| 瞬き | 3秒ごとに0.12秒だけ`blink.slot`を`blink.closed`に差し替える |
+| 呼吸 | 4秒周期のsinで縦に±3px動かす |
+| 口パク | `mouth`propで`mouthSlot`を上書きする |
+
+`blink`を持たないキャラ（目のパーツが無い）は瞬きしない。
+
+## スロットの優先順位
+
+後に書いたものが勝つ。
+
+```
+defaultSlots → emotions[emotion] → slots(props) → mouth → 瞬き
 ```
 
-## レイヤー順序（下から上）
+## レイヤー順序
 
-tail → body → arm_right → arm_left → head → edamame → face_color → eyebrow → eye → mouth
+`character.json`の`art.layers`の順。先に書いたものが奥になる。
+ずんだもんの場合:
+
+tail → body → arm_right → arm_left → head → edamame → face_color → eyebrow → eye → mouth → sweat → tears
+
+キャラクターを増やす手順は`.claude/rules/character.md`と
+`character-from-image`スキルを参照。

@@ -1,11 +1,7 @@
 import React from "react";
 import { useVideoConfig } from "remotion";
-import { ZundamonCharacter } from "../../ZundamonCharacter";
-import { EMOTION_PRESETS, EmotionType } from "../../../types/scene";
-
-// 立ち絵の原寸
-const ART_WIDTH = 1082;
-const ART_HEIGHT = 1594;
+import { CharacterRenderer, useCharacter } from "../../../characters";
+import { EmotionType } from "../../../types/scene";
 
 interface ThumbnailCharacterProps {
   emotion?: EmotionType;
@@ -17,9 +13,12 @@ interface ThumbnailCharacterProps {
 /**
  * サムネイル用のキャラクター配置
  *
- * ZundamonCharacterのx/yは「拡大前のボックスの左上」で、
+ * CharacterRendererのx/yは「拡大前のボックスの左上」で、
  * 拡大はbottom centerを軸に行われる。
  * ここでは見せたい位置（画面上の見た目）から逆算する。
+ *
+ * 立ち絵の原寸はキャラクター定義から取るので、
+ * サイズの違うキャラでも同じ見え方になる。
  */
 export const ThumbnailCharacter: React.FC<ThumbnailCharacterProps> = ({
   emotion = "happy",
@@ -28,12 +27,13 @@ export const ThumbnailCharacter: React.FC<ThumbnailCharacterProps> = ({
   bottomCrop = 0.04,
 }) => {
   const { width, height } = useVideoConfig();
-  const preset = EMOTION_PRESETS[emotion];
+  const character = useCharacter();
+  const { width: artWidth, height: artHeight } = character.art;
 
   // 画面の高さに対して少し大きめにして、足元を切る
   const drawHeight = height * 1.06 * scale;
-  const s = drawHeight / ART_HEIGHT;
-  const drawWidth = ART_WIDTH * s;
+  const s = drawHeight / artHeight;
+  const drawWidth = artWidth * s;
 
   // 見せたい位置（画面上の座標）
   const visibleLeft =
@@ -41,19 +41,16 @@ export const ThumbnailCharacter: React.FC<ThumbnailCharacterProps> = ({
   const visibleTop = height + drawHeight * bottomCrop - drawHeight;
 
   // transform-origin: bottom center を打ち消して、拡大前の座標に変換する
-  const x = visibleLeft - (ART_WIDTH / 2) * (1 - s);
-  const y = visibleTop - ART_HEIGHT * (1 - s);
+  const x = visibleLeft - (artWidth / 2) * (1 - s);
+  const y = visibleTop - artHeight * (1 - s);
 
   return (
-    <ZundamonCharacter
+    <CharacterRenderer
+      character={character}
       scale={s}
       x={x}
       y={y}
-      mouth="closed"
-      eye={preset.eye}
-      eyebrow={preset.eyebrow}
-      faceColor={preset.faceColor}
-      edamame={preset.edamame}
+      emotion={emotion}
       enableBlink={false}
       enableBreathing={false}
     />
