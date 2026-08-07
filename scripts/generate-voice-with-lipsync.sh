@@ -82,7 +82,9 @@ current_time = 0
 # （speedScaleが既定の1.0なら何も変わらない）
 speed = float(data.get('speedScale', 1.0)) or 1.0
 
-# 音素→母音キーの正規化（パーツ名への変換はsrc/hooks/useLipSync.ts側で行う）
+# モーラの母音→母音キーの正規化（パーツ名への変換はキャラクター定義のmouthMapが行う）
+# 大文字は無声化した母音。VOICEVOXはここに子音を入れてこないので、
+# 'ん'は大文字のNだけ。な行の子音は小文字のnで別枠（下の子音の扱いを参照）
 vowel_to_mouth = {
     'a': 'a',
     'A': 'a',
@@ -94,8 +96,7 @@ vowel_to_mouth = {
     'E': 'e',
     'o': 'o',
     'O': 'o',
-    'N': 'n',      # ん
-    'n': 'n',
+    'N': 'n',       # ん
     'cl': 'closed', # 促音
     'pau': 'closed', # ポーズ
 }
