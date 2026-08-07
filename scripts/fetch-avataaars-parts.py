@@ -190,7 +190,12 @@ def main():
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--name", default="presenter", help="キャラクターID")
     parser.add_argument("--display-name", default="プレゼンター", help="表示名")
-    parser.add_argument("--speaker-id", type=int, default=3, help="VOICEVOXの話者ID")
+    parser.add_argument("--speaker-id", type=int, default=11,
+                        help="VOICEVOXの話者ID（既定: 11 = 玄野武宏）")
+    parser.add_argument("--voice-name", default="玄野武宏",
+                        help="クレジットに出す話者名。VOICEVOXの規約は "
+                             "「VOICEVOX:キャラクター名」の表記を求めているので、"
+                             "--speaker-idを変えたらこちらも必ず合わせる")
     parser.add_argument("--pitch", type=float, help="音高 -0.15〜0.15")
     args = parser.parse_args()
 
@@ -278,7 +283,8 @@ def main():
         "mouthSlot": "mouth",
         "mouthMap": dict(MOUTH_MAP, smile=MOUTH_MAP["i"]),  # smileは旧JSON互換
         "voice": voice,
-        "credits": [f"VOICEVOX（話者ID: {args.speaker_id}）",
+        # VOICEVOXは「VOICEVOX:キャラクター名」の表記を規約で求めている
+        "credits": [f"VOICEVOX:{args.voice_name}",
                     "立ち絵: Avataaars by Pablo Stanley (MIT)"],
     }
 
