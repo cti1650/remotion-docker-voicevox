@@ -92,6 +92,7 @@ export interface SceneConfig {
   slide?: SlideConfig | null;      // スライド (省略時は直前のスライドを継続、nullで非表示)
   highlight?: number;              // 強調する箇条書きの番号 (1始まり)
   subtitle?: SubtitleVariant;      // テロップの見た目 (省略時は動画全体の設定)
+  character?: boolean;             // キャラクターを出すか (デフォルト: true)
   se?: SoundEffectInput;           // テロップ表示時の効果音 (nullで鳴らさない)
   duration?: number;               // 表示時間の上書き (秒、通常は音声長+余白)
   pause?: number;                  // セリフ後の間 (秒、デフォルト: 0.5)
