@@ -26,6 +26,8 @@ export interface LipSyncData {
 export interface DialogueLipSync {
   start: number;           // セリフ開始時間（秒）
   lipsyncData: LipSyncData;
+  /** そのセリフを喋るキャラクター（途中で切り替わる場合があるので個別に持つ） */
+  character: CharacterDefinition;
 }
 
 // ============================================
@@ -38,13 +40,17 @@ export interface DialogueLipSync {
  * リップシンクJSONに入っているのは母音キー（a/i/u/e/o/n/closed）だけで、
  * それをどのパーツ名に対応させるかはキャラクター定義のmouthMapが決める。
  *
- * @param dialogues セリフとリップシンクデータの配列
- * @param character 表示中のキャラクター
+ * 音声の先頭の無音（prePhonemeLength）は生成時に吸収済みなので、
+ * ここでの補正はキャラクター定義の`voice.lipSyncOffset`だけ。
+ * 喋る人が途中で変わってもいいように、口の形はセリフごとのキャラクターで解決する。
+ *
+ * @param dialogues セリフ・リップシンクデータ・喋るキャラクターの配列
+ * @param fallback 喋っていないときに口を閉じるためのキャラクター（表示中のもの）
  * @returns 現在のフレームに対応する口のパーツ名
  */
 export function useLipSync(
   dialogues: DialogueLipSync[],
-  character: CharacterDefinition
+  fallback: CharacterDefinition
 ): string {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -52,25 +58,27 @@ export function useLipSync(
 
   // 現在再生中のセリフを探す
   for (const dialogue of dialogues) {
+    // 正の値で口が遅く、負の値で口が早くなる
+    const offset = dialogue.character.voice.lipSyncOffset ?? 0;
     const dialogueEnd = dialogue.start + dialogue.lipsyncData.duration;
 
     if (currentTime >= dialogue.start && currentTime < dialogueEnd) {
       // セリフ内の相対時間
-      const relativeTime = currentTime - dialogue.start;
+      const relativeTime = currentTime - dialogue.start - offset;
 
       // 該当する音素を探す
       for (const entry of dialogue.lipsyncData.lipsync) {
         const entryEnd = entry.time + entry.duration;
 
         if (relativeTime >= entry.time && relativeTime < entryEnd) {
-          return resolveMouth(character, entry.mouth);
+          return resolveMouth(dialogue.character, entry.mouth);
         }
       }
     }
   }
 
   // 喋っていないときは閉じた口
-  return resolveMouth(character, "closed");
+  return resolveMouth(fallback, "closed");
 }
 
 // ============================================

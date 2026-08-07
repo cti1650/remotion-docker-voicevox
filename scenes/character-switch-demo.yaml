@@ -1,0 +1,53 @@
+# 動画の途中でキャラクターを切り替えるサンプル
+#
+# シーンの character は書き方で意味が変わる（slide と同じ書き味）
+#   文字列 = そのキャラクターに切り替える（以降のシーンにも引き継ぐ）
+#   false  = そのシーンだけ隠す（キャラクター自体は変えない）
+#   省略   = 直前のキャラクターをそのまま表示
+#
+# 声も一緒に切り替わる。クレジットは出てきた全員ぶんが自動で表示される。
+#
+# 生成: npm run video -- scenes/character-switch-demo.yaml
+
+title: "キャラクターを途中で切り替える"
+character: zundamon        # 動画の既定キャラクター
+defaultBackground: "gradient"
+defaultPause: 0.4
+
+defaultSe:
+  src: "audio/se/pop.ogg"
+  volume: 0.20
+
+scenes:
+  # ---- ずんだもん（既定）----
+  - text: "ずんだもんなのだ！まずはぼくが話すのだ"
+    emotion: happy
+
+  - text: "動画の途中で、別のキャラクターに交代できるのだ"
+    emotion: smug
+
+  # ---- ここでプレゼンターに交代（声も一緒に変わる）----
+  - text: "交代しました。ここからは私が担当します。"
+    character: presenter
+    emotion: normal
+    background: blue
+
+  - text: "キャラクターを書いたシーン以降は、そのまま引き継がれます。"
+    emotion: normal
+    background: blue
+
+  - text: "このシーンだけ姿を隠すこともできます。"
+    character: false
+    background: dark
+    se: "audio/se/transition.ogg"
+
+  # ---- ずんだもんに戻す ----
+  - text: "また戻ってきたのだ！"
+    character: zundamon
+    emotion: surprised
+    background: green
+
+  - text: "クレジットには、出てきた全員ぶんが自動で並ぶのだ！"
+    se: "audio/se/confirm.ogg"
+    emotion: happy
+    pause: 1.0

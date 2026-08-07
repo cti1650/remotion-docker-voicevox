@@ -76,11 +76,16 @@ import sys
 
 data = json.load(sys.stdin)
 lipsync = []
-current_time = 0
 
 # accent_phrasesの長さは話速をかける前の値なので、ここで割って実時間に直す
 # （speedScaleが既定の1.0なら何も変わらない）
 speed = float(data.get('speedScale', 1.0)) or 1.0
+
+# 合成される音声は先頭にprePhonemeLength分の無音が入る。
+# ここを0から数え始めると口だけが先に動くので、無音の分だけ後ろにずらす。
+# 既定の0.1秒は30fpsで3フレームぶんあり、話速の速い話者ほど目立つ。
+# pre/postPhonemeLengthも話速で割られる（実測で確認済み）
+current_time = float(data.get('prePhonemeLength', 0.0) or 0.0) / speed
 
 # モーラの母音→母音キーの正規化（パーツ名への変換はキャラクター定義のmouthMapが行う）
 # 大文字は無声化した母音。VOICEVOXはここに子音を入れてこないので、

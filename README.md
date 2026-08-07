@@ -274,6 +274,22 @@ voice:                  # 省略時はキャラクターの既定値
 同梱しているのは `zundamon`（既定。PNGパーツ）と `presenter`（Avataaars由来のSVGパーツ）。
 動作するサンプルは `scenes/presenter-demo.yaml` を参照。
 
+動画の途中で切り替えることもできる。シーンの `character` は書き方で意味が変わる。
+
+```yaml
+scenes:
+  - text: "まずはぼくが話すのだ"        # 既定のキャラクター
+
+  - text: "交代しました"
+    character: presenter               # 切り替え（以降のシーンにも引き継ぐ）
+
+  - text: "このシーンだけ姿を隠します"
+    character: false                   # そのシーンだけ隠す
+```
+
+声も一緒に切り替わり、**クレジットは出てきた全キャラクターぶんが自動で並ぶ**。
+動作するサンプルは `scenes/character-switch-demo.yaml` を参照。
+
 新しいキャラクターを追加する手順は `.claude/rules/character.md` を参照。
 
 #### 読み方を直す
@@ -332,7 +348,7 @@ npm run video -- scenes/my-video.yaml --skip-generate   # 音声を使い回し�
 | `slide` | スライド（`null`で非表示に戻す） | `{ title: "見出し", bullets: [...] }` |
 | `highlight` | 強調する箇条書き番号（1始まり） | `1` |
 | `subtitle` | テロップの見た目 | `boxed`, `bar`, `outline`, `card`, `none` |
-| `character` | キャラクターを出すか（デフォルト`true`） | `false` |
+| `character` | キャラクターの切り替え／表示 | `"presenter"`（切り替え）, `false`（隠す） |
 | `se` | テロップ表示時の効果音（`null`で無音） | `"audio/se/chime.ogg"` |
 | `pause` | セリフ後の間（秒） | `0.5` |
 

@@ -75,6 +75,15 @@ export interface CharacterVoice {
   intonationScale?: number;
   /** 音量 0〜2.0（既定1.0） */
   volumeScale?: number;
+  /**
+   * 口パクの微調整（秒。既定0）
+   *
+   * 音声の先頭の無音（prePhonemeLength）は生成時に自動で吸収しているので、
+   * 通常は0のままでよい。それでも口が早い／遅いと感じるキャラクターだけ
+   * ここで詰める。正の値で口が遅く、負の値で口が早くなる。
+   * 30fpsなら0.033で1フレームぶん。
+   */
+  lipSyncOffset?: number;
 }
 
 export interface CharacterDefinition {

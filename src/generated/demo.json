@@ -36,395 +36,395 @@
       "lipsyncData": {
         "text": "ずんだもんなのだ！今日はRemotionで動画を作る方法を紹介するのだ！",
         "speaker_id": 3,
-        "duration": 5.93,
+        "duration": 6.03,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.127,
             "phoneme": "z",
             "mouth": "u"
           },
           {
-            "time": 0.127,
+            "time": 0.227,
             "duration": 0.113,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.24,
+            "time": 0.34,
             "duration": 0.093,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 0.333,
+            "time": 0.433,
             "duration": 0.042,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 0.376,
+            "time": 0.476,
             "duration": 0.094,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.47,
+            "time": 0.57,
             "duration": 0.07,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.54,
+            "time": 0.64,
             "duration": 0.117,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.657,
+            "time": 0.757,
             "duration": 0.065,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 0.722,
+            "time": 0.822,
             "duration": 0.038,
             "phoneme": "n",
             "mouth": "a"
           },
           {
-            "time": 0.76,
+            "time": 0.86,
             "duration": 0.086,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.847,
+            "time": 0.947,
             "duration": 0.054,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 0.901,
+            "time": 1.001,
             "duration": 0.08,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.981,
+            "time": 1.081,
             "duration": 0.046,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 1.028,
+            "time": 1.128,
             "duration": 0.158,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.186,
+            "time": 1.286,
             "duration": 0.263,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 1.449,
+            "time": 1.549,
             "duration": 0.124,
             "phoneme": "ky",
             "mouth": "o"
           },
           {
-            "time": 1.574,
+            "time": 1.674,
             "duration": 0.085,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.658,
+            "time": 1.758,
             "duration": 0.084,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.742,
+            "time": 1.842,
             "duration": 0.061,
             "phoneme": "w",
             "mouth": "a"
           },
           {
-            "time": 1.803,
+            "time": 1.903,
             "duration": 0.091,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.894,
+            "time": 1.994,
             "duration": 0.045,
             "phoneme": "r",
             "mouth": "i"
           },
           {
-            "time": 1.939,
+            "time": 2.039,
             "duration": 0.08,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 2.019,
+            "time": 2.119,
             "duration": 0.073,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 2.091,
+            "time": 2.191,
             "duration": 0.089,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.18,
+            "time": 2.28,
             "duration": 0.089,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.269,
+            "time": 2.369,
             "duration": 0.092,
             "phoneme": "sh",
             "mouth": "o"
           },
           {
-            "time": 2.36,
+            "time": 2.46,
             "duration": 0.119,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.48,
+            "time": 2.58,
             "duration": 0.069,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 2.548,
+            "time": 2.648,
             "duration": 0.037,
             "phoneme": "d",
             "mouth": "e"
           },
           {
-            "time": 2.585,
+            "time": 2.685,
             "duration": 0.087,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 2.672,
+            "time": 2.772,
             "duration": 0.063,
             "phoneme": "d",
             "mouth": "o"
           },
           {
-            "time": 2.735,
+            "time": 2.835,
             "duration": 0.089,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.825,
+            "time": 2.925,
             "duration": 0.099,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.923,
+            "time": 3.023,
             "duration": 0.063,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 2.986,
+            "time": 3.086,
             "duration": 0.089,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.075,
+            "time": 3.175,
             "duration": 0.123,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.198,
+            "time": 3.298,
             "duration": 0.077,
             "phoneme": "ts",
             "mouth": "u"
           },
           {
-            "time": 3.275,
+            "time": 3.375,
             "duration": 0.059,
             "phoneme": "U",
             "mouth": "u"
           },
           {
-            "time": 3.333,
+            "time": 3.433,
             "duration": 0.078,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 3.412,
+            "time": 3.512,
             "duration": 0.067,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.479,
+            "time": 3.579,
             "duration": 0.039,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 3.517,
+            "time": 3.617,
             "duration": 0.089,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.607,
+            "time": 3.707,
             "duration": 0.084,
             "phoneme": "h",
             "mouth": "o"
           },
           {
-            "time": 3.691,
+            "time": 3.791,
             "duration": 0.084,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.775,
+            "time": 3.875,
             "duration": 0.098,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.873,
+            "time": 3.973,
             "duration": 0.075,
             "phoneme": "h",
             "mouth": "o"
           },
           {
-            "time": 3.948,
+            "time": 4.048,
             "duration": 0.092,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 4.04,
+            "time": 4.14,
             "duration": 0.098,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 4.138,
+            "time": 4.238,
             "duration": 0.095,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 4.233,
+            "time": 4.333,
             "duration": 0.099,
             "phoneme": "sh",
             "mouth": "o"
           },
           {
-            "time": 4.332,
+            "time": 4.432,
             "duration": 0.079,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 4.41,
+            "time": 4.51,
             "duration": 0.104,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 4.514,
+            "time": 4.614,
             "duration": 0.064,
             "phoneme": "k",
             "mouth": "a"
           },
           {
-            "time": 4.578,
+            "time": 4.678,
             "duration": 0.104,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 4.683,
+            "time": 4.783,
             "duration": 0.071,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 4.754,
+            "time": 4.854,
             "duration": 0.085,
             "phoneme": "s",
             "mouth": "u"
           },
           {
-            "time": 4.838,
+            "time": 4.938,
             "duration": 0.065,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 4.903,
+            "time": 5.003,
             "duration": 0.033,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 4.936,
+            "time": 5.036,
             "duration": 0.074,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 5.011,
+            "time": 5.111,
             "duration": 0.057,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 5.067,
+            "time": 5.167,
             "duration": 0.099,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 5.166,
+            "time": 5.266,
             "duration": 0.052,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 5.218,
+            "time": 5.318,
             "duration": 0.212,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 5.43,
+            "time": 5.53,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "duration": 6.53
+      "duration": 6.63
     },
     "thumbnail": {
       "variant": "split",
@@ -445,186 +445,188 @@
       "lipsyncData": {
         "text": "改めまして、ずんだもんなのだ！",
         "speaker_id": 3,
-        "duration": 3.09,
+        "duration": 3.19,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.146,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.146,
+            "time": 0.246,
             "duration": 0.031,
             "phoneme": "r",
             "mouth": "a"
           },
           {
-            "time": 0.178,
+            "time": 0.278,
             "duration": 0.106,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.283,
+            "time": 0.383,
             "duration": 0.065,
             "phoneme": "t",
             "mouth": "a"
           },
           {
-            "time": 0.349,
+            "time": 0.449,
             "duration": 0.074,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.423,
+            "time": 0.523,
             "duration": 0.058,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.482,
+            "time": 0.582,
             "duration": 0.064,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.545,
+            "time": 0.645,
             "duration": 0.056,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.602,
+            "time": 0.702,
             "duration": 0.096,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.698,
+            "time": 0.798,
             "duration": 0.031,
             "phoneme": "sh",
             "mouth": "i"
           },
           {
-            "time": 0.729,
+            "time": 0.829,
             "duration": 0.057,
             "phoneme": "I",
             "mouth": "i"
           },
           {
-            "time": 0.786,
+            "time": 0.886,
             "duration": 0.063,
             "phoneme": "t",
             "mouth": "e"
           },
           {
-            "time": 0.849,
+            "time": 0.949,
             "duration": 0.171,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 1.02,
+            "time": 1.12,
             "duration": 0.362,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 1.383,
+            "time": 1.483,
             "duration": 0.102,
             "phoneme": "z",
             "mouth": "u"
           },
           {
-            "time": 1.485,
+            "time": 1.585,
             "duration": 0.109,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.594,
+            "time": 1.694,
             "duration": 0.087,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 1.681,
+            "time": 1.781,
             "duration": 0.039,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 1.72,
+            "time": 1.82,
             "duration": 0.094,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.814,
+            "time": 1.914,
             "duration": 0.07,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 1.884,
+            "time": 1.984,
             "duration": 0.117,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.001,
+            "time": 2.101,
             "duration": 0.065,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 2.066,
+            "time": 2.166,
             "duration": 0.038,
             "phoneme": "n",
             "mouth": "a"
           },
           {
-            "time": 2.104,
+            "time": 2.204,
             "duration": 0.086,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.19,
+            "time": 2.29,
             "duration": 0.055,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 2.245,
+            "time": 2.345,
             "duration": 0.09,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.335,
+            "time": 2.435,
             "duration": 0.05,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 2.386,
+            "time": 2.486,
             "duration": 0.205,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.59,
+            "time": 2.69,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 7.03,
-      "pause": 0.4
+      "startTime": 7.13,
+      "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true
     },
     {
       "text": "このデモには、この仕組みでできることを全部詰め込んだのだ",
@@ -633,342 +635,344 @@
       "lipsyncData": {
         "text": "このデモには、この仕組みでできることを全部詰め込んだのだ",
         "speaker_id": 3,
-        "duration": 4.846,
+        "duration": 4.946,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.085,
             "phoneme": "k",
             "mouth": "o"
           },
           {
-            "time": 0.085,
+            "time": 0.185,
             "duration": 0.078,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.163,
+            "time": 0.263,
             "duration": 0.054,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 0.217,
+            "time": 0.317,
             "duration": 0.09,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.306,
+            "time": 0.406,
             "duration": 0.053,
             "phoneme": "d",
             "mouth": "e"
           },
           {
-            "time": 0.36,
+            "time": 0.46,
             "duration": 0.071,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.43,
+            "time": 0.53,
             "duration": 0.064,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.495,
+            "time": 0.595,
             "duration": 0.088,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.583,
+            "time": 0.683,
             "duration": 0.059,
             "phoneme": "n",
             "mouth": "i"
           },
           {
-            "time": 0.642,
+            "time": 0.742,
             "duration": 0.085,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.727,
+            "time": 0.827,
             "duration": 0.068,
             "phoneme": "w",
             "mouth": "a"
           },
           {
-            "time": 0.795,
+            "time": 0.895,
             "duration": 0.154,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.949,
+            "time": 1.049,
             "duration": 0.309,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 1.258,
+            "time": 1.358,
             "duration": 0.094,
             "phoneme": "k",
             "mouth": "o"
           },
           {
-            "time": 1.352,
+            "time": 1.452,
             "duration": 0.066,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.418,
+            "time": 1.518,
             "duration": 0.051,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 1.47,
+            "time": 1.57,
             "duration": 0.1,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.57,
+            "time": 1.67,
             "duration": 0.034,
             "phoneme": "sh",
             "mouth": "i"
           },
           {
-            "time": 1.604,
+            "time": 1.704,
             "duration": 0.065,
             "phoneme": "I",
             "mouth": "i"
           },
           {
-            "time": 1.668,
+            "time": 1.768,
             "duration": 0.075,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 1.743,
+            "time": 1.843,
             "duration": 0.058,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.801,
+            "time": 1.901,
             "duration": 0.06,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 1.861,
+            "time": 1.961,
             "duration": 0.064,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.925,
+            "time": 2.025,
             "duration": 0.05,
             "phoneme": "d",
             "mouth": "e"
           },
           {
-            "time": 1.976,
+            "time": 2.076,
             "duration": 0.071,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 2.047,
+            "time": 2.147,
             "duration": 0.055,
             "phoneme": "d",
             "mouth": "e"
           },
           {
-            "time": 2.102,
+            "time": 2.202,
             "duration": 0.092,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 2.194,
+            "time": 2.294,
             "duration": 0.072,
             "phoneme": "k",
             "mouth": "i"
           },
           {
-            "time": 2.266,
+            "time": 2.366,
             "duration": 0.054,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 2.319,
+            "time": 2.419,
             "duration": 0.042,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 2.362,
+            "time": 2.462,
             "duration": 0.087,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.449,
+            "time": 2.549,
             "duration": 0.063,
             "phoneme": "k",
             "mouth": "o"
           },
           {
-            "time": 2.512,
+            "time": 2.612,
             "duration": 0.085,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.596,
+            "time": 2.696,
             "duration": 0.074,
             "phoneme": "t",
             "mouth": "o"
           },
           {
-            "time": 2.67,
+            "time": 2.77,
             "duration": 0.096,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.766,
+            "time": 2.866,
             "duration": 0.105,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.872,
+            "time": 2.972,
             "duration": 0.074,
             "phoneme": "z",
             "mouth": "e"
           },
           {
-            "time": 2.945,
+            "time": 3.045,
             "duration": 0.127,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 3.073,
+            "time": 3.173,
             "duration": 0.065,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 3.138,
+            "time": 3.238,
             "duration": 0.038,
             "phoneme": "b",
             "mouth": "closed"
           },
           {
-            "time": 3.175,
+            "time": 3.275,
             "duration": 0.081,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.257,
+            "time": 3.357,
             "duration": 0.081,
             "phoneme": "ts",
             "mouth": "u"
           },
           {
-            "time": 3.338,
+            "time": 3.438,
             "duration": 0.057,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.395,
+            "time": 3.495,
             "duration": 0.054,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 3.449,
+            "time": 3.549,
             "duration": 0.107,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 3.556,
+            "time": 3.656,
             "duration": 0.071,
             "phoneme": "k",
             "mouth": "o"
           },
           {
-            "time": 3.627,
+            "time": 3.727,
             "duration": 0.127,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.754,
+            "time": 3.854,
             "duration": 0.069,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 3.823,
+            "time": 3.923,
             "duration": 0.031,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 3.854,
+            "time": 3.954,
             "duration": 0.087,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.941,
+            "time": 4.041,
             "duration": 0.059,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 4.0,
+            "time": 4.1,
             "duration": 0.091,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 4.091,
+            "time": 4.191,
             "duration": 0.051,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 4.142,
+            "time": 4.242,
             "duration": 0.205,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 4.346,
+            "time": 4.446,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 10.52,
-      "pause": 0.6
+      "startTime": 10.72,
+      "pause": 0.6,
+      "character": "zundamon",
+      "showCharacter": true
     },
     {
       "text": "まずは全体像を見てほしいのだ",
@@ -977,192 +981,194 @@
       "lipsyncData": {
         "text": "まずは全体像を見てほしいのだ",
         "speaker_id": 3,
-        "duration": 3.014,
+        "duration": 3.114,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.079,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.079,
+            "time": 0.179,
             "duration": 0.111,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.19,
+            "time": 0.29,
             "duration": 0.077,
             "phoneme": "z",
             "mouth": "u"
           },
           {
-            "time": 0.267,
+            "time": 0.367,
             "duration": 0.086,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.353,
+            "time": 0.453,
             "duration": 0.058,
             "phoneme": "w",
             "mouth": "a"
           },
           {
-            "time": 0.411,
+            "time": 0.511,
             "duration": 0.097,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.508,
+            "time": 0.608,
             "duration": 0.087,
             "phoneme": "z",
             "mouth": "e"
           },
           {
-            "time": 0.595,
+            "time": 0.695,
             "duration": 0.125,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.721,
+            "time": 0.821,
             "duration": 0.082,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 0.803,
+            "time": 0.903,
             "duration": 0.057,
             "phoneme": "t",
             "mouth": "a"
           },
           {
-            "time": 0.861,
+            "time": 0.961,
             "duration": 0.116,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.977,
+            "time": 1.077,
             "duration": 0.083,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.06,
+            "time": 1.16,
             "duration": 0.078,
             "phoneme": "z",
             "mouth": "o"
           },
           {
-            "time": 1.138,
+            "time": 1.238,
             "duration": 0.094,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.232,
+            "time": 1.332,
             "duration": 0.089,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.321,
+            "time": 1.421,
             "duration": 0.091,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.412,
+            "time": 1.512,
             "duration": 0.059,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 1.47,
+            "time": 1.57,
             "duration": 0.068,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.538,
+            "time": 1.638,
             "duration": 0.053,
             "phoneme": "t",
             "mouth": "e"
           },
           {
-            "time": 1.591,
+            "time": 1.691,
             "duration": 0.075,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 1.666,
+            "time": 1.766,
             "duration": 0.068,
             "phoneme": "h",
             "mouth": "o"
           },
           {
-            "time": 1.733,
+            "time": 1.833,
             "duration": 0.088,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.822,
+            "time": 1.922,
             "duration": 0.108,
             "phoneme": "sh",
             "mouth": "i"
           },
           {
-            "time": 1.929,
+            "time": 2.029,
             "duration": 0.087,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 2.016,
+            "time": 2.116,
             "duration": 0.08,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 2.096,
+            "time": 2.196,
             "duration": 0.062,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 2.158,
+            "time": 2.258,
             "duration": 0.1,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.258,
+            "time": 2.358,
             "duration": 0.049,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 2.307,
+            "time": 2.407,
             "duration": 0.207,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.514,
+            "time": 2.614,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 15.966,
+      "startTime": 16.266,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "se": "audio/se/slide-in.ogg",
         "title": "このデモでできること",
@@ -1185,330 +1191,332 @@
       "lipsyncData": {
         "text": "セリフを書けば、音声も口パクも勝手に作られるのだ",
         "speaker_id": 3,
-        "duration": 4.889,
+        "duration": 4.989,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.104,
             "phoneme": "s",
             "mouth": "e"
           },
           {
-            "time": 0.104,
+            "time": 0.204,
             "duration": 0.096,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.2,
+            "time": 0.3,
             "duration": 0.034,
             "phoneme": "r",
             "mouth": "i"
           },
           {
-            "time": 0.234,
+            "time": 0.334,
             "duration": 0.118,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.352,
+            "time": 0.452,
             "duration": 0.081,
             "phoneme": "f",
             "mouth": "u"
           },
           {
-            "time": 0.434,
+            "time": 0.534,
             "duration": 0.065,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.499,
+            "time": 0.599,
             "duration": 0.117,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.615,
+            "time": 0.715,
             "duration": 0.061,
             "phoneme": "k",
             "mouth": "a"
           },
           {
-            "time": 0.677,
+            "time": 0.777,
             "duration": 0.081,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.757,
+            "time": 0.857,
             "duration": 0.056,
             "phoneme": "k",
             "mouth": "e"
           },
           {
-            "time": 0.814,
+            "time": 0.914,
             "duration": 0.083,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.897,
+            "time": 0.997,
             "duration": 0.043,
             "phoneme": "b",
             "mouth": "closed"
           },
           {
-            "time": 0.94,
+            "time": 1.04,
             "duration": 0.183,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.123,
+            "time": 1.223,
             "duration": 0.368,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 1.491,
+            "time": 1.591,
             "duration": 0.165,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.656,
+            "time": 1.756,
             "duration": 0.078,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 1.734,
+            "time": 1.834,
             "duration": 0.08,
             "phoneme": "s",
             "mouth": "e"
           },
           {
-            "time": 1.814,
+            "time": 1.914,
             "duration": 0.108,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 1.921,
+            "time": 2.021,
             "duration": 0.079,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 2.0,
+            "time": 2.1,
             "duration": 0.059,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 2.059,
+            "time": 2.159,
             "duration": 0.094,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.153,
+            "time": 2.253,
             "duration": 0.063,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 2.216,
+            "time": 2.316,
             "duration": 0.055,
             "phoneme": "U",
             "mouth": "u"
           },
           {
-            "time": 2.271,
+            "time": 2.371,
             "duration": 0.065,
             "phoneme": "ch",
             "mouth": "i"
           },
           {
-            "time": 2.336,
+            "time": 2.436,
             "duration": 0.059,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 2.395,
+            "time": 2.495,
             "duration": 0.062,
             "phoneme": "p",
             "mouth": "closed"
           },
           {
-            "time": 2.457,
+            "time": 2.557,
             "duration": 0.094,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.552,
+            "time": 2.652,
             "duration": 0.059,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 2.611,
+            "time": 2.711,
             "duration": 0.048,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.659,
+            "time": 2.759,
             "duration": 0.053,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 2.712,
+            "time": 2.812,
             "duration": 0.098,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.81,
+            "time": 2.91,
             "duration": 0.072,
             "phoneme": "k",
             "mouth": "a"
           },
           {
-            "time": 2.881,
+            "time": 2.981,
             "duration": 0.128,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.009,
+            "time": 3.109,
             "duration": 0.054,
             "phoneme": "cl",
             "mouth": "closed"
           },
           {
-            "time": 3.063,
+            "time": 3.163,
             "duration": 0.059,
             "phoneme": "t",
             "mouth": "e"
           },
           {
-            "time": 3.121,
+            "time": 3.221,
             "duration": 0.074,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 3.195,
+            "time": 3.295,
             "duration": 0.047,
             "phoneme": "n",
             "mouth": "i"
           },
           {
-            "time": 3.242,
+            "time": 3.342,
             "duration": 0.095,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 3.337,
+            "time": 3.437,
             "duration": 0.074,
             "phoneme": "ts",
             "mouth": "u"
           },
           {
-            "time": 3.411,
+            "time": 3.511,
             "duration": 0.058,
             "phoneme": "U",
             "mouth": "u"
           },
           {
-            "time": 3.469,
+            "time": 3.569,
             "duration": 0.074,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 3.543,
+            "time": 3.643,
             "duration": 0.06,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.603,
+            "time": 3.703,
             "duration": 0.039,
             "phoneme": "r",
             "mouth": "a"
           },
           {
-            "time": 3.642,
+            "time": 3.742,
             "duration": 0.102,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.744,
+            "time": 3.844,
             "duration": 0.038,
             "phoneme": "r",
             "mouth": "e"
           },
           {
-            "time": 3.782,
+            "time": 3.882,
             "duration": 0.077,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 3.859,
+            "time": 3.959,
             "duration": 0.036,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 3.895,
+            "time": 3.995,
             "duration": 0.072,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.967,
+            "time": 4.067,
             "duration": 0.06,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 4.027,
+            "time": 4.127,
             "duration": 0.1,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 4.127,
+            "time": 4.227,
             "duration": 0.051,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 4.178,
+            "time": 4.278,
             "duration": 0.212,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 4.389,
+            "time": 4.489,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 19.38,
+      "startTime": 19.78,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "se": "audio/se/slide-in.ogg",
         "title": "このデモでできること",
@@ -1533,246 +1541,248 @@
       "lipsyncData": {
         "text": "こうやってスライドを出しながら喋れるのだ",
         "speaker_id": 3,
-        "duration": 3.35,
+        "duration": 3.45,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.097,
             "phoneme": "k",
             "mouth": "o"
           },
           {
-            "time": 0.097,
+            "time": 0.197,
             "duration": 0.099,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.196,
+            "time": 0.296,
             "duration": 0.092,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.288,
+            "time": 0.388,
             "duration": 0.068,
             "phoneme": "y",
             "mouth": "a"
           },
           {
-            "time": 0.356,
+            "time": 0.456,
             "duration": 0.125,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.481,
+            "time": 0.581,
             "duration": 0.055,
             "phoneme": "cl",
             "mouth": "closed"
           },
           {
-            "time": 0.536,
+            "time": 0.636,
             "duration": 0.055,
             "phoneme": "t",
             "mouth": "e"
           },
           {
-            "time": 0.591,
+            "time": 0.691,
             "duration": 0.075,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.666,
+            "time": 0.766,
             "duration": 0.074,
             "phoneme": "s",
             "mouth": "u"
           },
           {
-            "time": 0.74,
+            "time": 0.84,
             "duration": 0.064,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.804,
+            "time": 0.904,
             "duration": 0.04,
             "phoneme": "r",
             "mouth": "a"
           },
           {
-            "time": 0.844,
+            "time": 0.944,
             "duration": 0.117,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.961,
+            "time": 1.061,
             "duration": 0.074,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.035,
+            "time": 1.135,
             "duration": 0.058,
             "phoneme": "d",
             "mouth": "o"
           },
           {
-            "time": 1.093,
+            "time": 1.193,
             "duration": 0.085,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.178,
+            "time": 1.278,
             "duration": 0.081,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.259,
+            "time": 1.359,
             "duration": 0.05,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 1.309,
+            "time": 1.409,
             "duration": 0.083,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.391,
+            "time": 1.491,
             "duration": 0.051,
             "phoneme": "sh",
             "mouth": "i"
           },
           {
-            "time": 1.442,
+            "time": 1.542,
             "duration": 0.062,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.504,
+            "time": 1.604,
             "duration": 0.058,
             "phoneme": "n",
             "mouth": "a"
           },
           {
-            "time": 1.562,
+            "time": 1.662,
             "duration": 0.091,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.653,
+            "time": 1.753,
             "duration": 0.06,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 1.713,
+            "time": 1.813,
             "duration": 0.073,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.786,
+            "time": 1.886,
             "duration": 0.034,
             "phoneme": "r",
             "mouth": "a"
           },
           {
-            "time": 1.82,
+            "time": 1.92,
             "duration": 0.078,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.898,
+            "time": 1.998,
             "duration": 0.082,
             "phoneme": "sh",
             "mouth": "a"
           },
           {
-            "time": 1.98,
+            "time": 2.08,
             "duration": 0.085,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.065,
+            "time": 2.165,
             "duration": 0.056,
             "phoneme": "b",
             "mouth": "closed"
           },
           {
-            "time": 2.122,
+            "time": 2.222,
             "duration": 0.078,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 2.2,
+            "time": 2.3,
             "duration": 0.034,
             "phoneme": "r",
             "mouth": "e"
           },
           {
-            "time": 2.234,
+            "time": 2.334,
             "duration": 0.086,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 2.32,
+            "time": 2.42,
             "duration": 0.036,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 2.356,
+            "time": 2.456,
             "duration": 0.071,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.427,
+            "time": 2.527,
             "duration": 0.06,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 2.488,
+            "time": 2.588,
             "duration": 0.1,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.588,
+            "time": 2.688,
             "duration": 0.051,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 2.638,
+            "time": 2.738,
             "duration": 0.212,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.85,
+            "time": 2.95,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 24.669,
+      "startTime": 25.169,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "se": "audio/se/slide-in.ogg",
         "title": "このデモでできること",
@@ -1797,240 +1807,242 @@
       "lipsyncData": {
         "text": "今しゃべっている項目には色が付くのだ",
         "speaker_id": 3,
-        "duration": 3.395,
+        "duration": 3.495,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.081,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.081,
+            "time": 0.181,
             "duration": 0.065,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.146,
+            "time": 0.246,
             "duration": 0.09,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.236,
+            "time": 0.336,
             "duration": 0.091,
             "phoneme": "sh",
             "mouth": "a"
           },
           {
-            "time": 0.326,
+            "time": 0.426,
             "duration": 0.09,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.417,
+            "time": 0.517,
             "duration": 0.057,
             "phoneme": "b",
             "mouth": "closed"
           },
           {
-            "time": 0.474,
+            "time": 0.574,
             "duration": 0.113,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.587,
+            "time": 0.687,
             "duration": 0.061,
             "phoneme": "cl",
             "mouth": "closed"
           },
           {
-            "time": 0.648,
+            "time": 0.748,
             "duration": 0.066,
             "phoneme": "t",
             "mouth": "e"
           },
           {
-            "time": 0.714,
+            "time": 0.814,
             "duration": 0.109,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.823,
+            "time": 0.923,
             "duration": 0.071,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.894,
+            "time": 0.994,
             "duration": 0.046,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 0.941,
+            "time": 1.041,
             "duration": 0.096,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.036,
+            "time": 1.136,
             "duration": 0.076,
             "phoneme": "k",
             "mouth": "o"
           },
           {
-            "time": 1.112,
+            "time": 1.212,
             "duration": 0.085,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.197,
+            "time": 1.297,
             "duration": 0.083,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.28,
+            "time": 1.38,
             "duration": 0.056,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 1.336,
+            "time": 1.436,
             "duration": 0.098,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.434,
+            "time": 1.534,
             "duration": 0.066,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 1.5,
+            "time": 1.6,
             "duration": 0.061,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.56,
+            "time": 1.66,
             "duration": 0.057,
             "phoneme": "n",
             "mouth": "i"
           },
           {
-            "time": 1.617,
+            "time": 1.717,
             "duration": 0.09,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.707,
+            "time": 1.807,
             "duration": 0.063,
             "phoneme": "w",
             "mouth": "a"
           },
           {
-            "time": 1.77,
+            "time": 1.87,
             "duration": 0.104,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.874,
+            "time": 1.974,
             "duration": 0.073,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.947,
+            "time": 2.047,
             "duration": 0.044,
             "phoneme": "r",
             "mouth": "o"
           },
           {
-            "time": 1.99,
+            "time": 2.09,
             "duration": 0.084,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.075,
+            "time": 2.175,
             "duration": 0.049,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 2.124,
+            "time": 2.224,
             "duration": 0.094,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.218,
+            "time": 2.318,
             "duration": 0.075,
             "phoneme": "ts",
             "mouth": "u"
           },
           {
-            "time": 2.293,
+            "time": 2.393,
             "duration": 0.058,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.351,
+            "time": 2.451,
             "duration": 0.063,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 2.414,
+            "time": 2.514,
             "duration": 0.063,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.477,
+            "time": 2.577,
             "duration": 0.053,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 2.529,
+            "time": 2.629,
             "duration": 0.103,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.632,
+            "time": 2.732,
             "duration": 0.052,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 2.684,
+            "time": 2.784,
             "duration": 0.211,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.895,
+            "time": 2.995,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 28.419,
+      "startTime": 29.019,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "se": "audio/se/slide-in.ogg",
         "title": "このデモでできること",
@@ -2055,228 +2067,230 @@
       "lipsyncData": {
         "text": "作り方はたったの3ステップなのだ",
         "speaker_id": 3,
-        "duration": 3.169,
+        "duration": 3.269,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.095,
             "phoneme": "ts",
             "mouth": "u"
           },
           {
-            "time": 0.095,
+            "time": 0.195,
             "duration": 0.06,
             "phoneme": "U",
             "mouth": "u"
           },
           {
-            "time": 0.155,
+            "time": 0.255,
             "duration": 0.081,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 0.236,
+            "time": 0.336,
             "duration": 0.074,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.31,
+            "time": 0.41,
             "duration": 0.039,
             "phoneme": "r",
             "mouth": "i"
           },
           {
-            "time": 0.349,
+            "time": 0.449,
             "duration": 0.095,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.444,
+            "time": 0.544,
             "duration": 0.055,
             "phoneme": "k",
             "mouth": "a"
           },
           {
-            "time": 0.5,
+            "time": 0.6,
             "duration": 0.08,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.58,
+            "time": 0.68,
             "duration": 0.056,
             "phoneme": "t",
             "mouth": "a"
           },
           {
-            "time": 0.636,
+            "time": 0.736,
             "duration": 0.074,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.71,
+            "time": 0.81,
             "duration": 0.051,
             "phoneme": "w",
             "mouth": "a"
           },
           {
-            "time": 0.761,
+            "time": 0.861,
             "duration": 0.084,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.844,
+            "time": 0.944,
             "duration": 0.069,
             "phoneme": "t",
             "mouth": "a"
           },
           {
-            "time": 0.913,
+            "time": 1.013,
             "duration": 0.123,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.037,
+            "time": 1.137,
             "duration": 0.048,
             "phoneme": "cl",
             "mouth": "closed"
           },
           {
-            "time": 1.084,
+            "time": 1.184,
             "duration": 0.055,
             "phoneme": "t",
             "mouth": "a"
           },
           {
-            "time": 1.14,
+            "time": 1.24,
             "duration": 0.078,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.218,
+            "time": 1.318,
             "duration": 0.051,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 1.269,
+            "time": 1.369,
             "duration": 0.088,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.357,
+            "time": 1.457,
             "duration": 0.09,
             "phoneme": "s",
             "mouth": "a"
           },
           {
-            "time": 1.447,
+            "time": 1.547,
             "duration": 0.129,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.576,
+            "time": 1.676,
             "duration": 0.077,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 1.653,
+            "time": 1.753,
             "duration": 0.022,
             "phoneme": "s",
             "mouth": "u"
           },
           {
-            "time": 1.676,
+            "time": 1.776,
             "duration": 0.062,
             "phoneme": "U",
             "mouth": "u"
           },
           {
-            "time": 1.738,
+            "time": 1.838,
             "duration": 0.073,
             "phoneme": "t",
             "mouth": "e"
           },
           {
-            "time": 1.811,
+            "time": 1.911,
             "duration": 0.13,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 1.941,
+            "time": 2.041,
             "duration": 0.065,
             "phoneme": "cl",
             "mouth": "closed"
           },
           {
-            "time": 2.006,
+            "time": 2.106,
             "duration": 0.064,
             "phoneme": "p",
             "mouth": "closed"
           },
           {
-            "time": 2.071,
+            "time": 2.171,
             "duration": 0.056,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.127,
+            "time": 2.227,
             "duration": 0.047,
             "phoneme": "n",
             "mouth": "a"
           },
           {
-            "time": 2.174,
+            "time": 2.274,
             "duration": 0.091,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.265,
+            "time": 2.365,
             "duration": 0.056,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 2.321,
+            "time": 2.421,
             "duration": 0.093,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.414,
+            "time": 2.514,
             "duration": 0.05,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 2.464,
+            "time": 2.564,
             "duration": 0.205,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.669,
+            "time": 2.769,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 32.214,
+      "startTime": 32.914,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "se": "audio/se/slide-in.ogg",
         "title": "作り方は3ステップ",
@@ -2300,192 +2314,194 @@
       "lipsyncData": {
         "text": "最初にYAMLへセリフを書くのだ",
         "speaker_id": 3,
-        "duration": 2.906,
+        "duration": 3.006,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.118,
             "phoneme": "s",
             "mouth": "a"
           },
           {
-            "time": 0.118,
+            "time": 0.218,
             "duration": 0.128,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.246,
+            "time": 0.346,
             "duration": 0.079,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.325,
+            "time": 0.425,
             "duration": 0.088,
             "phoneme": "sh",
             "mouth": "o"
           },
           {
-            "time": 0.412,
+            "time": 0.512,
             "duration": 0.089,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.501,
+            "time": 0.601,
             "duration": 0.058,
             "phoneme": "n",
             "mouth": "i"
           },
           {
-            "time": 0.559,
+            "time": 0.659,
             "duration": 0.078,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.638,
+            "time": 0.738,
             "duration": 0.063,
             "phoneme": "y",
             "mouth": "a"
           },
           {
-            "time": 0.701,
+            "time": 0.801,
             "duration": 0.088,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.789,
+            "time": 0.889,
             "duration": 0.065,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.854,
+            "time": 0.954,
             "duration": 0.077,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.931,
+            "time": 1.031,
             "duration": 0.039,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 0.97,
+            "time": 1.07,
             "duration": 0.091,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.061,
+            "time": 1.161,
             "duration": 0.104,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 1.165,
+            "time": 1.265,
             "duration": 0.082,
             "phoneme": "s",
             "mouth": "e"
           },
           {
-            "time": 1.248,
+            "time": 1.348,
             "duration": 0.085,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 1.333,
+            "time": 1.433,
             "duration": 0.033,
             "phoneme": "r",
             "mouth": "i"
           },
           {
-            "time": 1.366,
+            "time": 1.466,
             "duration": 0.1,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.466,
+            "time": 1.566,
             "duration": 0.081,
             "phoneme": "f",
             "mouth": "u"
           },
           {
-            "time": 1.547,
+            "time": 1.647,
             "duration": 0.065,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.612,
+            "time": 1.712,
             "duration": 0.117,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.729,
+            "time": 1.829,
             "duration": 0.059,
             "phoneme": "k",
             "mouth": "a"
           },
           {
-            "time": 1.788,
+            "time": 1.888,
             "duration": 0.087,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.876,
+            "time": 1.976,
             "duration": 0.06,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 1.936,
+            "time": 2.036,
             "duration": 0.053,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.989,
+            "time": 2.089,
             "duration": 0.054,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 2.043,
+            "time": 2.143,
             "duration": 0.101,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.144,
+            "time": 2.244,
             "duration": 0.051,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 2.195,
+            "time": 2.295,
             "duration": 0.211,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.406,
+            "time": 2.506,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 35.783,
+      "startTime": 36.583,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "se": "audio/se/slide-in.ogg",
         "title": "作り方は3ステップ",
@@ -2511,342 +2527,344 @@
       "lipsyncData": {
         "text": "あとはコマンドをひとつ叩くだけで、動画までできあがるのだ！",
         "speaker_id": 3,
-        "duration": 4.876,
+        "duration": 4.976,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.134,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.134,
+            "time": 0.234,
             "duration": 0.064,
             "phoneme": "t",
             "mouth": "o"
           },
           {
-            "time": 0.198,
+            "time": 0.298,
             "duration": 0.09,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.288,
+            "time": 0.388,
             "duration": 0.052,
             "phoneme": "w",
             "mouth": "a"
           },
           {
-            "time": 0.34,
+            "time": 0.44,
             "duration": 0.104,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.443,
+            "time": 0.543,
             "duration": 0.074,
             "phoneme": "k",
             "mouth": "o"
           },
           {
-            "time": 0.517,
+            "time": 0.617,
             "duration": 0.072,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.589,
+            "time": 0.689,
             "duration": 0.066,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.655,
+            "time": 0.755,
             "duration": 0.139,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.794,
+            "time": 0.894,
             "duration": 0.077,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 0.87,
+            "time": 0.97,
             "duration": 0.045,
             "phoneme": "d",
             "mouth": "o"
           },
           {
-            "time": 0.916,
+            "time": 1.016,
             "duration": 0.094,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.009,
+            "time": 1.109,
             "duration": 0.111,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.12,
+            "time": 1.22,
             "duration": 0.037,
             "phoneme": "h",
             "mouth": "i"
           },
           {
-            "time": 1.157,
+            "time": 1.257,
             "duration": 0.046,
             "phoneme": "I",
             "mouth": "i"
           },
           {
-            "time": 1.203,
+            "time": 1.303,
             "duration": 0.064,
             "phoneme": "t",
             "mouth": "o"
           },
           {
-            "time": 1.267,
+            "time": 1.367,
             "duration": 0.096,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.363,
+            "time": 1.463,
             "duration": 0.061,
             "phoneme": "ts",
             "mouth": "u"
           },
           {
-            "time": 1.423,
+            "time": 1.523,
             "duration": 0.044,
             "phoneme": "U",
             "mouth": "u"
           },
           {
-            "time": 1.467,
+            "time": 1.567,
             "duration": 0.059,
             "phoneme": "t",
             "mouth": "a"
           },
           {
-            "time": 1.526,
+            "time": 1.626,
             "duration": 0.082,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.608,
+            "time": 1.708,
             "duration": 0.048,
             "phoneme": "t",
             "mouth": "a"
           },
           {
-            "time": 1.657,
+            "time": 1.757,
             "duration": 0.084,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.74,
+            "time": 1.84,
             "duration": 0.057,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 1.797,
+            "time": 1.897,
             "duration": 0.047,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.844,
+            "time": 1.944,
             "duration": 0.049,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 1.893,
+            "time": 1.993,
             "duration": 0.099,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.991,
+            "time": 2.091,
             "duration": 0.053,
             "phoneme": "k",
             "mouth": "e"
           },
           {
-            "time": 2.044,
+            "time": 2.144,
             "duration": 0.082,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 2.127,
+            "time": 2.227,
             "duration": 0.046,
             "phoneme": "d",
             "mouth": "e"
           },
           {
-            "time": 2.172,
+            "time": 2.272,
             "duration": 0.168,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 2.34,
+            "time": 2.44,
             "duration": 0.274,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 2.614,
+            "time": 2.714,
             "duration": 0.085,
             "phoneme": "d",
             "mouth": "o"
           },
           {
-            "time": 2.699,
+            "time": 2.799,
             "duration": 0.087,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.786,
+            "time": 2.886,
             "duration": 0.099,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.885,
+            "time": 2.985,
             "duration": 0.057,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 2.942,
+            "time": 3.042,
             "duration": 0.083,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.025,
+            "time": 3.125,
             "duration": 0.061,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 3.086,
+            "time": 3.186,
             "duration": 0.077,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.163,
+            "time": 3.263,
             "duration": 0.051,
             "phoneme": "d",
             "mouth": "e"
           },
           {
-            "time": 3.215,
+            "time": 3.315,
             "duration": 0.069,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 3.284,
+            "time": 3.384,
             "duration": 0.055,
             "phoneme": "d",
             "mouth": "e"
           },
           {
-            "time": 3.339,
+            "time": 3.439,
             "duration": 0.101,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 3.439,
+            "time": 3.539,
             "duration": 0.08,
             "phoneme": "k",
             "mouth": "i"
           },
           {
-            "time": 3.519,
+            "time": 3.619,
             "duration": 0.075,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 3.594,
+            "time": 3.694,
             "duration": 0.113,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.707,
+            "time": 3.807,
             "duration": 0.066,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 3.773,
+            "time": 3.873,
             "duration": 0.089,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.862,
+            "time": 3.962,
             "duration": 0.031,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 3.893,
+            "time": 3.993,
             "duration": 0.067,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.959,
+            "time": 4.059,
             "duration": 0.059,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 4.018,
+            "time": 4.118,
             "duration": 0.096,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 4.115,
+            "time": 4.215,
             "duration": 0.05,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 4.164,
+            "time": 4.264,
             "duration": 0.212,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 4.376,
+            "time": 4.476,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 39.089,
+      "startTime": 39.989,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "se": "audio/se/slide-in.ogg",
         "title": "作り方は3ステップ",
@@ -2872,186 +2890,188 @@
       "lipsyncData": {
         "text": "テロップの見た目も選べるのだ",
         "speaker_id": 3,
-        "duration": 2.641,
+        "duration": 2.741,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.082,
             "phoneme": "t",
             "mouth": "e"
           },
           {
-            "time": 0.082,
+            "time": 0.182,
             "duration": 0.089,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.171,
+            "time": 0.271,
             "duration": 0.05,
             "phoneme": "r",
             "mouth": "o"
           },
           {
-            "time": 0.22,
+            "time": 0.32,
             "duration": 0.151,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.371,
+            "time": 0.471,
             "duration": 0.068,
             "phoneme": "cl",
             "mouth": "closed"
           },
           {
-            "time": 0.439,
+            "time": 0.539,
             "duration": 0.067,
             "phoneme": "p",
             "mouth": "closed"
           },
           {
-            "time": 0.506,
+            "time": 0.606,
             "duration": 0.057,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.563,
+            "time": 0.663,
             "duration": 0.048,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 0.611,
+            "time": 0.711,
             "duration": 0.087,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.698,
+            "time": 0.798,
             "duration": 0.06,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.758,
+            "time": 0.858,
             "duration": 0.067,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.824,
+            "time": 0.924,
             "duration": 0.057,
             "phoneme": "t",
             "mouth": "a"
           },
           {
-            "time": 0.882,
+            "time": 0.982,
             "duration": 0.082,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.963,
+            "time": 1.063,
             "duration": 0.061,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 1.025,
+            "time": 1.125,
             "duration": 0.076,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 1.1,
+            "time": 1.2,
             "duration": 0.063,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 1.163,
+            "time": 1.263,
             "duration": 0.102,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.266,
+            "time": 1.366,
             "duration": 0.084,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 1.35,
+            "time": 1.45,
             "duration": 0.035,
             "phoneme": "r",
             "mouth": "a"
           },
           {
-            "time": 1.385,
+            "time": 1.485,
             "duration": 0.099,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.485,
+            "time": 1.585,
             "duration": 0.056,
             "phoneme": "b",
             "mouth": "closed"
           },
           {
-            "time": 1.541,
+            "time": 1.641,
             "duration": 0.076,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 1.616,
+            "time": 1.716,
             "duration": 0.032,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 1.648,
+            "time": 1.748,
             "duration": 0.073,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.721,
+            "time": 1.821,
             "duration": 0.059,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 1.78,
+            "time": 1.88,
             "duration": 0.099,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.879,
+            "time": 1.979,
             "duration": 0.051,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 1.93,
+            "time": 2.03,
             "duration": 0.212,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.141,
+            "time": 2.241,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 44.365,
+      "startTime": 45.365,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "variant": "title",
         "se": "audio/se/transition.ogg",
@@ -3069,204 +3089,206 @@
       "lipsyncData": {
         "text": "これが標準の boxed なのだ",
         "speaker_id": 3,
-        "duration": 3.78,
+        "duration": 3.88,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.082,
             "phoneme": "k",
             "mouth": "o"
           },
           {
-            "time": 0.082,
+            "time": 0.182,
             "duration": 0.084,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.165,
+            "time": 0.265,
             "duration": 0.036,
             "phoneme": "r",
             "mouth": "e"
           },
           {
-            "time": 0.201,
+            "time": 0.301,
             "duration": 0.094,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.295,
+            "time": 0.395,
             "duration": 0.057,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 0.351,
+            "time": 0.451,
             "duration": 0.107,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.458,
+            "time": 0.558,
             "duration": 0.106,
             "phoneme": "hy",
             "mouth": "o"
           },
           {
-            "time": 0.564,
+            "time": 0.664,
             "duration": 0.077,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.641,
+            "time": 0.741,
             "duration": 0.096,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.737,
+            "time": 0.837,
             "duration": 0.083,
             "phoneme": "j",
             "mouth": "u"
           },
           {
-            "time": 0.82,
+            "time": 0.92,
             "duration": 0.099,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.919,
+            "time": 1.019,
             "duration": 0.074,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 0.993,
+            "time": 1.093,
             "duration": 0.037,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 1.03,
+            "time": 1.13,
             "duration": 0.165,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.195,
+            "time": 1.295,
             "duration": 0.373,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 1.569,
+            "time": 1.669,
             "duration": 0.087,
             "phoneme": "b",
             "mouth": "closed"
           },
           {
-            "time": 1.655,
+            "time": 1.755,
             "duration": 0.121,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.777,
+            "time": 1.877,
             "duration": 0.073,
             "phoneme": "cl",
             "mouth": "closed"
           },
           {
-            "time": 1.849,
+            "time": 1.949,
             "duration": 0.07,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 1.92,
+            "time": 2.02,
             "duration": 0.058,
             "phoneme": "U",
             "mouth": "u"
           },
           {
-            "time": 1.978,
+            "time": 2.078,
             "duration": 0.076,
             "phoneme": "s",
             "mouth": "u"
           },
           {
-            "time": 2.053,
+            "time": 2.153,
             "duration": 0.074,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.127,
+            "time": 2.227,
             "duration": 0.06,
             "phoneme": "d",
             "mouth": "o"
           },
           {
-            "time": 2.187,
+            "time": 2.287,
             "duration": 0.156,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.342,
+            "time": 2.442,
             "duration": 0.353,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 2.695,
+            "time": 2.795,
             "duration": 0.076,
             "phoneme": "n",
             "mouth": "a"
           },
           {
-            "time": 2.772,
+            "time": 2.872,
             "duration": 0.086,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.858,
+            "time": 2.958,
             "duration": 0.06,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 2.918,
+            "time": 3.018,
             "duration": 0.102,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.02,
+            "time": 3.12,
             "duration": 0.05,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 3.07,
+            "time": 3.17,
             "duration": 0.21,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.28,
+            "time": 3.38,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 47.406,
+      "startTime": 48.506,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "variant": "title",
         "se": "audio/se/transition.ogg",
@@ -3285,294 +3307,296 @@
       "lipsyncData": {
         "text": "これが bar なのだ。ニュース番組みたいな帯なのだ",
         "speaker_id": 3,
-        "duration": 5.445,
+        "duration": 5.545,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.081,
             "phoneme": "k",
             "mouth": "o"
           },
           {
-            "time": 0.081,
+            "time": 0.181,
             "duration": 0.086,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.167,
+            "time": 0.267,
             "duration": 0.03,
             "phoneme": "r",
             "mouth": "e"
           },
           {
-            "time": 0.197,
+            "time": 0.297,
             "duration": 0.109,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.306,
+            "time": 0.406,
             "duration": 0.057,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 0.363,
+            "time": 0.463,
             "duration": 0.176,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.54,
+            "time": 0.64,
             "duration": 0.413,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 0.953,
+            "time": 1.053,
             "duration": 0.073,
             "phoneme": "b",
             "mouth": "closed"
           },
           {
-            "time": 1.026,
+            "time": 1.126,
             "duration": 0.122,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.148,
+            "time": 1.248,
             "duration": 0.187,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.335,
+            "time": 1.435,
             "duration": 0.458,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 1.793,
+            "time": 1.893,
             "duration": 0.075,
             "phoneme": "n",
             "mouth": "a"
           },
           {
-            "time": 1.869,
+            "time": 1.969,
             "duration": 0.092,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.96,
+            "time": 2.06,
             "duration": 0.058,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 2.018,
+            "time": 2.118,
             "duration": 0.094,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.112,
+            "time": 2.212,
             "duration": 0.051,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 2.163,
+            "time": 2.263,
             "duration": 0.173,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.335,
+            "time": 2.435,
             "duration": 0.311,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 2.646,
+            "time": 2.746,
             "duration": 0.149,
             "phoneme": "ny",
             "mouth": "u"
           },
           {
-            "time": 2.796,
+            "time": 2.896,
             "duration": 0.069,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.864,
+            "time": 2.964,
             "duration": 0.082,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.946,
+            "time": 3.046,
             "duration": 0.081,
             "phoneme": "s",
             "mouth": "u"
           },
           {
-            "time": 3.027,
+            "time": 3.127,
             "duration": 0.071,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.098,
+            "time": 3.198,
             "duration": 0.058,
             "phoneme": "b",
             "mouth": "closed"
           },
           {
-            "time": 3.156,
+            "time": 3.256,
             "duration": 0.147,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.303,
+            "time": 3.403,
             "duration": 0.073,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 3.376,
+            "time": 3.476,
             "duration": 0.045,
             "phoneme": "g",
             "mouth": "u"
           },
           {
-            "time": 3.421,
+            "time": 3.521,
             "duration": 0.071,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.492,
+            "time": 3.592,
             "duration": 0.067,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 3.559,
+            "time": 3.659,
             "duration": 0.065,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 3.624,
+            "time": 3.724,
             "duration": 0.061,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 3.685,
+            "time": 3.785,
             "duration": 0.079,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 3.765,
+            "time": 3.865,
             "duration": 0.066,
             "phoneme": "t",
             "mouth": "a"
           },
           {
-            "time": 3.83,
+            "time": 3.93,
             "duration": 0.118,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.949,
+            "time": 4.049,
             "duration": 0.066,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 4.014,
+            "time": 4.114,
             "duration": 0.063,
             "phoneme": "n",
             "mouth": "a"
           },
           {
-            "time": 4.077,
+            "time": 4.177,
             "duration": 0.092,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 4.17,
+            "time": 4.27,
             "duration": 0.108,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 4.277,
+            "time": 4.377,
             "duration": 0.063,
             "phoneme": "b",
             "mouth": "closed"
           },
           {
-            "time": 4.34,
+            "time": 4.44,
             "duration": 0.064,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 4.404,
+            "time": 4.504,
             "duration": 0.053,
             "phoneme": "n",
             "mouth": "a"
           },
           {
-            "time": 4.458,
+            "time": 4.558,
             "duration": 0.086,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 4.543,
+            "time": 4.643,
             "duration": 0.057,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 4.6,
+            "time": 4.7,
             "duration": 0.092,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 4.692,
+            "time": 4.792,
             "duration": 0.049,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 4.74,
+            "time": 4.84,
             "duration": 0.205,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 4.945,
+            "time": 5.045,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 51.586,
+      "startTime": 52.786,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "variant": "title",
         "se": "audio/se/transition.ogg",
@@ -3591,276 +3615,278 @@
       "lipsyncData": {
         "text": "これが outline なのだ。背景を隠さないのだ",
         "speaker_id": 3,
-        "duration": 5.136,
+        "duration": 5.236,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.081,
             "phoneme": "k",
             "mouth": "o"
           },
           {
-            "time": 0.081,
+            "time": 0.181,
             "duration": 0.086,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.168,
+            "time": 0.268,
             "duration": 0.031,
             "phoneme": "r",
             "mouth": "e"
           },
           {
-            "time": 0.199,
+            "time": 0.299,
             "duration": 0.106,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.304,
+            "time": 0.404,
             "duration": 0.054,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 0.358,
+            "time": 0.458,
             "duration": 0.165,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.523,
+            "time": 0.623,
             "duration": 0.352,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 0.875,
+            "time": 0.975,
             "duration": 0.163,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.038,
+            "time": 1.138,
             "duration": 0.08,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.117,
+            "time": 1.217,
             "duration": 0.06,
             "phoneme": "t",
             "mouth": "o"
           },
           {
-            "time": 1.178,
+            "time": 1.278,
             "duration": 0.089,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.267,
+            "time": 1.367,
             "duration": 0.034,
             "phoneme": "r",
             "mouth": "a"
           },
           {
-            "time": 1.301,
+            "time": 1.401,
             "duration": 0.156,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.457,
+            "time": 1.557,
             "duration": 0.102,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.56,
+            "time": 1.66,
             "duration": 0.106,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 1.666,
+            "time": 1.766,
             "duration": 0.379,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 2.045,
+            "time": 2.145,
             "duration": 0.074,
             "phoneme": "n",
             "mouth": "a"
           },
           {
-            "time": 2.119,
+            "time": 2.219,
             "duration": 0.089,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.208,
+            "time": 2.308,
             "duration": 0.063,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 2.271,
+            "time": 2.371,
             "duration": 0.098,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.369,
+            "time": 2.469,
             "duration": 0.047,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 2.416,
+            "time": 2.516,
             "duration": 0.171,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.587,
+            "time": 2.687,
             "duration": 0.287,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 2.874,
+            "time": 2.974,
             "duration": 0.098,
             "phoneme": "h",
             "mouth": "a"
           },
           {
-            "time": 2.972,
+            "time": 3.072,
             "duration": 0.114,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.086,
+            "time": 3.186,
             "duration": 0.093,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 3.179,
+            "time": 3.279,
             "duration": 0.074,
             "phoneme": "k",
             "mouth": "e"
           },
           {
-            "time": 3.253,
+            "time": 3.353,
             "duration": 0.092,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 3.345,
+            "time": 3.445,
             "duration": 0.088,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 3.433,
+            "time": 3.533,
             "duration": 0.13,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.564,
+            "time": 3.664,
             "duration": 0.063,
             "phoneme": "k",
             "mouth": "a"
           },
           {
-            "time": 3.627,
+            "time": 3.727,
             "duration": 0.089,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.716,
+            "time": 3.816,
             "duration": 0.058,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 3.774,
+            "time": 3.874,
             "duration": 0.052,
             "phoneme": "U",
             "mouth": "u"
           },
           {
-            "time": 3.826,
+            "time": 3.926,
             "duration": 0.083,
             "phoneme": "s",
             "mouth": "a"
           },
           {
-            "time": 3.908,
+            "time": 4.008,
             "duration": 0.085,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.993,
+            "time": 4.093,
             "duration": 0.057,
             "phoneme": "n",
             "mouth": "a"
           },
           {
-            "time": 4.05,
+            "time": 4.15,
             "duration": 0.103,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 4.153,
+            "time": 4.253,
             "duration": 0.069,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 4.222,
+            "time": 4.322,
             "duration": 0.058,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 4.28,
+            "time": 4.38,
             "duration": 0.102,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 4.381,
+            "time": 4.481,
             "duration": 0.049,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 4.431,
+            "time": 4.531,
             "duration": 0.205,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 4.636,
+            "time": 4.736,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 57.431,
+      "startTime": 58.731,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "variant": "title",
         "se": "audio/se/transition.ogg",
@@ -3879,324 +3905,326 @@
       "lipsyncData": {
         "text": "これが card なのだ。スライドと雰囲気を揃えられるのだ",
         "speaker_id": 3,
-        "duration": 5.591,
+        "duration": 5.691,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.081,
             "phoneme": "k",
             "mouth": "o"
           },
           {
-            "time": 0.081,
+            "time": 0.181,
             "duration": 0.086,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.167,
+            "time": 0.267,
             "duration": 0.03,
             "phoneme": "r",
             "mouth": "e"
           },
           {
-            "time": 0.198,
+            "time": 0.298,
             "duration": 0.106,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.304,
+            "time": 0.404,
             "duration": 0.055,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 0.359,
+            "time": 0.459,
             "duration": 0.164,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.524,
+            "time": 0.624,
             "duration": 0.344,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 0.868,
+            "time": 0.968,
             "duration": 0.092,
             "phoneme": "k",
             "mouth": "a"
           },
           {
-            "time": 0.96,
+            "time": 1.06,
             "duration": 0.119,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.079,
+            "time": 1.179,
             "duration": 0.111,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.189,
+            "time": 1.289,
             "duration": 0.055,
             "phoneme": "d",
             "mouth": "o"
           },
           {
-            "time": 1.245,
+            "time": 1.345,
             "duration": 0.152,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.397,
+            "time": 1.497,
             "duration": 0.345,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 1.742,
+            "time": 1.842,
             "duration": 0.075,
             "phoneme": "n",
             "mouth": "a"
           },
           {
-            "time": 1.817,
+            "time": 1.917,
             "duration": 0.085,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.901,
+            "time": 2.001,
             "duration": 0.06,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 1.961,
+            "time": 2.061,
             "duration": 0.095,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.056,
+            "time": 2.156,
             "duration": 0.051,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 2.107,
+            "time": 2.207,
             "duration": 0.168,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.275,
+            "time": 2.375,
             "duration": 0.293,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 2.567,
+            "time": 2.667,
             "duration": 0.111,
             "phoneme": "s",
             "mouth": "u"
           },
           {
-            "time": 2.679,
+            "time": 2.779,
             "duration": 0.063,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.741,
+            "time": 2.841,
             "duration": 0.032,
             "phoneme": "r",
             "mouth": "a"
           },
           {
-            "time": 2.773,
+            "time": 2.873,
             "duration": 0.123,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.897,
+            "time": 2.997,
             "duration": 0.075,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 2.971,
+            "time": 3.071,
             "duration": 0.052,
             "phoneme": "d",
             "mouth": "o"
           },
           {
-            "time": 3.023,
+            "time": 3.123,
             "duration": 0.093,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.115,
+            "time": 3.215,
             "duration": 0.063,
             "phoneme": "t",
             "mouth": "o"
           },
           {
-            "time": 3.178,
+            "time": 3.278,
             "duration": 0.094,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.272,
+            "time": 3.372,
             "duration": 0.079,
             "phoneme": "f",
             "mouth": "u"
           },
           {
-            "time": 3.351,
+            "time": 3.451,
             "duration": 0.11,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.461,
+            "time": 3.561,
             "duration": 0.085,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 3.546,
+            "time": 3.646,
             "duration": 0.084,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 3.629,
+            "time": 3.729,
             "duration": 0.088,
             "phoneme": "k",
             "mouth": "i"
           },
           {
-            "time": 3.718,
+            "time": 3.818,
             "duration": 0.078,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 3.796,
+            "time": 3.896,
             "duration": 0.113,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.909,
+            "time": 4.009,
             "duration": 0.088,
             "phoneme": "s",
             "mouth": "o"
           },
           {
-            "time": 3.997,
+            "time": 4.097,
             "duration": 0.078,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 4.075,
+            "time": 4.175,
             "duration": 0.039,
             "phoneme": "r",
             "mouth": "o"
           },
           {
-            "time": 4.114,
+            "time": 4.214,
             "duration": 0.107,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 4.221,
+            "time": 4.321,
             "duration": 0.09,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 4.311,
+            "time": 4.411,
             "duration": 0.037,
             "phoneme": "r",
             "mouth": "a"
           },
           {
-            "time": 4.348,
+            "time": 4.448,
             "duration": 0.098,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 4.446,
+            "time": 4.546,
             "duration": 0.039,
             "phoneme": "r",
             "mouth": "e"
           },
           {
-            "time": 4.485,
+            "time": 4.585,
             "duration": 0.076,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 4.561,
+            "time": 4.661,
             "duration": 0.036,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 4.597,
+            "time": 4.697,
             "duration": 0.072,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 4.669,
+            "time": 4.769,
             "duration": 0.06,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 4.729,
+            "time": 4.829,
             "duration": 0.1,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 4.829,
+            "time": 4.929,
             "duration": 0.051,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 4.879,
+            "time": 4.979,
             "duration": 0.212,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 5.091,
+            "time": 5.191,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 62.967,
+      "startTime": 64.367,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "variant": "title",
         "se": "audio/se/transition.ogg",
@@ -4215,252 +4243,254 @@
       "lipsyncData": {
         "text": "画面の隅に画像を出すこともできるのだ",
         "speaker_id": 3,
-        "duration": 3.489,
+        "duration": 3.589,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.073,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 0.073,
+            "time": 0.173,
             "duration": 0.103,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.176,
+            "time": 0.276,
             "duration": 0.074,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.249,
+            "time": 0.349,
             "duration": 0.145,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.394,
+            "time": 0.494,
             "duration": 0.066,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 0.46,
+            "time": 0.56,
             "duration": 0.037,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 0.497,
+            "time": 0.597,
             "duration": 0.088,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.585,
+            "time": 0.685,
             "duration": 0.081,
             "phoneme": "s",
             "mouth": "u"
           },
           {
-            "time": 0.666,
+            "time": 0.766,
             "duration": 0.062,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.728,
+            "time": 0.828,
             "duration": 0.063,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.792,
+            "time": 0.892,
             "duration": 0.07,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.862,
+            "time": 0.962,
             "duration": 0.058,
             "phoneme": "n",
             "mouth": "i"
           },
           {
-            "time": 0.92,
+            "time": 1.02,
             "duration": 0.074,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.994,
+            "time": 1.094,
             "duration": 0.06,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 1.055,
+            "time": 1.155,
             "duration": 0.11,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.165,
+            "time": 1.265,
             "duration": 0.079,
             "phoneme": "z",
             "mouth": "o"
           },
           {
-            "time": 1.244,
+            "time": 1.344,
             "duration": 0.091,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.336,
+            "time": 1.436,
             "duration": 0.087,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.422,
+            "time": 1.522,
             "duration": 0.089,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.511,
+            "time": 1.611,
             "duration": 0.054,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 1.566,
+            "time": 1.666,
             "duration": 0.105,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.671,
+            "time": 1.771,
             "duration": 0.03,
             "phoneme": "s",
             "mouth": "u"
           },
           {
-            "time": 1.701,
+            "time": 1.801,
             "duration": 0.068,
             "phoneme": "U",
             "mouth": "u"
           },
           {
-            "time": 1.769,
+            "time": 1.869,
             "duration": 0.07,
             "phoneme": "k",
             "mouth": "o"
           },
           {
-            "time": 1.838,
+            "time": 1.938,
             "duration": 0.083,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.922,
+            "time": 2.022,
             "duration": 0.057,
             "phoneme": "t",
             "mouth": "o"
           },
           {
-            "time": 1.979,
+            "time": 2.079,
             "duration": 0.07,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.049,
+            "time": 2.149,
             "duration": 0.057,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 2.106,
+            "time": 2.206,
             "duration": 0.078,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.183,
+            "time": 2.283,
             "duration": 0.057,
             "phoneme": "d",
             "mouth": "e"
           },
           {
-            "time": 2.24,
+            "time": 2.34,
             "duration": 0.089,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 2.328,
+            "time": 2.428,
             "duration": 0.074,
             "phoneme": "k",
             "mouth": "i"
           },
           {
-            "time": 2.402,
+            "time": 2.502,
             "duration": 0.055,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 2.457,
+            "time": 2.557,
             "duration": 0.038,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 2.495,
+            "time": 2.595,
             "duration": 0.075,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.57,
+            "time": 2.67,
             "duration": 0.059,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 2.628,
+            "time": 2.728,
             "duration": 0.097,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.726,
+            "time": 2.826,
             "duration": 0.05,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 2.776,
+            "time": 2.876,
             "duration": 0.213,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.989,
+            "time": 3.089,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 68.958,
+      "startTime": 70.458,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "background": "orange",
       "image": {
         "src": "images/layout.png",
@@ -4474,348 +4504,350 @@
       "lipsyncData": {
         "text": "図をじっくり見せたいときは、ずんだもんを消して大きく出せるのだ",
         "speaker_id": 3,
-        "duration": 5.204,
+        "duration": 5.304,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.116,
             "phoneme": "z",
             "mouth": "u"
           },
           {
-            "time": 0.116,
+            "time": 0.216,
             "duration": 0.082,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.197,
+            "time": 0.297,
             "duration": 0.125,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.322,
+            "time": 0.422,
             "duration": 0.081,
             "phoneme": "j",
             "mouth": "i"
           },
           {
-            "time": 0.404,
+            "time": 0.504,
             "duration": 0.099,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.503,
+            "time": 0.603,
             "duration": 0.082,
             "phoneme": "cl",
             "mouth": "closed"
           },
           {
-            "time": 0.585,
+            "time": 0.685,
             "duration": 0.071,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 0.656,
+            "time": 0.756,
             "duration": 0.063,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.719,
+            "time": 0.819,
             "duration": 0.037,
             "phoneme": "r",
             "mouth": "i"
           },
           {
-            "time": 0.756,
+            "time": 0.856,
             "duration": 0.084,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.84,
+            "time": 0.94,
             "duration": 0.064,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.904,
+            "time": 1.004,
             "duration": 0.069,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.973,
+            "time": 1.073,
             "duration": 0.065,
             "phoneme": "s",
             "mouth": "e"
           },
           {
-            "time": 1.038,
+            "time": 1.138,
             "duration": 0.089,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 1.127,
+            "time": 1.227,
             "duration": 0.058,
             "phoneme": "t",
             "mouth": "a"
           },
           {
-            "time": 1.185,
+            "time": 1.285,
             "duration": 0.104,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.289,
+            "time": 1.389,
             "duration": 0.078,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.368,
+            "time": 1.468,
             "duration": 0.054,
             "phoneme": "t",
             "mouth": "o"
           },
           {
-            "time": 1.421,
+            "time": 1.521,
             "duration": 0.094,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.515,
+            "time": 1.615,
             "duration": 0.08,
             "phoneme": "k",
             "mouth": "i"
           },
           {
-            "time": 1.595,
+            "time": 1.695,
             "duration": 0.069,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.664,
+            "time": 1.764,
             "duration": 0.064,
             "phoneme": "w",
             "mouth": "a"
           },
           {
-            "time": 1.727,
+            "time": 1.827,
             "duration": 0.159,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.887,
+            "time": 1.987,
             "duration": 0.313,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 2.2,
+            "time": 2.3,
             "duration": 0.112,
             "phoneme": "z",
             "mouth": "u"
           },
           {
-            "time": 2.312,
+            "time": 2.412,
             "duration": 0.11,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.421,
+            "time": 2.521,
             "duration": 0.085,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 2.507,
+            "time": 2.607,
             "duration": 0.036,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 2.542,
+            "time": 2.642,
             "duration": 0.097,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.64,
+            "time": 2.74,
             "duration": 0.071,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 2.71,
+            "time": 2.81,
             "duration": 0.122,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.832,
+            "time": 2.932,
             "duration": 0.08,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 2.912,
+            "time": 3.012,
             "duration": 0.1,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.012,
+            "time": 3.112,
             "duration": 0.068,
             "phoneme": "k",
             "mouth": "e"
           },
           {
-            "time": 3.079,
+            "time": 3.179,
             "duration": 0.092,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 3.172,
+            "time": 3.272,
             "duration": 0.037,
             "phoneme": "sh",
             "mouth": "i"
           },
           {
-            "time": 3.209,
+            "time": 3.309,
             "duration": 0.054,
             "phoneme": "I",
             "mouth": "i"
           },
           {
-            "time": 3.263,
+            "time": 3.363,
             "duration": 0.07,
             "phoneme": "t",
             "mouth": "e"
           },
           {
-            "time": 3.333,
+            "time": 3.433,
             "duration": 0.098,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 3.431,
+            "time": 3.531,
             "duration": 0.105,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.536,
+            "time": 3.636,
             "duration": 0.115,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.651,
+            "time": 3.751,
             "duration": 0.057,
             "phoneme": "k",
             "mouth": "i"
           },
           {
-            "time": 3.708,
+            "time": 3.808,
             "duration": 0.057,
             "phoneme": "I",
             "mouth": "i"
           },
           {
-            "time": 3.765,
+            "time": 3.865,
             "duration": 0.065,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 3.829,
+            "time": 3.929,
             "duration": 0.053,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.882,
+            "time": 3.982,
             "duration": 0.051,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 3.933,
+            "time": 4.033,
             "duration": 0.097,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 4.03,
+            "time": 4.13,
             "duration": 0.077,
             "phoneme": "s",
             "mouth": "e"
           },
           {
-            "time": 4.107,
+            "time": 4.207,
             "duration": 0.074,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 4.182,
+            "time": 4.282,
             "duration": 0.031,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 4.213,
+            "time": 4.313,
             "duration": 0.073,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 4.285,
+            "time": 4.385,
             "duration": 0.058,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 4.343,
+            "time": 4.443,
             "duration": 0.097,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 4.441,
+            "time": 4.541,
             "duration": 0.051,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 4.492,
+            "time": 4.592,
             "duration": 0.212,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 4.704,
+            "time": 4.804,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 72.847,
+      "startTime": 74.447,
       "pause": 0.8,
+      "character": "zundamon",
+      "showCharacter": false,
       "background": "orange",
       "image": {
         "src": "images/layout.png",
@@ -4823,8 +4855,7 @@
         "scale": 2.6,
         "animation": "zoom-in"
       },
-      "se": "audio/se/transition.ogg",
-      "character": false
+      "se": "audio/se/transition.ogg"
     },
     {
       "text": "テロップを消したいときは none にするのだ",
@@ -4833,234 +4864,236 @@
       "lipsyncData": {
         "text": "テロップを消したいときは none にするのだ",
         "speaker_id": 3,
-        "duration": 4.213,
+        "duration": 4.313,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.082,
             "phoneme": "t",
             "mouth": "e"
           },
           {
-            "time": 0.082,
+            "time": 0.182,
             "duration": 0.089,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.171,
+            "time": 0.271,
             "duration": 0.05,
             "phoneme": "r",
             "mouth": "o"
           },
           {
-            "time": 0.221,
+            "time": 0.321,
             "duration": 0.148,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.369,
+            "time": 0.469,
             "duration": 0.072,
             "phoneme": "cl",
             "mouth": "closed"
           },
           {
-            "time": 0.442,
+            "time": 0.542,
             "duration": 0.075,
             "phoneme": "p",
             "mouth": "closed"
           },
           {
-            "time": 0.517,
+            "time": 0.617,
             "duration": 0.071,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.588,
+            "time": 0.688,
             "duration": 0.113,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.701,
+            "time": 0.801,
             "duration": 0.073,
             "phoneme": "k",
             "mouth": "e"
           },
           {
-            "time": 0.773,
+            "time": 0.873,
             "duration": 0.089,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.862,
+            "time": 0.962,
             "duration": 0.038,
             "phoneme": "sh",
             "mouth": "i"
           },
           {
-            "time": 0.9,
+            "time": 1.0,
             "duration": 0.06,
             "phoneme": "I",
             "mouth": "i"
           },
           {
-            "time": 0.96,
+            "time": 1.06,
             "duration": 0.065,
             "phoneme": "t",
             "mouth": "a"
           },
           {
-            "time": 1.026,
+            "time": 1.126,
             "duration": 0.098,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.123,
+            "time": 1.223,
             "duration": 0.076,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.199,
+            "time": 1.299,
             "duration": 0.056,
             "phoneme": "t",
             "mouth": "o"
           },
           {
-            "time": 1.256,
+            "time": 1.356,
             "duration": 0.093,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.349,
+            "time": 1.449,
             "duration": 0.08,
             "phoneme": "k",
             "mouth": "i"
           },
           {
-            "time": 1.429,
+            "time": 1.529,
             "duration": 0.067,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.496,
+            "time": 1.596,
             "duration": 0.064,
             "phoneme": "w",
             "mouth": "a"
           },
           {
-            "time": 1.561,
+            "time": 1.661,
             "duration": 0.152,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.713,
+            "time": 1.813,
             "duration": 0.308,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 2.021,
+            "time": 2.121,
             "duration": 0.093,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 2.113,
+            "time": 2.213,
             "duration": 0.125,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.239,
+            "time": 2.339,
             "duration": 0.121,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 2.359,
+            "time": 2.459,
             "duration": 0.497,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 2.857,
+            "time": 2.957,
             "duration": 0.08,
             "phoneme": "n",
             "mouth": "i"
           },
           {
-            "time": 2.937,
+            "time": 3.037,
             "duration": 0.074,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 3.011,
+            "time": 3.111,
             "duration": 0.095,
             "phoneme": "s",
             "mouth": "u"
           },
           {
-            "time": 3.106,
+            "time": 3.206,
             "duration": 0.074,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.18,
+            "time": 3.28,
             "duration": 0.036,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 3.216,
+            "time": 3.316,
             "duration": 0.077,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.293,
+            "time": 3.393,
             "duration": 0.056,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 3.35,
+            "time": 3.45,
             "duration": 0.099,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.449,
+            "time": 3.549,
             "duration": 0.052,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 3.501,
+            "time": 3.601,
             "duration": 0.212,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.713,
+            "time": 3.813,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 78.851,
+      "startTime": 80.551,
       "pause": 0.8,
+      "character": "zundamon",
+      "showCharacter": true,
       "background": "orange",
       "subtitle": "none",
       "se": null
@@ -5072,222 +5105,224 @@
       "lipsyncData": {
         "text": "スライドの見た目も切り替えられるのだ",
         "speaker_id": 3,
-        "duration": 3.063,
+        "duration": 3.163,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.109,
             "phoneme": "s",
             "mouth": "u"
           },
           {
-            "time": 0.109,
+            "time": 0.209,
             "duration": 0.073,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.182,
+            "time": 0.282,
             "duration": 0.032,
             "phoneme": "r",
             "mouth": "a"
           },
           {
-            "time": 0.214,
+            "time": 0.314,
             "duration": 0.131,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.345,
+            "time": 0.445,
             "duration": 0.077,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.422,
+            "time": 0.522,
             "duration": 0.052,
             "phoneme": "d",
             "mouth": "o"
           },
           {
-            "time": 0.474,
+            "time": 0.574,
             "duration": 0.083,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.557,
+            "time": 0.657,
             "duration": 0.054,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 0.61,
+            "time": 0.71,
             "duration": 0.076,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.687,
+            "time": 0.787,
             "duration": 0.058,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.744,
+            "time": 0.844,
             "duration": 0.067,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.812,
+            "time": 0.912,
             "duration": 0.057,
             "phoneme": "t",
             "mouth": "a"
           },
           {
-            "time": 0.869,
+            "time": 0.969,
             "duration": 0.081,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.949,
+            "time": 1.049,
             "duration": 0.057,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 1.006,
+            "time": 1.106,
             "duration": 0.068,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 1.074,
+            "time": 1.174,
             "duration": 0.054,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 1.128,
+            "time": 1.228,
             "duration": 0.098,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.226,
+            "time": 1.326,
             "duration": 0.083,
             "phoneme": "k",
             "mouth": "i"
           },
           {
-            "time": 1.309,
+            "time": 1.409,
             "duration": 0.06,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.37,
+            "time": 1.47,
             "duration": 0.041,
             "phoneme": "r",
             "mouth": "i"
           },
           {
-            "time": 1.411,
+            "time": 1.511,
             "duration": 0.103,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.513,
+            "time": 1.613,
             "duration": 0.072,
             "phoneme": "k",
             "mouth": "a"
           },
           {
-            "time": 1.585,
+            "time": 1.685,
             "duration": 0.113,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.698,
+            "time": 1.798,
             "duration": 0.085,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 1.783,
+            "time": 1.883,
             "duration": 0.036,
             "phoneme": "r",
             "mouth": "a"
           },
           {
-            "time": 1.819,
+            "time": 1.919,
             "duration": 0.097,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.915,
+            "time": 2.015,
             "duration": 0.04,
             "phoneme": "r",
             "mouth": "e"
           },
           {
-            "time": 1.956,
+            "time": 2.056,
             "duration": 0.077,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 2.032,
+            "time": 2.132,
             "duration": 0.036,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 2.068,
+            "time": 2.168,
             "duration": 0.072,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.14,
+            "time": 2.24,
             "duration": 0.06,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 2.2,
+            "time": 2.3,
             "duration": 0.1,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.3,
+            "time": 2.4,
             "duration": 0.051,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 2.351,
+            "time": 2.451,
             "duration": 0.212,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.563,
+            "time": 2.663,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 83.864,
+      "startTime": 85.664,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "variant": "fullbleed",
         "se": "audio/se/slide-in.ogg",
@@ -5311,306 +5346,308 @@
       "lipsyncData": {
         "text": "背景が暗いときは、文字が自動で明るくなるのだ",
         "speaker_id": 3,
-        "duration": 4.526,
+        "duration": 4.626,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.098,
             "phoneme": "h",
             "mouth": "a"
           },
           {
-            "time": 0.098,
+            "time": 0.198,
             "duration": 0.126,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.224,
+            "time": 0.324,
             "duration": 0.095,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.319,
+            "time": 0.419,
             "duration": 0.077,
             "phoneme": "k",
             "mouth": "e"
           },
           {
-            "time": 0.396,
+            "time": 0.496,
             "duration": 0.096,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.493,
+            "time": 0.593,
             "duration": 0.082,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.574,
+            "time": 0.674,
             "duration": 0.054,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 0.628,
+            "time": 0.728,
             "duration": 0.1,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.728,
+            "time": 0.828,
             "duration": 0.066,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 0.793,
+            "time": 0.893,
             "duration": 0.058,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.851,
+            "time": 0.951,
             "duration": 0.039,
             "phoneme": "r",
             "mouth": "a"
           },
           {
-            "time": 0.891,
+            "time": 0.991,
             "duration": 0.106,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.997,
+            "time": 1.097,
             "duration": 0.079,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.076,
+            "time": 1.176,
             "duration": 0.053,
             "phoneme": "t",
             "mouth": "o"
           },
           {
-            "time": 1.129,
+            "time": 1.229,
             "duration": 0.095,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.223,
+            "time": 1.323,
             "duration": 0.08,
             "phoneme": "k",
             "mouth": "i"
           },
           {
-            "time": 1.303,
+            "time": 1.403,
             "duration": 0.067,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.37,
+            "time": 1.47,
             "duration": 0.063,
             "phoneme": "w",
             "mouth": "a"
           },
           {
-            "time": 1.434,
+            "time": 1.534,
             "duration": 0.152,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.585,
+            "time": 1.685,
             "duration": 0.277,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 1.863,
+            "time": 1.963,
             "duration": 0.093,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 1.956,
+            "time": 2.056,
             "duration": 0.089,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.045,
+            "time": 2.145,
             "duration": 0.064,
             "phoneme": "j",
             "mouth": "i"
           },
           {
-            "time": 2.108,
+            "time": 2.208,
             "duration": 0.07,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 2.178,
+            "time": 2.278,
             "duration": 0.061,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 2.239,
+            "time": 2.339,
             "duration": 0.108,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.347,
+            "time": 2.447,
             "duration": 0.064,
             "phoneme": "j",
             "mouth": "i"
           },
           {
-            "time": 2.411,
+            "time": 2.511,
             "duration": 0.061,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 2.473,
+            "time": 2.573,
             "duration": 0.062,
             "phoneme": "d",
             "mouth": "o"
           },
           {
-            "time": 2.534,
+            "time": 2.634,
             "duration": 0.092,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.627,
+            "time": 2.727,
             "duration": 0.096,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.722,
+            "time": 2.822,
             "duration": 0.055,
             "phoneme": "d",
             "mouth": "e"
           },
           {
-            "time": 2.777,
+            "time": 2.877,
             "duration": 0.073,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 2.851,
+            "time": 2.951,
             "duration": 0.119,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.969,
+            "time": 3.069,
             "duration": 0.066,
             "phoneme": "k",
             "mouth": "a"
           },
           {
-            "time": 3.035,
+            "time": 3.135,
             "duration": 0.08,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.115,
+            "time": 3.215,
             "duration": 0.037,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 3.152,
+            "time": 3.252,
             "duration": 0.083,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.234,
+            "time": 3.334,
             "duration": 0.061,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 3.296,
+            "time": 3.396,
             "duration": 0.058,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.353,
+            "time": 3.453,
             "duration": 0.056,
             "phoneme": "n",
             "mouth": "a"
           },
           {
-            "time": 3.409,
+            "time": 3.509,
             "duration": 0.101,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.511,
+            "time": 3.611,
             "duration": 0.032,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 3.543,
+            "time": 3.643,
             "duration": 0.065,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.608,
+            "time": 3.708,
             "duration": 0.059,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 3.667,
+            "time": 3.767,
             "duration": 0.096,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.764,
+            "time": 3.864,
             "duration": 0.05,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 3.814,
+            "time": 3.914,
             "duration": 0.212,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 4.026,
+            "time": 4.126,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 87.327,
+      "startTime": 89.227,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "variant": "fullbleed",
         "se": "audio/se/slide-in.ogg",
@@ -5635,318 +5672,320 @@
       "lipsyncData": {
         "text": "BGMもYAMLに1行書くだけで流れているのだ",
         "speaker_id": 3,
-        "duration": 4.406,
+        "duration": 4.506,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.087,
             "phoneme": "b",
             "mouth": "closed"
           },
           {
-            "time": 0.087,
+            "time": 0.187,
             "duration": 0.112,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.199,
+            "time": 0.299,
             "duration": 0.104,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.303,
+            "time": 0.403,
             "duration": 0.088,
             "phoneme": "j",
             "mouth": "i"
           },
           {
-            "time": 0.391,
+            "time": 0.491,
             "duration": 0.095,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.486,
+            "time": 0.586,
             "duration": 0.107,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.593,
+            "time": 0.693,
             "duration": 0.113,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.705,
+            "time": 0.805,
             "duration": 0.062,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.768,
+            "time": 0.868,
             "duration": 0.071,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.839,
+            "time": 0.939,
             "duration": 0.059,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.898,
+            "time": 0.998,
             "duration": 0.088,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.986,
+            "time": 1.086,
             "duration": 0.064,
             "phoneme": "y",
             "mouth": "a"
           },
           {
-            "time": 1.051,
+            "time": 1.151,
             "duration": 0.084,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.135,
+            "time": 1.235,
             "duration": 0.064,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 1.199,
+            "time": 1.299,
             "duration": 0.074,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.273,
+            "time": 1.373,
             "duration": 0.037,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 1.31,
+            "time": 1.41,
             "duration": 0.082,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.392,
+            "time": 1.492,
             "duration": 0.071,
             "phoneme": "n",
             "mouth": "i"
           },
           {
-            "time": 1.463,
+            "time": 1.563,
             "duration": 0.099,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.563,
+            "time": 1.663,
             "duration": 0.103,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.665,
+            "time": 1.765,
             "duration": 0.089,
             "phoneme": "ch",
             "mouth": "i"
           },
           {
-            "time": 1.754,
+            "time": 1.854,
             "duration": 0.075,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.83,
+            "time": 1.93,
             "duration": 0.088,
             "phoneme": "gy",
             "mouth": "o"
           },
           {
-            "time": 1.918,
+            "time": 2.018,
             "duration": 0.082,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.999,
+            "time": 2.099,
             "duration": 0.093,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.092,
+            "time": 2.192,
             "duration": 0.049,
             "phoneme": "k",
             "mouth": "a"
           },
           {
-            "time": 2.141,
+            "time": 2.241,
             "duration": 0.084,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.224,
+            "time": 2.324,
             "duration": 0.055,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 2.279,
+            "time": 2.379,
             "duration": 0.047,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.326,
+            "time": 2.426,
             "duration": 0.049,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 2.375,
+            "time": 2.475,
             "duration": 0.098,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.473,
+            "time": 2.573,
             "duration": 0.058,
             "phoneme": "k",
             "mouth": "e"
           },
           {
-            "time": 2.531,
+            "time": 2.631,
             "duration": 0.064,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 2.595,
+            "time": 2.695,
             "duration": 0.048,
             "phoneme": "d",
             "mouth": "e"
           },
           {
-            "time": 2.643,
+            "time": 2.743,
             "duration": 0.072,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 2.715,
+            "time": 2.815,
             "duration": 0.057,
             "phoneme": "n",
             "mouth": "a"
           },
           {
-            "time": 2.772,
+            "time": 2.872,
             "duration": 0.087,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.859,
+            "time": 2.959,
             "duration": 0.062,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 2.922,
+            "time": 3.022,
             "duration": 0.077,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.999,
+            "time": 3.099,
             "duration": 0.035,
             "phoneme": "r",
             "mouth": "e"
           },
           {
-            "time": 3.034,
+            "time": 3.134,
             "duration": 0.093,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 3.127,
+            "time": 3.227,
             "duration": 0.063,
             "phoneme": "t",
             "mouth": "e"
           },
           {
-            "time": 3.19,
+            "time": 3.29,
             "duration": 0.111,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 3.301,
+            "time": 3.401,
             "duration": 0.075,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 3.376,
+            "time": 3.476,
             "duration": 0.041,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 3.418,
+            "time": 3.518,
             "duration": 0.072,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.49,
+            "time": 3.59,
             "duration": 0.056,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 3.545,
+            "time": 3.645,
             "duration": 0.096,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.642,
+            "time": 3.742,
             "duration": 0.051,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 3.693,
+            "time": 3.793,
             "duration": 0.213,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.906,
+            "time": 4.006,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 92.253,
+      "startTime": 94.253,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "variant": "card",
         "se": "audio/se/slide-in.ogg",
@@ -5968,360 +6007,362 @@
       "lipsyncData": {
         "text": "DockerでVOICEVOXが動くから、環境構築もすぐなのだ",
         "speaker_id": 3,
-        "duration": 5.303,
+        "duration": 5.403,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.073,
             "phoneme": "d",
             "mouth": "o"
           },
           {
-            "time": 0.073,
+            "time": 0.173,
             "duration": 0.126,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.199,
+            "time": 0.299,
             "duration": 0.085,
             "phoneme": "cl",
             "mouth": "closed"
           },
           {
-            "time": 0.285,
+            "time": 0.385,
             "duration": 0.079,
             "phoneme": "k",
             "mouth": "a"
           },
           {
-            "time": 0.363,
+            "time": 0.463,
             "duration": 0.101,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.464,
+            "time": 0.564,
             "duration": 0.094,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.558,
+            "time": 0.658,
             "duration": 0.057,
             "phoneme": "d",
             "mouth": "e"
           },
           {
-            "time": 0.615,
+            "time": 0.715,
             "duration": 0.083,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.698,
+            "time": 0.798,
             "duration": 0.059,
             "phoneme": "b",
             "mouth": "closed"
           },
           {
-            "time": 0.757,
+            "time": 0.857,
             "duration": 0.104,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.861,
+            "time": 0.961,
             "duration": 0.072,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.934,
+            "time": 1.034,
             "duration": 0.071,
             "phoneme": "s",
             "mouth": "u"
           },
           {
-            "time": 1.005,
+            "time": 1.105,
             "duration": 0.068,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.073,
+            "time": 1.173,
             "duration": 0.053,
             "phoneme": "b",
             "mouth": "closed"
           },
           {
-            "time": 1.127,
+            "time": 1.227,
             "duration": 0.121,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.248,
+            "time": 1.348,
             "duration": 0.072,
             "phoneme": "cl",
             "mouth": "closed"
           },
           {
-            "time": 1.32,
+            "time": 1.42,
             "duration": 0.063,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 1.383,
+            "time": 1.483,
             "duration": 0.056,
             "phoneme": "U",
             "mouth": "u"
           },
           {
-            "time": 1.439,
+            "time": 1.539,
             "duration": 0.08,
             "phoneme": "s",
             "mouth": "u"
           },
           {
-            "time": 1.52,
+            "time": 1.62,
             "duration": 0.067,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.587,
+            "time": 1.687,
             "duration": 0.066,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 1.653,
+            "time": 1.753,
             "duration": 0.12,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.773,
+            "time": 1.873,
             "duration": 0.073,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.846,
+            "time": 1.946,
             "duration": 0.054,
             "phoneme": "g",
             "mouth": "o"
           },
           {
-            "time": 1.899,
+            "time": 1.999,
             "duration": 0.097,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.996,
+            "time": 2.096,
             "duration": 0.057,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 2.052,
+            "time": 2.152,
             "duration": 0.054,
             "phoneme": "U",
             "mouth": "u"
           },
           {
-            "time": 2.107,
+            "time": 2.207,
             "duration": 0.073,
             "phoneme": "k",
             "mouth": "a"
           },
           {
-            "time": 2.18,
+            "time": 2.28,
             "duration": 0.096,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.276,
+            "time": 2.376,
             "duration": 0.035,
             "phoneme": "r",
             "mouth": "a"
           },
           {
-            "time": 2.311,
+            "time": 2.411,
             "duration": 0.149,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.46,
+            "time": 2.56,
             "duration": 0.295,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 2.756,
+            "time": 2.856,
             "duration": 0.089,
             "phoneme": "k",
             "mouth": "a"
           },
           {
-            "time": 2.844,
+            "time": 2.944,
             "duration": 0.133,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.977,
+            "time": 3.077,
             "duration": 0.093,
             "phoneme": "N",
             "mouth": "n"
           },
           {
-            "time": 3.07,
+            "time": 3.17,
             "duration": 0.099,
             "phoneme": "ky",
             "mouth": "o"
           },
           {
-            "time": 3.169,
+            "time": 3.269,
             "duration": 0.072,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.241,
+            "time": 3.341,
             "duration": 0.104,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.345,
+            "time": 3.445,
             "duration": 0.077,
             "phoneme": "k",
             "mouth": "o"
           },
           {
-            "time": 3.422,
+            "time": 3.522,
             "duration": 0.084,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.506,
+            "time": 3.606,
             "duration": 0.105,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.611,
+            "time": 3.711,
             "duration": 0.049,
             "phoneme": "ch",
             "mouth": "i"
           },
           {
-            "time": 3.66,
+            "time": 3.76,
             "duration": 0.053,
             "phoneme": "I",
             "mouth": "i"
           },
           {
-            "time": 3.713,
+            "time": 3.813,
             "duration": 0.067,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 3.78,
+            "time": 3.88,
             "duration": 0.057,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.837,
+            "time": 3.937,
             "duration": 0.057,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 3.894,
+            "time": 3.994,
             "duration": 0.092,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.986,
+            "time": 4.086,
             "duration": 0.079,
             "phoneme": "s",
             "mouth": "u"
           },
           {
-            "time": 4.066,
+            "time": 4.166,
             "duration": 0.063,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 4.128,
+            "time": 4.228,
             "duration": 0.058,
             "phoneme": "g",
             "mouth": "u"
           },
           {
-            "time": 4.186,
+            "time": 4.286,
             "duration": 0.074,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 4.26,
+            "time": 4.36,
             "duration": 0.051,
             "phoneme": "n",
             "mouth": "a"
           },
           {
-            "time": 4.311,
+            "time": 4.411,
             "duration": 0.088,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 4.399,
+            "time": 4.499,
             "duration": 0.056,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 4.455,
+            "time": 4.555,
             "duration": 0.094,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 4.549,
+            "time": 4.649,
             "duration": 0.049,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 4.599,
+            "time": 4.699,
             "duration": 0.205,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 4.803,
+            "time": 4.903,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 97.059,
+      "startTime": 99.159,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "variant": "card",
         "se": "audio/se/slide-in.ogg",
@@ -6345,246 +6386,248 @@
       "lipsyncData": {
         "text": "サムネイルも同じYAMLから作れるのだ！",
         "speaker_id": 3,
-        "duration": 3.357,
+        "duration": 3.457,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.108,
             "phoneme": "s",
             "mouth": "a"
           },
           {
-            "time": 0.108,
+            "time": 0.208,
             "duration": 0.086,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.194,
+            "time": 0.294,
             "duration": 0.068,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.262,
+            "time": 0.362,
             "duration": 0.084,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.345,
+            "time": 0.445,
             "duration": 0.063,
             "phoneme": "n",
             "mouth": "e"
           },
           {
-            "time": 0.408,
+            "time": 0.508,
             "duration": 0.119,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.527,
+            "time": 0.627,
             "duration": 0.078,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.605,
+            "time": 0.705,
             "duration": 0.043,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 0.648,
+            "time": 0.748,
             "duration": 0.079,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.727,
+            "time": 0.827,
             "duration": 0.066,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.793,
+            "time": 0.893,
             "duration": 0.078,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.871,
+            "time": 0.971,
             "duration": 0.085,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.956,
+            "time": 1.056,
             "duration": 0.058,
             "phoneme": "n",
             "mouth": "a"
           },
           {
-            "time": 1.015,
+            "time": 1.115,
             "duration": 0.104,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.118,
+            "time": 1.218,
             "duration": 0.063,
             "phoneme": "j",
             "mouth": "i"
           },
           {
-            "time": 1.181,
+            "time": 1.281,
             "duration": 0.065,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.246,
+            "time": 1.346,
             "duration": 0.058,
             "phoneme": "y",
             "mouth": "a"
           },
           {
-            "time": 1.304,
+            "time": 1.404,
             "duration": 0.089,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.393,
+            "time": 1.493,
             "duration": 0.063,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 1.457,
+            "time": 1.557,
             "duration": 0.069,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.526,
+            "time": 1.626,
             "duration": 0.038,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 1.563,
+            "time": 1.663,
             "duration": 0.084,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.648,
+            "time": 1.748,
             "duration": 0.062,
             "phoneme": "k",
             "mouth": "a"
           },
           {
-            "time": 1.71,
+            "time": 1.81,
             "duration": 0.083,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.793,
+            "time": 1.893,
             "duration": 0.033,
             "phoneme": "r",
             "mouth": "a"
           },
           {
-            "time": 1.827,
+            "time": 1.927,
             "duration": 0.111,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.937,
+            "time": 2.037,
             "duration": 0.061,
             "phoneme": "ts",
             "mouth": "u"
           },
           {
-            "time": 1.999,
+            "time": 2.099,
             "duration": 0.057,
             "phoneme": "U",
             "mouth": "u"
           },
           {
-            "time": 2.055,
+            "time": 2.155,
             "duration": 0.079,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 2.135,
+            "time": 2.235,
             "duration": 0.065,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.199,
+            "time": 2.299,
             "duration": 0.04,
             "phoneme": "r",
             "mouth": "e"
           },
           {
-            "time": 2.239,
+            "time": 2.339,
             "duration": 0.089,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 2.329,
+            "time": 2.429,
             "duration": 0.034,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 2.362,
+            "time": 2.462,
             "duration": 0.071,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.433,
+            "time": 2.533,
             "duration": 0.061,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 2.494,
+            "time": 2.594,
             "duration": 0.1,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.594,
+            "time": 2.694,
             "duration": 0.051,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 2.645,
+            "time": 2.745,
             "duration": 0.212,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.857,
+            "time": 2.957,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 102.762,
+      "startTime": 104.962,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "slide": {
         "variant": "title",
         "se": "audio/se/transition.ogg",
@@ -6603,300 +6646,302 @@
       "lipsyncData": {
         "text": "というわけで、YAMLを書くだけで動画が作れるのだ！",
         "speaker_id": 3,
-        "duration": 4.495,
+        "duration": 4.595,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.086,
             "phoneme": "t",
             "mouth": "o"
           },
           {
-            "time": 0.086,
+            "time": 0.186,
             "duration": 0.14,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 0.226,
+            "time": 0.326,
             "duration": 0.105,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.332,
+            "time": 0.432,
             "duration": 0.106,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 0.438,
+            "time": 0.538,
             "duration": 0.051,
             "phoneme": "w",
             "mouth": "a"
           },
           {
-            "time": 0.489,
+            "time": 0.589,
             "duration": 0.085,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.574,
+            "time": 0.674,
             "duration": 0.058,
             "phoneme": "k",
             "mouth": "e"
           },
           {
-            "time": 0.631,
+            "time": 0.731,
             "duration": 0.094,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.726,
+            "time": 0.826,
             "duration": 0.049,
             "phoneme": "d",
             "mouth": "e"
           },
           {
-            "time": 0.774,
+            "time": 0.874,
             "duration": 0.174,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.948,
+            "time": 1.048,
             "duration": 0.368,
             "phoneme": "pau",
             "mouth": "closed"
           },
           {
-            "time": 1.316,
+            "time": 1.416,
             "duration": 0.08,
             "phoneme": "y",
             "mouth": "a"
           },
           {
-            "time": 1.396,
+            "time": 1.496,
             "duration": 0.084,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.48,
+            "time": 1.58,
             "duration": 0.07,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 1.55,
+            "time": 1.65,
             "duration": 0.087,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.637,
+            "time": 1.737,
             "duration": 0.041,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 1.677,
+            "time": 1.777,
             "duration": 0.079,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 1.757,
+            "time": 1.857,
             "duration": 0.126,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.882,
+            "time": 1.982,
             "duration": 0.054,
             "phoneme": "k",
             "mouth": "a"
           },
           {
-            "time": 1.936,
+            "time": 2.036,
             "duration": 0.083,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.019,
+            "time": 2.119,
             "duration": 0.057,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 2.075,
+            "time": 2.175,
             "duration": 0.048,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 2.123,
+            "time": 2.223,
             "duration": 0.048,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 2.172,
+            "time": 2.272,
             "duration": 0.097,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.269,
+            "time": 2.369,
             "duration": 0.058,
             "phoneme": "k",
             "mouth": "e"
           },
           {
-            "time": 2.327,
+            "time": 2.427,
             "duration": 0.064,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 2.391,
+            "time": 2.491,
             "duration": 0.05,
             "phoneme": "d",
             "mouth": "e"
           },
           {
-            "time": 2.441,
+            "time": 2.541,
             "duration": 0.085,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 2.526,
+            "time": 2.626,
             "duration": 0.062,
             "phoneme": "d",
             "mouth": "o"
           },
           {
-            "time": 2.588,
+            "time": 2.688,
             "duration": 0.089,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.677,
+            "time": 2.777,
             "duration": 0.091,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 2.768,
+            "time": 2.868,
             "duration": 0.058,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 2.826,
+            "time": 2.926,
             "duration": 0.088,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 2.914,
+            "time": 3.014,
             "duration": 0.055,
             "phoneme": "g",
             "mouth": "a"
           },
           {
-            "time": 2.97,
+            "time": 3.07,
             "duration": 0.106,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.075,
+            "time": 3.175,
             "duration": 0.061,
             "phoneme": "ts",
             "mouth": "u"
           },
           {
-            "time": 3.136,
+            "time": 3.236,
             "duration": 0.058,
             "phoneme": "U",
             "mouth": "u"
           },
           {
-            "time": 3.194,
+            "time": 3.294,
             "duration": 0.079,
             "phoneme": "k",
             "mouth": "u"
           },
           {
-            "time": 3.273,
+            "time": 3.373,
             "duration": 0.064,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.337,
+            "time": 3.437,
             "duration": 0.04,
             "phoneme": "r",
             "mouth": "e"
           },
           {
-            "time": 3.377,
+            "time": 3.477,
             "duration": 0.089,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 3.467,
+            "time": 3.567,
             "duration": 0.034,
             "phoneme": "r",
             "mouth": "u"
           },
           {
-            "time": 3.501,
+            "time": 3.601,
             "duration": 0.071,
             "phoneme": "u",
             "mouth": "u"
           },
           {
-            "time": 3.571,
+            "time": 3.671,
             "duration": 0.061,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 3.632,
+            "time": 3.732,
             "duration": 0.1,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 3.732,
+            "time": 3.832,
             "duration": 0.051,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 3.783,
+            "time": 3.883,
             "duration": 0.212,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 3.995,
+            "time": 4.095,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 106.519,
+      "startTime": 108.819,
       "pause": 0.4,
+      "character": "zundamon",
+      "showCharacter": true,
       "background": "gradient",
       "se": "audio/se/confirm.ogg"
     },
@@ -6907,169 +6952,171 @@
       "lipsyncData": {
         "text": "ぜひ試してみてほしいのだ！",
         "speaker_id": 3,
-        "duration": 2.428,
+        "duration": 2.528,
         "lipsync": [
           {
-            "time": 0,
+            "time": 0.1,
             "duration": 0.088,
             "phoneme": "z",
             "mouth": "e"
           },
           {
-            "time": 0.088,
+            "time": 0.188,
             "duration": 0.101,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.189,
+            "time": 0.289,
             "duration": 0.05,
             "phoneme": "h",
             "mouth": "i"
           },
           {
-            "time": 0.239,
+            "time": 0.339,
             "duration": 0.057,
             "phoneme": "I",
             "mouth": "i"
           },
           {
-            "time": 0.296,
+            "time": 0.396,
             "duration": 0.067,
             "phoneme": "t",
             "mouth": "a"
           },
           {
-            "time": 0.363,
+            "time": 0.463,
             "duration": 0.077,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 0.439,
+            "time": 0.539,
             "duration": 0.061,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.501,
+            "time": 0.601,
             "duration": 0.076,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.577,
+            "time": 0.677,
             "duration": 0.045,
             "phoneme": "sh",
             "mouth": "i"
           },
           {
-            "time": 0.622,
+            "time": 0.722,
             "duration": 0.072,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.695,
+            "time": 0.795,
             "duration": 0.06,
             "phoneme": "t",
             "mouth": "e"
           },
           {
-            "time": 0.755,
+            "time": 0.855,
             "duration": 0.073,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 0.828,
+            "time": 0.928,
             "duration": 0.058,
             "phoneme": "m",
             "mouth": "closed"
           },
           {
-            "time": 0.886,
+            "time": 0.986,
             "duration": 0.064,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 0.95,
+            "time": 1.05,
             "duration": 0.055,
             "phoneme": "t",
             "mouth": "e"
           },
           {
-            "time": 1.005,
+            "time": 1.105,
             "duration": 0.074,
             "phoneme": "e",
             "mouth": "e"
           },
           {
-            "time": 1.079,
+            "time": 1.179,
             "duration": 0.069,
             "phoneme": "h",
             "mouth": "o"
           },
           {
-            "time": 1.148,
+            "time": 1.248,
             "duration": 0.089,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.236,
+            "time": 1.336,
             "duration": 0.108,
             "phoneme": "sh",
             "mouth": "i"
           },
           {
-            "time": 1.344,
+            "time": 1.444,
             "duration": 0.087,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.43,
+            "time": 1.53,
             "duration": 0.08,
             "phoneme": "i",
             "mouth": "i"
           },
           {
-            "time": 1.511,
+            "time": 1.611,
             "duration": 0.062,
             "phoneme": "n",
             "mouth": "o"
           },
           {
-            "time": 1.572,
+            "time": 1.672,
             "duration": 0.1,
             "phoneme": "o",
             "mouth": "o"
           },
           {
-            "time": 1.672,
+            "time": 1.772,
             "duration": 0.049,
             "phoneme": "d",
             "mouth": "a"
           },
           {
-            "time": 1.722,
+            "time": 1.822,
             "duration": 0.207,
             "phoneme": "a",
             "mouth": "a"
           },
           {
-            "time": 1.928,
+            "time": 2.028,
             "duration": 0.5,
             "phoneme": "end",
             "mouth": "closed"
           }
         ]
       },
-      "startTime": 111.414,
-      "pause": 1.0
+      "startTime": 113.814,
+      "pause": 1.0,
+      "character": "zundamon",
+      "showCharacter": true
     }
   ],
-  "totalDuration": 115.342
+  "totalDuration": 117.842
 }
