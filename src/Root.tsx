@@ -9,8 +9,12 @@ import * as cosenseData from "./generated/cosense.json";
 import * as demoData from "./generated/demo.json";
 import * as opening_demoData from "./generated/opening-demo.json";
 import * as presenter_demoData from "./generated/presenter-demo.json";
+import * as reactData from "./generated/react.json";
+import * as remotionData from "./generated/remotion.json";
 import * as slide_demoData from "./generated/slide-demo.json";
 import * as variants_demoData from "./generated/variants-demo.json";
+import * as video_productionData from "./generated/video-production.json";
+import * as voicevoxData from "./generated/voicevox.json";
 
 // インポートした動画データを配列化
 const generatedVideos: GeneratedVideoData[] = [
@@ -18,8 +22,12 @@ const generatedVideos: GeneratedVideoData[] = [
   demoData as unknown as GeneratedVideoData,
   opening_demoData as unknown as GeneratedVideoData,
   presenter_demoData as unknown as GeneratedVideoData,
+  reactData as unknown as GeneratedVideoData,
+  remotionData as unknown as GeneratedVideoData,
   slide_demoData as unknown as GeneratedVideoData,
   variants_demoData as unknown as GeneratedVideoData,
+  video_productionData as unknown as GeneratedVideoData,
+  voicevoxData as unknown as GeneratedVideoData,
 ].filter((v) => v && v.id); // 有効なデータのみ
 
 export const RemotionRoot: React.FC = () => {

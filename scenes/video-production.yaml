@@ -1,0 +1,217 @@
+# 動画制作の流れの解説動画（サンプル）
+#
+# 生成: npm run video -- scenes/video-production.yaml
+# サムネ: npm run thumbnail -- scenes/video-production.yaml
+
+title: "動画制作の流れ"
+character: zundamon
+speaker_id: 3
+fps: 30
+width: 1920
+height: 1080
+defaultBackground: "gradient"
+defaultPause: 0.4
+defaultSubtitle: boxed
+defaultSlideVariant: card
+
+defaultSe:
+  src: "audio/se/pop.ogg"
+  volume: 0.20
+
+dict:
+  BGM: ビージーエム
+
+bgm:
+  src: "audio/bgm/carefree-kevin-macleod.mp3"
+  volume: 0.10
+  fadeIn: 1.5
+  fadeOut: 2.5
+  credit: "BGM: Carefree - Kevin MacLeod (incompetech.com) / CC BY 4.0"
+
+opening:
+  variant: center
+  title: "動画制作の流れ"
+  subtitle: "企画から書き出しまで"
+  badge: "入門"
+  accent: "#fdcb6e"
+  background: "dark"
+  emotion: happy
+  se: "audio/se/transition.ogg"
+  text: "ずんだもんなのだ！今日は動画ができるまでの流れを紹介するのだ！"
+
+thumbnail:
+  variant: simple
+  title: "動画制作の流れ"
+  subtitle: "企画から書き出しまで"
+  badge: "入門"
+  accent: "#fdcb6e"
+  background: "dark"
+  emotion: smug
+
+scenes:
+  # ---- 導入 ----
+  - text: "動画を作ってみたいけど、何から始めればいいか分からない人は多いのだ"
+    emotion: thinking
+
+  - text: "実は、作る順番はだいたい決まっているのだ"
+    emotion: smug
+    pause: 0.6
+
+  # ---- スライド1: 全体像 ----
+  - text: "まずは全体の流れを見てほしいのだ"
+    emotion: normal
+    background: purple
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "動画ができるまで"
+      accent: "#6c5ce7"
+      bullets:
+        - "何を伝えるか決める"
+        - "話す内容を書く"
+        - "映像と音を用意する"
+        - "つなげて仕上げる"
+      note: "この順番を守ると迷いにくい"
+
+  - text: "この四つの順番で進めると、途中で迷いにくいのだ"
+    emotion: normal
+    background: purple
+
+  # ---- 1. 企画 ----
+  - text: "ひとつめは、何を伝えるかを決めることなのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: blue
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "一 何を伝えるか決める"
+      accent: "#0984e3"
+      bullets:
+        - "誰に見てほしいのかを決める"
+        - "見た人にどうなってほしいかを決める"
+        - "伝えたいことはひとつに絞る"
+
+  - text: "誰に見てほしいのかで、話し方も長さも変わるのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: blue
+    highlight: 1
+
+  - text: "あれもこれも詰め込むと、結局なにも伝わらないのだ"
+    se: "audio/se/select.ogg"
+    emotion: tired
+    background: blue
+    highlight: 3
+
+  # ---- 2. 台本 ----
+  - text: "ふたつめは、話す内容を書くことなのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: green
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "二 話す内容を書く"
+      accent: "#00b894"
+      bullets:
+        - "話す言葉をそのまま書き出す"
+        - "順番を入れ替えて整える"
+        - "声に出して読んでみる"
+
+  - text: "頭の中だけで組み立てると、必ずどこかで詰まるのだ"
+    emotion: tired
+    background: green
+
+  - text: "声に出して読むと、長すぎる文がすぐ見つかるのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: green
+    highlight: 3
+
+  # ---- 3. 素材 ----
+  - text: "みっつめは、映像と音を用意することなのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: orange
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "三 映像と音を用意する"
+      accent: "#e17055"
+      bullets:
+        - "画面や図を用意する"
+        - "声を録音する、または合成する"
+        - "BGMと効果音を選ぶ"
+      note: "素材は使ってよい条件を必ず確認する"
+
+  - text: "声は自分で録音してもいいし、音声合成に読ませてもいいのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: orange
+    highlight: 2
+
+  - text: "この動画の声も、合成で作っているのだ"
+    emotion: smug
+    background: orange
+
+  - text: "拾ってきた素材は、使ってよい条件を必ず確認してほしいのだ"
+    se: "audio/se/chime.ogg"
+    emotion: surprised
+    background: orange
+    pause: 0.6
+
+  # ---- 4. 編集 ----
+  - text: "よっつめは、つなげて仕上げることなのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: dark
+    slide:
+      variant: fullbleed
+      se: "audio/se/slide-in.ogg"
+      title: "四 つなげて仕上げる"
+      accent: "#00d2a0"
+      bullets:
+        - "いらないところを削る"
+        - "文字を入れて分かりやすくする"
+        - "音の大きさをそろえる"
+
+  - text: "編集でいちばん効くのは、いらないところを削ることなのだ"
+    se: "audio/se/select.ogg"
+    emotion: smug
+    background: dark
+    highlight: 1
+
+  - text: "声とBGMの大きさがそろっていないと、それだけで聞きづらくなるのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: dark
+    highlight: 3
+
+  # ---- 自動化 ----
+  - text: "ここまでの流れは、実は自動にもできるのだ"
+    emotion: surprised
+    background: pink
+    slide:
+      variant: title
+      se: "audio/se/transition.ogg"
+      title: "同じ形なら自動にできる"
+      note: "台本を書けば、声も動画も自動で作れる"
+      accent: "#e84393"
+
+  - text: "毎回おなじ形の動画なら、台本を書くだけで完成させることもできるのだ"
+    emotion: happy
+    background: pink
+
+  - text: "この動画も、まさにそうやって作られているのだ！"
+    se: "audio/se/chime.ogg"
+    emotion: smug
+    background: pink
+    pause: 0.6
+
+  # ---- まとめ ----
+  - text: "決める、書く、集める、つなげる。この四つなのだ！"
+    se: "audio/se/confirm.ogg"
+    emotion: happy
+    background: gradient
+    slide: null
+
+  - text: "まずは短いものから作ってみてほしいのだ！"
+    emotion: happy
+    pause: 1.0

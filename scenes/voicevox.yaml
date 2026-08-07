@@ -1,0 +1,188 @@
+# VOICEVOXの解説動画（サンプル）
+#
+# 生成: npm run video -- scenes/voicevox.yaml
+# サムネ: npm run thumbnail -- scenes/voicevox.yaml
+
+title: "VOICEVOXってなに？"
+character: zundamon
+speaker_id: 3
+fps: 30
+width: 1920
+height: 1080
+defaultBackground: "gradient"
+defaultPause: 0.4
+defaultSubtitle: boxed
+defaultSlideVariant: card
+
+defaultSe:
+  src: "audio/se/pop.ogg"
+  volume: 0.20
+
+# VOICEVOXは共有辞書にある。他に誤読する語は無かったので個別の辞書は空
+# （WindowsやMacはスライドの文字だけで、セリフには出てこない）
+
+bgm:
+  src: "audio/bgm/carefree-kevin-macleod.mp3"
+  volume: 0.10
+  fadeIn: 1.5
+  fadeOut: 2.5
+  credit: "BGM: Carefree - Kevin MacLeod (incompetech.com) / CC BY 4.0"
+
+opening:
+  variant: minimal
+  title: "VOICEVOXってなに？"
+  subtitle: "無料で使える音声合成"
+  badge: "解説"
+  accent: "#8fd14f"
+  background: "dark"
+  emotion: happy
+  se: "audio/se/transition.ogg"
+  text: "ずんだもんなのだ！今日はぼくの声を作っているVOICEVOXを紹介するのだ！"
+
+thumbnail:
+  variant: bold
+  title: "VOICEVOXってなに？"
+  subtitle: "無料で使える音声合成"
+  badge: "解説"
+  accent: "#8fd14f"
+  background: "dark"
+  emotion: happy
+
+scenes:
+  # ---- 導入 ----
+  - text: "今しゃべっているぼくの声は、人間が録音したものじゃないのだ"
+    emotion: normal
+
+  - text: "文章を打ち込むと、その通りにしゃべってくれるソフトで作っているのだ"
+    emotion: smug
+    pause: 0.6
+
+  # ---- スライド1: VOICEVOXとは ----
+  - text: "そのソフトがVOICEVOXなのだ"
+    emotion: happy
+    background: purple
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "VOICEVOXとは"
+      accent: "#6c5ce7"
+      bullets:
+        - "無料で使える音声合成ソフト"
+        - "文章を打ち込むとしゃべってくれる"
+        - "インターネットにつながなくても動く"
+      note: "WindowsとMacとLinuxで動く"
+
+  - text: "無料で使える音声合成ソフトなのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: purple
+    highlight: 1
+
+  - text: "文章を打ち込むだけで、その通りにしゃべってくれるのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: purple
+    highlight: 2
+
+  - text: "自分のパソコンの中で動くから、インターネットにつながなくても使えるのだ"
+    se: "audio/se/select.ogg"
+    emotion: smug
+    background: purple
+    highlight: 3
+
+  # ---- スライド2: 声のキャラクター ----
+  - text: "VOICEVOXには、たくさんの声のキャラクターがいるのだ"
+    emotion: normal
+    background: blue
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "いろいろな声を選べる"
+      accent: "#0984e3"
+      bullets:
+        - "キャラクターごとに声が違う"
+        - "同じキャラでも話し方を変えられる"
+        - "ぼくずんだもんもそのひとり"
+
+  - text: "キャラクターを選ぶだけで、声がまるごと変わるのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: blue
+    highlight: 1
+
+  - text: "同じキャラクターでも、あまあまやツンツンみたいに話し方を選べるのだ"
+    se: "audio/se/select.ogg"
+    emotion: surprised
+    background: blue
+    highlight: 2
+
+  # ---- スライド3: 調整 ----
+  - text: "声の細かい調整もできるのだ"
+    emotion: normal
+    background: green
+    slide:
+      variant: fullbleed
+      se: "audio/se/slide-in.ogg"
+      title: "声を細かく調整できる"
+      accent: "#00b894"
+      bullets:
+        - "話す速さを変えられる"
+        - "声の高さを変えられる"
+        - "抑揚の強さも変えられる"
+
+  - text: "早口にしたり、ゆっくりにしたりできるのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: green
+    highlight: 1
+
+  - text: "声を高くしたり低くしたりもできるのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: green
+    highlight: 2
+
+  - text: "それから、読み方を辞書に登録して直すこともできるのだ"
+    emotion: thinking
+    background: green
+    subtitle: bar
+
+  - text: "むずかしい名前や英語は、そのままだと変な読み方になりやすいのだ"
+    emotion: tired
+    background: green
+    pause: 0.6
+
+  # ---- 利用規約 ----
+  - text: "使うときに、ひとつだけ大事な約束があるのだ"
+    emotion: normal
+    background: dark
+    slide:
+      variant: title
+      se: "audio/se/transition.ogg"
+      title: "使うときの約束"
+      note: "クレジット表記と、キャラクターごとの規約を確認する"
+      accent: "#e17055"
+
+  - text: "作ったものには、使った声の名前を書く必要があるのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: dark
+
+  - text: "この動画の最後にも、ちゃんと表示されているのだ"
+    emotion: smug
+    background: dark
+
+  - text: "できることの範囲はキャラクターごとに違うから、公式の規約を確認してほしいのだ"
+    se: "audio/se/chime.ogg"
+    emotion: surprised
+    background: dark
+    pause: 0.6
+
+  # ---- まとめ ----
+  - text: "というわけで、VOICEVOXは無料で使える音声合成ソフトなのだ！"
+    se: "audio/se/confirm.ogg"
+    emotion: happy
+    background: gradient
+    slide: null
+
+  - text: "動画やゲームの声に、ぜひ使ってみてほしいのだ！"
+    emotion: happy
+    pause: 1.0

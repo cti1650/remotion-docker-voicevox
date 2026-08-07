@@ -101,12 +101,19 @@ scenes:
 
 スライドは指定したシーン以降も継続表示される（`slide: null`で消える）。
 
-サンプル:
+サンプル（機能デモ）:
 - `scenes/demo.yaml` — 全機能入り（opening/thumbnail/bgm/dict/slide/subtitle/image）
 - `scenes/variants-demo.yaml` — テロップとスライドの見た目
 - `scenes/opening-demo.yaml` — 冒頭とサムネイル
 - `scenes/slide-demo.yaml` — スライドの基本
 - `scenes/presenter-demo.yaml` — キャラクターの差し替え
+
+サンプル（解説動画）:
+- `scenes/cosense.yaml` — Cosenseの使い方
+- `scenes/remotion.yaml` — Remotionってなに？
+- `scenes/react.yaml` — Reactってなに？
+- `scenes/voicevox.yaml` — VOICEVOXってなに？
+- `scenes/video-production.yaml` — 動画制作の流れ
 
 ## 重要な知見
 
