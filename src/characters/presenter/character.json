@@ -90,10 +90,10 @@
     "smile": "grimace"
   },
   "voice": {
-    "defaultSpeakerId": 3
+    "defaultSpeakerId": 11
   },
   "credits": [
-    "VOICEVOX（話者ID: 3）",
+    "VOICEVOX:玄野武宏",
     "立ち絵: Avataaars by Pablo Stanley (MIT)"
   ]
 }
