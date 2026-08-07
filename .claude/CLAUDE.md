@@ -85,7 +85,7 @@ scenes:
     background: purple  # gradient/purple/blue/green/orange/pink/dark/white
     subtitle: bar       # このシーンだけテロップを変える
     se: "audio/se/chime.ogg"  # このシーンだけ効果音を変える（nullで無音）
-    character: false    # このシーンだけキャラクターを隠す（デフォルトtrue）
+    character: false    # 文字列=キャラを切り替え / false=このシーンだけ隠す
     image:              # オプション
       src: "images/sample.png"
       position: "top-right"  # top-right/top-left/center/bottom-right/bottom-left
@@ -107,6 +107,7 @@ scenes:
 - `scenes/opening-demo.yaml` — 冒頭とサムネイル
 - `scenes/slide-demo.yaml` — スライドの基本
 - `scenes/presenter-demo.yaml` — キャラクターの差し替え
+- `scenes/character-switch-demo.yaml` — 動画の途中でキャラクターを切り替える
 
 サンプル（解説動画）:
 - `scenes/cosense.yaml` — Cosenseの使い方
@@ -131,6 +132,10 @@ scenes:
 - **リップシンク**: JSONの最後に`end`エントリが自動追加。
   子音は後ろに続く母音と同じ口にする（両唇音だけ`closed`）。
   子音に専用の形を割り当てると1フレームだけ口が閉じてチラつくため
+- **口パクの開始位置**: 合成音声の先頭には`prePhonemeLength`（既定0.1秒＝30fpsで
+  3フレーム）の無音が入る。生成時にこの分だけ口パクを後ろへずらしている。
+  話速の速い話者ほどズレが目立つ。詰め切れないキャラは
+  `voice.lipSyncOffset`で微調整する（詳細は`.claude/rules/character.md`）
 - **辞書**: 生成のたびに`config/voicevox-dict.json`+YAMLの`dict`で総入れ替え。
   日本語の複合語は`priority=10`でないと内蔵辞書に負ける（詳細は`.claude/rules/voicevox.md`）
 - **読みの確認**: セリフは字幕にもなるので、カタカナ書きで誤読を回避しない。

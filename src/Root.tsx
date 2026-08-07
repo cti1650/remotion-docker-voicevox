@@ -5,6 +5,7 @@ import { ThumbnailComposition, thumbnailSize } from "./components/thumbnail";
 
 // 生成された動画データを直接インポート
 // generate-from-scenes.sh実行時に自動更新
+import * as character_switch_demoData from "./generated/character-switch-demo.json";
 import * as cosenseData from "./generated/cosense.json";
 import * as demoData from "./generated/demo.json";
 import * as opening_demoData from "./generated/opening-demo.json";
@@ -18,6 +19,7 @@ import * as voicevoxData from "./generated/voicevox.json";
 
 // インポートした動画データを配列化
 const generatedVideos: GeneratedVideoData[] = [
+  character_switch_demoData as unknown as GeneratedVideoData,
   cosenseData as unknown as GeneratedVideoData,
   demoData as unknown as GeneratedVideoData,
   opening_demoData as unknown as GeneratedVideoData,

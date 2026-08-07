@@ -59,38 +59,56 @@ scenes = config.get('scenes', [])
 # キャラクター定義（src/characters/<name>/character.json）
 # 見た目はTypeScript側が読むが、話者IDはここでも要るので同じファイルを見る
 DEFAULT_CHARACTER = 'zundamon'
-character_name = config.get('character', DEFAULT_CHARACTER)
-character_file = os.path.join('src', 'characters', character_name, 'character.json')
-
-if not os.path.isfile(character_file):
-    available = sorted(
-        d for d in os.listdir('src/characters')
-        if os.path.isfile(os.path.join('src/characters', d, 'character.json'))
-    )
-    print(f"ERROR: キャラクター \"{character_name}\" が見つかりません: {character_file}")
-    print(f"  登録済み: {' / '.join(available)}")
-    print("  静止画から作るには scripts/create-character.py を使ってください")
-    sys.exit(1)
-
-with open(character_file, 'r', encoding='utf-8') as f:
-    character = json.load(f)
-
-# 話者IDはYAMLで上書きできる（省略時はキャラクターの既定値）
-character_voice = character['voice']
-speaker_id = config.get('speaker_id', character_voice['defaultSpeakerId'])
-
-# 声の調整もキャラクターの既定値をYAMLの`voice:`で上書きできる
 VOICE_PARAM_KEYS = ('speedScale', 'pitchScale', 'intonationScale', 'volumeScale')
-voice_params = {
-    key: value for key, value in character_voice.items()
-    if key in VOICE_PARAM_KEYS and value is not None
-}
-voice_params.update({
-    key: value for key, value in (config.get('voice') or {}).items()
-    if key in VOICE_PARAM_KEYS and value is not None
-})
 
-print(f"  キャラクター: {character.get('displayName', character_name)} "
+default_character_name = config.get('character', DEFAULT_CHARACTER)
+_character_cache = {}
+
+
+def load_character(name):
+    """キャラクター定義を読む（同じ動画で何度も参照するのでキャッシュする）"""
+    if name in _character_cache:
+        return _character_cache[name]
+
+    path = os.path.join('src', 'characters', name, 'character.json')
+    if not os.path.isfile(path):
+        available = sorted(
+            d for d in os.listdir('src/characters')
+            if os.path.isfile(os.path.join('src/characters', d, 'character.json'))
+        )
+        print(f"ERROR: キャラクター \"{name}\" が見つかりません: {path}")
+        print(f"  登録済み: {' / '.join(available)}")
+        print("  静止画から作るには scripts/create-character.py を使ってください")
+        sys.exit(1)
+
+    with open(path, 'r', encoding='utf-8') as f:
+        _character_cache[name] = json.load(f)
+    return _character_cache[name]
+
+
+def resolve_voice(name):
+    """そのキャラクターの話者IDと声の調整を決める
+
+    トップレベルのspeaker_id/voiceは「この動画の既定キャラクターへの上書き」
+    として扱う。途中で別のキャラクターに切り替えたシーンは、
+    そのキャラクター自身の声をそのまま使う（そうしないと声が切り替わらない）。
+    """
+    voice = load_character(name)['voice']
+    params = {k: v for k, v in voice.items()
+              if k in VOICE_PARAM_KEYS and v is not None}
+
+    if name != default_character_name:
+        return voice['defaultSpeakerId'], params
+
+    params.update({k: v for k, v in (config.get('voice') or {}).items()
+                   if k in VOICE_PARAM_KEYS and v is not None})
+    return config.get('speaker_id', voice['defaultSpeakerId']), params
+
+
+default_character = load_character(default_character_name)
+speaker_id, voice_params = resolve_voice(default_character_name)
+
+print(f"  キャラクター: {default_character.get('displayName', default_character_name)} "
       f"(話者ID: {speaker_id})")
 if voice_params:
     print(f"  声の調整: {voice_params}")
@@ -239,11 +257,15 @@ if se_sources:
         print("    public/audio/se/local/ に置いてください")
 
 
-def generate_voice(text, output_base):
-    """1つのセリフから音声とリップシンクを作る"""
+def generate_voice(text, output_base, voice=None):
+    """1つのセリフから音声とリップシンクを作る
+
+    voiceは(話者ID, 声の調整)。省略時は既定キャラクターの声を使う。
+    """
+    sid, params = voice if voice else (speaker_id, voice_params)
     result = subprocess.run(
-        [f'{script_dir}/generate-voice-with-lipsync.sh', text, str(speaker_id),
-         output_base, json.dumps(voice_params)],
+        [f'{script_dir}/generate-voice-with-lipsync.sh', text, str(sid),
+         output_base, json.dumps(params)],
         capture_output=True,
         text=True,
     )
@@ -280,15 +302,37 @@ current_time = (generated_opening['duration'] if generated_opening else 0) + 0.5
 current_slide = None
 slide_index = 0
 
+# キャラクターもスライドと同じく、明示的に切り替えるまで引き継ぐ
+current_character = default_character_name
+
 print(f"  Processing {len(scenes)} scenes...")
 
 for i, scene in enumerate(scenes):
     text = scene['text']
     output_base = f"{output_dir}/scene_{i+1:03d}"
 
+    # characterは書き方で意味が変わる（slideと同じ書き味）
+    #   文字列 → そのキャラクターに切り替える（以降も継続）
+    #   false  → このシーンだけ隠す
+    #   true / 省略 → そのまま表示
+    show_character = True
+    scene_character = scene.get('character')
+    if isinstance(scene_character, str):
+        if scene_character != current_character:
+            load_character(scene_character)   # 無ければここで止まる
+            print(f"    → キャラクターを {scene_character} に切り替え")
+        current_character = scene_character
+    elif scene_character is False:
+        show_character = False
+    elif scene_character is not None and scene_character is not True:
+        print(f"ERROR: scene {i+1} の character はキャラクターIDか true/false で "
+              f"書いてください (指定値: {scene_character!r})")
+        sys.exit(1)
+
     print(f"    Scene {i+1}: {text[:30]}...")
 
-    lipsync_data = generate_voice(text, output_base)
+    lipsync_data = generate_voice(text, output_base,
+                                  resolve_voice(current_character))
 
     # Build generated scene
     pause = scene.get('pause', default_pause)
@@ -299,6 +343,9 @@ for i, scene in enumerate(scenes):
         'lipsyncData': lipsync_data,
         'startTime': round(current_time, 3),
         'pause': pause,
+        # 解決済みの値を書く（描画側で解釈し直さなくていいように）
+        'character': current_character,
+        'showCharacter': show_character,
     }
 
     # スライドの切り替え（未指定なら直前のスライドを継続、nullで非表示に戻す）
@@ -313,18 +360,8 @@ for i, scene in enumerate(scenes):
         generated_scene['slide'] = current_slide
         generated_scene['slideIndex'] = slide_index
 
-    # シーンのcharacterは「出すか出さないか」の真偽値。
-    # トップレベルのcharacter（キャラクターID）と紛らわしいので、
-    # 文字列を書かれたら黙って無視せずここで止める
-    if 'character' in scene and not isinstance(scene['character'], bool):
-        print(f"ERROR: scene {i+1} の character は true/false で書いてください "
-              f"(指定値: {scene['character']!r})")
-        print("  キャラクターを変えるのはYAMLのトップレベルだけです。"
-              "動画の途中では切り替えられません")
-        sys.exit(1)
-
-    # Optional fields
-    for key in ('background', 'image', 'highlight', 'subtitle', 'se', 'character'):
+    # Optional fields（characterは上で解決済みなのでここには含めない）
+    for key in ('background', 'image', 'highlight', 'subtitle', 'se'):
         if key in scene:
             generated_scene[key] = scene[key]
 
@@ -337,7 +374,7 @@ output = {
     'config': {
         'title': config.get('title', basename),
         # 既定値が将来変わっても古いJSONの見た目が変わらないよう、常に書き出す
-        'character': character_name,
+        'character': default_character_name,
         'speaker_id': speaker_id,
         **({'voice': voice_params} if voice_params else {}),
         'fps': config.get('fps', 30),

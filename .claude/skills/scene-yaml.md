@@ -51,7 +51,7 @@ dict:
 | `background` | | 背景 | `purple` |
 | `image` | | 強調画像 | `{ src: "img.png" }` |
 | `subtitle` | | テロップの見た目 | `bar` |
-| `character` | | キャラクターを出すか（デフォルト`true`） | `false` |
+| `character` | | キャラクターの切り替え／表示 | `presenter` / `false` |
 | `se` | | 効果音（`null`で無音） | `"audio/se/chime.ogg"` |
 | `pause` | | セリフ後の間（秒） | `0.5` |
 
@@ -147,9 +147,31 @@ scenes:
       animation: "zoom-in"
 ```
 
-`character`はそのシーンだけの表示切り替え（真偽値）で、
-トップレベルの`character:`（キャラクターID）とは別物。
-動画の途中でキャラクターそのものを差し替えることはできない。
+## キャラクターの切り替え（character）
+
+シーンの`character`は書き方で意味が変わる（`slide`と同じ書き味）。
+
+| 書き方 | 意味 |
+|--------|------|
+| 文字列 | そのキャラクターに切り替える。以降のシーンにも引き継ぐ |
+| `false` | そのシーンだけ隠す。キャラクター自体は変わらない |
+| `true` / 省略 | 直前のキャラクターをそのまま表示 |
+
+```yaml
+character: zundamon        # 動画の既定キャラクター
+
+scenes:
+  - text: "まずはぼくが話すのだ"
+
+  - text: "交代しました"
+    character: presenter   # 声も一緒に切り替わる
+
+  - text: "図をじっくり見せるのだ"
+    character: false       # 姿だけ隠す
+```
+
+クレジットは出てきた全キャラクターぶんが自動で並ぶ。
+サンプル: `scenes/character-switch-demo.yaml`
 
 ## サンプル
 

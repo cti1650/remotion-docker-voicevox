@@ -27,11 +27,15 @@ import {
 } from "../types/scene";
 
 // 生成されたシーンデータ（音声・リップシンク情報を含む）
-export interface GeneratedScene extends SceneConfig {
+// characterはYAMLでは「切り替え or 表示可否」の両方を表すが、
+// 生成時に解決して2つの項目に分けてある
+export interface GeneratedScene extends Omit<SceneConfig, "character"> {
   audioFile: string;      // 音声ファイルパス
   lipsyncData: LipSyncData;  // リップシンクデータ
   startTime: number;      // 開始時間（秒）
   slideIndex?: number;    // 表示中のスライド番号（1始まり）
+  character?: string;     // このシーンのキャラクターID（解決済み）
+  showCharacter?: boolean; // このシーンでキャラクターを描くか
 }
 
 // 同じスライドを表示し続けるシーンのまとまり
@@ -97,8 +101,8 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
   const { fps, width, height } = useVideoConfig();
   const currentTime = frame / fps;
 
-  // 立ち絵・表情・クレジットはキャラクター定義が持つ
-  const character = getCharacter(config.character);
+  // 動画の既定キャラクター（オープニングと、シーンが指定していないときに使う）
+  const defaultCharacter = getCharacter(config.character);
 
   // オープニング（本編の前のタイトル演出）
   const opening = config.opening;
@@ -107,17 +111,21 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
 
   // リップシンク用データを作成
   // オープニングにセリフがあれば、それも口パクの対象にする
+  // 途中でキャラクターが変わってもいいよう、喋る人をセリフごとに持たせる
   const lipSyncDialogues: DialogueLipSync[] = [
     ...(opening?.lipsyncData
-      ? [{ start: 0, lipsyncData: opening.lipsyncData }]
+      ? [{
+          start: 0,
+          lipsyncData: opening.lipsyncData,
+          character: defaultCharacter,
+        }]
       : []),
     ...scenes.map((scene) => ({
       start: scene.startTime,
       lipsyncData: scene.lipsyncData,
+      character: getCharacter(scene.character ?? config.character),
     })),
   ];
-
-  const mouth = useLipSync(lipSyncDialogues, character);
 
   // 現在のシーンを取得
   const getCurrentScene = (): GeneratedScene | undefined => {
@@ -135,11 +143,18 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
     ? opening?.emotion ?? "happy"
     : currentScene?.emotion ?? "normal";
 
-  // オープニングもシーンも character: false でキャラクターを隠せる
+  // 今このシーンで立っているキャラクター（途中で切り替わることがある）
+  const character = inOpening
+    ? defaultCharacter
+    : getCharacter(currentScene?.character ?? config.character);
+
+  const mouth = useLipSync(lipSyncDialogues, character);
+
+  // オープニングは character: false、シーンは showCharacter で隠せる
   // （画像やスライドだけを大きく見せたいとき）
   const showCharacter = inOpening
     ? opening?.character ?? true
-    : currentScene?.character ?? true;
+    : currentScene?.showCharacter ?? true;
 
   // 連続して同じスライドを表示するシーンをまとめる（登場アニメーションを1回にするため）
   const slideGroups: SlideGroup[] = [];
@@ -168,6 +183,19 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
   // BGMのクレジット表記（設定されていれば動画末尾に追記する）
   const bgmCredit =
     typeof config.bgm === "object" ? config.bgm.credit : undefined;
+
+  // クレジットは「動画に出てきた全キャラクター」ぶんを出す。
+  // 途中で喋る人が変わる場合、片方だけ載せると規約違反になる
+  const credits = Array.from(
+    new Set(
+      [
+        defaultCharacter,
+        ...scenes.map((scene) =>
+          getCharacter(scene.character ?? config.character)
+        ),
+      ].flatMap((c) => c.credits)
+    )
+  );
 
   // キャラクター配置（原寸も置き場所もキャラクター定義から取る）
   const { scale: characterScale, offsetX, offsetY } = character.placement;
@@ -284,7 +312,7 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
             ),
           }}
         >
-          {character.credits.map((credit) => (
+          {credits.map((credit) => (
             <div key={credit}>{credit}</div>
           ))}
           {bgmCredit && <div>{bgmCredit}</div>}

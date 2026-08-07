@@ -78,11 +78,17 @@ const character = useCharacter();   // CharacterProviderが配る
 ```tsx
 import { useLipSync } from "./hooks/useLipSync";
 
-const mouth = useLipSync(lipSyncDialogues, character);
+// dialoguesの各要素は { start, lipsyncData, character } を持つ。
+// 途中でキャラクターが変わってもいいよう、口の形はセリフごとに解決する
+const mouth = useLipSync(lipSyncDialogues, character); // 第2引数は非再生時のfallback
 ```
 
 リップシンクJSONに入っているのは母音キー（`a`/`i`/`u`/`e`/`o`/`n`/`closed`）だけで、
 実際のパーツ名への変換は`character.json`の`mouthMap`が決める。
+
+音声の先頭には`prePhonemeLength`（既定0.1秒）の無音が入るため、生成時に
+その分だけ口パクの開始をずらして吸収している。キャラごとに微調整したいときは
+`character.json`の`voice.lipSyncOffset`（秒）を使う。詳細は`.claude/rules/character.md`。
 **新しいキャラクターは この7つのキーを埋めれば口パクが動く。**
 
 ## アニメーションの実装（CharacterRenderer.tsx）
