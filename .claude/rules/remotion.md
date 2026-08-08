@@ -1,6 +1,12 @@
 ---
-name: remotion
-description: Remotionでの動画作成ルール。SceneComposition、シーンYAML、クレジット表記。
+description: |
+  Remotionでの動画作成ルール。SceneComposition、シーンYAML、見た目のバリアント、
+  BGM・効果音の指定、メディアパスの解決、クレジット表記。
+paths:
+  - src/**
+  - scripts/render-video.sh
+  - scripts/render-thumbnail.sh
+  - remotion.config.ts
 ---
 
 # Remotionルール
@@ -25,18 +31,8 @@ npm run video -- scenes/my-video.yaml --skip-generate  # レンダリングの�
 
 ## シーンYAML構造
 
-```yaml
-title: "動画タイトル"
-character: zundamon   # 立ち絵と声をまとめて切り替える（省略時 zundamon）
-speaker_id: 3         # 省略時はキャラクターの既定値
-defaultBackground: gradient
-
-scenes:
-  - text: "セリフ"
-    emotion: happy
-    background: purple
-    pause: 0.5
-```
+**フォーマットの仕様は`.claude/rules/scenes.md`にまとめてある**（全項目・既定値・
+省略時の挙動）。ここでは動画側の機能ごとの使い方だけを扱う。
 
 ## スライド解説形式
 
@@ -93,14 +89,10 @@ bgm:
 - セリフを邪魔しないよう`volume`は0.1前後を推奨
 - `credit`を書くと動画末尾のクレジットに追記される
 
-### BGMの置き場所（重要）
+### BGMの置き場所
 
-再配布の可否で置き場所を分ける。
-
-| 置き場所 | 用途 | git管理 |
-|----------|------|---------|
-| `public/audio/bgm/` | 再配布OK（CC BY・パブリックドメインなど） | する |
-| `public/audio/bgm/local/` | **再配布NG**（DOVA-SYNDROME・魔王魂・購入音源） | しない |
+**ライセンスと置き場所の判断は`.claude/rules/assets.md`に従う（厳守）。**
+再配布NGの素材は`public/audio/bgm/local/`（`.gitignore`済み）に置く。
 
 ```yaml
 bgm:
@@ -108,11 +100,8 @@ bgm:
   credit: "BGM: shuffle shuffle / KK (DOVA-SYNDROME)"
 ```
 
-- `local/`は`.gitignore`で除外済みなので`git add -A`しても混入しない
-- 迷ったら`local/`に置けば規約違反にはならない
-- コミットする音源は`public/audio/bgm/CREDITS.md`にライセンスを追記する
-- `generate-from-scenes.sh`がファイルの実在と置き場所をチェックする
-  （見つからなければエラー終了、コミット対象の場所なら注意を表示）
+`generate-from-scenes.sh`がファイルの実在と置き場所をチェックする
+（見つからなければエラー終了、コミット対象の場所なら注意を表示）。
 
 ## 効果音
 
@@ -141,19 +130,12 @@ scenes:
 - `slide.se`は**スライドが切り替わったときだけ**鳴る（継続表示のシーンでは鳴らない）
 - 実装は`src/components/SoundEffect.tsx`。`Sequence`で開始フレームに合わせている
 
-### 効果音の置き場所（BGMと同じ）
+### 効果音の置き場所
 
-| 置き場所 | 用途 | git管理 |
-|----------|------|---------|
-| `public/audio/se/` | 再配布OK（CC0など） | する |
-| `public/audio/se/local/` | **再配布NG**（効果音ラボ・魔王魂など） | しない |
+BGMと同じ。**判断は`.claude/rules/assets.md`に従う（厳守）。**
 
 同梱しているのはKenney Interface Sounds（CC0）から採った6種類。
 `pop` / `select` / `slide-in` / `chime` / `confirm` / `transition`。
-ライセンスは`public/audio/se/CREDITS.md`を参照。
-
-日本語のフリー効果音サイトは商用利用OKでも**素材の再配布は禁止**が多いので`local/`へ。
-`generate-from-scenes.sh`がファイルの実在と置き場所をチェックする。
 
 ## メディアパスの解決
 
@@ -278,6 +260,10 @@ Remotionに登録されるのは、YAML由来の`SceneVideo`（動画）と、
 
 ## クレジット（自動表示）
 
-動画最後の2秒に自動表示:
-- VOICEVOX:ずんだもん
-- 立ち絵素材: 坂本アヒル
+動画最後の2秒に自動表示される。
+
+- 声・立ち絵は各キャラクターの`character.json`の`credits`。
+  **動画に出てきた全キャラクターぶんが自動で並ぶ**
+- BGMはシーンYAMLの`bgm.credit`
+
+素材のライセンスと表記義務は`.claude/rules/assets.md`に従う（**厳守**）。

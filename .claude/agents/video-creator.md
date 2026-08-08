@@ -31,60 +31,18 @@ npm run thumbnail -- scenes/<name>.yaml
 npm run voice
 ```
 
-## シーンYAMLテンプレート
+## シーンYAML
 
-```yaml
-title: "動画タイトル"
-character: zundamon   # 省略可。立ち絵・声・クレジットがまとめて切り替わる
-speaker_id: 3          # 省略時はキャラクターの既定値
+**フォーマットの仕様は `.claude/rules/scenes.md`**（全項目・既定値・省略時の挙動）。
+`scenes/**` を編集すると自動で読み込まれる。
 
-dict:                 # 誤読する語（英字・日本語の複合語）
-  Cosense: コセンス
+**出力までの流れは `video-pipeline` スキル**（読みの確認 → 音声生成 →
+静止画で確認 → レンダリング）。順番を守ること。
 
-opening:              # 省略可。本編前のタイトル演出
-  variant: center     # center/band/minimal
-  title: "タイトル"
-  text: "喋らせたいセリフ"   # 省略すると無音（duration秒）
+表情プリセットはキャラクターごとに違う（`character.json`の`emotions`）。
+一覧は `.claude/rules/character.md` を参照。
 
-thumbnail:            # 省略可。npm run thumbnail で静止画出力
-  variant: bold       # bold/split/simple
-  title: "サムネの文字"
-
-scenes:
-  - text: "こんにちは！"
-    emotion: happy
-
-  - text: "説明するのだ"
-    emotion: normal
-    background: purple
-    subtitle: bar     # 省略可。boxed/bar/outline/card/none
-    slide:            # 省略可。以降のシーンも継続表示される
-      variant: card   # card/fullbleed/title
-      title: "見出し"
-      bullets: ["項目1", "項目2"]
-
-  - text: "すごいのだ！"
-    emotion: surprised
-    highlight: 1      # 箇条書きの強調（1始まり）
-```
-
-全機能を使ったサンプルは `scenes/demo.yaml` を参照。
-
-## 表情プリセット（zundamon）
-
-表情パーツはキャラクターごとに違う（`src/characters/<name>/character.json`の`emotions`）。
-以下はずんだもんの場合。
-
-| emotion | 目 | 眉 | 頬 | 枝豆 |
-|---------|-----|-----|-----|------|
-| normal | normal | normal | normal | normal |
-| happy | smile | normal | red | normal |
-| sad | normal | troubled | normal | wilted |
-| angry | jitome | angry | red | normal |
-| surprised | circle | raised | normal | standing |
-| thinking | normal_up | normal | normal | normal |
-| smug | jitome | normal | normal | normal |
-| tired | relaxed | troubled | pale | wilted |
+全機能を使ったサンプルは `scenes/demo.yaml`。
 
 ## チェックポイント
 

@@ -1,6 +1,12 @@
 ---
-name: parts
-description: キャラクターパーツ画像の管理ルール。英語命名、口マッピング（むふ=closed）、PSD抽出時のtopil()使用。
+description: |
+  キャラクターパーツ画像の管理ルール。英語命名、口マッピング（むふ=closed）、
+  PSD抽出時のtopil()使用、派生パーツの再生成。
+paths:
+  - public/parts/**
+  - scripts/extract-psd-parts.py
+  - scripts/rename-parts-to-english.py
+  - scripts/generate-mouth-parts.py
 ---
 
 # パーツ管理ルール
