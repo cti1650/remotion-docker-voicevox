@@ -27,14 +27,14 @@ npm run voice -- scenes/demo.yaml
 ## 個別音声生成
 
 ```bash
-./scripts/generate-voice-with-lipsync.sh "テキスト" <speaker_id> <output_base> [voice_params]
+node scripts/voice.mjs "テキスト" <speaker_id> <output_base> [voice_params]
 
 # 例
-./scripts/generate-voice-with-lipsync.sh "こんにちは！" 3 public/audio/voice/demo/scene_001
+node scripts/voice.mjs "こんにちは！" 3 public/audio/voice/demo/scene_001
 # 出力: scene_001.wav, scene_001.json
 
 # 声を調整する場合（省略可。JSON文字列で渡す）
-./scripts/generate-voice-with-lipsync.sh "テスト" 3 /tmp/p010 '{"pitchScale":0.10}'
+node scripts/voice.mjs "テスト" 3 /tmp/p010 '{"pitchScale":0.10}'
 ```
 
 話者ID: ずんだもん=3（ノーマル）、1（あまあま）、7（ツンツン）

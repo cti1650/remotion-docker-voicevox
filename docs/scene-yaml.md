@@ -320,6 +320,25 @@ curl -s -X POST "http://localhost:50021/audio_query?text=$(printf '複数人' | 
 
 サンプルは `scenes/cosense.yaml` を参照。
 
+## 書き間違いに気付く
+
+書ける項目は `schema/scene.schema.json` が正。生成時（`npm run voice` / `npm run video`）に
+検証され、**未知のキーや許可されていない値はエラーで止まる**。
+
+```
+scenes/my-video.yaml のスキーマ検証に失敗しました
+  /scenes/0/emotion must be equal to one of the allowed values (使えるのは normal / happy / ...)
+```
+
+VS Codeに[YAML拡張](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)を
+入れると、書いている最中に補完と検証が効く。各YAMLの1行目にあるモデル行がスキーマと結び付けている。
+
+```yaml
+# yaml-language-server: $schema=../schema/scene.schema.json
+```
+
+項目を増やすときは `src/types/scene.ts` と `schema/scene.schema.json` の両方を直す。
+
 ## 設定オプション
 
 | プロパティ | 説明 | 例 |

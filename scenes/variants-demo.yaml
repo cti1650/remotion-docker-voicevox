@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../schema/scene.schema.json
 # テロップとスライドの見た目バリアントのサンプル
 #
 #   subtitle:       テロップの見た目（シーン単位で切り替えられる）

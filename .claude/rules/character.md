@@ -27,8 +27,8 @@ src/characters/
 └── <name>/character.json  # キャラ1体分の定義（これが唯一の正）
 ```
 
-`character.json`はTypeScript（描画）とPython（音声生成）の**両方から読む**ため、
-ロジックを持たない素のJSONで書く。TSに移すと`generate-from-scenes.sh`から読めなくなる。
+`character.json`は描画（TSX）と音声生成（`scripts/generate.mjs`）の**両方から読む**ため、
+ロジックを持たない素のJSONで書く。TSに移すとスクリプト側から読めなくなる。
 
 ## 切り替え方
 
@@ -132,7 +132,7 @@ voice:              # この動画だけ上書きする
 
 VOICEVOXが合成する音声は、**先頭に`prePhonemeLength`（既定0.1秒）の無音が入る**。
 これを無視して0秒から口を動かすと、30fpsで3フレームぶん口だけが先に動く。
-`generate-voice-with-lipsync.sh`はこの無音を吸収して口パクの開始をずらしている
+`voice.mjs`はこの無音を吸収して口パクの開始をずらしている
 （`pre/postPhonemeLength`も話速で割られる。実測で確認済み）。
 
 そのため**通常は`lipSyncOffset`を触る必要はない**。
@@ -152,10 +152,10 @@ VOICEVOXが合成する音声は、**先頭に`prePhonemeLength`（既定0.1秒�
 
 範囲外の値は生成時にエラーで止まる（VOICEVOXのGUIと同じ範囲にしてある）。
 
-聴き比べは`generate-voice-with-lipsync.sh`を直接叩くのが速い。
+聴き比べは`voice.mjs`を直接叩くのが速い。
 
 ```bash
-./scripts/generate-voice-with-lipsync.sh "テスト" 3 /tmp/p010 '{"pitchScale":0.10}'
+node scripts/voice.mjs "テスト" 3 /tmp/p010 '{"pitchScale":0.10}'
 ```
 
 **注意**: `speedScale`を変えると音声の尺が変わるので、

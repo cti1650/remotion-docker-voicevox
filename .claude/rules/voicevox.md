@@ -3,9 +3,9 @@ description: |
   VOICEVOX音声生成時のルール。読みの事前確認（audio_queryのkana）、辞書の二層構成、
   声の調整（ピッチ・話速）、話者IDとクレジット表記。
 paths:
-  - scripts/generate-voice-with-lipsync.sh
-  - scripts/generate-from-scenes.sh
-  - scripts/voicevox-dict.sh
+  - scripts/voice.mjs
+  - scripts/generate.mjs
+  - scripts/dict.mjs
   - config/voicevox-dict.json
   - scenes/**
   - src/hooks/useLipSync.ts
@@ -20,7 +20,7 @@ paths:
 3. **日本語でも誤読しやすい語は必ず辞書に登録する**
 4. セリフはそのまま字幕になるので、読みを直すためにカタカナで書かない
 
-エンジンの起動確認は不要（`scripts/lib.sh`の`ensure_voicevox`が自動で起動する）。
+エンジンの起動確認は不要（`scripts/lib.mjs`の`ensure_voicevox`が自動で起動する）。
 
 ## 辞書
 
@@ -65,7 +65,7 @@ curl -s -X POST "http://localhost:50021/audio_query?text=$(printf '複数人' | 
 ### priorityの注意
 
 VOICEVOXのデフォルト`priority=5`では、日本語の複合語が内蔵辞書の分割に負けて
-**登録した読みが効かない**。そのため`generate-from-scenes.sh`は`priority=10`で登録している。
+**登録した読みが効かない**。そのため`generate.mjs`は`priority=10`で登録している。
 
 ## 音声生成（推奨）
 
@@ -80,7 +80,7 @@ npm run voice
 ## 個別音声生成
 
 ```bash
-./scripts/generate-voice-with-lipsync.sh "テキスト" 3 public/audio/voice/demo/scene_001
+node scripts/voice.mjs "テキスト" 3 public/audio/voice/demo/scene_001
 ```
 
 ## 辞書の手動操作（デバッグ用）
@@ -88,8 +88,8 @@ npm run voice
 通常は不要。エンジンの状態を直接見たいときに使う。
 
 ```bash
-./scripts/voicevox-dict.sh list      # 今エンジンに入っている語を確認
-./scripts/voicevox-dict.sh add Remotion リモーション
+npm run dict -- list      # 今エンジンに入っている語を確認
+npm run dict -- add Remotion リモーション
 ```
 
 `add`で足した語は次回の生成時に消える（`config/`とYAMLだけが正のため）。
@@ -102,7 +102,7 @@ npm run voice
 
 ```bash
 # 単発で聴き比べるとき
-./scripts/generate-voice-with-lipsync.sh "テスト" 3 /tmp/p010 '{"pitchScale":0.10}'
+node scripts/voice.mjs "テスト" 3 /tmp/p010 '{"pitchScale":0.10}'
 ```
 
 - `pitchScale`を変えても**尺は変わらない**ので、リップシンクはそのまま合う

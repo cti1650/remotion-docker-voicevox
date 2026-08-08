@@ -4,7 +4,7 @@ import { SceneVideo, GeneratedVideoData } from "./SceneVideo";
 import { ThumbnailComposition, thumbnailSize } from "./components/thumbnail";
 
 // 生成された動画データを直接インポート
-// generate-from-scenes.sh実行時に自動更新
+// generate.mjs実行時に自動更新
 import * as character_switch_demoData from "./generated/character-switch-demo.json";
 import * as cosenseData from "./generated/cosense.json";
 import * as demoData from "./generated/demo.json";

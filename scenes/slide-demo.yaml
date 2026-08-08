@@ -1,10 +1,11 @@
+# yaml-language-server: $schema=../schema/scene.schema.json
 # スライドを見せながら解説する形式のサンプル
 #
 #   slide:      新しいスライドに切り替える（省略すると直前のスライドが続く）
 #   slide: null スライドを消す
 #   highlight:  今しゃべっている箇条書きを強調する（1始まり）
 #
-# 生成: ./scripts/generate-from-scenes.sh scenes/slide-demo.yaml
+# 生成: node scripts/generate.mjs scenes/slide-demo.yaml
 
 title: "スライド解説デモ"
 speaker_id: 3

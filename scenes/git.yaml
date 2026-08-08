@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../schema/scene.schema.json
 # Gitの入門動画（バイブコーディングを始めた人向け）
 #
 # 生成: npm run video -- scenes/git.yaml

@@ -6834,7 +6834,7 @@
             "mouth": "a"
           },
           {
-            "time": 2.0,
+            "time": 2,
             "duration": 0.054,
             "phoneme": "n",
             "mouth": "a"
@@ -7997,7 +7997,7 @@
         ]
       },
       "startTime": 117.106,
-      "pause": 1.0,
+      "pause": 1,
       "character": "zundamon",
       "showCharacter": true
     }

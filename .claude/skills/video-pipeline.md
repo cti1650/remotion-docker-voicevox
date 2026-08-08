@@ -55,7 +55,7 @@ curl -s -X POST "http://localhost:50021/audio_query?text=$(printf '行単位' | 
 「録って」→ロクッテ のように語自体が紛らわしい場合は、
 「録音して」のように**書き換えたほうが自然**なことが多い。
 
-VOICEVOXが止まっていれば自動起動する（`scripts/lib.sh`の`ensure_voicevox`）。
+VOICEVOXが止まっていれば自動起動する（`scripts/lib.mjs`の`ensure_voicevox`）。
 
 ## 3. 音声とリップシンクを生成する
 
@@ -160,7 +160,7 @@ npm run thumbnail -- scenes/<name>.yaml   # output/<name>-thumbnail.png
 
 音声が不要なら `--skip-generate` を使う。
 
-**リップシンクの計算方法を変えた場合は全本作り直す**（`generate-voice-with-lipsync.sh`）。
+**リップシンクの計算方法を変えた場合は全本作り直す**（`voice.mjs`）。
 
 ## 困ったとき
 
@@ -171,7 +171,7 @@ npm run thumbnail -- scenes/<name>.yaml   # output/<name>-thumbnail.png
 | `辞書に登録できません` | 読みは**全角カタカナ**で書く |
 | プレビューに反映されない | `src/generated/*.json` 更新後はRemotionサーバーを再起動 |
 | 口パクがずれる | `.claude/rules/character.md` の「口パクのタイミング」を参照 |
-| python3で落ちる | `scripts/lib.sh`の`resolve_python`が使えるものを探す |
+| `スキーマ検証に失敗しました` | 未知のキーはタイポ。書ける項目は`schema/scene.schema.json`を参照 |
 
 ## 変更が既存動画に影響しないか確かめる
 

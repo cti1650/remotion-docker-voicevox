@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../schema/scene.schema.json
 # Reactの解説動画（サンプル）
 #
 # 生成: npm run video -- scenes/react.yaml

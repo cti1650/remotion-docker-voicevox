@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../schema/scene.schema.json
 # 冒頭とエンディングのサンプル
 #
 # ending は opening と対になるオプション。省略すれば付かない。

@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../schema/scene.schema.json
 # このプロジェクトの機能を一通り詰め込んだデモ
 #
 #   opening   本編前のタイトル演出（セリフ付き）

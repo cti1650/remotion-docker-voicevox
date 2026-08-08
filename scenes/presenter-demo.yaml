@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../schema/scene.schema.json
 # キャラクターの差し替えを確認するためのサンプル
 # character: を書くだけで立ち絵・表情・声・クレジットがまとめて切り替わる
 title: "キャラクターを差し替える"

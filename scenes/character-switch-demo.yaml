@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../schema/scene.schema.json
 # 動画の途中でキャラクターを切り替えるサンプル
 #
 # シーンの character は書き方で意味が変わる（slide と同じ書き味）

@@ -4933,7 +4933,7 @@
             "mouth": "i"
           },
           {
-            "time": 1.0,
+            "time": 1,
             "duration": 0.06,
             "phoneme": "I",
             "mouth": "i"
@@ -7113,7 +7113,7 @@
         ]
       },
       "startTime": 113.814,
-      "pause": 1.0,
+      "pause": 1,
       "character": "zundamon",
       "showCharacter": true
     }

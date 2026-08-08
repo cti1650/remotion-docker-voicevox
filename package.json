@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Remotion + VOICEVOX video creation environment with Docker",
   "scripts": {
-    "video": "./scripts/render-video.sh",
-    "voice": "./scripts/generate-from-scenes.sh",
-    "thumbnail": "./scripts/render-thumbnail.sh",
+    "video": "node scripts/render.mjs",
+    "voice": "node scripts/generate.mjs",
+    "thumbnail": "node scripts/render.mjs --thumbnail",
+    "dict": "node scripts/dict.mjs",
     "dev": "remotion studio",
     "voicevox:up": "docker compose up -d voicevox",
     "voicevox:down": "docker compose stop voicevox",
@@ -14,6 +15,8 @@
   },
   "dependencies": {
     "@remotion/cli": "^4.0.0",
+    "ajv": "^8.20.0",
+    "js-yaml": "^5.2.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "remotion": "^4.0.0"
