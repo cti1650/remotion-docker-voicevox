@@ -1,0 +1,286 @@
+# Gitの入門動画（バイブコーディングを始めた人向け）
+#
+# 生成: npm run video -- scenes/git.yaml
+# サムネ: npm run thumbnail -- scenes/git.yaml
+
+title: "Gitのメリットとリスク"
+character: zundamon
+speaker_id: 3
+fps: 30
+width: 1920
+height: 1080
+defaultBackground: "gradient"
+defaultPause: 0.4
+defaultSubtitle: boxed
+defaultSlideVariant: card
+
+defaultSe:
+  src: "audio/se/pop.ogg"
+  volume: 0.20
+
+dict:
+  Git: ギット
+  AI: エーアイ
+  API: エーピーアイ
+  # 日本語でも誤読するもの
+  行単位: ギョウタンイ     # デフォルトはクダリタンイ
+
+bgm:
+  src: "audio/bgm/carefree-kevin-macleod.mp3"
+  volume: 0.10
+  fadeIn: 1.5
+  fadeOut: 2.5
+  credit: "BGM: Carefree - Kevin MacLeod (incompetech.com) / CC BY 4.0"
+
+opening:
+  variant: band
+  title: "Gitのメリットとリスク"
+  subtitle: "AIとコードを書き始めた人へ"
+  badge: "入門"
+  accent: "#f05033"
+  background: "dark"
+  emotion: happy
+  se: "audio/se/transition.ogg"
+  text: "ずんだもんなのだ！今日はGitについて話すのだ！"
+
+thumbnail:
+  variant: bold
+  title: "Gitのメリットとリスク"
+  subtitle: "AIとコードを書き始めた人へ"
+  badge: "入門"
+  accent: "#f05033"
+  background: "dark"
+  emotion: smug
+
+scenes:
+  # ---- 導入：あるある ----
+  - text: "AIにコードを書いてもらうのが、当たり前になってきたのだ"
+    emotion: normal
+
+  - text: "でも、さっきまで動いていたのに急に動かなくなった。そんな経験はないのだ？"
+    emotion: thinking
+    pause: 0.6
+
+  - text: "そういうときに助けてくれるのがGitなのだ"
+    emotion: happy
+    pause: 0.6
+
+  # ---- スライド1: Gitとは ----
+  - text: "まずはGitがどんなものか見てほしいのだ"
+    emotion: normal
+    background: purple
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "Gitってなに？"
+      accent: "#6c5ce7"
+      bullets:
+        - "変更の履歴を残しておく仕組み"
+        - "いつでも過去の状態に戻せる"
+        - "ゲームのセーブポイントに近い"
+      note: "コードを書く人のほとんどが使っている"
+
+  - text: "ひとことで言うと、変更の履歴を残しておく仕組みなのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: purple
+    highlight: 1
+
+  - text: "区切りのいいところで保存しておくと、いつでもそこに戻れるのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: purple
+    highlight: 2
+
+  - text: "ゲームのセーブポイントを思い浮かべると分かりやすいのだ"
+    se: "audio/se/select.ogg"
+    emotion: smug
+    background: purple
+    highlight: 3
+
+  # ---- スライド2: メリット ----
+  - text: "使うといいことが三つあるのだ"
+    emotion: normal
+    background: blue
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "うれしいこと"
+      accent: "#0984e3"
+      bullets:
+        - "壊しても元に戻せる"
+        - "どこが変わったか一目で分かる"
+        - "思い切って試せるようになる"
+
+  - text: "ひとつめ。おかしくなっても、動いていたところまで戻せるのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: blue
+    highlight: 1
+
+  - text: "ふたつめ。前回からどこが変わったのかを、行単位で見られるのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: blue
+    highlight: 2
+
+  - text: "これがAIと一緒に書くときに、とても効いてくるのだ"
+    emotion: surprised
+    background: blue
+    subtitle: bar
+
+  - text: "みっつめ。戻れると分かっていれば、大きな変更も気軽に試せるのだ"
+    se: "audio/se/select.ogg"
+    emotion: smug
+    background: blue
+    highlight: 3
+
+  # ---- スライド3: バイブコーディングだと特に効く ----
+  - text: "AIに任せて書くときは、特に相性がいいのだ"
+    emotion: normal
+    background: green
+    slide:
+      variant: fullbleed
+      se: "audio/se/slide-in.ogg"
+      title: "AIと書くなら、なおさら"
+      accent: "#00b894"
+      bullets:
+        - "AIはファイルをまるごと書き換えることがある"
+        - "何をどう変えたのかを後から確認できる"
+        - "大きく頼む前に保存しておくと安心"
+
+  - text: "AIは、こちらが思っていたより広い範囲を書き換えることがあるのだ"
+    se: "audio/se/select.ogg"
+    emotion: thinking
+    background: green
+    highlight: 1
+
+  - text: "履歴が残っていれば、勝手に消えた部分にも気づけるのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: green
+    highlight: 2
+
+  - text: "大きなお願いをする前に一回保存しておく。これだけで事故が減るのだ"
+    se: "audio/se/chime.ogg"
+    emotion: happy
+    background: green
+    highlight: 3
+
+  # ---- スライド4: リスク（本題）----
+  - text: "ここからは気をつけてほしいことなのだ"
+    emotion: normal
+    background: dark
+    slide:
+      variant: title
+      se: "audio/se/transition.ogg"
+      title: "気をつけること"
+      note: "便利な反面、こわい面もある"
+      accent: "#e17055"
+
+  - text: "いちばん怖いのは、人に見せてはいけない情報を記録してしまうことなのだ"
+    emotion: surprised
+    background: dark
+    slide:
+      variant: card
+      se: "audio/se/slide-in.ogg"
+      title: "うっかり記録してしまうもの"
+      accent: "#e17055"
+      bullets:
+        - "APIキーやパスワード"
+        - "個人情報が入ったファイル"
+        - "自分だけの設定ファイル"
+      note: "AIが書いたコードに直接埋め込まれていることもある"
+
+  - text: "APIキーが外に出ると、他人に使われて料金を請求されることがあるのだ"
+    se: "audio/se/select.ogg"
+    emotion: angry
+    background: dark
+    highlight: 1
+
+  - text: "AIが書いたコードに、キーがそのまま埋め込まれていることもあるのだ"
+    emotion: thinking
+    background: dark
+
+  - text: "しかも、一度公開してしまうと、あとから消しても履歴には残るのだ"
+    se: "audio/se/chime.ogg"
+    emotion: surprised
+    background: dark
+    subtitle: bar
+    pause: 0.7
+
+  - text: "ファイルを消して保存し直しても、前の記録はそのまま残っているのだ"
+    emotion: tired
+    background: dark
+    pause: 0.6
+
+  # ---- スライド5: 危ない操作 ----
+  - text: "もうひとつ、操作そのものにも気をつけてほしいのだ"
+    emotion: normal
+    background: orange
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "強い操作は立ち止まる"
+      accent: "#e17055"
+      bullets:
+        - "保存していない変更は戻せない"
+        - "履歴を書き換える操作もある"
+        - "意味が分からないまま実行しない"
+
+  - text: "保存する前の変更を捨ててしまう操作があるのだ。これは元に戻せないのだ"
+    se: "audio/se/select.ogg"
+    emotion: surprised
+    background: orange
+    highlight: 1
+
+  - text: "AIに提案されたコマンドを、そのまま実行しないでほしいのだ"
+    se: "audio/se/chime.ogg"
+    emotion: angry
+    background: orange
+    highlight: 3
+
+  - text: "何が起きるか分からないときは、いったん手を止めて調べるのだ"
+    emotion: normal
+    background: orange
+    pause: 0.6
+
+  # ---- スライド6: 最初にやること ----
+  - text: "では、始めるときに何をすればいいのだ？"
+    emotion: thinking
+    background: pink
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "最初にやること"
+      accent: "#e84393"
+      bullets:
+        - "記録しないファイルの一覧を先に作る"
+        - "秘密の情報はコードに直接書かない"
+        - "公開する前に中身を見直す"
+      note: "一覧のファイル名は .gitignore"
+
+  - text: "まず、記録したくないファイルの一覧を先に作っておくのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: pink
+    highlight: 1
+
+  - text: "秘密の情報は別のファイルに置いて、その一覧に入れておくのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: pink
+    highlight: 2
+
+  - text: "そして、みんなに見える場所へ出す前に、一度中身を確認してほしいのだ"
+    se: "audio/se/select.ogg"
+    emotion: smug
+    background: pink
+    highlight: 3
+
+  # ---- まとめ ----
+  - text: "こわがらなくていいのだ。やっていることは、こまめに保存するだけなのだ"
+    se: "audio/se/confirm.ogg"
+    emotion: happy
+    background: gradient
+    slide: null
+
+  - text: "まずは小さく保存するところから始めてみてほしいのだ！"
+    emotion: happy
+    pause: 1.0

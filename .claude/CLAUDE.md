@@ -115,6 +115,7 @@ scenes:
 - `scenes/react.yaml` — Reactってなに？
 - `scenes/voicevox.yaml` — VOICEVOXってなに？
 - `scenes/video-production.yaml` — 動画制作の流れ
+- `scenes/git.yaml` — Gitのメリットとリスク（バイブコーディング入門者向け）
 
 ## 重要な知見
 
