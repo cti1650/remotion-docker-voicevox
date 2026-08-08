@@ -1,0 +1,242 @@
+# yaml-language-server: $schema=../schema/scene.schema.json
+# ニュース解説動画: オープンソースAIワークスペース「Cloudflare OS」が公開
+#
+# 元記事: Impress Watch「オープンソースAIワークスペース『Cloudflare OS』が公開」
+# 生成: npm run video -- scenes/cloudflare-os.yaml
+# サムネ: npm run thumbnail -- scenes/cloudflare-os.yaml
+
+title: "Cloudflare OSが公開されたのだ"
+character: zundamon
+speaker_id: 3
+fps: 30
+width: 1920
+height: 1080
+defaultBackground: "gradient"
+defaultPause: 0.4
+defaultSubtitle: boxed
+defaultSlideVariant: card
+
+defaultSe:
+  src: "audio/se/pop.ogg"
+  volume: 0.20
+
+# この動画でしか使わない語の読み。セリフに出てくる語だけ書く
+dict:
+  Cloudflare: クラウドフレア
+  Cloudflare OS: クラウドフレアオーエス
+  OS: オーエス
+  Apache: アパッチ
+  GitHub: ギットハブ
+  Workers: ワーカーズ
+  AI: エーアイ
+  エージェント: エージェント
+  ワークスペース: ワークスペース
+  ガジェット: ガジェット
+
+bgm:
+  src: "audio/bgm/carefree-kevin-macleod.mp3"
+  volume: 0.10
+  fadeIn: 1.5
+  fadeOut: 2.5
+  credit: "BGM: Carefree - Kevin MacLeod (incompetech.com) / CC BY 4.0"
+
+opening:
+  variant: band
+  title: "Cloudflare OSが公開"
+  subtitle: "オープンソースのAIワークスペース"
+  badge: "ニュース"
+  accent: "#f6821f"
+  background: "dark"
+  emotion: happy
+  se: "audio/se/transition.ogg"
+  text: "ずんだもんなのだ！今日は話題のAIニュースを紹介するのだ！"
+
+thumbnail:
+  variant: bold
+  title: "Cloudflare OS"
+  subtitle: "AIワークスペースが公開"
+  badge: "ニュース"
+  accent: "#f6821f"
+  background: "dark"
+  emotion: smug
+
+scenes:
+  # ---- 導入 ----
+  - text: "Cloudflareが、あたらしいAIのツールを公開したのだ"
+    emotion: normal
+
+  - text: "その名も、Cloudflare OSなのだ"
+    emotion: happy
+    pause: 0.6
+
+  - text: "社内で使っていたものを、だれでも使えるように公開したのだ"
+    emotion: surprised
+    pause: 0.6
+
+  # ---- スライド1: Cloudflare OSとは ----
+  - text: "Cloudflare OSがどんなものなのか、まとめてみたのだ"
+    emotion: normal
+    background: purple
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "Cloudflare OSとは"
+      accent: "#f6821f"
+      bullets:
+        - "AIエージェントと一緒に仕事をする作業場"
+        - "ブラウザから話しかけて使う"
+        - "会社の情報やシステムとつながる"
+      note: "オープンソースで公開された"
+
+  - text: "ひとことで言うと、AIと一緒に仕事をする作業場なのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: purple
+    highlight: 1
+
+  - text: "ブラウザからAIに話しかけるだけで、作業を進めてくれるのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: purple
+    highlight: 2
+
+  - text: "しかも、会社の情報やシステムとつながって動くのだ"
+    se: "audio/se/select.ogg"
+    emotion: smug
+    background: purple
+    highlight: 3
+
+  # ---- スライド2: できること ----
+  - text: "じゃあ、具体的になにができるのだ？"
+    emotion: thinking
+    background: blue
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "できること"
+      accent: "#0984e3"
+      bullets:
+        - "調べものやリサーチ"
+        - "資料や表の作成"
+        - "小さな社内アプリづくり"
+      note: "文章から表、アプリまで一か所で"
+
+  - text: "気になることを調べてまとめてくれるのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: blue
+    highlight: 1
+
+  - text: "データとつながった資料や、表も作れるのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: blue
+    highlight: 2
+
+  - text: "さらに、ちょっとした社内アプリまで作れてしまうのだ"
+    se: "audio/se/chime.ogg"
+    emotion: surprised
+    background: blue
+    highlight: 3
+
+  # ---- スライド3: ガジェットのしくみ ----
+  - text: "おもしろいのが、ファイルの考え方なのだ"
+    emotion: normal
+    background: green
+    slide:
+      variant: fullbleed
+      se: "audio/se/slide-in.ogg"
+      title: "ファイルがアプリになる"
+      accent: "#00b894"
+      bullets:
+        - "ひとつひとつが「ガジェット」と呼ばれる"
+        - "AIがその場で専用アプリとして書く"
+        - "決まったファイル形式にしばられない"
+
+  - text: "ふつうのオフィスソフトは、文書や表といった形が決まっているのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: green
+    highlight: 1
+
+  - text: "でもCloudflare OSでは、ファイルごとにAIが専用アプリを書いてくれるのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: green
+    highlight: 2
+
+  - text: "だから、自分にぴったりの道具をその場で用意できるのだ"
+    se: "audio/se/select.ogg"
+    emotion: smug
+    background: green
+    highlight: 3
+
+  # ---- スライド4: 安全のしくみ ----
+  - text: "でも、AIに好きにさせて危なくないのだ？"
+    emotion: thinking
+    background: dark
+    slide:
+      variant: title
+      se: "audio/se/transition.ogg"
+      title: "安全のしくみ「ゲートキーパー」"
+      note: "AIとアプリの両方に見張りをつけて安全を守る"
+      accent: "#e17055"
+
+  - text: "そこで、ゲートキーパーという見張りのしくみがあるのだ"
+    emotion: normal
+    background: dark
+
+  - text: "AIにもアプリにもルールをかけて、変なことが起きないようにしているのだ"
+    emotion: happy
+    background: dark
+    pause: 0.6
+
+  - text: "だから、くわしくない人でも安心して使えるのだ"
+    emotion: smug
+    background: dark
+    subtitle: bar
+
+  # ---- スライド5: 使い方・公開先 ----
+  - text: "手に入れ方も、うれしいポイントなのだ"
+    emotion: happy
+    background: orange
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "だれでも使える"
+      accent: "#f6821f"
+      bullets:
+        - "Apacheライセンスのオープンソース"
+        - "GitHubでソースが公開されている"
+        - "自分のCloudflareの上に置いて動かせる"
+      note: "ホスティング版も用意されている"
+
+  - text: "ライセンスはApacheで、GitHubでソースが公開されているのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: orange
+    highlight: 1
+
+  - text: "自分のCloudflareの上に置いて、自由に動かせるのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: orange
+    highlight: 3
+
+  # ---- まとめ ----
+  - text: "というわけで、Cloudflare OSはAIと働く新しい作業場なのだ！"
+    se: "audio/se/confirm.ogg"
+    emotion: happy
+    background: gradient
+    slide: null
+
+  - text: "オープンソースだから、気になったらぜひのぞいてみてほしいのだ！"
+    emotion: happy
+    pause: 1.0
+
+ending:
+  variant: band
+  title: "ご視聴ありがとうございました"
+  subtitle: "また次のニュースで"
+  accent: "#f6821f"
+  background: "dark"
+  emotion: happy
+  se: "audio/se/confirm.ogg"
+  text: "最後まで見てくれてありがとうなのだ！また次のニュースで会おうなのだ！"
