@@ -1,3 +1,16 @@
+---
+description: |
+  キャラクター定義（立ち絵・表情・声・クレジット）のルール。
+  character.jsonの構造、途中でのキャラクター切り替え、声の調整とリップシンクの微調整。
+paths:
+  - src/characters/**
+  - src/components/SceneComposition.tsx
+  - src/components/thumbnail/**
+  - src/hooks/useLipSync.ts
+  - scripts/create-character.py
+  - scripts/fetch-avataaars-parts.py
+---
+
 # キャラクタールール
 
 立ち絵・表情・声・クレジットは**キャラクター定義1つにまとまっている**。

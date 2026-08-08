@@ -143,10 +143,45 @@ scenes:
   `audio_query`の`kana`で読みを事前確認して辞書で直す
 - **JSON更新後**: Remotionサーバー再起動が必要
 
+## ルール（.claude/rules/）
+
+作業するファイルに応じて読む。frontmatterの`paths`で対象を宣言してある。
+
+| ルール | paths | 内容 |
+|--------|-------|------|
+| [scenes.md](rules/scenes.md) | `scenes/**` | シーンYAMLのフォーマット仕様（全項目・既定値） |
+| [assets.md](rules/assets.md) | `public/**` | 素材のライセンス判断と置き場所（**厳守**） |
+| [character.md](rules/character.md) | `src/characters/**` ほか | キャラクター定義・切り替え・声の調整 |
+| [voicevox.md](rules/voicevox.md) | `scenes/**` `scripts/generate-*` | 音声生成・読みの確認・辞書 |
+| [remotion.md](rules/remotion.md) | `src/**` | 動画作成・バリアント・BGM/効果音の指定 |
+| [parts.md](rules/parts.md) | `public/parts/**` | パーツ画像の命名とPSD抽出 |
+
+## スキル（.claude/skills/）
+
+| スキル | 用途 |
+|--------|------|
+| `video-pipeline` | YAML→mp4の流れ全体（読み確認→生成→静止画確認→書き出し） |
+| `asset-source` | 素材の取得元を選ぶ・ライセンスを確認する |
+| `voicevox-voice` | 音声とリップシンクの生成 |
+| `character-animation` | 表情・口パク・瞬きの実装 |
+| `character-from-image` | 静止画1枚からキャラクターを作る |
+| `psd-extract` | PSDからパーツを抽出する |
+
+## 素材を追加するとき
+
+**必ず`.claude/rules/assets.md`に従う。** 素材探しは`asset-source`スキルを使う。
+
+- 公開リポジトリへのコミットは**再配布**にあたる。商用利用OKでも再配布NGの素材は
+  `local/`（`.gitignore`済み）に置く
+- 一覧のソース以外も、条件を満たせば使ってよい。ただし確認手順は省略しない
+- コミットする素材は同じディレクトリの`CREDITS.md`にライセンスを書く
+
 ## クレジット
 
 動画末尾に自動表示される。表記は使うキャラクターの`character.json`の`credits`が持つ。
-既定のずんだもんは以下。
+出てきた全キャラクターぶんが自動で並ぶ。既定のずんだもんは以下。
 
 - VOICEVOX:ずんだもん
 - 立ち絵素材: 坂本アヒル
+
+BGMの表記はシーンYAMLの`bgm.credit`に書く。CC BYなどは表記が**義務**なので省略しない。

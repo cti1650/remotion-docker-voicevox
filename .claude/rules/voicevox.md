@@ -1,6 +1,14 @@
 ---
-name: voicevox
-description: VOICEVOX音声生成時のルール。シーンYAML使用、辞書登録、クレジット表記。
+description: |
+  VOICEVOX音声生成時のルール。読みの事前確認（audio_queryのkana）、辞書の二層構成、
+  声の調整（ピッチ・話速）、話者IDとクレジット表記。
+paths:
+  - scripts/generate-voice-with-lipsync.sh
+  - scripts/generate-from-scenes.sh
+  - scripts/voicevox-dict.sh
+  - config/voicevox-dict.json
+  - scenes/**
+  - src/hooks/useLipSync.ts
 ---
 
 # VOICEVOXルール
