@@ -72,6 +72,10 @@ opening:              # オプション（本編前のタイトル演出）
   variant: center     # center/band/minimal
   title: "タイトル"
   text: "喋らせたいセリフ"   # 省略時は無音でduration秒
+ending:               # オプション（本編後の締めの演出。書き方はopeningと同じ）
+  variant: center     # center/band/minimal
+  title: "ご視聴ありがとうございました"
+  text: "また会おうなのだ！"   # 省略時は無音でduration秒
 thumbnail:            # オプション（npm run thumbnailで静止画出力）
   variant: bold       # bold/split/simple
   title: "サムネの文字"
@@ -108,6 +112,7 @@ scenes:
 - `scenes/slide-demo.yaml` — スライドの基本
 - `scenes/presenter-demo.yaml` — キャラクターの差し替え
 - `scenes/character-switch-demo.yaml` — 動画の途中でキャラクターを切り替える
+- `scenes/ending-demo.yaml` — 冒頭とエンディング
 
 サンプル（解説動画）:
 - `scenes/cosense.yaml` — Cosenseの使い方

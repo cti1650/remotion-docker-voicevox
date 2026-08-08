@@ -170,6 +170,7 @@ scenes:
 - `subtitle`: `boxed`（既定） / `bar` / `outline` / `card` / `none`
 - `slide.variant`: `card`（既定） / `fullbleed` / `title`
 - `opening.variant`: `center`（既定） / `band` / `minimal`
+- `ending.variant`: `center`（既定） / `band` / `minimal`
 - `thumbnail.variant`: `bold`（既定） / `split` / `simple`
 
 サンプル: `scenes/variants-demo.yaml`、`scenes/opening-demo.yaml`
@@ -215,13 +216,13 @@ npm run thumbnail -- scenes/my-video.yaml   # output/my-video-thumbnail.png
 
 ### バリアントの追加手順
 
-`subtitle` / `slide` / `opening` / `thumbnail` の4グループはすべて
+`subtitle` / `slide` / `opening` / `ending` / `thumbnail` の5グループはすべて
 「共通パーツ → バリアント → レジストリ」の3層構成。追加は3ステップで済む。
 
 1. バリアントのコンポーネントを追加（`SubtitleVariantComponent`などを実装）
 2. 同ディレクトリの`index.tsx`のレジストリに登録
 3. `src/types/scene.ts`の対応する型（`SubtitleVariant` / `SlideVariant` /
-   `OpeningVariant` / `ThumbnailVariant`）に名前を追加
+   `OpeningVariant` / `EndingVariant` / `ThumbnailVariant`）に名前を追加
 
 `SceneComposition.tsx`は触らない。スライドのバリアントは
 `parts/`（SlideShell・SlideHeader・SlideBody・SlideFooter・Bullet・SlideImage）を

@@ -45,6 +45,7 @@ scenes:
 | `bgm` | なし | BGM（文字列ならsrcのみ） |
 | `defaultSe` | なし | 全シーンのテロップ表示で鳴る効果音 |
 | `opening` | なし | 本編前のタイトル演出。`text`を書くと喋り、尺は音声の長さになる |
+| `ending` | なし | 本編後の締めの演出。書き方は`opening`と同じ |
 | `thumbnail` | なし | サムネイル（動画には出ない） |
 | `scenes` | **必須** | シーンの配列 |
 
@@ -124,6 +125,18 @@ opening:
   text: "喋らせたいセリフ"     # 書くと尺は音声の長さになる
   duration: 3                # textが無いときの尺（既定3）
 
+ending:                      # 本編の後。省略すれば付かない
+  variant: center            # center / band / minimal
+  title: "ご視聴ありがとうございました"   # 必須
+  subtitle: "また次の動画で"
+  accent: "#00d2a0"
+  background: "dark"
+  emotion: happy
+  character: false           # エンディングでキャラを隠す（真偽値のみ）
+  se: "audio/se/confirm.ogg"
+  text: "また会おうなのだ！"   # 書くと尺は音声の長さになる
+  duration: 4                # textが無いときの尺（既定4）
+
 thumbnail:
   variant: bold              # bold / split / simple
   title: "サムネの文字"        # 必須
@@ -166,6 +179,9 @@ image:
    素材のライセンスと置き場所は`assets.md`に従う（**厳守**）
 5. 長いタイトルは `opening.variant: center` だとキャラクターに重なる。
    長い場合は `band` か `minimal` を使う
+   （`ending` は長文前提なので、どのバリアントも自動で折り返す）
+6. **クレジットはエンディングと併存する。** 動画末尾2秒のクレジットは
+   エンディングの上に重ねて表示される。`ending` を書いても書かなくても出る
 
 ## サンプル
 
@@ -177,6 +193,7 @@ image:
 | `scenes/slide-demo.yaml` | スライドの基本 |
 | `scenes/presenter-demo.yaml` | キャラクターの差し替え |
 | `scenes/character-switch-demo.yaml` | 途中でのキャラクター切り替え |
+| `scenes/ending-demo.yaml` | 冒頭とエンディング |
 | `scenes/git.yaml` ほか | 実際の解説動画 |
 
 ## 関連ルール

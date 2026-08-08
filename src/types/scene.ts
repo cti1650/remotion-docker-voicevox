@@ -124,6 +124,29 @@ export interface OpeningConfig {
   pause?: number;            // セリフ後の間 (秒)
 }
 
+// エンディング（本編の後に流す締めの演出）の見た目
+// 実体は src/components/ending/
+export type EndingVariant =
+  | "center"   // 画面中央に大きくメッセージ（デフォルト）
+  | "band"     // 斜めの帯にメッセージを載せる
+  | "minimal"; // 細い線とメッセージだけ
+
+// オープニングとほぼ同じ形。省略すればエンディングは付かない
+export interface EndingConfig {
+  variant?: EndingVariant;
+  title: string;             // 大きく出す文字（「ご視聴ありがとうございました」など）
+  subtitle?: string;         // 補足の一行
+  badge?: string;            // 小さいラベル
+  accent?: string;           // アクセントカラー
+  background?: BackgroundConfig | string;
+  emotion?: EmotionType;     // キャラクターの表情
+  character?: boolean;       // キャラクターを出すか (デフォルト: true)
+  se?: SoundEffectInput;     // 冒頭で鳴らす効果音
+  text?: string;             // セリフ。書くと音声を生成し、尺は音声の長さになる
+  duration?: number;         // textが無いときの尺 (秒、デフォルト: 4)
+  pause?: number;            // セリフ後の間 (秒)
+}
+
 // サムネイルの見た目
 // 実体は src/components/thumbnail/
 export type ThumbnailVariant =
@@ -179,6 +202,7 @@ export interface VideoConfigInput {
   bgm?: BgmConfig | string;        // BGM (文字列の場合はsrcのみ)
   defaultSe?: SoundEffectInput;    // 全シーンのテロップ表示で鳴らす効果音
   opening?: OpeningConfig;         // 本編前のタイトル演出
+  ending?: EndingConfig;           // 本編後の締めの演出
   thumbnail?: ThumbnailConfig;     // サムネイル (npm run thumbnail で静止画出力)
   scenes: SceneConfig[];
 }
@@ -199,12 +223,22 @@ export interface VideoConfig {
   bgm?: BgmConfig | string;
   defaultSe?: SoundEffectInput;
   opening?: GeneratedOpening;
+  ending?: GeneratedEnding;
   thumbnail?: ThumbnailConfig;
 }
 
 // 生成後のオープニング（尺と音声が確定した状態）
 export interface GeneratedOpening extends OpeningConfig {
   duration: number;             // 尺（秒）
+  audioFile?: string;           // textを書いた場合の音声
+  lipsyncData?: LipSyncData;    // 同上。口パクに使う
+}
+
+// 生成後のエンディング（尺と音声が確定した状態）
+// startTimeは本編の最後のシーンが終わった時刻（絶対時刻）
+export interface GeneratedEnding extends EndingConfig {
+  duration: number;             // 尺（秒）
+  startTime: number;            // 開始時刻（秒）
   audioFile?: string;           // textを書いた場合の音声
   lipsyncData?: LipSyncData;    // 同上。口パクに使う
 }

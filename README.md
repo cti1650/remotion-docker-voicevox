@@ -91,6 +91,7 @@ clone直後は音声が無い状態なので、`npm run voice` を実行して�
 | `scenes/opening-demo.yaml` | 冒頭とサムネイル |
 | `scenes/presenter-demo.yaml` | キャラクターの差し替え |
 | `scenes/character-switch-demo.yaml` | 動画の途中でキャラクターを切り替える |
+| `scenes/ending-demo.yaml` | 冒頭とエンディング |
 | `scenes/git.yaml` ほか | 実際の解説動画 |
 
 ## ライセンス・クレジット

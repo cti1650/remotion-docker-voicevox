@@ -368,6 +368,28 @@ for i, scene in enumerate(scenes):
     generated_scenes.append(generated_scene)
     current_time += lipsync_data['duration'] + pause
 
+# エンディング（本編の後に流す締めの演出）
+# オープニングと同じく、textがあれば音声を生成して尺を音声に合わせる。
+# 省略すればエンディングは付かない（従来どおり）
+generated_ending = None
+ending = config.get('ending')
+if ending:
+    generated_ending = dict(ending)
+    generated_ending['startTime'] = round(current_time, 3)
+    if ending.get('text'):
+        print("  エンディングの音声を生成...")
+        base = f"{output_dir}/ending"
+        lipsync = generate_voice(ending['text'], base,
+                                 resolve_voice(current_character))
+        generated_ending['audioFile'] = f"audio/voice/{basename}/ending.wav"
+        generated_ending['lipsyncData'] = lipsync
+        generated_ending['duration'] = round(
+            lipsync['duration'] + ending.get('pause', 0.6), 3)
+    else:
+        generated_ending['duration'] = round(ending.get('duration', 4), 3)
+    current_time += generated_ending['duration']
+    print(f"  エンディング: {generated_ending['duration']}s")
+
 # Build final output
 output = {
     'id': basename,
@@ -386,6 +408,7 @@ output = {
         **{k: config[k] for k in ('defaultSubtitle', 'defaultSlideVariant', 'defaultSe') if k in config},
         **({'bgm': config['bgm']} if 'bgm' in config else {}),
         **({'opening': generated_opening} if generated_opening else {}),
+        **({'ending': generated_ending} if generated_ending else {}),
         **({'thumbnail': config['thumbnail']} if 'thumbnail' in config else {}),
     },
     'scenes': generated_scenes,
