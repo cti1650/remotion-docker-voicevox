@@ -332,3 +332,13 @@ scenes:
   - text: "くわしくは、東京大学uteleconの記事を見てみるのだ！"
     emotion: happy
     pause: 1.0
+
+# 本編の後に流れる締めの演出（クレジットはこの上に重なる）
+ending:
+  variant: center
+  title: "ご視聴ありがとうございました"
+  subtitle: "また次の動画で"
+  background: "dark"
+  emotion: happy
+  se: "audio/se/confirm.ogg"
+  text: "最後まで見てくれてありがとうなのだ！また次の動画で会おうなのだ！"
