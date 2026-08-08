@@ -14,6 +14,7 @@ import { HighlightImage } from "./HighlightImage";
 import { SlideRenderer } from "./slide";
 import { SubtitleRenderer } from "./subtitle";
 import { OpeningRenderer } from "./opening";
+import { EndingRenderer } from "./ending";
 import { SoundEffect } from "./SoundEffect";
 import { useLipSync, LipSyncData, DialogueLipSync } from "../hooks/useLipSync";
 import { resolveMediaSrc } from "../utils/media";
@@ -109,6 +110,11 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
   const openingDuration = opening?.duration ?? 0;
   const inOpening = openingDuration > 0 && currentTime < openingDuration;
 
+  // エンディング（本編の後の締めの演出）。無ければ従来どおり何も起きない
+  const ending = config.ending;
+  const endingStart = ending?.startTime ?? Infinity;
+  const inEnding = ending !== undefined && currentTime >= endingStart;
+
   // リップシンク用データを作成
   // オープニングにセリフがあれば、それも口パクの対象にする
   // 途中でキャラクターが変わってもいいよう、喋る人をセリフごとに持たせる
@@ -125,6 +131,13 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
       lipsyncData: scene.lipsyncData,
       character: getCharacter(scene.character ?? config.character),
     })),
+    ...(config.ending?.lipsyncData
+      ? [{
+          start: config.ending.startTime,
+          lipsyncData: config.ending.lipsyncData,
+          character: defaultCharacter,
+        }]
+      : []),
   ];
 
   // 現在のシーンを取得
@@ -141,10 +154,12 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
   const currentScene = getCurrentScene();
   const emotion: EmotionType = inOpening
     ? opening?.emotion ?? "happy"
-    : currentScene?.emotion ?? "normal";
+    : inEnding
+      ? ending?.emotion ?? "happy"
+      : currentScene?.emotion ?? "normal";
 
   // 今このシーンで立っているキャラクター（途中で切り替わることがある）
-  const character = inOpening
+  const character = inOpening || inEnding
     ? defaultCharacter
     : getCharacter(currentScene?.character ?? config.character);
 
@@ -154,7 +169,9 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
   // （画像やスライドだけを大きく見せたいとき）
   const showCharacter = inOpening
     ? opening?.character ?? true
-    : currentScene?.showCharacter ?? true;
+    : inEnding
+      ? ending?.character ?? true
+      : currentScene?.showCharacter ?? true;
 
   // 連続して同じスライドを表示するシーンをまとめる（登場アニメーションを1回にするため）
   const slideGroups: SlideGroup[] = [];
@@ -178,7 +195,9 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
   // 背景の取得（オープニング中は専用の背景を使える）
   const background: BackgroundConfig | string = inOpening
     ? opening?.background ?? config.defaultBackground ?? "gradient"
-    : currentScene?.background ?? config.defaultBackground ?? "gradient";
+    : inEnding
+      ? ending?.background ?? config.defaultBackground ?? "gradient"
+      : currentScene?.background ?? config.defaultBackground ?? "gradient";
 
   // BGMのクレジット表記（設定されていれば動画末尾に追記する）
   const bgmCredit =
@@ -206,11 +225,15 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
   // 動画の長さ（最後のシーンが終わる時刻）
   // scene.startTimeはオープニングの尺を含んだ絶対時刻なので、これだけで足りる
   const lastScene = scenes[scenes.length - 1];
-  const totalDuration = lastScene
+  const scenesEnd = lastScene
     ? lastScene.startTime +
       lastScene.lipsyncData.duration +
       (lastScene.pause ?? 0.5)
     : openingDuration;
+  // エンディングがあればその分だけ伸びる
+  const totalDuration = ending
+    ? ending.startTime + ending.duration
+    : scenesEnd;
 
   return (
     <AbsoluteFill>
@@ -255,6 +278,25 @@ export const SceneComposition: React.FC<SceneCompositionProps> = ({
             {opening.audioFile && <Audio src={staticFile(opening.audioFile)} />}
           </Sequence>
           <SoundEffect config={opening.se} startFrame={0} />
+        </>
+      )}
+      {/* エンディング（本編の後。クレジットはこの上に重ねて表示される） */}
+      {ending && (
+        <>
+          <Sequence
+            from={Math.floor(ending.startTime * fps)}
+            durationInFrames={Math.ceil(ending.duration * fps)}
+          >
+            <EndingRenderer
+              ending={ending}
+              durationInFrames={Math.ceil(ending.duration * fps)}
+            />
+            {ending.audioFile && <Audio src={staticFile(ending.audioFile)} />}
+          </Sequence>
+          <SoundEffect
+            config={ending.se}
+            startFrame={Math.floor(ending.startTime * fps)}
+          />
         </>
       )}
       {/* スライド登場時の効果音（同じスライドを続けるシーンでは鳴らさない） */}

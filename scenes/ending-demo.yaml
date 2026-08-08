@@ -1,0 +1,49 @@
+# 冒頭とエンディングのサンプル
+#
+# ending は opening と対になるオプション。省略すれば付かない。
+# クレジット（動画末尾2秒）はエンディングに重ねて表示される（併存）。
+#
+# 生成: npm run video -- scenes/ending-demo.yaml
+
+title: "エンディングのデモ"
+character: zundamon
+defaultBackground: "gradient"
+defaultPause: 0.4
+
+defaultSe:
+  src: "audio/se/pop.ogg"
+  volume: 0.20
+
+opening:
+  variant: band
+  title: "エンディングを付ける"
+  subtitle: "openingと対になる締めの演出"
+  badge: "デモ"
+  accent: "#6c5ce7"
+  background: "dark"
+  emotion: happy
+  se: "audio/se/transition.ogg"
+  text: "ずんだもんなのだ！今日はエンディングの紹介なのだ！"
+
+scenes:
+  - text: "動画の最後に、締めの演出を入れられるようになったのだ"
+    emotion: normal
+
+  - text: "冒頭の演出と同じで、書かなければ付かないのだ"
+    emotion: smug
+    background: purple
+
+  - text: "セリフを書けば、エンディングでも喋れるのだ"
+    emotion: happy
+    background: blue
+
+# 本編のあとに流れる（textがあるので喋る。尺は音声の長さ）
+ending:
+  variant: center
+  title: "ご視聴ありがとうございました"
+  subtitle: "また次の動画で"
+  accent: "#00d2a0"
+  background: "dark"
+  emotion: happy
+  se: "audio/se/confirm.ogg"
+  text: "最後まで見てくれてありがとうなのだ！また会おうなのだ！"
