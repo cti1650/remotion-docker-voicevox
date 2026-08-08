@@ -1,0 +1,4 @@
+{
+  "// recommendations": "シーンYAMLの補完・検証に使う",
+  "recommendations": ["redhat.vscode-yaml"]
+}

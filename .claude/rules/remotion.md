@@ -4,8 +4,7 @@ description: |
   BGM・効果音の指定、メディアパスの解決、クレジット表記。
 paths:
   - src/**
-  - scripts/render-video.sh
-  - scripts/render-thumbnail.sh
+  - scripts/render.mjs
   - remotion.config.ts
 ---
 
@@ -100,7 +99,7 @@ bgm:
   credit: "BGM: shuffle shuffle / KK (DOVA-SYNDROME)"
 ```
 
-`generate-from-scenes.sh`がファイルの実在と置き場所をチェックする
+`generate.mjs`がファイルの実在と置き場所をチェックする
 （見つからなければエラー終了、コミット対象の場所なら注意を表示）。
 
 ## 効果音

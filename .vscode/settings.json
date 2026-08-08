@@ -1,0 +1,6 @@
+{
+  "// yaml.schemas": "シーンYAMLに補完と検証を効かせる。YAML拡張 (redhat.vscode-yaml) が必要",
+  "yaml.schemas": {
+    "./schema/scene.schema.json": ["scenes/*.yaml"]
+  }
+}

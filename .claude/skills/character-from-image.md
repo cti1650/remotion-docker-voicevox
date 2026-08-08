@@ -76,7 +76,7 @@ src/characters/<name>/character.json
 
 ```bash
 for p in -0.05 0.00 0.05 0.10; do
-  ./scripts/generate-voice-with-lipsync.sh "テストです" 3 /tmp/p$p "{\"pitchScale\":$p}"
+  node scripts/voice.mjs "テストです" 3 /tmp/p$p "{\"pitchScale\":$p}"
 done
 ```
 

@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../schema/scene.schema.json
 # 動画制作の流れの解説動画（サンプル）
 #
 # 生成: npm run video -- scenes/video-production.yaml

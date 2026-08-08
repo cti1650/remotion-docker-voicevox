@@ -33,7 +33,8 @@ RUN apt-get update && apt-get install -y \
     fonts-noto-color-emoji \
     && rm -rf /var/lib/apt/lists/*
 
-# Install psd-tools for PSD file processing
+# PSDやPNGからパーツを切り出す初期セットアップ用（scripts/*.py）。
+# YAML→動画のパイプラインはNodeで完結するのでPythonは要らない
 RUN pip3 install --break-system-packages psd-tools Pillow
 
 # Set working directory

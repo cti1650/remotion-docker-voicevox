@@ -8,12 +8,15 @@
 .
 ├── scenes/                    # シーン定義YAML
 │   └── demo.yaml
+├── schema/
+│   └── scene.schema.json      # シーンYAMLのJSON Schema（生成時に検証・補完も効く）
 ├── scripts/
-│   ├── render-video.sh           # 音声生成 + レンダリング（npm run video）
-│   ├── render-thumbnail.sh       # サムネイル出力（npm run thumbnail）
-│   ├── generate-from-scenes.sh   # 音声・リップシンク生成（npm run voice）
-│   ├── generate-voice-with-lipsync.sh
-│   └── lib.sh                    # python検出・VOICEVOX起動の共通処理
+│   ├── render.mjs             # レンダリング（npm run video / npm run thumbnail）
+│   ├── generate.mjs           # 音声・リップシンク生成（npm run voice）
+│   ├── voice.mjs              # 1セリフぶんの音声とリップシンク
+│   ├── dict.mjs               # 辞書の確認・操作（npm run dict）
+│   ├── lib.mjs                # YAML読み込み・スキーマ検証・VOICEVOX起動
+│   └── *.py                   # パーツ抽出などの画像処理（初期セットアップのみ）
 ├── src/
 │   ├── characters/             # キャラクター定義（立ち絵・表情・声・クレジット）
 │   │   ├── CharacterRenderer.tsx  # layersを重ねるだけの汎用描画
@@ -96,7 +99,7 @@ src/components/thumbnail/  # Bold / Split / Simple
 | 置き場所 | 中身 | git管理 |
 |----------|------|---------|
 | `public/audio/bgm/` | BGM（手で配置） | する |
-| `public/audio/voice/` | `generate-from-scenes.sh` の出力（`.wav` + リップシンク`.json`） | **しない** |
+| `public/audio/voice/` | `generate.mjs` の出力（`.wav` + リップシンク`.json`） | **しない** |
 
 `public/audio/voice/` は `.gitignore` で丸ごと除外しているので、動画を増やしても
 `.gitignore` を触る必要がない。

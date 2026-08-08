@@ -108,7 +108,7 @@ bgm:
 npm run voice -- scenes/<name>.yaml   # 素材の実在と置き場所をチェックする
 ```
 
-`generate-from-scenes.sh` がBGM・効果音のファイル実在を確認し、
+`generate.mjs` がBGM・効果音のファイル実在を確認し、
 コミット対象の場所にある場合は注意を表示する。
 
 ## ユーザーへの伝え方

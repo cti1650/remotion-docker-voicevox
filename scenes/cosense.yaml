@@ -1,7 +1,8 @@
+# yaml-language-server: $schema=../schema/scene.schema.json
 # 東京大学 utelecon「Cosenseの基本的な使い方」の解説動画
 # 元記事: https://utelecon.adm.u-tokyo.ac.jp/articles/cosense/
 #
-# 生成: ./scripts/generate-from-scenes.sh scenes/cosense.yaml
+# 生成: node scripts/generate.mjs scenes/cosense.yaml
 
 title: "Cosenseの基本的な使い方"
 speaker_id: 3

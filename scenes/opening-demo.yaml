@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../schema/scene.schema.json
 # オープニングとサムネイルのサンプル
 #
 #   opening:    本編の前に流すタイトル演出

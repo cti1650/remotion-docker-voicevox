@@ -19,7 +19,7 @@ download-linux-x64
 # Audio files (generated)
 *.wav
 
-# 生成された音声とリップシンク（generate-from-scenes.shの出力先）
+# 生成された音声とリップシンク（generate.mjsの出力先）
 # 音声(.wav)もリップシンク(.json)も再生成できるため、丸ごと管理外にする
 # BGMはpublic/audio/bgm/に置くので巻き込まれない
 public/audio/voice/
@@ -38,7 +38,9 @@ public/audio/se/local/*
 
 # IDE
 .idea/
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
 *.swp
 *.swo
 

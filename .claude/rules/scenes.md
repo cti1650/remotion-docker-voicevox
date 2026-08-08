@@ -4,12 +4,28 @@ description: |
   既定値、省略時の挙動、書き方で意味が変わる項目（character / slide / se）。
 paths:
   - scenes/**
+  - schema/scene.schema.json
 ---
 
 # シーンYAMLルール
 
 `scenes/*.yaml` が動画の入力。ここを書けば音声・リップシンク・動画が生成される。
 型の実体は `src/types/scene.ts`（`VideoConfigInput` と `SceneConfig`）。
+
+## スキーマ検証
+
+書ける項目は `schema/scene.schema.json` が正。生成時（`npm run voice` / `npm run video`）に
+検証され、**未知のキーはタイポとみなしてエラーで止まる**。
+
+各YAMLの1行目にモデル行を書いてあるので、エディタ（VS Code + YAML拡張）でも
+補完と実時間の検証が効く。
+
+```yaml
+# yaml-language-server: $schema=../schema/scene.schema.json
+```
+
+項目を増やすときは `src/types/scene.ts` と `schema/scene.schema.json` の両方を直す。
+片方だけだと「型はあるのに生成時に弾かれる」状態になる。
 **型を変えたらこのファイルも更新すること。**
 
 ```bash

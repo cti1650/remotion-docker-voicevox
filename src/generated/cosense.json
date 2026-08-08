@@ -639,7 +639,7 @@
             "mouth": "n"
           },
           {
-            "time": 1.0,
+            "time": 1,
             "duration": 0.026,
             "phoneme": "s",
             "mouth": "u"
@@ -1910,7 +1910,7 @@
             "mouth": "u"
           },
           {
-            "time": 4.0,
+            "time": 4,
             "duration": 0.068,
             "phoneme": "u",
             "mouth": "u"
@@ -2788,7 +2788,7 @@
             "mouth": "o"
           },
           {
-            "time": 5.0,
+            "time": 5,
             "duration": 0.049,
             "phoneme": "d",
             "mouth": "a"
@@ -4489,7 +4489,7 @@
             "mouth": "a"
           },
           {
-            "time": 1.0,
+            "time": 1,
             "duration": 0.061,
             "phoneme": "k",
             "mouth": "u"
@@ -8202,7 +8202,7 @@
             "mouth": "a"
           },
           {
-            "time": 3.0,
+            "time": 3,
             "duration": 0.057,
             "phoneme": "n",
             "mouth": "o"
@@ -8901,7 +8901,7 @@
             "mouth": "o"
           },
           {
-            "time": 4.0,
+            "time": 4,
             "duration": 0.081,
             "phoneme": "o",
             "mouth": "o"
@@ -9284,7 +9284,7 @@
             "mouth": "i"
           },
           {
-            "time": 4.0,
+            "time": 4,
             "duration": 0.072,
             "phoneme": "i",
             "mouth": "i"
@@ -16241,7 +16241,7 @@
         ]
       },
       "startTime": 241.791,
-      "pause": 1.0,
+      "pause": 1,
       "character": "zundamon",
       "showCharacter": true
     }

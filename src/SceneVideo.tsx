@@ -29,7 +29,7 @@ export const SceneVideo: React.FC<SceneVideoProps> = ({ videoData }) => {
         fontFamily: "'Noto Sans JP', sans-serif",
         fontSize: 32,
       }}>
-        No video data - run generate-from-scenes.sh first
+        No video data - run generate.mjs first
       </div>
     );
   }

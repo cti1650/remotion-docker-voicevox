@@ -56,7 +56,7 @@ BGM・効果音・立ち絵・背景画像・参考画像・音声のライセ�
 | `public/audio/bgm/` `public/audio/se/` `public/images/` `public/parts/<name>/` | する | 再配布可の素材 |
 | `public/audio/bgm/local/` `public/audio/se/local/` | **しない** | 再配布不可の素材 |
 
-`generate-from-scenes.sh` がBGMと効果音のファイル実在と置き場所をチェックし、
+`generate.mjs` がBGMと効果音のファイル実在と置き場所をチェックし、
 コミット対象の場所にある場合は注意を表示する。
 
 ## 検証済みのソース（候補）

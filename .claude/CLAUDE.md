@@ -9,13 +9,14 @@ YAMLでシーンを定義するだけで、音声・リップシンク・動画�
 npm run video -- scenes/demo.yaml   # 音声生成→レンダリングを一括実行
 ```
 
-VOICEVOXは止まっていれば自動起動する（`scripts/lib.sh`の`ensure_voicevox`）。
+VOICEVOXは止まっていれば自動起動する（`scripts/lib.mjs`の`ensure_voicevox`）。
 
 ```bash
 npm run voice -- scenes/demo.yaml                  # 音声・リップシンクのみ
 npm run dev                                        # プレビュー
 npm run video -- scenes/demo.yaml --skip-generate  # レンダリングのみ
 npm run thumbnail -- scenes/demo.yaml              # サムネイルをPNG出力
+npm run dict -- list                               # 辞書の中身を確認（デバッグ用）
 npm run voicevox:down                              # VOICEVOX停止
 ```
 
@@ -124,15 +125,18 @@ scenes:
 
 ## 重要な知見
 
-- **Root.tsx**: generate-from-scenes.sh実行時に自動更新
-- **python3**: `scripts/lib.sh`の`resolve_python`が使えるものを探す
-  （asdf等でshimがバージョン未設定だと素の`python3`は落ちるため）
+- **Root.tsx**: generate.mjs実行時に自動更新
+- **パイプラインはNodeで完結**: YAML読み込みからレンダリングまで`scripts/*.mjs`。
+  動画づくりにpython3は要らない。`scripts/*.py`はPSD抽出などの画像処理専用で、
+  初期セットアップのときだけ使う
+- **YAMLの検証**: `schema/scene.schema.json`で生成時に検証する（`scripts/lib.mjs`）。
+  未知のキーはタイポとみなしてエラーにするので、項目を増やしたらスキーマも直す
 - **コンポジション**: YAML由来の`SceneVideo`と、`thumbnail:`がある場合の
   `<id>-thumbnail`（Still）のみ。手書きの`MyComposition`は廃止済み
 - **口のデフォルト**: `closed`（`むふ`から抽出）
 - **キャラクター**: 立ち絵・表情・置き場所・声・クレジットは
-  `src/characters/<name>/character.json` に集約。TSとPythonの両方が読むのでJSON。
-  静止画1枚から作るなら`python3 scripts/create-character.py`
+  `src/characters/<name>/character.json` に集約。描画(TSX)と生成(Node)の両方が読むのでJSON。
+  静止画1枚から作るなら`scripts/create-character.py`（画像処理なのでPython）
   （詳細は`.claude/rules/character.md`）
 - **PSD抽出**: `layer.topil()`使用
 - **リップシンク**: JSONの最後に`end`エントリが自動追加。

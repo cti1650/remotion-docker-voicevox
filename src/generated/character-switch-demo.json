@@ -1880,7 +1880,7 @@
         ]
       },
       "startTime": 23.835,
-      "pause": 1.0,
+      "pause": 1,
       "character": "zundamon",
       "showCharacter": true,
       "se": "audio/se/confirm.ogg"

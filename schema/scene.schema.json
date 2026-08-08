@@ -1,0 +1,291 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/cti1650/remotion-docker-voicevox/schema/scene.schema.json",
+  "title": "シーンYAML",
+  "description": "scenes/*.yaml のスキーマ。型の実体は src/types/scene.ts の VideoConfigInput",
+  "type": "object",
+  "required": ["scenes"],
+  "additionalProperties": false,
+
+  "properties": {
+    "title": { "type": "string", "description": "動画タイトル（省略時はファイル名）" },
+    "character": {
+      "type": "string",
+      "description": "既定のキャラクターID（省略時 zundamon）",
+      "examples": ["zundamon", "presenter"]
+    },
+    "speaker_id": {
+      "type": "integer",
+      "description": "VOICEVOXの話者ID。既定キャラクターへの上書き（省略時はキャラクターの既定値）"
+    },
+    "voice": { "$ref": "#/definitions/voiceParams" },
+    "fps": { "type": "integer", "default": 30 },
+    "width": { "type": "integer", "default": 1920 },
+    "height": { "type": "integer", "default": 1080 },
+    "defaultBackground": { "$ref": "#/definitions/background" },
+    "defaultPause": { "type": "number", "default": 0.5, "description": "セリフ後の間（秒）" },
+    "defaultSubtitle": { "$ref": "#/definitions/subtitleVariant" },
+    "defaultSlideVariant": { "$ref": "#/definitions/slideVariant" },
+    "dict": {
+      "type": "object",
+      "description": "この動画だけの読み。セリフに出てくる語だけ書く（スライドの文字は音声にならない）",
+      "additionalProperties": {
+        "oneOf": [
+          { "type": "string", "description": "全角カタカナの読み" },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["pronunciation"],
+            "properties": {
+              "pronunciation": { "type": "string" },
+              "accent_type": { "type": "integer" },
+              "priority": { "type": "integer", "minimum": 0, "maximum": 10 }
+            }
+          }
+        ]
+      }
+    },
+    "bgm": {
+      "oneOf": [
+        { "type": "string", "description": "public/からの相対パス" },
+        { "$ref": "#/definitions/bgmConfig" }
+      ]
+    },
+    "defaultSe": { "$ref": "#/definitions/soundEffect" },
+    "opening": { "$ref": "#/definitions/opening" },
+    "ending": { "$ref": "#/definitions/ending" },
+    "thumbnail": { "$ref": "#/definitions/thumbnail" },
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/scene" }
+    }
+  },
+
+  "definitions": {
+    "emotion": {
+      "type": "string",
+      "enum": ["normal", "happy", "sad", "angry", "surprised", "thinking", "smug", "tired"]
+    },
+    "subtitleVariant": {
+      "type": "string",
+      "enum": ["boxed", "bar", "outline", "card", "none"]
+    },
+    "slideVariant": {
+      "type": "string",
+      "enum": ["card", "fullbleed", "title"]
+    },
+    "titleVariant": {
+      "type": "string",
+      "enum": ["center", "band", "minimal"]
+    },
+    "thumbnailVariant": {
+      "type": "string",
+      "enum": ["bold", "split", "simple"]
+    },
+
+    "background": {
+      "description": "プリセット名、または {type, value}",
+      "oneOf": [
+        {
+          "type": "string",
+          "enum": ["gradient", "purple", "blue", "green", "orange", "pink", "dark", "white"]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "value"],
+          "properties": {
+            "type": { "type": "string", "enum": ["gradient", "solid", "image"] },
+            "value": {
+              "oneOf": [
+                { "type": "string" },
+                { "type": "array", "items": { "type": "string" } }
+              ]
+            }
+          }
+        }
+      ]
+    },
+
+    "soundEffect": {
+      "description": "文字列ならsrcのみ。nullで鳴らさない",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["src"],
+          "properties": {
+            "src": { "type": "string" },
+            "volume": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.35 },
+            "delay": { "type": "number", "description": "表示から遅らせる秒数" }
+          }
+        }
+      ]
+    },
+
+    "voiceParams": {
+      "type": "object",
+      "description": "声の調整。既定キャラクターへの上書き",
+      "additionalProperties": false,
+      "properties": {
+        "speedScale": { "type": "number", "minimum": 0.5, "maximum": 2.0, "description": "話速。変えたら音声を作り直す" },
+        "pitchScale": { "type": "number", "minimum": -0.15, "maximum": 0.15, "description": "音高" },
+        "intonationScale": { "type": "number", "minimum": 0, "maximum": 2.0, "description": "抑揚" },
+        "volumeScale": { "type": "number", "minimum": 0, "maximum": 2.0 }
+      }
+    },
+
+    "bgmConfig": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["src"],
+      "properties": {
+        "src": { "type": "string", "description": "public/からの相対パス、またはURL" },
+        "volume": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.12 },
+        "fadeIn": { "type": "number", "default": 1 },
+        "fadeOut": { "type": "number", "default": 2 },
+        "loop": { "type": "boolean", "default": true },
+        "credit": { "type": "string", "description": "CC BY等で表記義務がある場合は必須" }
+      }
+    },
+
+    "image": {
+      "description": "文字列ならsrcのみ",
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["src"],
+          "properties": {
+            "src": { "type": "string" },
+            "position": {
+              "type": "string",
+              "enum": ["top-right", "top-left", "center", "bottom-right", "bottom-left"]
+            },
+            "scale": { "type": "number" },
+            "animation": {
+              "type": "string",
+              "enum": ["fade-in", "slide-in", "zoom-in", "none"]
+            }
+          }
+        }
+      ]
+    },
+
+    "slide": {
+      "description": "オブジェクトで切り替え、nullで非表示、省略で直前を継続",
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "variant": { "$ref": "#/definitions/slideVariant" },
+            "title": { "type": "string" },
+            "bullets": { "type": "array", "items": { "type": "string" } },
+            "image": { "type": "string" },
+            "imageLayout": { "type": "string", "enum": ["split", "stack"] },
+            "caption": { "type": "string" },
+            "note": { "type": "string" },
+            "accent": { "$ref": "#/definitions/color" },
+            "se": { "$ref": "#/definitions/soundEffect" }
+          }
+        }
+      ]
+    },
+
+    "color": {
+      "type": "string",
+      "pattern": "^#[0-9a-fA-F]{6}$",
+      "description": "#RRGGBB"
+    },
+
+    "scene": {
+      "type": "object",
+      "required": ["text"],
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "description": "セリフ。そのまま字幕になるので、読みを直すためにカタカナで書かない（dictを使う）"
+        },
+        "emotion": { "$ref": "#/definitions/emotion" },
+        "background": { "$ref": "#/definitions/background" },
+        "image": { "$ref": "#/definitions/image" },
+        "slide": { "$ref": "#/definitions/slide" },
+        "highlight": { "type": "integer", "minimum": 1, "description": "強調する箇条書きの番号（1始まり）" },
+        "subtitle": { "$ref": "#/definitions/subtitleVariant" },
+        "character": {
+          "description": "文字列=切り替え（以降も継続） / false=そのシーンだけ隠す / true・省略=継続",
+          "oneOf": [{ "type": "string" }, { "type": "boolean" }]
+        },
+        "se": { "$ref": "#/definitions/soundEffect" },
+        "duration": { "type": "number", "description": "表示時間の上書き（秒）" },
+        "pause": { "type": "number", "description": "セリフ後の間（秒）" }
+      }
+    },
+
+    "opening": {
+      "type": "object",
+      "required": ["title"],
+      "additionalProperties": false,
+      "properties": {
+        "variant": { "$ref": "#/definitions/titleVariant" },
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "badge": { "type": "string" },
+        "accent": { "$ref": "#/definitions/color" },
+        "background": { "$ref": "#/definitions/background" },
+        "emotion": { "$ref": "#/definitions/emotion" },
+        "character": { "type": "boolean", "description": "キャラクターを出すか（真偽値のみ）" },
+        "se": { "$ref": "#/definitions/soundEffect" },
+        "text": { "type": "string", "description": "書くと喋る。尺は音声の長さになる" },
+        "duration": { "type": "number", "default": 3, "description": "textが無いときの尺（秒）" },
+        "pause": { "type": "number" }
+      }
+    },
+
+    "ending": {
+      "type": "object",
+      "required": ["title"],
+      "additionalProperties": false,
+      "properties": {
+        "variant": { "$ref": "#/definitions/titleVariant" },
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "badge": { "type": "string" },
+        "accent": { "$ref": "#/definitions/color" },
+        "background": { "$ref": "#/definitions/background" },
+        "emotion": { "$ref": "#/definitions/emotion" },
+        "character": { "type": "boolean", "description": "キャラクターを出すか（真偽値のみ）" },
+        "se": { "$ref": "#/definitions/soundEffect" },
+        "text": { "type": "string", "description": "書くと喋る。尺は音声の長さになる" },
+        "duration": { "type": "number", "default": 4, "description": "textが無いときの尺（秒）" },
+        "pause": { "type": "number" }
+      }
+    },
+
+    "thumbnail": {
+      "type": "object",
+      "required": ["title"],
+      "additionalProperties": false,
+      "properties": {
+        "variant": { "$ref": "#/definitions/thumbnailVariant" },
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "badge": { "type": "string" },
+        "accent": { "$ref": "#/definitions/color" },
+        "background": { "$ref": "#/definitions/background" },
+        "emotion": { "$ref": "#/definitions/emotion" },
+        "image": { "type": "string" },
+        "width": { "type": "integer", "default": 1280 },
+        "height": { "type": "integer", "default": 720 }
+      }
+    }
+  }
+}

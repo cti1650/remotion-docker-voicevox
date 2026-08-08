@@ -3,11 +3,18 @@
 DockerでRemotionとVOICEVOXを使った動画作成環境。
 YAMLでシーンを定義するだけで、音声・リップシンク・動画を自動生成する。
 
+![デモ](docs/images/demo.gif)
+
+セリフを書くだけで、読み上げ・口パク・テロップ・表情・背景が揃う
+（`scenes/presenter-demo.yaml` の出力。GIFなので音は出ない）。
+
 ## 必要条件
 
 - Docker / Docker Compose
 - Node.js 18+
-- Python 3 + PyYAML（音声生成スクリプトが使用）
+
+動画づくりに必要なのはこの2つだけ。
+PSDからパーツを切り出す等の初期セットアップだけPython 3を使う（[docs/assets.md](docs/assets.md)）。
 
 ## クイックスタート
 
@@ -52,6 +59,20 @@ npm run video -- scenes/my-video.yaml --skip-generate    # 音声を使い回し
 スライド・BGM・効果音・冒頭演出・サムネイル・キャラクターの切り替えなどは
 [docs/scene-yaml.md](docs/scene-yaml.md) を参照。
 
+### 書き間違いはその場で分かる
+
+YAMLは `schema/scene.schema.json` で検証される。項目名を打ち間違えると
+生成時にエラーで止まるので、動画を書き出してから気付くことがない。
+
+```
+scenes/my-video.yaml のスキーマ検証に失敗しました
+  /scenes/0/emotion must be equal to one of the allowed values (使えるのは normal / happy / ...)
+```
+
+VS Codeに [YAML拡張](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)
+を入れると、書いている最中に補完と検証が効く（拡張はこのリポジトリを開くと推奨表示される）。
+各YAMLの1行目にあるモデル行がスキーマと結び付けている。
+
 ## ドキュメント
 
 | ドキュメント | 内容 |
@@ -75,6 +96,7 @@ AIエージェント向けの規約は `.claude/` にある（`rules/` と `skil
 | `npm run thumbnail -- scenes/demo.yaml` | サムネイルをPNGで書き出す |
 | `npm run dev` | Remotion Studioでプレビュー |
 | `npm run voicevox:up` / `npm run voicevox:down` | VOICEVOXの起動・停止 |
+| `npm run dict -- list` | VOICEVOXの辞書の中身を確認（デバッグ用） |
 
 `npm run video` / `npm run voice` はVOICEVOXが止まっていれば自動で起動するので、
 `voicevox:up` を先に叩く必要はない。

@@ -24,7 +24,7 @@ npm run voice -- scenes/demo.yaml
 npm run voice
 
 # エンジンの辞書を確認（登録はYAMLのdict:かconfig/voicevox-dict.jsonに書く）
-./scripts/voicevox-dict.sh list
+npm run dict -- list
 ```
 
 ## 出力ファイル
