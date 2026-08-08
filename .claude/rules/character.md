@@ -165,7 +165,7 @@ VOICEVOXが合成する音声は、**先頭に`prePhonemeLength`（既定0.1秒�
 
 | ID | 素材 | ライセンス | パーツ |
 |----|------|-----------|--------|
-| `zundamon` | 坂本アヒルの立ち絵（PSD由来） | 素材元の規約に従う | PNG |
+| `zundamon` | 坂本アヒルの立ち絵（PSD由来） | グレーな判断でコミット（`assets.md`参照） | PNG |
 | `presenter` | [Avataaars](https://avataaars.com/) (Pablo Stanley) | MIT | SVG |
 
 `presenter`は口・目・眉が独立した層なので、リップシンク・瞬き・表情がすべて動く。

@@ -112,6 +112,15 @@ clone直後は音声が無い状態なので、`npm run voice` を実行して�
 - **presenter** — [Avataaars](https://avataaars.com/) (Pablo Stanley) / MIT
   （全文は `public/parts/presenter/CREDITS.md`）
 
+> [!IMPORTANT]
+> **フォークして商用利用する場合は注意が必要です。**
+> ずんだもんの立ち絵と声には、東北ずん子・ずんだもんプロジェクトの規約による制約が
+> あります（東北6県以外の企業・法人の商用利用は別途ライセンス契約が必要）。
+> また立ち絵の無償再配布については規約に明記が無く、このリポジトリは
+> 「OSS・無償・立ち絵が主体ではない」ことから禁止に該当しないと判断して同梱しています。
+> 詳細と、制約を避けたい場合の代替（`presenter`キャラクター）は
+> [docs/assets.md](docs/assets.md) を参照してください。
+
 ### BGM・効果音
 
 - BGM: Carefree - Kevin MacLeod (incompetech.com) / CC BY 4.0
