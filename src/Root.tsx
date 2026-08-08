@@ -7,10 +7,12 @@ import { ThumbnailComposition, thumbnailSize } from "./components/thumbnail";
 // generate.mjs実行時に自動更新
 import * as character_switch_demoData from "./generated/character-switch-demo.json";
 import * as cloudflare_osData from "./generated/cloudflare-os.json";
+import * as cloudflare_warpData from "./generated/cloudflare-warp.json";
 import * as cosenseData from "./generated/cosense.json";
 import * as demoData from "./generated/demo.json";
 import * as ending_demoData from "./generated/ending-demo.json";
 import * as gitData from "./generated/git.json";
+import * as onepasswordData from "./generated/onepassword.json";
 import * as opening_demoData from "./generated/opening-demo.json";
 import * as presenter_demoData from "./generated/presenter-demo.json";
 import * as reactData from "./generated/react.json";
@@ -24,10 +26,12 @@ import * as voicevoxData from "./generated/voicevox.json";
 const generatedVideos: GeneratedVideoData[] = [
   character_switch_demoData as unknown as GeneratedVideoData,
   cloudflare_osData as unknown as GeneratedVideoData,
+  cloudflare_warpData as unknown as GeneratedVideoData,
   cosenseData as unknown as GeneratedVideoData,
   demoData as unknown as GeneratedVideoData,
   ending_demoData as unknown as GeneratedVideoData,
   gitData as unknown as GeneratedVideoData,
+  onepasswordData as unknown as GeneratedVideoData,
   opening_demoData as unknown as GeneratedVideoData,
   presenter_demoData as unknown as GeneratedVideoData,
   reactData as unknown as GeneratedVideoData,

@@ -1,0 +1,207 @@
+# yaml-language-server: $schema=../schema/scene.schema.json
+# 解説動画: Cloudflare WARPってなに？
+#
+# 生成: npm run video -- scenes/cloudflare-warp.yaml
+# サムネ: npm run thumbnail -- scenes/cloudflare-warp.yaml
+
+title: "Cloudflare WARPってなに？"
+character: zundamon
+speaker_id: 3
+fps: 30
+width: 1920
+height: 1080
+defaultBackground: "gradient"
+defaultPause: 0.4
+defaultSubtitle: boxed
+defaultSlideVariant: card
+
+defaultSe:
+  src: "audio/se/pop.ogg"
+  volume: 0.20
+
+dict:
+  Cloudflare: クラウドフレア
+  WARP: ワープ
+  Cloudflare WARP: クラウドフレアワープ
+  WireGuard: ワイヤーガード
+  VPN: ブイピーエヌ
+  DNS: ディーエヌエス
+  Wi-Fi: ワイファイ
+  データセンター: データセンター
+
+bgm:
+  src: "audio/bgm/carefree-kevin-macleod.mp3"
+  volume: 0.10
+  fadeIn: 1.5
+  fadeOut: 2.5
+  credit: "BGM: Carefree - Kevin MacLeod (incompetech.com) / CC BY 4.0"
+
+opening:
+  variant: band
+  title: "Cloudflare WARPってなに？"
+  subtitle: "通信を安全にする無料アプリ"
+  badge: "解説"
+  accent: "#f6821f"
+  background: "dark"
+  emotion: happy
+  se: "audio/se/transition.ogg"
+  text: "ずんだもんなのだ！今日は通信を守るアプリを紹介するのだ！"
+
+thumbnail:
+  variant: bold
+  title: "Cloudflare WARP"
+  subtitle: "通信を安全にする無料アプリ"
+  badge: "解説"
+  accent: "#f6821f"
+  background: "dark"
+  emotion: smug
+
+scenes:
+  # ---- 導入 ----
+  - text: "カフェや空港の無料Wi-Fi、つい使ってしまうのだ"
+    emotion: normal
+
+  - text: "でも、通信の中身をのぞかれないか、ちょっと心配なのだ"
+    emotion: sad
+    pause: 0.6
+
+  - text: "そんなときに役立つのが、Cloudflare WARPなのだ"
+    emotion: happy
+    pause: 0.6
+
+  # ---- スライド1: WARPとは ----
+  - text: "Cloudflare WARPがどんなものか、まとめてみたのだ"
+    emotion: normal
+    background: purple
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "Cloudflare WARPとは"
+      accent: "#f6821f"
+      bullets:
+        - "通信を安全にする無料のアプリ"
+        - "端末とネットの間で通信を暗号化する"
+        - "スマホでもパソコンでも使える"
+      note: "正式名称は 1.1.1.1 with WARP"
+
+  - text: "ひとことで言うと、通信を安全にしてくれる無料のアプリなのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: purple
+    highlight: 1
+
+  - text: "端末とインターネットの間に入って、通信を暗号化してくれるのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: purple
+    highlight: 2
+
+  - text: "スマホでもパソコンでも、入れるだけで使えるのだ"
+    se: "audio/se/select.ogg"
+    emotion: smug
+    background: purple
+    highlight: 3
+
+  # ---- スライド2: しくみ ----
+  - text: "どうやって安全にしているのか、しくみを見てみるのだ"
+    emotion: thinking
+    background: blue
+    slide:
+      se: "audio/se/slide-in.ogg"
+      title: "安全にするしくみ"
+      accent: "#0984e3"
+      bullets:
+        - "通信をまるごと暗号化して包む"
+        - "近くのCloudflareの拠点まで運ぶ"
+        - "そこからネットへ送り出す"
+      note: "暗号化にはWireGuardという技術を使う"
+
+  - text: "まず、あなたの通信をまるごと暗号化して包むのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: blue
+    highlight: 1
+
+  - text: "それを、近くにあるCloudflareの拠点まで安全に運ぶのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: blue
+    highlight: 2
+
+  - text: "拠点からインターネットへ送り出すから、途中でのぞかれにくいのだ"
+    se: "audio/se/chime.ogg"
+    emotion: surprised
+    background: blue
+    highlight: 3
+
+  # ---- スライド3: うれしいところ ----
+  - text: "使うと、どんないいことがあるのだ？"
+    emotion: thinking
+    background: green
+    slide:
+      variant: fullbleed
+      se: "audio/se/slide-in.ogg"
+      title: "うれしいところ"
+      accent: "#00b894"
+      bullets:
+        - "無料で、通信量の上限もない"
+        - "会員登録もいらない"
+        - "公共Wi-Fiでも中身が見えにくい"
+
+  - text: "まず、無料なうえに通信量の上限もないのだ"
+    se: "audio/se/select.ogg"
+    emotion: happy
+    background: green
+    highlight: 1
+
+  - text: "面倒な会員登録もいらないから、すぐに始められるのだ"
+    se: "audio/se/select.ogg"
+    emotion: normal
+    background: green
+    highlight: 2
+
+  - text: "公共のWi-Fiでも、提供者に通信の中身が見えにくくなるのだ"
+    se: "audio/se/select.ogg"
+    emotion: smug
+    background: green
+    highlight: 3
+
+  # ---- 注意点: VPNとの違い ----
+  - text: "でも、ふつうのVPNとは少し違うのだ"
+    emotion: normal
+    background: dark
+    slide:
+      variant: title
+      se: "audio/se/transition.ogg"
+      title: "VPNとの違い"
+      note: "目的は通信の安全と高速化。国を偽ったり身元を隠す用途ではない"
+      accent: "#e17055"
+
+  - text: "WARPの狙いは、通信を安全にして速くすることなのだ"
+    emotion: normal
+    background: dark
+
+  - text: "国を偽ったり、身元をすっかり隠したりする用途ではないのだ"
+    emotion: tired
+    background: dark
+    pause: 0.6
+
+  # ---- まとめ ----
+  - text: "というわけで、Cloudflare WARPは通信を手軽に守れる無料アプリなのだ！"
+    se: "audio/se/confirm.ogg"
+    emotion: happy
+    background: gradient
+    slide: null
+
+  - text: "外のWi-Fiをよく使う人は、ぜひ試してみてほしいのだ！"
+    emotion: happy
+    pause: 1.0
+
+ending:
+  variant: band
+  title: "ご視聴ありがとうございました"
+  subtitle: "また次の動画で"
+  accent: "#f6821f"
+  background: "dark"
+  emotion: happy
+  se: "audio/se/confirm.ogg"
+  text: "最後まで見てくれてありがとうなのだ！また次の動画で会おうなのだ！"
